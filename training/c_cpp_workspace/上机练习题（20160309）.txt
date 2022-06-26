@@ -1,0 +1,67 @@
+1. 美元兑换人民币的比率为1：6.258，假如你拿125美元到银行去换成RMB，银行每笔交易收费2%，请问兑换后，你的账户里有多少RMB？输出结果只保留两位小数。
+#include <stdio.h>
+int main() {
+	double USD,CNY;
+	USD=125;
+	CNY=USD*6.258;
+	printf("%.2lf",CNY*(1-0.02));
+	return 0;
+}
+2. 定义一个double型变量表示一个人的身高（以厘米为单位），计算并输出其黄金分割点的位置在哪，结果总共占10位，右对齐，小数点后保留两位。
+#include <stdio.h>
+int main() {
+	double a,b;
+	scanf("%lf",&a);
+	b=a*0.618;
+	printf("%10.2lf",b);
+	return 0;
+}
+3. 从键盘输入三角形的三边长a、b、c（假定输入保证了它们能构成三角形），用公式求该三角形的面积，结果保留两位小数。求三角形面积的公式：area=sqrt(s*(s-a)*(s-b)*(s-c)),其中s=(a+b+c)/2。
+#include <stdio.h>
+#include <math.h>
+int main() {
+	double area,s,a,b,c;
+	scanf("%lf%lf%lf",&a,&b,&c);
+	s=(a+b+c)/2;
+	area=sqrt(s*(s-a)*(s-b)*(s-c));
+	printf("%.2lf",area);
+	return 0;
+}
+4. 同第3题的输入，但不保证一定能够构成三角形，请对输入的数据进行判断，对于能够构成三角形的情况，把三角形面积输出（保留两位小数），对于不能构成三角形的情况，输出“无法构成三角形”。
+#include <stdio.h>
+#include <math.h>
+int main() {
+	double area,s,a,b,c;
+	scanf("%lf%lf%lf",&a,&b,&c);
+	if(a+b>c,a+c>b,b+c>a,a-b<c,a-c<b,b-a<c,b-c<a,c-a<b,c-b<a){
+		s=(a+b+c)/2;
+		area=sqrt(s*(s-a)*(s-b)*(s-c));
+		printf("%.2lf",area);
+	} else {
+		printf("无法构成三角形");
+	}
+  	return 0;
+}
+5. 从键盘上输入一个秒数（整数），将其转换成对应的小时数、分钟数和秒数。例如，输入5000，则输出应为“ 1小时23分钟20秒”。
+#include <stdio.h>
+int main() {
+	int sec,h,d,s;
+	scanf("%d",&sec);
+	h=sec/3600;
+	d=(sec-h*3600)/60;
+	s=sec-h*3600-d*60;
+	printf("%d小时%d分钟%d秒",h,d,s);
+  	return 0;
+}
+6. 大连东联路从联合路入口到南关岭出口全长11.3公里，全程限速70公里/小时，编写程序，计算从联合路到南关岭最短的时间是多少分钟多少秒？
+#include <stdio.h>
+int main() {
+	double km,h;
+	int d,s;
+	km=11.3;
+	h=km/70;
+	d=h*60;
+	s=h*3600-d*60;
+	printf("%d分钟%d秒",d,s);
+  	return 0;
+} 

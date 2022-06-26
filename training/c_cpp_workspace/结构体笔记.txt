@@ -1,0 +1,151 @@
+定义：
+struct 结构体名称｛
+	结构体内容
+｝；
+例子：
+struct book{
+	char book id[12];
+	char name[31];
+	char author[16];
+	char publish[31];
+	double price;
+} books[1000];
+scanf("%s%s%s%s%lf",books[0].bool_id,books[0].name,books[0].author,books[0].publish,&books[0].price）；
+
+结构体、
+
+#include<stdio.h>
+#include<stdlib.h>
+#define N 3
+typedef struct date {
+	int year,month,day;
+} Date;
+typedef struct stu {
+	int id;
+	char name[13];
+	double score;
+	Date bdate;
+	Date idate;
+} student;
+void inputArr(student stus[], int n) {
+	int i;
+	for(i=0; i<n; ++i) {
+		scanf("%d%s%lf%d%d%d%d%d%d",
+		      &stus[i].id,stus[i].name,&stus[i].score,
+		      &stus[i].bdate.year,
+		      &stus[i].bdate.month,
+		      &stus[i].bdate.day,
+		      &stus[i].idate.year,
+		      &stus[i].idate.month,
+		      &stus[i].idate.day);
+	}
+}
+void printArr(student stus[], int n) {
+	int i;
+	for(i=0; i<n; ++i)
+		printf("%d,%s,%.1lf,%d-%d-%d,%d-%d-%d\n ",
+		       stus[i].id,stus[i].name,
+		       stus[i].score,
+		       stus[i].bdate.year,
+		       stus[i].bdate.month,
+		       stus[i].bdate.day,
+		       stus[i].idate.year,
+		       stus[i].idate.month,
+		       stus[i].idate.day);
+	printf("%\n");
+}
+int cmp(const void* a, const void* b) {
+	int ya,yb,ma,mb,da,db;
+	ya=((student*)a)->bdate.year;
+	ma=((student*)a)->bdate.month;
+	da=((student*)a)->bdate.day;
+	yb=((student*)b)->bdate.year;
+	mb=((student*)b)->bdate.month;
+	db=((student*)b)->bdate.day;
+	if(ya!=yb) return ya yb
+	return ((student*)b)->score-((student*)a)->score;
+}
+void sortArr(student stud[],int n) {
+	psort(stus,n,sizeof(student),cmp);
+}
+int main() {
+	student stus[];
+	//从键盘录入
+	inputArr(stus,N);
+	//显示每个学生信息
+	printArr(stus,N);
+	//按成绩
+	sortArr(stus,N);
+	printArr(stus,N);
+	int a[N]= {3,1,2,6,5,0,-3,7,5,10};
+	printArr(a,N);
+	qsort(a,N,sizeof(int),cmp);
+	printArr(a,N);
+	return 0;
+}
+
+
+#include<stdio.h>
+int main() {
+	struct date {
+		int year;
+		int month;
+		int day;
+	} Date;
+	struct student {
+		int  id;
+		char name[31];
+		double score;
+		struct date birthdate;
+		struct date indate;
+	} stu[5];
+	int i;
+	for(i=0; i<5; ++i)
+		scanf("%d%s%lf%d%d%d%d%d%d",&stu[i].id,stu[i].name,&stu[i].score,&stu[i].birthdate.year,
+		      &stu[i].birthdate.month,&stu[i].birthdate.day,&stu[i].indate.year,
+			  &stu[i].indate.month,&stu[i].indate.day);
+	for(i=0; i<5; ++i)
+		printf("%d,%s,%.2lf,%d-%d-%d,%d-%d-%d\n",stu[i].id,stu[i].name,stu[i].score,stu[i].birthdate.year,
+		       stu[i].birthdate.month,stu[i].birthdate.day,stu[i].indate.year,
+			   stu[i].indate.month,stu[i].indate.day);
+	int j,k;
+		for(i=0; i<5; i++) {
+			for(j=0; j<5-i; j++)
+				if(stu[j].score<stu[j+1].score) {
+					k=stu[j].score;
+					stu[j].score=stu[j+1].score;
+					stu[j+1].score=k;
+				}
+			printf("%d,%s,%.2lf,%d-%d-%d,%d-%d-%d\n",stu[i].id,stu[i].name,stu[i].score,stu[i].birthdate.year,
+		       stu[i].birthdate.month,stu[i].birthdate.day,stu[i].indate.year,
+			   stu[i].indate.month,stu[i].indate.day);}
+	return 0;		   
+}
+
+联合体 union
+定义方法：
+union 联合体名称｛
+	联合体成员
+｝；
+
+struct S{
+	char a[4];
+	int b;
+};
+
+union U｛
+	char a[4];
+	int b;
+};
+
+枚举类型
+给一组整数起别名
+enum Week={SUN,MON,TUE,WED,THI,FRI,STA};
+
+enum{BIN=2,DEC=10,OCX=8,HEX=16};
+
+存储图书的信息：编号（char[13]),名称(char[50])，价格(double)
+类别：儿童图书、教科书
+其他属性：
+（1）对于儿童图书，年龄段（几岁到几岁）
+（2）对于教科书，科目

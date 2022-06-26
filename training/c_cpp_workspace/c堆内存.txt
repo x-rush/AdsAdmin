@@ -1,0 +1,88 @@
+把数组作为参数传递给函数时，编译器会自动把数组转换为指针，该指针指向数组的首地址
+
+printfArr(int *a);
+printfArr(int a[10]);
+printfArr(int a[]);
+传递数组给函数，通常有三种方案：
+1，传递数组，外加长度。
+2，传递数组的首地址和尾地址。
+函数定义：
+void printfArr(int *a,int *b){
+int *p=a;
+while(p!=b){printf("%d",*(p++);)
+printf("\n");}}
+调用：
+printfArr(a,a+10);
+
+3.数组内部有特殊的结束标记，可以只传数组首地址（例如字符串）
+
+
+
+public class Train {
+
+	public static void swap(int c,int d) {
+		int tmp=c;
+		c=d;
+		d=tmp;
+		System.out.println("swap方法里，a的值是"+c+";b的值是"+d);
+	}
+	public static void main(String[] args){
+		int a=6;
+		int b=9;
+		swap(a,b);
+		System.out.println("交换结束后，变量a的值是"+a+";变量b的值是"+b);
+	}
+	
+}
+
+
+动态内存管理（堆内存管理）
+程序员自行申请、使用和释放。堆内存没有名称，只能通过指针间接访问。
+
+1.引入头文件stdlib.h
+
+2.三个函数：malloc calloc free
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+	int *p=(int*)malloc(sizeof(int));
+	//从堆中申请了int大小的内存 p是指向这块内存的指针，且p是一个整形指针 
+	if(p==NULL){
+		printf("No memory!\n");
+		return -1;
+	}
+	*p=10;
+	(*p)++;
+	printf("%d\n",*p);
+	free(p);
+
+	return 0;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+	int n,i;
+	scanf("%d",&n);
+	int *p=(int*)malloc(sizeof(int));
+	//从堆中申请了int大小的内存 p是指向这块内存的指针，且p是一个整形指针 
+	if(p==NULL){
+		printf("No memory!\n");
+		return -1;
+	}
+	for(i=0;i<n;i++){
+		*(p+i)=i*10;//p[i]=i*10;
+	}
+	for(i=0;i<n;i++){
+		printf("%d ",*(p+i));//p[i]等价于*(p+i)
+	}
+	printf("\n");
+	free(p);
+
+	return 0;
+}
+3.防止内存泄漏，如果没有free或者因为指向动态内存的首指针位置改变而丢失动态内存的位置号，导致无法释放，就会产生内存泄漏，此时其他程序无法使用这些被申请过的内存。
+
+4.calloc函数在申请堆内存的同时，会把各个元素初始化为0.

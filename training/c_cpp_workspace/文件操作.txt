@@ -1,0 +1,63 @@
+文件操作
+fopen和fclose函数
+fscanf和fprintf函数
+fgets和fputs函数
+fseek和ftell函数
+
+//下面程序可以实现复制一个文本文件
+#include<stdio.h>
+#define MAX 101
+int main() {
+	//先在硬盘上找到一个存在内容的文本文件 
+	FILE* fpr=fopen("d:\\exam.sql",
+		"r");
+	//设置合理路径和文件名，将把结果写入该文件 
+	FILE* fpw=fopen("d:\\result.txt",
+		"w");
+	char line[MAX];
+	if(fpr==NULL||fpw==NULL){
+		printf("open failed!\n");
+		return -1;
+	}
+	while(fgets(line,MAX,fpr)){
+		fputs(line,fpw);
+	}
+	fclose(fpr);
+	if(fclose(fpw)!=0)
+		printf("close failed.\n");
+	return 0;
+}
+
+
+
+//以下程序能够实现将英文文本文件内容反转
+#include<stdio.h>
+#define MAX 101
+#define CNTL_Z '\032' 
+int main() {
+	//先在硬盘上找到一个存在内容的文本文件 
+	FILE* fpr=fopen("d:\\exam.sql",
+		"rb");
+	//设置合理路径和文件名，将把结果写入该文件 
+	FILE* fpw=fopen("d:\\result2.txt",
+		"wb");
+	char line[MAX], ch;
+	long count, last;
+	if(fpr==NULL||fpw==NULL){
+		printf("open failed!\n");
+		return -1;
+	}
+	fseek(fpr,0L,SEEK_END);
+	last=ftell(fpr);
+	for(count=1L;count<=last;count++){
+		fseek(fpr,-count,SEEK_END);
+		ch=getc(fpr);
+		if(ch!=CNTL_Z&&ch!='\r')
+			fprintf(fpw,"%c",ch);
+	}
+	fprintf(fpw,"\n");
+	fclose(fpr);
+	if(fclose(fpw)!=0)
+		printf("close failed.\n");
+	return 0;
+}

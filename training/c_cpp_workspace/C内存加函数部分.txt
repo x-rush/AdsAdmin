@@ -1,0 +1,328 @@
+一，内存的划分
+1，全局区
+全局变量所在的区域，全局变量就是不在任何函数之内定义的变量。
+e.g.
+int a=0;
+int aaa(){}
+int main(){}//在函数外定义变量，在所有函数中都可以使用
+注意：若全局变量与局部变量重名，优先选择离执行项最近的变量。
+注意：全局变量如果没有初始化，会自动初始化为0。
+2，栈区(stack)
+在栈区的内容遵循一个特性：先进后出。
+局部变量（定义在函数内部的变量）放在栈区，每个函数都有自己的栈，在程序执行过程中，如果调用了一个函数，
+该函数所需要的栈内存才会申请，该函数内部的变量都放在这个栈区，该函数执行完毕，这个栈会自动销毁。
+（在栈区中定义的变量，寿命都有限度，函数结束时，变量结束，自动销毁，将空间还给操作系统）
+另外，栈区中的变量执行速度是最快的。
+注意:局部变量使用之前必须初始化。（至少得初始化一个）(e.g. int a[10]={1}//起码初始化一个)
+3，堆区(heap)
+可以由程序员通过malloc、calloc等函数申请并自行管理的内存区域。该区域中的变量在程序员申请时诞生，由程序
+员负责释放，编译器以及操作系统不负责对其管理。（风险度较高）
+堆区的内存执行速度较慢（轻易不要使用）
+4，代码区
+编译后二进制代码所在的内存区域，嵌入式编程会关注该区域。
+
+二，函数
+能够完成一个特定功能的代码段，拥有自己的名称，可能还拥有参数和返回值。
+当代码中有反复书写或者执行的部分，就应该抽取出来写成函数。
+
+函数定义的语法：
+返回值 函数名称(参数列表){ 函数体 }//注意函数名的冲突与重复
+int printarray(a);//对数组a进行排序
+
+函数调用的语法：
+函数名(实际参数列表)；
+调用时会把实际参数的值按照顺序赋值给对应的形式参数，相当于在函数内部的局部变量。
+e.g.
+int getmax(int a,int b);//等价于int getmax(){int a,int b,int c...}
+int c;
+if (a>b)
+c=a;
+else c=b;
+return c;//注意,此外，若要返回较大值，可以return a>b?a:b;
+e.g.
+int main(){
+int m=5,n=7,max0;
+max0=getmax(5,7);//往上面的函数送值
+extra:
+交换函数：swapint()
+交换地址的时候：swapint(int *a,int *b){...}
+
+如果想在函数内部修改外部的内容，形式参数需要使用指针。
+
+函数练习题
+1. 编写一个chline(ch, i, j)函数，实现指定字符ch在第i列和第j列之间（含i和j两列）输出，1<=i,j<=60，但i不一定小于j。然后在main函数中测试该函数是否正确。
+巨大问题程序：
+#include <stdio.h>
+#include <string.h>
+int chline(char ch[60],int i,int j){;
+char ch1[60];
+int l,k;
+if(1<=i && j<=60 && i>j){
+l=strlen(ch);
+k=(60-j)+(i-1)-l;
+strnpy(ch1,ch,k);
+printf("%s",ch1);
+ }
+else if(1<=i && j<=60 && i<j){
+l=strlen(ch);
+k=l-(60-j)-(i-1);
+strnpy(ch1,ch,k);
+printf("%s",ch1);
+}
+else{
+printf("nonsense");}
+}
+正确答案：
+void chline(char ch,int i, int j){
+int low,high,k;
+low=i<j?i:j;
+high=i>j?i:j;
+for(k=1;k<low;++k){
+printf(" ");}
+for(k=low;k<+low;++k){printf("%c",ch);}
+printf("\n");}
+2. 编写一个draw(ch, i, j)函数，实现打印i行j列ch字符的功能，其中1<=i,j<=60，然后在main函数中测试该函数是否正确。
+void draw(char ch,int i,int j){
+int k1,k2;
+for(k1=1;k1<=i;++k1){
+for(k2=1;k2=j;++k2){
+printf("%c",ch);
+printf("\n");}}}
+3. 编写一个sortArr(int a[], int n)函数，其中a是一个整型数组，n是该数组中元素的个数，该函数实现对数组a进行升序排列的
+功能，在main函数中测试该函数是否正确。
+?(如何实现对数组升序排列)
+答案:
+void sortArr(int a[],int n){
+int i,j;
+for(i=0;i<n-1;++i){
+for(j=0;j<n-1-i;++j){
+if(a[j]>a[j+1]){
+t=a[j];
+a[j]=a[j+1];
+a[j+1]=t;
+}}}}
+int main(){
+int n;
+char a[20];
+printf("%c",sortArr(a[20],n);
+return 0;)
+4. 编写一个返回值为double类型的函数power(a,n)，其中a是double类型的底数，n是一个整数，代表方幂，也就是说该函数计算a
+的n次方（注意，n不一定是正整数），在main函数中测试该函数是否正确。
+double power(double a,int n){
+if(a>1e-6 || a<-1e-6){
+if(n>0){
+int i;
+double result=1;
+for(i=1;i<=n;++i){
+result*=a;
+return 1/result;}}}
+if(n==0)
+return 1;
+else return 0;
+
+}
+5. 两个数的谐均值定义为：先对两个数的倒数取平均值，最后再取倒数。编写一个计算两个数谐均值的函数havg，然后在main函数
+中测试该函数是否正确。
+
+6. 编写一个reverse函数，实现将一个字符串逆序，然后在main函数中测试该函数是否正确。
+void reverse(char a[]){
+int n=strlen(s),i;
+char t;
+for(i=0;i<n/2;i++){
+t=a[i];
+a[i]=a[n-1-i];
+a[n-1-i]=t;
+}
+}
+1、区别是main()函数是否有返回值。
+2、void定义的函数没有返回值，int定义的函数返回整型值。
+3、void，字面意思是“无类型”，常用在程序编写中对定义函数的参数类型、返回值、函数中指针类型进行声明，有注释和限制程
+序的作用。
+
+新课
+把数组作为参数传递给函数时，编译器会自动把数组转换为指针，该指针指向数组的首地址。
+
+printfArr(int *a);
+printfArr(int a[10]);
+printfArr(int a[]);//以上三种方式等价
+
+传递数组给函数，通常有三种方案：
+1，传递数组，外加长度。
+2，传递数组的首地址和尾地址。
+函数定义：
+void printfArr(int *a,int *b){
+int *p=a;//int之后，按照上面的说法，这一步意思等价int *p=&a;
+while(p!=b){printf("%d",*(p++);)
+printf("\n");}}
+调用：
+printfArr(a,a+10);
+3,数组内部有特殊的结束标记，可以只传数组首地址（例如字符串，基本上也只适用于字符串）
+与运算时，当前边的数是0时则后边的数不运算，直接得0，或运算若前面为1，则后边的数直接为1.
+
+tips：定义函数涉及到字符串时，定义长度可以这样：
+e.g. void reverse(char *ch,int i,int j){}
+或void reverse(char ch[],int i,int j){}
+或void reverse(char ch[60],int i,int j){}//可能吧
+
+新课：递归函数
+函数调用自身进行下一步计算。
+计算阶乘：
+1!=1
+2!=2*1
+3!=3*2!
+4!=4*3!
+f(n)用于计算n的阶乘:
+f(n)=n*f(n-1)
+一个能够用递归计算的函数，要满足两方面特性：
+1，递推关系：当前步与前面的若干步之间存在什么样的关系；
+2，终止条件：到什么时候停止使用递推关系，直接得到结果。
+满足以上两个条件，即可使用递推函数。
+e.g.
+int fac(int n){
+if(n==1){
+return 1;}
+else{return fac(n-1)*n;}//在定义函数过程中使用到了被定义函数的本身，称为递推函数
+}
+int main(){
+printf("%d",fac(3));
+return 0;
+}
+
+f(n)=2*f(n-1)+0.5*f(n-2)+3，则f(10)=？
+e.g.
+double f(int n){
+if(n==1)
+return 1.0;
+else if(n==2)
+return 2.0;
+else 
+return 2*f(n-1)+0.5*f(n-2)+3;
+}
+int main(){
+printf("%lf",f(10)};
+return 0;
+}
+
+tips:long的范围与int一样，long long才是更广范围的输入（"%lld"）
+
+e.g.
+int fib(int n){
+if(n==1 || n==2)
+return 1;
+else 
+return fib(n-1)+fib(n-2);
+}
+若改为使用循环方式来编写：
+#include<stdio.h>
+int  a[40]={1,1}; 
+int fib(int n) {
+	int  i;
+	for(i=2; i<41; ++i) 
+       a[i]=a[i-1]+a[i-2];
+		return a[n-1];
+}
+int main() {
+	printf("%d\n",fib(40));
+	return 0;
+}
+
+问题：查找关于qsort(快速排序)的语句。
+
+新课：如何储存数据库中的一行信息。
+tips：char a[11]//定义一个十位数组，留一位给"\0"。
+char publish[1000][31];//定义一千个元素，每个元素里面有三十一个长度的字符串作为内容。
+如何使相对独立的定义函数产生关联，看作一个整体：
+复合数据类型：结构体
+大体意思：（在一个结构体中可以储存不同类型的数据，把他们看作一个整体处理）
+定义：
+struct 结构体名称{
+结构体内容;
+};
+e.g.
+struct book{
+char book_id[12];
+char name[31];
+char author[16];
+char publish[31];
+double price;};//后续便可以当作一个整体来处理，新的定义类型为：struct book或book，该名字可直接使用，如下：
+struct book{
+char book_id[12];
+char name[31];
+char author[16];
+char publish[31];
+double price;}
+books[1000];
+scanf("%s%s%s%s%lf",books[0].book_id,books[0].name,...,&books[0].price);//注意price的输入，需要取地址符。另外，当需要输入多个数值时，
+可以用循环来控制输入。
+
+e.g.
+#include <stdio.h>
+
+int main(){
+struct student{
+	int id;
+	char name[16];
+	double score;
+}
+students[5];
+int i;
+for(i=0;i<5;++i){
+scanf("%d%s%lf",&students[i].id,students[i].name,&students[i].score);
+
+}
+for(i=0;i<5;++i)
+printf("%d%s%.2lf\n",students[i].id,students[i].name,students[i].score);
+
+	return 0;
+}
+问题：如何加入年月日数据输入：
+#include <stdio.h>
+
+int main(){
+struct date{
+int year;
+int minth;
+int day;}
+struct student{
+	int id;
+	char name[16];
+	double score;
+struct date birthdate;//定义
+}
+
+students[5];
+int i;
+for(i=0;i<5;++i){
+scanf("%d%d%d%d%s%lf",&students[i].birthdate.year,&students[i].birthdate.month,&students[i].birthdate.day,&students[i].id,students[i].name,&students[i].score);
+
+}
+for(i=0;i<5;++i)
+printf("%d%s%.2lf\n",students[i].id,students[i].name,students[i].score...(同上));
+
+	return 0;
+}
+
+别名：
+typedef struct date{
+int year;
+int minth;
+int day;
+} Date;//Date为该函数的别名
+在之后的struct student{}中，则表示为
+Date birthdate;
+Date indate//?
+e.g.
+typedef long long LL;
+LL a;//long long a;
+
+extra：
+char flag1;
+char flag2;//内存总空间占用量有关
+
+extra:
+Date *p;
+Date mydate;
+p=&mydate;
+scanf("%d%d%d",&mydate.year,&mydat.month,&mydate.day);
+printf("%d-%d-%d",(*p).year);//也可以写为printf("%d-%d-%d",p->year,p->month,p->day);则有，(*p).year等价于p->year,
+前提是p指向的是结构体而不是其余类型，如整型

@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />		
+		<title>导航栏</title>
+		<style>			
+			*{
+				background: write;
+				z-index: auto;
+			}
+			a{
+				text-decoration: none;
+				color: white;
+				display: block;
+				margin-top: 20px;
+				font-size: 30px;
+			}		
+			.box{
+				display: flex;
+				flex-flow：row nowrap;				
+			}
+			.boxA{
+				display: flex;
+				flex-flow: row wrap;
+				flex-grow: 4;
+			}
+			.boxB{
+				display: flex;
+				flex-flow: row wrap;
+				flex-grow: 1;
+			}
+			.A{
+				text-align: center;
+				background-color: grey;
+				height: 80px;
+				flex-grow: 1;
+			}
+			.A>a{
+				background: grey;
+			}
+			.B{
+				text-align: center;
+				background-color: orangered;
+				height: 80px;
+				flex-grow: 1;
+			}
+			.B>a{
+				background: orangered;
+			}
+			.A:hover,.B:hover,.A>a:hover,.B>a:hover{
+				background-color:gainsboro;					
+			}
+			a:hover{
+				color: #000000;	
+			}
+			@media all and (max-width:640px){
+				.box{
+					flex-flow: column wrap;
+				}
+			
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="boxA">
+				<div class="A"><a href="6.44.html">评论</a></div>
+				<div class="A"><a href="yueli.html">月历</a></div>
+			</div>
+		</div>
+	</body>
+</html>
