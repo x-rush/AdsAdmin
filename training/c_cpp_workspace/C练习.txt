@@ -1,0 +1,41 @@
+1.
+#include <stdio.h>
+#include <string.h> 
+int main() {
+	char ch[100];
+	int i,cntA=0,cnta=0,cnt0=0,cntk=0,cntf=0;
+	gets(ch); 
+		for(i=0;i<strlen(ch);i++){
+		if(ch[i]>='A'&&ch[i]<='Z'){
+			cntA++;
+		}else if(ch[i]>='a'&&ch[i]<='z'){
+			cnta++;
+		}else if(ch[i]>='0'&&ch[i]<='9'){
+	    	cnt0++;
+		}else if(ch[i]==' '){
+			cntk++;
+		}else{
+			cntf++;
+		}}
+	printf("大写字母有%d个\n",cntA);
+	printf("小写字母有%d个\n",cnta);
+	printf("数字有%d个\n",cnt0);
+	printf("空格有%d个\n",cntk);
+	printf("特殊符号有%d个\n",cntf);
+	return 0;
+}
+2.
+#include <stdio.h>
+#include <string.h> 
+int main() {
+	int i;
+	char ch[100];
+	while(scanf("%s",ch)!=EOF){
+		for(i=0;i<strlen(ch);i++){
+		if(ch[i]>='A'&&ch[i]<='Z'){
+		    ch[i]+=32;
+		}
+	} 
+	puts(ch);}
+	return 0;
+}

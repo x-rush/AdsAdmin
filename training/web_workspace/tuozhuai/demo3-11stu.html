@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    .dropzone {
+        width: 200px;
+        height: 100px;
+        border: 2px dashed #ddd;
+        text-align: center;
+        padding-top: 100px;
+        color: #999;
+    }
+    .preview img {
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<body>
+<div id="dropzone" class="dropzone">
+    拖拽文件到此处
+</div>
+<div id="preview" class="preview">
+
+</div>
+<script type="text/javascript">
+    var preview = document.getElementById('preview');
+    var dropzone = document.getElementById('dropzone');
+    dropzone.addEventListener('dragover', function (e) {
+        e.preventDefault();
+    });
+    dropzone.addEventListener('drop',function(e){
+        //图像类型过滤
+     var imageType = /image.*/;
+     console.log(e.dataTransfer.files[0].type);
+     if(e.dataTransfer.files[0].type.match(imageType)){
+        console.log("你拖拽了一张图");
+        var img = document.createElement("img");
+        var reader = new FileReader();
+        reader.readAsDataURL(e.dataTransfer.files[0]);
+        reader.onload=function(e){
+            img.src=e.target.result;
+            preview.appendChild(img);
+        }
+     }else{alert("你拖入的不是图片文件");}
+     e.preventDefault();
+     e.stopPropagation();
+    })
+</script>
+
+</body>
+</html>

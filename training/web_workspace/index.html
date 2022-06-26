@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/p5.js/0.5.16/p5.js"></script>
+	<style type="text/css">
+		#main {
+	background-color: white;
+	width:900px;
+	margin: 0px auto;
+	}
+h1 {
+	line-height: 50px;
+	background-color: #8EE5EE;
+	height: 50px;
+	text-align: center;
+	margin: 0px;
+    color:#fff;
+}
+h2 {
+	line-height: 50px;
+	background-color: #999999;
+	height: 50px;
+	text-align: center;
+	margin: 0px;
+    color:#fff;
+}
+li{
+	list-style-type:none;
+	width:100px;
+	height:50px;
+	line-height:50px;
+	float: left;
+	margin-top:10px;
+	margin-right:5px;
+}
+a:link,a:visited {
+	font-size: 12px;
+	color: #000;
+	text-decoration: none;
+	background-color:#FFF68F;
+	text-align: center;
+    font-weight:bold;
+	display: block;
+	border: 1px;
+        border-style: solid;
+	border-color:#ccc #333 #333 #ccc;	
+}
+a:hover,a:active{
+	background-color:aquamarine;
+	color:antiquewhite;
+    border-color:#333 #ccc #ccc #333;}
+.clear{
+	clear:both;}
+h2{
+	text-align:center;
+	font-size:20px;}
+h3 a:link{
+	height:40px;
+	line-height:40px;}
+ul{
+	-webkit-padding-start: 0px;
+	</style>
+</head>
+<body>
+	<div id="main">
+<ul>
+	<h1>移动互联网开发</h1>
+	<h2>522李若星</h2>
+    <li><a href="gouwuche/info.html" target="_blank">作业一：购物车</a></li>
+    <li><a href="tuozhuai/index.html" target="_blank">作业二：拖拽</a></li>
+    <li><a href="daohanglan/index.html" target="_blank">作业三：导航栏</a></li>
+    <li><a href="heima/index.html" target="_blank">作业四：黑马</a></li>
+    <li><a href=""></a></li>
+    <li><a href=""></a></li>
+</ul>
+</body>
+</div>
+<canvas id="cvs" width="" height=""></canvas>
+	<script type="text/javascript">
+			var canvas=document.getElementById("cvs");
+			var context=canvas.getContext("2d");
+			canvas.width=window.innerWidth;
+			canvas.height=window.innerHeight;
+			var sakura=function(x,y,l,sx,sy,r,g,b,alpha){
+				this.x=x;2
+				this.y=y;
+				this.l=l;
+				this.sx=sx;
+				this.sy=sy;
+				this.r=r;
+				this.g=g;
+				this.b=b;
+				this.alpha=alpha;
+				this.display=function(){
+					context.save();
+					context.translate(this.x,this.y);
+					context.fillStyle="rgba("+this.r+","+this.g+","+this.b+","+this.alpha+")";
+					for(var i=0;i<6;i++){
+				      context.beginPath();
+			          context.moveTo(0,0);
+			          context.lineTo(this.l*0.6,this.l*0.2);
+			          context.lineTo(this.l*0.6,this.l);
+			          context.closePath();
+			          context.fill();
+			          context.rotate(2*Math.PI/6);
+			       }
+			        context.restore();
+				};
+				this.fall=function(){
+		    	this.x+=this.sx;
+		    	this.y+=this.sy;
+		    	
+		    	if(this.y>=window.innerHeight){
+		    		this.y=0;
+		    	}
+		    	this.display();
+		    }
+			}
+			
+			var sakuras=[];
+			var n=60;
+			
+			for(var i=0;i<n;i++){
+				var x=Math.floor(Math.random()*window.innerWidth);
+				var y=Math.floor(Math.random()*window.innerHeight*0.1);
+				var l=Math.floor(Math.random()*10+5);
+				var sx=Math.random()*0.05;
+				var sy=Math.random()*2;
+				var r=18;
+				var g=150;
+				var b=219;
+				var alpha=Math.random();
+				sakuras[i]=new sakura(x,y,l,sx,sy,r,g,b,alpha);
+				sakuras[i].display();
+			}
+		    
+		    window.requestAnimationFrame(falling);
+		    
+		    function falling(){
+		    	context.clearRect(0,0,canvas.width,canvas.height);
+		    	for(var i=0; i<n ;i++){
+		    		sakuras[i].fall();
+		    	}
+		    	 window.requestAnimationFrame(falling);
+		    }
+		</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		fieldset {
+			height: auto;
+			width: 600px;
+			border: 1px solid black;
+			margin-bottom: 15px;
+		}
+		
+		fieldset>* {
+			margin: 3px auto;
+		}
+	</style>
+
+	<body>
+		<div id="app">
+			<fieldset id="">
+				<legend>学生录入系统</legend>
+				<div>
+					<span>姓名：</span>
+					<input type="text" v-model="newStudent.name" placeholder="请输入姓名" />
+				</div>
+				<div>
+					<span>年龄：</span>
+					<input type="text" v-model="newStudent.age" placeholder="请输入年龄" />
+				</div>
+				<div>
+					<span>性别：</span>
+					<select v-model="newStudent.sex">
+						<option value="男" selected>男</option>
+						<option value="女">女</option>
+					</select>
+				</div>
+				<button @click="createStudent()">添加新学生</button>
+			</fieldset>
+			<fieldset id="">
+				<legend>筛选</legend>
+				<div>
+					<span>按姓名搜索：</span>
+					<input type="text" v-model="search"/>
+					<button @click="filteresStudents()">确认</button>
+				</div>
+				
+			</fieldset>
+			<fieldset id="">
+				<legend>学生列表</legend>
+				<table border="1" style="color:black;">
+					<tr>
+						<th>姓名</th>
+						<th>年龄</th>
+						<th>性别</th>
+						<th>购买数量</th>
+						<th>操作</th>
+					</tr>
+
+					<tr v-for="(student,index) in students">
+						<td>
+							<p>{{student.name}}</p>
+						</td>
+						<td>
+							<p>{{student.age}}</p>
+						</td>
+						<td>
+							<p>{{student.sex}}</p>
+						</td>
+						<td>
+							<button @click="changeNum(index,-1)" :disabled="student.num===1">-</button> {{student.num}}
+							<button @click="changeNum(index,1)">+</button>
+						</td>
+						<td><button @click="deleteStudent(index)">删除</button></td>
+					</tr>
+				</table>
+			</fieldset>
+			<p :style="{display:show}">学生总年龄是：{{ages}}</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#app', //容器建立联系
+			data: {
+				//model
+				search:'',
+				newStudent: {
+					name: '',
+					age: 0,
+					num: 1,
+					sex: '男'
+				},
+
+				students: [{
+						name: '张三',
+						age: 12,
+						num: 1,
+						sex: '男'
+					},
+					{
+						name: '李四',
+						age: 13,
+						num: 1,
+						sex: '女'
+					},
+					{
+						name: '王五',
+						age: 14,
+						num: 1,
+						sex: '男'
+					},
+					{
+						name: '赵四',
+						age: 15,
+						num: 1,
+						sex: '女'
+					}
+				],
+				show: "block"
+			},
+			methods: {
+				createStudent() {
+					if(this.newStudent.name === '' || this.newStudent.age <= 10) {
+						alert('姓名不能为空，且年龄需大于10岁');
+						return;
+					}
+					this.students.unshift(this.newStudent);
+					this.newStudent = {
+						name: '',
+						age: 0,
+						num: 1,
+						sex: '男'
+					};
+				},
+				changeNum(index, num1) {
+					this.students[index].num += num1;
+				},
+				sortedStudents() {
+					this.students.sort(function(a, b) {
+						return a.age > b.age;
+					})
+				},
+				filteresStudents() {
+					se=this.search;
+					vm.students = this.students.filter(function(item) {
+						return item.name.match(se);
+					})
+				},
+				deleteStudent(index) {
+					this.students.splice(index, 1);
+				},
+				showed() {
+					this.show = "block";
+				}
+			},
+
+			computed: {
+				ages() {
+					var ages = 0;
+					for(var i = 0; i < this.students.length; i++) {
+						ages += (this.students[i].age * this.students[i].num);
+					}
+					return ages;
+				}
+			}
+		});
+	</script>
+
+</html>
