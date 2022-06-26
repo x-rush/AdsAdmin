@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3-7</title>
+		<style>
+			.list{
+				width: 40px;
+				height: 40px;
+				float: left;
+				background: #ccc;
+				border: 1px dotted #000;
+				margin: 10px;
+			}
+			.clicked{
+				border-radius: 50%;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<script>
+			$(document).ready(function(){
+				$(".list").on("click",function(){
+					$(this).addClass("clicked");
+					var i = $(this).index();
+					$("#num").html(i);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h2>
+			你点击的是第<span id="num">0</span>个盒子
+		</h2>
+		<div class="list"></div>
+		<div class="list"></div>
+		<div class="list"></div>
+		<div class="list"></div>
+		<div class="list"></div>
+		<div class="list"></div>
+		<div class="list"></div>		
+	</body>
+</html>

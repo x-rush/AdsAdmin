@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>2-17</title>
+		<style>
+			#sr{
+				width:100px;
+				font-size:14px;
+				color:#999;
+				margin-left:130px;
+			}
+			#sr:focus{
+				color:#099;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="sr" name = "sr" value="商品名称" onfocus="bc()" onblur="bd()">
+		<input type="button" value="搜索">
+		<script>
+			var dsq,dsq2;
+			function bc(){
+				dsq = setInterval("bcf()",10);
+			}
+			function bd(){
+				dsq2 = setInterval("bdf()",10);
+			}
+			var i = document.getElementById("sr");
+			var w = 100;
+			var ml = 130;
+			function bcf(){
+				w ++;
+				ml --;
+				
+				i.style.width = w + "px";
+				i.style.marginLeft = ml + "px";
+				
+				if(w >= 230){
+					clearInterval(dsq);
+				}	
+			}
+			function bdf(){
+				w --;
+				ml ++;
+				
+				i.style.width = w + "px";
+				i.style.marginLeft = ml + "px";
+				
+				if(w <= 100){
+					clearInterval(dsq2);
+				}	
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>4-2</title>
+		<script src="https://cdn.bootcss.com/p5.js/0.5.16/p5.js"></script>
+		<script>
+			function setup(){
+				createCanvas(windowWidth,windowHeight);
+				background(255);
+				frameRate(60);
+			}
+			function draw(){
+				if(mouseIsPressed){
+					fill(0);
+				}else{
+					fill(255);
+				}
+				ellipse(mouseX,mouseY,50,50);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

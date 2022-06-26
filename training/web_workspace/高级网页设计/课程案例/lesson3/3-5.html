@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<script>
+			$(document).ready(function(){
+				$("#add").on("click",function(){
+					var num = $("num").val();
+					num++;
+					$("#num").val(num);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="text" id="num" disabled value="10"/>
+		<button id="add">+</button>
+		<button id="minus">-</button>
+	</body>
+</html>

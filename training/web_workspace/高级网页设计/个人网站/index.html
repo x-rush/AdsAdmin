@@ -1,0 +1,386 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个人网站</title>
+<link href='http://fonts.googleapis.com/css?family=Cutive' rel='stylesheet' type='text/css'>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+		<style>
+			.ly-box{
+				position: relative;
+				width: 500px;
+				height: 350px;
+			}
+			.left-button{
+				width: 30px;
+				height: 60px;
+				background: rgba(0,0,0,0.5);
+				position: absolute;
+				left: 0px;
+				top: 145px;
+				color: #FFFFFF;
+				font-size: 30px;
+				text-align: center;
+				line-height: 60px;
+				z-index: 100;
+			}
+			.right-button{
+				width: 30px;
+				height: 60px;
+				background: rgba(0,0,0,0.5);
+				position: absolute;
+				left: 470px;
+				top: 145px;
+				color: #FFFFFF;
+				font-size: 30px;
+				text-align: center;
+				line-height: 60px;
+				z-index: 100;
+			}
+			.overflow{
+				width: 500px;
+				height: 350px;
+				overflow: hidden;
+			}
+			.slide{
+				width: 3000px;
+				height: 350px;
+			}
+			.list{
+				position: relative;
+				float: left;
+				margin:0;
+				width: 500px;
+				height: 350px;
+			}
+			.list img{
+				width: 500px;
+				height: 350px;
+			}
+			.list p{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 500px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				font-size: 30px;
+				color: #FFFFFF;
+				background: rgba(0,0,0,0.5);
+				margin: 0;
+			}
+			.dian{
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<script>
+			$(function(){
+				
+				setInterval(function(){
+					changeList("right");
+				},1000);//开启定时器
+				
+				$(".left-button").click(function(){
+					changeList("left");
+				});
+				$(".right-button").click(function(){
+					changeList("right");
+				});
+				$(".dian i").click(function(){
+					var i = $(".dian i").index(this);
+					changeList("");
+				});
+			});
+			var index = 0;
+			function changeList(x){
+				if(!isNaN(x)){
+					index = x;
+				}else if(x == "left"){
+					index --;
+					if(index < 0) index = 5;
+				}else if(x =="right"){
+					index ++;
+					if(index > 5) index = 0;
+				}
+				var len = - index * 500 + "px";
+				$(".slide").animate({
+					marginLeft:len
+				});
+				$(".dian i").removeClass("fa-circle").eq(index).addClass("fa-circle");
+			}
+		</script>
+
+</head>
+<body>
+<div class="wrapper">
+	<header>
+    	<div class="colLeft"><img src="images/person.jpg" alt="John Bunton"></div>
+    	<div class="colRight description about">
+            <h1>李若星</h1>
+            <h2>15110100522</h2>
+            
+            <ul>
+                <li><a href="">大连东软信息学院</a></li>
+                <li><a href="">班级：计算机15005</a></li>
+                <li><a href="">QQ：779581099</a></li>
+            </ul>
+            
+            <div class="clearfloat"></div>
+        </div>
+    </header>
+    
+    <div class="clearfloat"></div>
+    <hr>
+    <section>
+    	<div class="colLeft">
+        	<h2></h2>
+        </div>
+        <div class="colRight description">
+            
+            <div class="listContent">
+                <ul>
+                	<div class="ly-box">
+			<div class="left-button">
+				<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+			</div>
+			<div class="right-button">
+				<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+			</div>
+			<div class="overflow">
+				<div class="slide">
+					<div class="list">
+						<img src="images/1.png">
+						<p>老虎机</p>
+					</div>
+					<div class="list">
+						<img src="images/2.png">
+						<p>星音乐</p>
+					</div>
+					<div class="list">
+						<img src="images/3.png">
+						<p>限时购</p>
+					</div>
+					<div class="list">
+						<img src="images/4.png">
+						<p>2-13</p>
+					</div>
+					<div class="list">
+						<img src="images/5.png">
+						<p>2-14</p>
+					</div>
+					<div class="list">
+						<img src="images/6.png">
+						<p>4-3</p>
+					</div>
+				</div>
+			</div>
+			<div class="dian">
+				<i class="fa fa-circle-o fa-circle" aria-hidden="true"></i>
+				<i class="fa fa-circle-o" aria-hidden="true"></i>
+				<i class="fa fa-circle-o" aria-hidden="true"></i>
+				<i class="fa fa-circle-o" aria-hidden="true"></i>
+				<i class="fa fa-circle-o" aria-hidden="true"></i>
+				<i class="fa fa-circle-o" aria-hidden="true"></i>
+			</div>
+		</div>
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    
+    <div class="clearfloat"></div>
+    <hr>
+    <section>
+    	<div class="colLeft">
+        	<h2>三级项目</h2>
+        </div>
+        <div class="colRight description">
+            
+            <div class="listContent">
+                <ul>
+                    <li><a href="../music/index.html">星音乐</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="clearfloat"></div>
+    <hr>
+    <section>
+    	<div class="colLeft">
+        	<h2>第一次大作业</h2>
+        </div>
+        <div class="colRight description">
+            
+            <div class="listContent">
+                <ul>
+                    <li><a href="../限时购/daojishi.html">限时购</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="clearfloat"></div>
+    <hr>
+    <section>
+    	<div class="colLeft">
+        	<h2>老虎机</h2>
+        </div>
+        <div class="colRight description">
+            
+            <div class="listContent">
+                <ul>
+                    <li><a href="../slotmachine/slotmachine.html">老虎机</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="clearfloat"></div>
+    <hr>
+    <section>
+    	<div class="colLeft">
+        	<h2>lesson1</h2>
+        </div>
+        <div class="colRight description">
+            
+            <div class="listContent">
+                <ul>
+                    <li><a href="../课程案例/lesson1/1-1.html">1-1</a></li>
+                    <li><a href="../课程案例/lesson1/1-2.html">1-2</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="clearfloat"></div>
+    <hr>
+    <section>
+    	<div class="colLeft">
+        	<h2>lesson2</h2>
+        </div>
+        <div class="colRight description">
+            
+            <div class="listContent">
+                <ul>
+                    <li><a href="../课程案例/lesson2/2-1.html">2-1</a></li>
+                    <li><a href="../课程案例/lesson2/2-2.html">2-2</a></li>
+                    <li><a href="../课程案例/lesson2/2-3.html">2-3</a></li>
+                    <li><a href="../课程案例/lesson2/2-4.html">2-4</a></li>
+                    <li><a href="../课程案例/lesson2/2-5.html">2-5</a></li>
+                    <li><a href="../课程案例/lesson2/2-6.html">2-6</a></li>
+                    <li><a href="../课程案例/lesson2/2-7.html">2-7</a></li>
+                    <li><a href="../课程案例/lesson2/2-8.html">2-8</a></li>
+                    <li><a href="../课程案例/lesson2/2-9.html">2-9</a></li>
+                    <li><a href="../课程案例/lesson2/2-11.html">2-11</a></li>
+                    <li><a href="../课程案例/lesson2/2-13.html">2-13</a></li>
+                    <li><a href="../课程案例/lesson2/2-14.html">2-14</a></li>
+                    <li><a href="../课程案例/lesson2/2-15.html">2-15</a></li>
+                    <li><a href="../课程案例/lesson2/2-16.html">2-16</a></li>
+                    <li><a href="../课程案例/lesson2/2-17.html">2-17</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+<div class="clearfloat"></div>
+    <hr>
+    <section>
+    	<div class="colLeft">
+        	<h2>lesson3</h2>
+        </div>
+        <div class="colRight description">
+            
+            <div class="listContent">
+                <ul>
+                    <li><a href="../课程案例/lesson3/3.html">3</a></li>
+                    <li><a href="../课程案例/lesson3/3-1.html">3-1</a></li>
+                    <li><a href="../课程案例/lesson3/3-2.html">3-2</a></li>
+                    <li><a href="../课程案例/lesson3/3-3.html">3-3</a></li>
+                    <li><a href="../课程案例/lesson3/3-4.html">3-4</a></li>
+                    <li><a href="../课程案例/lesson3/3-5.html">3-5</a></li>
+                    <li><a href="../课程案例/lesson3/3-6.html">3-6</a></li>
+                    <li><a href="../课程案例/lesson3/3-7.html">3-7</a></li>
+                    <li><a href="../课程案例/lesson3/3-8.html">3-8</a></li>
+                    <li><a href="../课程案例/lesson3/3-10.html">3-10</a></li>
+                    <li><a href="../课程案例/lesson3/3-10-2.html">3-10-2</a></li>
+                    <li><a href="../课程案例/lesson3/3-11.html">3-11</a></li>
+                    <li><a href="../课程案例/lesson3/3-13.html">3-13</a></li>
+                    <li><a href="../课程案例/lesson3/3-15.html">3-15</a></li>
+                    <li><a href="../课程案例/lesson3/3-16.html">3-16</a></li>
+                    <li><a href="../课程案例/lesson3/3-17.html">3-17</a></li>
+                    <li><a href="../课程案例/lesson3/3-18.html">3-18</a></li>
+                    <li><a href="../课程案例/lesson3/3-19.html">3-19</a></li>
+                    <li><a href="../课程案例/lesson3/3-21.html">3-21</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="clearfloat"></div>
+    <hr>
+    <section>
+    	<div class="colLeft">
+        	<h2>lesson4</h2>
+        </div>
+        <div class="colRight description">
+            
+            <div class="listContent">
+                <ul>
+                    <li><a href="../课程案例/lesson4/4-1.html">4-1</a></li>
+                    <li><a href="../课程案例/lesson4/4-2.html">4-2</a></li>
+                    <li><a href="../课程案例/lesson4/4-3.html">4-3</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="clearfloat"></div>
+    <hr>
+    <section>
+    	<div class="colLeft">
+        	<h2>lesson5</h2>
+        </div>
+        <div class="colRight description">
+            
+            <div class="listContent">
+                <ul>
+                    <li><a href="../课程案例/lesson5/5-1.html">5-1</a></li>
+                    <li><a href="../课程案例/lesson5/5-2.html">5-2</a></li>
+                    <li><a href="../课程案例/lesson5/5-3.html">5-3</a></li>
+                    <li><a href="../课程案例/lesson5/5-4.html">5-4</a></li>
+                    <li><a href="../课程案例/lesson5/5-5.html">5-5</a></li>
+                    <li><a href="../课程案例/lesson5/5-6.html">5-6</a></li>
+                    <li><a href="../课程案例/lesson5/5-7.html">5-7</a></li>
+                    <li><a href="../课程案例/lesson5/5-8.html">5-8</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="clearfloat"></div>
+    <hr>
+    <section>
+    	<div class="colLeft">
+        	<h2>lesson6</h2>
+        </div>
+        <div class="colRight description">
+            
+            <div class="listContent">
+                <ul>
+                    <li><a href="../课程案例/lesson6/6-1.html">6-1</a></li>
+                    <li><a href="../课程案例/lesson6/6-2.html">6-2</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="clearfloat"></div>
+    <hr>
+    <footer> 
+        <p>
+            版权所有 &copy; <a href="#">李若星</a> | 大连东软信息学院
+        </p>
+    </footer>
+</div>
+</body>
+</html>

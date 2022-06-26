@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3-16</title>
+		<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+	    <style>
+			#box{
+				border: 1px solid #CCCCCC;
+				width: 260px;
+			}
+			#box ul {
+				list-style-type: none;
+				padding: 0;
+				margin: 0;
+			}
+			
+			#box img {
+				width: 80px;
+				height: 80px;
+			}
+			
+			#box i {
+				position: absolute;
+				top: 0;
+				left: 0;
+				color: #FF0000;
+			}
+			
+			#box li {
+				position: relative;
+				clear: both;
+				text-align: center;
+				border-bottom: 1px solid #ccc;
+			}
+	
+			#box .num {
+				position: absolute;
+				top: -2px;
+				left: 0px;
+				color: #FFFFFF;
+				font-weight: bold;
+			}
+			
+			#box .text {
+				display: block;
+				margin: 0 auto ;
+				width: 90px;
+				height: 30px;
+				line-height: 15px;
+				font-size: 15px;
+				overflow: hidden;
+			}
+			
+			#box .new {
+				color: #FF0000;
+				font-size: 16px;
+				font-weight: bold;
+			}
+			
+			#box .old {
+				color: #CCCCCC;
+				font-size: 9px;
+			}
+			
+			#box .short-new,
+			#box .short-num,
+			#box .short-text {
+				font-size: 12px;
+				display: inline-block;
+				height:left;
+				height: 16px;
+				line-height: 16px;
+				
+			}
+			
+			#box .short-text {
+				width: 80px;
+				overflow: hidden;
+			}
+		</style>
+		<script src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#box li:odd").css({
+					height:"16px"
+				}).on("mouseover",function(){
+					$("#box li:even").hide();
+					$(this).prev().show();
+				});
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>
+					<i class="fa fa-square" aria-hidden="true"></i>
+					<div class="num">1</div>
+					<img src="img/DSC_0028.JPG">
+					<span class="text">一本书一本书一本书一本书</span>
+					<span class="now">￥68.00</span>
+					<span class="old">￥168.00</span>	
+				</li>
+				<li>
+					<span class="short-num">1、</span>
+					<span class="short-text">一本书一本书一本书一本书</span>
+					<span class="short-now">￥68.00</span>
+				</li>
+				<li style="display:none;">
+					<i class="fa fa-square" aria-hidden="true"></i>
+					<div class="num">2</div>
+					<img src="img/DSC_0049.JPG">
+					<span class="text">一本书一本书一本书一本书</span>
+					<span class="now">￥68.00</span>
+					<span class="old">￥168.00</span>	
+				</li>
+				<li>
+					<span class="short-num">2、</span>
+					<span class="short-text">一本书一本书一本书一本书</span>
+					<span class="short-now">￥68.00</span>
+				</li>
+				<li style="display:none;">
+					<i class="fa fa-square" aria-hidden="true"></i>
+					<div class="num">3</div>
+					<img src="img/DSC_0068.JPG">
+					<span class="text">一本书一本书一本书一本书</span>
+					<span class="now">￥68.00</span>
+					<span class="old">￥168.00</span>	
+				</li>
+				<li>
+					<span class="short-num">3、</span>
+					<span class="short-text">一本书一本书一本书一本书</span>
+					<span class="short-now">￥68.00</span>
+				</li>
+				<li style="display:none;">
+					<i class="fa fa-square" aria-hidden="true"></i>
+					<div class="num">4</div>
+					<img src="img/DSC_0079.JPG">
+					<span class="text">一本书一本书一本书一本书</span>
+					<span class="now">￥68.00</span>
+					<span class="old">￥168.00</span>	
+				</li>
+				<li>
+					<span class="short-num">4、</span>
+					<span class="short-text">一本书一本书一本书一本书</span>
+					<span class="short-now">￥68.00</span>
+				</li>
+				<li style="display:none;">
+					<i class="fa fa-square" aria-hidden="true"></i>
+					<div class="num">5</div>
+					<img src="img/monsters, avatar, monster, smile, happy, smiley icon icon.png">
+					<span class="text">一本书一本书一本书一本书</span>
+					<span class="now">￥68.00</span>
+					<span class="old">￥168.00</span>	
+				</li>
+				<li>
+					<span class="short-num">5、</span>
+					<span class="short-text">一本书一本书一本书一本书</span>
+					<span class="short-now">￥68.00</span>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
