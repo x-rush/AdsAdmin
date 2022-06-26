@@ -2,8 +2,8 @@
 for ad serving
 
 <br>一个前后端分离的广告投放后台管理系统
-<br>前端 Vue-cli —— vue-admin-template
-<br>后端 hyperf + MySQL + Redis
+<br>前端 Vue-cli（vue-admin-template）
+<br>后端 php（hyperf） + MySQL + Redis
 
 <br>TODO:
 <br>1：用户管理 -信息-权限
