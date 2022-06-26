@@ -13,3 +13,6 @@ for ad serving
 <br>&nbsp;&nbsp;&nbsp;&nbsp;3.2：用户行为转化
 <br>&nbsp;&nbsp;&nbsp;&nbsp;3.3：统计
 <br>etc...
+
+
+<br> /trainning 是日常学习练习。 10月删除
