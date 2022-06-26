@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.erpdemo.dao.SysSaleListGoodsMapper" >
+  <resultMap id="BaseResultMap" type="com.erpdemo.entity.SysSaleListGoods" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="goodsid" property="goodsid" jdbcType="INTEGER" />
+    <result column="model" property="model" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+    <result column="price" property="price" jdbcType="REAL" />
+    <result column="total" property="total" jdbcType="REAL" />
+    <result column="unit" property="unit" jdbcType="VARCHAR" />
+    <result column="salelistid" property="salelistid" jdbcType="INTEGER" />
+    <result column="typeid" property="typeid" jdbcType="INTEGER" />
+    <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="delflag" property="delflag" jdbcType="INTEGER" />
+    
+    <association property="sysSaleList" javaType="com.erpdemo.entity.SysSaleList">
+		<id column="sl_id" property="id" jdbcType="INTEGER" />
+	    <result column="sl_amountpaid" property="amountpaid" jdbcType="REAL" />
+	    <result column="sl_amountpayable" property="amountpayable" jdbcType="REAL" />
+	    <result column="sl_remarks" property="remarks" jdbcType="VARCHAR" />
+	    <result column="sl_saledate" property="saledate" jdbcType="TIMESTAMP" />
+	    <result column="sl_salenum" property="salenum" jdbcType="VARCHAR" />
+	    <result column="sl_state" property="state" jdbcType="INTEGER" />
+	    <result column="sl_customerid" property="customerid" jdbcType="INTEGER" />
+	    <result column="sl_userid" property="userid" jdbcType="INTEGER" />
+	    <result column="sl_addtime" property="addtime" jdbcType="TIMESTAMP" />
+	    <result column="sl_delflag" property="delflag" jdbcType="INTEGER" />
+	</association>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, code, goodsid, model, name, num, price, total, unit, salelistid, typeid, addtime, 
+    userid, delflag
+  </sql>
+  <select id="queryList" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+		select 
+			<include refid="Base_Column_List" />
+			
+		from t_sale_list_goods sg 
+		<where> 
+			sg.delflag=0 
+		</where>
+		<choose>
+			<when test="sidx != null and sidx.trim() != ''">
+				order by ${sidx} ${order}
+			</when>
+			<otherwise>
+				order by sg.addtime desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	<select id="queryObject" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+	   select 
+	   <include refid="Base_Column_List" />
+	   from t_sale_list_goods sg  
+	   <where>
+		sg.id = #{id,jdbcType=INTEGER} 
+	</where>
+	 </select>
+	 <select id="queryTotal" resultType="int">
+		select
+			count(*)
+		from 
+			t_sale_list_goods sg 
+		<where>
+			sg.delflag=0
+		</where>
+	</select>
+	<insert id="save" parameterType="com.erpdemo.entity.SysSaleListGoods" >
+	    insert into t_sale_list_goods
+	    <trim prefix="(" suffix=")" suffixOverrides="," >
+	      <if test="model != null" >
+	        model,
+	      </if>
+	      <if test="name != null" >
+	        name,
+	      </if>
+	      <if test="num != null" >
+	        num,
+	      </if>
+	      <if test="price != null" >
+	        price,
+	      </if>
+	      <if test="total != null" >
+	        total,
+	      </if>
+	      <if test="unit != null" >
+	        unit,
+	      </if>
+	      <if test="salelistid != null" >
+	        salelistid,
+	      </if>
+	      <if test="typeid != null" >
+	        typeid,
+	      </if>
+	        addtime,
+	      <if test="userid != null" >
+	        userid,
+	      </if>
+	        delflag,
+	    </trim>
+	    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="model != null" >
+	        #{model,jdbcType=VARCHAR},
+	      </if>
+	      <if test="name != null" >
+	        #{name,jdbcType=VARCHAR},
+	      </if>
+	      <if test="num != null" >
+	        #{num,jdbcType=INTEGER},
+	      </if>
+	      <if test="price != null" >
+	        #{price,jdbcType=REAL},
+	      </if>
+	      <if test="total != null" >
+	        #{total,jdbcType=REAL},
+	      </if>
+	      <if test="unit != null" >
+	        #{unit,jdbcType=VARCHAR},
+	      </if>
+	      <if test="salelistid != null" >
+	        #{salelistid,jdbcType=INTEGER},
+	      </if>
+	      <if test="typeid != null" >
+	        #{typeid,jdbcType=INTEGER},
+	      </if>
+	      	now(),
+	      <if test="userid != null" >
+	        #{userid,jdbcType=INTEGER},
+	      </if>
+	      	0
+	    </trim>
+	  </insert>
+	  <update id="update" parameterType="com.erpdemo.entity.SysSaleListGoods" >
+		  update t_sale_list_goods
+		  <set >
+		    <if test="code != null" >
+		      code = #{code,jdbcType=VARCHAR},
+		    </if>
+		    <if test="goodsid != null" >
+		      goodsid = #{goodsid,jdbcType=INTEGER},
+		    </if>
+		    <if test="model != null" >
+		      model = #{model,jdbcType=VARCHAR},
+		    </if>
+		    <if test="name != null" >
+		      name = #{name,jdbcType=VARCHAR},
+		    </if>
+		    <if test="num != null" >
+		      num = #{num,jdbcType=INTEGER},
+		    </if>
+		    <if test="price != null" >
+		      price = #{price,jdbcType=REAL},
+		    </if>
+		    <if test="total != null" >
+		      total = #{total,jdbcType=REAL},
+		    </if>
+		    <if test="unit != null" >
+		      unit = #{unit,jdbcType=VARCHAR},
+		    </if>
+		    <if test="salelistid != null" >
+		      salelistid = #{salelistid,jdbcType=INTEGER},
+		    </if>
+		    <if test="typeid != null" >
+		      typeid = #{typeid,jdbcType=INTEGER},
+		    </if>
+		    <if test="addtime != null" >
+		      addtime = #{addtime,jdbcType=TIMESTAMP},
+		    </if>
+		    <if test="userid != null" >
+		      userid = #{userid,jdbcType=INTEGER},
+		    </if>
+		    <if test="delflag != null" >
+		      delflag = #{delflag,jdbcType=INTEGER},
+		    </if>
+		  </set>
+		  where id = #{id,jdbcType=INTEGER}
+		</update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_sale_list_goods
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_sale_list_goods
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.erpdemo.entity.SysSaleListGoods" >
+    insert into t_sale_list_goods (id, code, goodsid, 
+      model, name, num, price, 
+      total, unit, salelistid, 
+      typeid, addtime, userid, 
+      delflag)
+    values (#{id,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR}, #{goodsid,jdbcType=INTEGER}, 
+      #{model,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{num,jdbcType=INTEGER}, #{price,jdbcType=REAL}, 
+      #{total,jdbcType=REAL}, #{unit,jdbcType=VARCHAR}, #{salelistid,jdbcType=INTEGER}, 
+      #{typeid,jdbcType=INTEGER}, #{addtime,jdbcType=TIMESTAMP}, #{userid,jdbcType=INTEGER}, 
+      #{delflag,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.erpdemo.entity.SysSaleListGoods" >
+    insert into t_sale_list_goods
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="goodsid != null" >
+        goodsid,
+      </if>
+      <if test="model != null" >
+        model,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="num != null" >
+        num,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="total != null" >
+        total,
+      </if>
+      <if test="unit != null" >
+        unit,
+      </if>
+      <if test="salelistid != null" >
+        salelistid,
+      </if>
+      <if test="typeid != null" >
+        typeid,
+      </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="delflag != null" >
+        delflag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsid != null" >
+        #{goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="model != null" >
+        #{model,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null" >
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=REAL},
+      </if>
+      <if test="total != null" >
+        #{total,jdbcType=REAL},
+      </if>
+      <if test="unit != null" >
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="salelistid != null" >
+        #{salelistid,jdbcType=INTEGER},
+      </if>
+      <if test="typeid != null" >
+        #{typeid,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="delflag != null" >
+        #{delflag,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.erpdemo.entity.SysSaleListGoods" >
+    update t_sale_list_goods
+    <set >
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsid != null" >
+        goodsid = #{goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="model != null" >
+        model = #{model,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null" >
+        num = #{num,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=REAL},
+      </if>
+      <if test="total != null" >
+        total = #{total,jdbcType=REAL},
+      </if>
+      <if test="unit != null" >
+        unit = #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="salelistid != null" >
+        salelistid = #{salelistid,jdbcType=INTEGER},
+      </if>
+      <if test="typeid != null" >
+        typeid = #{typeid,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="delflag != null" >
+        delflag = #{delflag,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.erpdemo.entity.SysSaleListGoods" >
+    update t_sale_list_goods
+    set code = #{code,jdbcType=VARCHAR},
+      goodsid = #{goodsid,jdbcType=INTEGER},
+      model = #{model,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      num = #{num,jdbcType=INTEGER},
+      price = #{price,jdbcType=REAL},
+      total = #{total,jdbcType=REAL},
+      unit = #{unit,jdbcType=VARCHAR},
+      salelistid = #{salelistid,jdbcType=INTEGER},
+      typeid = #{typeid,jdbcType=INTEGER},
+      addtime = #{addtime,jdbcType=TIMESTAMP},
+      userid = #{userid,jdbcType=INTEGER},
+      delflag = #{delflag,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

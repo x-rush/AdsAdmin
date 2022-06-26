@@ -1,0 +1,31 @@
+
+能选的能写的都是双向绑定		v-model		双向绑定的指令
+页面能点击的按钮都需要加事件		@click="age++"	单击事件 触发一个方法	事件绑定        等价     v-on:click="age++" 
+						v-bind		绑定属性的指令	v-bind:value	等价	:value
+
+搜索条件		v-model="searchName"
+表格数据		v-for="(user,index) in list"
+每页记录数		v-model="pageSize"
+总记录数		{{totalCount}}
+总页数		v-for="page in pageCount"
+
+
+用户			v-model="user.username"
+密码			v-model="user.password"
+
+
+页面--get发送请求--前端向后台发送数据--回应成功拿到数据--数据对data数据更新
+因为是双向绑定	前端页面v-for遍历拿到的数据
+
+
+添加中的提交 属性submit改成button
+
+
+
+
+
+
+
+
+
+

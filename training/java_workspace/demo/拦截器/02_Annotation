@@ -1,0 +1,12 @@
+注解类型：使用@interface关键字定义。
+
+Java注解：@Override
+Junit注解：@Test
+Spring注解：@Service
+
+元注解：就是注解其它的注解。
+
+注意：如果要使用注解必须使用Java反射API。
+
+注解的数据定义的格式：
+数据类型 属性名() default 默认值

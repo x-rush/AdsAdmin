@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yangfulai.dao.EmpDAO">
+
+    <insert id="insert" parameterType="Employee">
+        INSERT INTO t_employee 
+        VALUES(#{employeeNo},#{positionObj},#{name},#{sex},#{employeePhoto},#{birthday},#{schoolRecord},#{employeeDesc})
+    </insert>
+    
+    
+     
+    
+    
+    <update id="update" parameterType="Employee">
+       update t_employee 
+       <set>
+           <if test="name != null">
+               name = #{name},
+           </if>
+           <if test="sex != null">
+            	sex = #{sex},
+           </if>
+           <if test="employeePhoto != null">
+               employeePhoto =#{employeePhoto},
+           </if>
+           <if test="birthday != null">
+               birthday =#{birthday},
+           </if>
+           <if test="schoolRecord != null">
+               schoolRecord =#{schoolRecord},
+           </if>
+           <if test="employeeDesc != null">
+               employeeDesc =#{employeeDesc},
+           </if>
+           <if test="1 == 1">
+               employeeNo = employeeNo
+           </if>
+       </set>
+			where employeeNo = #{employeeNo}
+    </update>
+    
+    <delete id="delete" parameterType="String">
+        DELETE from t_employee where employeeNo = #{employeeNo}
+    </delete>
+    
+    <resultMap type="Employee" id="mapEmp">
+        <id property="employeeNo" column="employeeNo"/>
+        <result property="positionObj" column="positionObj"/>
+        <result property="name" column="name"/>
+        <result property="sex" column="sex"/>
+        <result property="employeePhoto" column="employeePhoto"/>
+        <result property="birthday" column="birthday"/>
+        <result property="schoolRecord" column="schoolRecord"/>
+        <result property="employeeDesc" column="employeeDesc"/>
+        <association property="position" javaType="Position">
+            <id property="positionId" column="positionId"/>
+         	<result property="departmentObj" column="departmentObj"/>
+         	<result property="positionName" column="positionName"/>
+         	<result property="baseSalary" column="baseSalary"/>
+         	<result property="sellPercent" column="sellPercent"/>
+        	 <association property="department" javaType="com.yangfulai.pojo.Department">
+				<id property="departmentNo" column="departmentNo"/>
+				<result property="departmentName" column="departmentName"/>
+        	 </association>
+        </association>
+    </resultMap>
+    
+    
+    
+    
+    <sql id="sqlEmp">
+               employeeNo,positionObj,name,sex,employeePhoto,
+               birthday,schoolRecord,employeeDesc
+        
+    </sql>
+    <sql id="sqlDept">
+         departmentNo,departmentName
+    </sql>
+   <sql id="sqlPos">
+        positionId,departmentObj,positionName,baseSalary,sellPercent
+    </sql>
+    
+    
+    
+    
+    
+    
+    
+    <select id="selectOne" resultMap="mapEmp" parameterType="String">
+		 SELECT <include refid="sqlEmp"/>,<include refid="sqlPos"/>,<include refid="sqlDept"/>
+		from  t_employee e,t_position p,t_department d
+		where p.positionId = e.positionObj
+		AND p.departmentObj = d.departmentNo
+		AND e.employeeNo = #{employeeNo}
+    </select>
+    
+    <select id="getCount" resultType="int">
+         SELECT count(*)
+		from  t_employee e,t_position p,t_department d
+		
+		<where>
+		    <if test="1 == 1">
+		 p.positionId = e.positionObj
+		AND p.departmentObj = d.departmentNo
+		    </if>
+		    <if test="name != null">
+		        AND e.name like concat('%',#{name},'%')
+		    </if>
+		</where>
+		
+    </select>
+    
+    <select id="selectAll" resultMap="mapEmp" >
+         SELECT <include refid="sqlEmp"/>,<include refid="sqlPos"/>,<include refid="sqlDept"/>
+		from  t_employee e,t_position p,t_department d
+		<where>
+		    <if test="1 == 1">
+		 p.positionId = e.positionObj
+		AND p.departmentObj = d.departmentNo
+		    </if>
+		    <if test="name != null">
+		        AND e.name like concat('%',#{name},'%')
+		    </if>
+		</where>
+		limit #{page},#{rows}
+    </select>
+</mapper>

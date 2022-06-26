@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.erpdemo.dao.SysSaleListMapper" >
+  <resultMap id="BaseResultMap" type="com.erpdemo.entity.SysSaleList" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="amountpaid" property="amountpaid" jdbcType="REAL" />
+    <result column="amountpayable" property="amountpayable" jdbcType="REAL" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="saledate" property="saledate" jdbcType="TIMESTAMP" />
+    <result column="salenum" property="salenum" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+    <result column="customerid" property="customerid" jdbcType="INTEGER" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
+    <result column="delflag" property="delflag" jdbcType="INTEGER" />
+    
+    <collection property="sysSaleListGoods" ofType="com.erpdemo.entity.SysSaleListGoods" column="salelistid">
+		<id column="sg_id" property="id" jdbcType="INTEGER" />
+	    <result column="sg_code" property="code" jdbcType="VARCHAR" />
+	    <result column="sg_goodsid" property="goodsid" jdbcType="INTEGER" />
+	    <result column="sg_model" property="model" jdbcType="VARCHAR" />
+	    <result column="sg_name" property="name" jdbcType="VARCHAR" />
+	    <result column="sg_num" property="num" jdbcType="INTEGER" />
+	    <result column="sg_price" property="price" jdbcType="REAL" />
+	    <result column="sg_total" property="total" jdbcType="REAL" />
+	    <result column="sg_unit" property="unit" jdbcType="VARCHAR" />
+	    <result column="sg_salelistid" property="salelistid" jdbcType="INTEGER" />
+	    <result column="sg_typeid" property="typeid" jdbcType="INTEGER" />
+	    <result column="sg_addtime" property="addtime" jdbcType="TIMESTAMP" />
+	    <result column="sg_userid" property="userid" jdbcType="INTEGER" />
+	    <result column="sg_delflag" property="delflag" jdbcType="INTEGER" />
+	</collection>
+
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, amountpaid, amountpayable, remarks, saledate, salenum, state, customerid, userid, 
+    addtime, delflag
+  </sql>
+  
+ 
+	<select id="queryList" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+		select 
+			sl.id as id, 
+			sl.amountpaid as amountpaid, 
+			sl.amountpayable as amountpayable, 
+			sl.remarks as remarks, 
+			sl.saledate as saledate, 
+			sl.salenum as salenum, 
+			sl.state as state, 
+			sl.userid as userid, 
+			sl.addtime as addtime, 
+			sl.delflag as delflag,
+			sl.customerid as customerid
+		from t_sale_list sl 
+		<where> 
+			sl.delflag=0 
+		</where>
+		<choose>
+			<when test="sidx != null and sidx.trim() != ''">
+				order by ${sidx} ${order}
+			</when>
+			<otherwise>
+				order by sl.addtime desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+  <select id="queryObject" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_sale_list sl 
+    <where>
+		id = #{id,jdbcType=INTEGER} 
+	</where>
+  </select>
+  <select id="queryTotal" resultType="int">
+		select
+			count(*)
+		from 
+			t_sale_list sl 
+		<where>
+			sl.delflag=0
+		</where>
+	</select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_sale_list
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.erpdemo.entity.SysSaleList" >
+    insert into t_sale_list (amountpaid, amountpayable, 
+      remarks, saledate, salenum, 
+      state, customerid, userid, 
+      addtime, delflag)
+    values (#{amountpaid,jdbcType=REAL}, #{amountpayable,jdbcType=REAL}, 
+      #{remarks,jdbcType=VARCHAR}, #{saledate,jdbcType=TIMESTAMP}, #{salenum,jdbcType=VARCHAR}, 
+      #{state,jdbcType=INTEGER}, #{customerid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, 
+      now(), #{delflag,jdbcType=INTEGER})
+  </insert>
+  <insert id="save" parameterType="com.erpdemo.entity.SysSaleList" >
+    insert into t_sale_list
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="amountpaid != null" >
+        amountpaid,
+      </if>
+      <if test="amountpayable != null" >
+        amountpayable,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="saledate != null" >
+        saledate,
+      </if>
+      <if test="salenum != null" >
+        salenum,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="customerid != null" >
+        customerid,
+      </if>
+      <if test="userid != null" >
+        userid,
+      </if>
+        addtime,
+        delflag,
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="amountpaid != null" >
+        #{amountpaid,jdbcType=REAL},
+      </if>
+      <if test="amountpayable != null" >
+        #{amountpayable,jdbcType=REAL},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="saledate != null" >
+        #{saledate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="salenum != null" >
+        #{salenum,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="customerid != null" >
+        #{customerid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+     	now(),
+      	0
+    </trim>
+  </insert>
+  <update id="updateBy" parameterType="com.erpdemo.entity.SysSaleList" >
+    update t_sale_list
+    set amountpaid = #{amountpaid,jdbcType=REAL},
+      amountpayable = #{amountpayable,jdbcType=REAL},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      saledate = #{saledate,jdbcType=TIMESTAMP},
+      salenum = #{salenum,jdbcType=VARCHAR},
+      state = #{state,jdbcType=INTEGER},
+      customerid = #{customerid,jdbcType=INTEGER},
+      userid = #{userid,jdbcType=INTEGER},
+      addtime = #{addtime,jdbcType=TIMESTAMP},
+      delflag = #{delflag,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="update" parameterType="com.erpdemo.entity.SysSaleList" >
+  	update t_sale_list
+    <set >
+      <if test="amountpaid != null" >
+        amountpaid = #{amountpaid,jdbcType=REAL},
+      </if>
+      <if test="amountpayable != null" >
+        amountpayable = #{amountpayable,jdbcType=REAL},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="saledate != null" >
+        saledate = #{saledate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="salenum != null" >
+        salenum = #{salenum,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="customerid != null" >
+        customerid = #{customerid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delflag != null" >
+        delflag = #{delflag,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+    
+  </update>
+</mapper>

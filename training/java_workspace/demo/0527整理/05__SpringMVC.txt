@@ -1,0 +1,20 @@
+
+Mybatis框架：是一个基于【SQL映射】的【持久层】框架。
+Spring框架：是一个基于【IOC和AOP】的【JavaEE】框架。
+SpringMVC框架：是一个基于【MVC】的【Web框架】框架。
+
+(一)MVC原理(思想)
+
+M	Model		模型层
+V	View		视图层
+C	Controller	控制层
+
+(二)SpringMVC框架的常用注解
+@RestController		控制器注解(所有方法默认都返回JSON)
+@RequestMapping		请求映射
+@RequestParam		获取参数
+@RequestBody		把JSON转换为Java
+@ResponseBody		把Java转换为JSON
+@SessionAttribute		把数据存储到sessoin范围中
+
+

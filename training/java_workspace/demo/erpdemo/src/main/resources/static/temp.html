@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div class="ui-jqgrid " id="gbox_jqGrid" dir="ltr"
+		style="width: 1055px;">
+		<div class="jqgrid-overlay ui-overlay" id="lui_jqGrid"></div>
+		<div class="ui-jqgrid-view table-responsive" role="grid"
+			id="gview_jqGrid" style="width: 1055px;">
+			<div class="ui-jqgrid-titlebar ui-jqgrid-caption"
+				style="display: none;">
+				<a role="link" class="ui-jqgrid-titlebar-close HeaderButton "
+					title="Toggle Expand Collapse Grid" style="right: 0px;"><span
+					class="ui-jqgrid-headlink glyphicon glyphicon-circle-arrow-up"></span></a><span
+					class="ui-jqgrid-title"></span>
+			</div>
+			<div class="ui-jqgrid-hdiv" style="width: 1053px;">
+				<div class="ui-jqgrid-hbox">
+					<table
+						class="ui-jqgrid-htable ui-common-table table table-bordered"
+						style="width: 1055px;" role="presentation"
+						aria-labelledby="gbox_jqGrid">
+						<thead>
+							<tr class="ui-jqgrid-labels" role="row">
+								<th id="jqGrid_rn" role="columnheader"
+									class="ui-th-column ui-th-ltr " style="width: 25px;"><div
+										class="ui-th-div" id="jqgh_jqGrid_rn">
+										<span class="s-ico" style="display: none"><span
+											sort="asc"
+											class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-disabled glyphicon glyphicon-triangle-top"></span><span
+											sort="desc"
+											class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-disabled glyphicon glyphicon-triangle-bottom"></span></span>
+									</div></th>
+								<th id="jqGrid_cb" role="columnheader"
+									class="ui-th-column ui-th-ltr " style="width: 35px;"><div
+										class="ui-th-div" id="jqgh_jqGrid_cb">
+										<input role="checkbox" id="cb_jqGrid" class="cbox"
+											type="checkbox"><span class="s-ico"
+											style="display: none"><span sort="asc"
+											class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-disabled glyphicon glyphicon-triangle-top"></span><span
+											sort="desc"
+											class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-disabled glyphicon glyphicon-triangle-bottom"></span></span>
+									</div></th>
+								<th id="jqGrid_roleId" role="columnheader"
+									class="ui-th-column ui-th-ltr" style="width: 149px;"><span
+									class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
+									style="cursor: col-resize;">&nbsp;</span>
+								<div class="ui-th-div ui-jqgrid-sortable"
+										id="jqgh_jqGrid_roleId">
+										角色ID<span class="s-ico" style="display: none"><span
+											sort="asc"
+											class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-disabled glyphicon glyphicon-triangle-top"></span><span
+											sort="desc"
+											class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-disabled glyphicon glyphicon-triangle-bottom"></span></span>
+									</div></th>
+								<th id="jqGrid_roleName" role="columnheader"
+									class="ui-th-column ui-th-ltr" style="width: 249px;"><span
+									class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
+									style="cursor: col-resize;">&nbsp;</span>
+								<div class="ui-th-div ui-jqgrid-sortable"
+										id="jqgh_jqGrid_roleName">
+										角色名称<span class="s-ico" style="display: none"><span
+											sort="asc"
+											class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-disabled glyphicon glyphicon-triangle-top"></span><span
+											sort="desc"
+											class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-disabled glyphicon glyphicon-triangle-bottom"></span></span>
+									</div></th>
+								<th id="jqGrid_remark" role="columnheader"
+									class="ui-th-column ui-th-ltr" style="width: 332px;"><span
+									class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
+									style="cursor: col-resize;">&nbsp;</span>
+								<div class="ui-th-div ui-jqgrid-sortable"
+										id="jqgh_jqGrid_remark">
+										备注<span class="s-ico" style="display: none"><span
+											sort="asc"
+											class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-disabled glyphicon glyphicon-triangle-top"></span><span
+											sort="desc"
+											class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-disabled glyphicon glyphicon-triangle-bottom"></span></span>
+									</div></th>
+								<th id="jqGrid_createTime" role="columnheader"
+									class="ui-th-column ui-th-ltr " style="width: 265px;"><span
+									class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
+									style="cursor: col-resize;">&nbsp;</span>
+								<div class="ui-th-div ui-jqgrid-sortable"
+										id="jqgh_jqGrid_createTime">
+										创建时间<span class="s-ico" style="display: none"><span
+											sort="asc"
+											class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-disabled glyphicon glyphicon-triangle-top"></span><span
+											sort="desc"
+											class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-disabled glyphicon glyphicon-triangle-bottom"></span></span>
+									</div></th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			<div class="ui-jqgrid-bdiv"
+				style="height: 385px; width: 1053px; overflow-x: hidden;">
+				<div style="position: relative;">
+					<div></div>
+					<table id="jqGrid" tabindex="0" role="presentation"
+						aria-multiselectable="true" aria-labelledby="gbox_jqGrid"
+						class="ui-jqgrid-btable ui-common-table table table-bordered"
+						style="width: 1055px;">
+						<tbody>
+							<tr class="jqgfirstrow" role="row">
+								<td role="gridcell" style="height: 0px; width: 25px;"></td>
+								<td role="gridcell" style="height: 0px; width: 35px;"></td>
+								<td role="gridcell" style="height: 0px; width: 149px;"></td>
+								<td role="gridcell" style="height: 0px; width: 249px;"></td>
+								<td role="gridcell" style="height: 0px; width: 332px;"></td>
+								<td role="gridcell" style="height: 0px; width: 265px;"></td>
+							</tr>
+							<tr role="row" id="1" tabindex="-1" class="jqgrow ui-row-ltr">
+								<td role="gridcell" class="jqgrid-rownum active"
+									style="text-align: center; width: 25px;" title="1"
+									aria-describedby="jqGrid_rn">1</td>
+								<td role="gridcell" style="text-align: center; width: 35px;"
+									aria-describedby="jqGrid_cb"><input role="checkbox"
+									type="checkbox" id="jqg_jqGrid_1" class="cbox checkbox"
+									name="jqg_jqGrid_1"></td>
+								<td role="gridcell" style="" title="1"
+									aria-describedby="jqGrid_roleId">1</td>
+								<td role="gridcell" style="" title="普通用户"
+									aria-describedby="jqGrid_roleName">普通用户</td>
+								<td role="gridcell" style="" title="只能查看用户信息"
+									aria-describedby="jqGrid_remark">只能查看用户信息</td>
+								<td role="gridcell" style="" title="2019-04-30 14:12:37"
+									aria-describedby="jqGrid_createTime">2019-04-30 14:12:37</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="ui-jqgrid-resize-mark" id="rs_mjqGrid">&nbsp;</div>
+		<div id="jqGridPager" class="ui-jqgrid-pager" dir="ltr"
+			style="width: 1055px;">
+			<div id="pg_jqGridPager" class="ui-pager-control" role="group">
+				<table class="ui-pg-table ui-common-table ui-pager-table table">
+					<tbody>
+						<tr>
+							<td id="jqGridPager_left" align="left"></td>
+							<td id="jqGridPager_center" align="center"
+								style="white-space: pre; width: 340px;"><table
+									class="ui-pg-table ui-common-table ui-paging-pager">
+									<tbody>
+										<tr>
+											<td id="first_jqGridPager" class="ui-pg-button ui-disabled"
+												title="First Page"><span
+												class="glyphicon glyphicon-step-backward"></span></td>
+											<td id="prev_jqGridPager" class="ui-pg-button ui-disabled"
+												title="Previous Page"><span
+												class="glyphicon glyphicon-backward"></span></td>
+											<td class="ui-pg-button ui-disabled"><span
+												class="ui-separator"></span></td>
+											<td id="input_jqGridPager" dir="ltr"><input
+												class="ui-pg-input form-control" type="text" size="2"
+												maxlength="7" value="0" role="textbox"> 共 <span
+												id="sp_1_jqGridPager">1</span> 页</td>
+											<td class="ui-pg-button ui-disabled"><span
+												class="ui-separator"></span></td>
+											<td id="next_jqGridPager" class="ui-pg-button ui-disabled"
+												title="Next Page"><span
+												class="glyphicon glyphicon-forward"></span></td>
+											<td id="last_jqGridPager" class="ui-pg-button ui-disabled"
+												title="Last Page"><span
+												class="glyphicon glyphicon-step-forward"></span></td>
+											<td dir="ltr"><select class="ui-pg-selbox form-control"
+												role="listbox" title="Records per Page"><option
+														role="option" value="10" selected="selected">10</option>
+													<option role="option" value="30">30</option>
+													<option role="option" value="50">50</option></select></td>
+										</tr>
+									</tbody>
+								</table></td>
+							<td id="jqGridPager_right" align="right"><div dir="ltr"
+									style="text-align: right" class="ui-paging-info">1 - 1 共
+									1 条</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

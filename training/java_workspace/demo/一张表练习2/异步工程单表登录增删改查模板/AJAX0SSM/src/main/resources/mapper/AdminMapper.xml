@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yangfulai.dao.AdminDAO">
+
+
+
+	<select id="getAll" resultMap="mapAdmin">
+	SELECT * from t_admin
+	</select>
+	
+	
+	
+    <insert id="insert" parameterType="Admin">
+        INSERT INTO t_admin VALUES(#{username},#{password})
+    </insert>
+    
+    <update id="update" parameterType="Admin">
+        update t_admin set password = #{password} WHERE username = #{username}
+    </update>
+    
+    <delete id="delete" parameterType="String">
+        DELETE from t_admin where username = #{username}
+    </delete>
+    
+    
+    
+    <sql id="sqlAdmin">
+        username,password
+    </sql>
+    <resultMap type="Admin" id="mapAdmin">
+        <id property="username" column="username"/>
+        <result property="password" column="password"/>
+    </resultMap>
+    
+    
+    
+    
+    <!--根据主键查询一条数据（一个对象）  -->
+    <select id="selectOne" parameterType="String" resultMap="mapAdmin">
+        SELECT username,password
+        from t_admin where username = #{username}
+       
+    </select>
+    
+    <!--统计记录个数的方法（搜索条件：按照名字模糊查询、）  -->
+    <select id="getCount" resultType="int">
+        SELECT count(*) from t_admin 
+        <where>
+            <if test="username != null">
+            username like concat('%',#{username},'%')
+            </if>
+        </where>
+    </select>
+    
+   
+    
+    <!--分页集合（名字搜索  -->
+    <select id="selectAll" resultMap="mapAdmin">
+        SELECT <include refid="sqlAdmin"/> 
+        from t_admin 
+         <where>
+           
+            <if test="username != null">
+              username like concat('%',#{username},'%')
+            </if>
+        </where>
+        limit #{page},#{rows}
+    </select>
+    
+    
+    
+    
+    
+    
+</mapper>

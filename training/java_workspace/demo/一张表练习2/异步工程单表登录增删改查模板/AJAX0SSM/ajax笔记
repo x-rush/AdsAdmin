@@ -1,0 +1,87 @@
+AJAX(异步的JavaScript和XML)
+
+(一)web开发的两种方式
+
+模式一:同步开发模式
+View			Model			Controller
+JSP页面(Java语言)	--Java数据--		SpringMVC框架(Java语言)
+
+模式二:异步开发模式
+
+HTML页面(JSON)	--JSON数据--		SpringMVC框架(Java语言)
+APP				--JSON数据--		SpringMVC框架(Java语言)
+小程序			--JSON数据--		SpringMVC框架(Java语言)
+
+(二)JSON数据格式
+
+JSON对象的表达方式
+"{'name':'张三','age':20}"
+JSON数组的表达方式
+"[{'name':'张三','age':20},{'name':'张三','age':20}]"
+
+
+(三)springMVC框架发送JSON数据的方式
+
+SpringMVC框架中的方法默认返回类型字符串类型String,表示跳转页面的路径
+SpringMVC框架如果让方法返回的是JSON 数据要使用注解@ResponseBody
+表示把方法的返回的java对象自动转换为JSON数据并发送给客户端
+如果方法上方使用@ResponseBody这个注解方法的返回类型可以是任意的Objict类型
+
+(四)什么是AJAX
+AJAX定义:异步JavaScript和XML文件,异步的代名词
+
+注意一:AJAX中发送请求的是JavaScript的XMLHttpRequest(AJAX引擎)对象发送请求
+注意二:AJAX中接受后台JSON数据的是XMLHttpRequest对象(AJAX引擎)
+注意三:以前响应数据都是XML现在响应数据都是JSON
+注意四:正常使用JavaScript发送异步请求接受异步数据,今天使用jQuery框架发送请求,接受JSON数据
+jQuery框架是一个JavaScript语言的框架,或叫jQuery库
+
+
+
+JavaScript内置对象
+1.document增删改查
+2.XMLHttpRequest发送请求接受数据
+
+
+
+##################################################
+
+Springboot+vue案例
+用户信息模块
+
+一.用户控制器
+1.@RestController//每个方法都会加一个@ResponseBody	注解
+2.登录方法
+3.查询方法
+4.添加方法,修改方法
+5.删除方法
+
+测试查询方法											测试底层的方法
+http://127.0.0.1:8080/a/table?page=1&rows=3
+
+
+选择器 		<div id="app">在最外层</div>
+ 
+搜索条件		v-model="searchName"
+表格数据		v-for="(user,index) in list"
+每页记录数		v-model="pageSize"
+总记录数		{{totalCount}}
+总页数		v-for="page in pageCount"
+用户			v-model="user.username"
+密码			v-model="user.password"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

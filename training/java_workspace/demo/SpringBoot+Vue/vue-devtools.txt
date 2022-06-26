@@ -1,0 +1,13 @@
+1、到github主页去下载安装：
+https://github.com/vuejs/vue-devtools
+
+2、继续执行以下命令（cnpm国内镜像下载更快）：
+cd vue-devtools　　　　　　 //进入当前目录
+cnpm install　　　　　　　  //下载依赖
+cnpm run build　　　　　　   //打包
+
+3、进入chrome浏览器添加扩展程序：
+chrome浏览器>> 更多工具>> 扩展程序，进入下图页面：
+（1）勾选开发者模式
+（2）点击加载已解压的扩展程序（选择地址为：安装路径>> vue-devtools>>shells>>chrome），将chrome文件夹导入
+（3）点击确定就能安装成功

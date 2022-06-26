@@ -1,0 +1,17 @@
+﻿<script type="text/javascript">
+ function changeImage() {
+      var v = document.getElementById("#verifyCodeImage");
+      v.setAttribute('src', '/ssm01_zhaoyang/user/getVerifyCode.do')
+ }
+</script>
+
+
+<tr>
+<td valign="middle" align="left">
+    <img src="/ssm01_zhaoyang/user/getVerifyCode.do" width="80" height="34" id="verifyCodeImage" onclick="javascript:changeImage();">
+</td>
+<td valign="middle" align="right">
+    <input type="text" id="verifyCode" name="verifyCode" placeholder="验证码" maxlength="4">
+    <font color="red">${message}</font>
+</td>
+</tr>			

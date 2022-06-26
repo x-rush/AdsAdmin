@@ -1,0 +1,28 @@
+/*2008.09.28*/
+
+Table.holder{
+	width:100%;
+	
+	border-right:  1px solid #dddddd; 
+    border-top:    0px solid #dddddd; 
+    border-left:   1px solid #dddddd; 
+    border-bottom: 1px solid #dddddd;
+	
+	background:#f7f7f7;
+}
+
+Table.holder caption{
+	height£º28px;
+	font-size:16px;
+	font-weight:bold;
+	background:url(../img/whiteTrBg.gif) repeat-x;
+	
+	text-align:left;
+	
+	border-right:  1px solid #dddddd; 
+    border-top:    1px solid #dddddd; 
+    border-left:   1px solid #dddddd; 
+    border-bottom: 1px solid #dddddd; 
+}
+
+

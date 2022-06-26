@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title></title>
+<link rel="stylesheet" href="css/pintuer.css">
+<link rel="stylesheet" href="css/admin.css">
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/vue.js"></script>
+<script type="text/javascript" src="/js/axios.js"></script>
+<!--导入vue框架  -->
+<script type="text/javascript" src="/js/employee.js"></script>
+
+</head>
+<body>
+<div id="app">
+<div class="panel admin-panel">
+  <div class="panel-head"><strong class="icon-reorder"> 员工列表</strong></div>
+  <div class="padding border-bottom">  
+ 
+      <ul class="search" style="padding-left:10px;">
+        <li> <button type="button" class="button border-yellow" onclick="window.location.href='#add'"><span class="icon-plus-square-o"></span> 添加员工</button> </li>
+        <li>搜索：</li>          
+          <input type="text" placeholder="请输入搜索关键字" name="keywords" class="input" style="width:250px; line-height:17px;display:inline-block" />
+          <a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()" > 搜索</a></li>
+      </ul>       
+      
+  </div>
+    <table class="table table-hover text-center">
+      <tr>
+        <th width="100" style="text-align:left; padding-left:20px;">序号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>照片</th>
+        <th>生日</th>
+        <th>学历</th>
+        <th>经验</th>
+        <th>部门</th>
+        <th>职位</th>
+        <th width="310">操作</th>
+      </tr>
+      
+      
+        <tr v-for="(employee,index) in list">
+          
+          <td>{{(currentPage-1)*pageSize+index+1}}</td>
+          <td>{{employee.name}}</td>
+          <td>{{employee.sex}}</td>
+          <td width="10%"><img src="images/11.jpg" alt="" width="70" height="50" /></td>
+          <td>{{employee.birthday}}</td>
+          <td>{{employee.schoolRecord}}</td>
+          <td>1年</td>
+          <td>部门</td>
+          <td>职位名称</td>
+          <td><div class="button-group"> 
+          <a class="button border-main" href="add.html"><span class="icon-edit"></span> 修改</a> 
+          <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+        </tr>
+         
+      
+          
+        <tr>
+        <td style="text-align:left; padding:19px 0;padding-left:20px;"><input type="checkbox" id="checkall"/>
+          全选 </td>
+        <td colspan="9" style="text-align:left;padding-left:20px;"><a href="javascript:void(0)" class="button border-red icon-trash-o" style="padding:5px 15px;" onclick="DelSelect()"> 删除</a>
+          <select name="copynum" style="padding:5px 15px; border:1px solid #ddd;" onchange="changecopy(this)">
+            <option value="10">10条/页</option>
+            <option value="15">15条/页</option>
+            <option value="20">20条/页</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td colspan="10"><div class="pagelist"> 
+        <a href="">首页</a>
+        <a href="">上一页</a> 
+        
+        <span class="current">1</span><a href="">2</a><a href="">3</a>
+        
+        <a href="">下一页</a>
+        <a href="">尾页</a> </div></td>
+      </tr>
+    </table>
+
+</div>
+<script type="text/javascript">
+/* function del(id,mid){
+	if(confirm("您确定要删除吗?")){
+	
+	}
+} */
+</script>
+<div class="panel admin-panel margin-top" id="add">
+  <div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 增加员工</strong></div>
+  <div class="body-content">
+    <form method="post" class="form-x" action="">
+      <div class="form-group">
+        <div class="label">
+          <label>部门：</label>
+        </div>
+        <div class="field">
+          <select name="pid" class="input w50">
+            <option value="">请选择部门</option>
+            <option value="">开发部</option>
+            <option value="">测试部</option>
+          </select>
+        </div>
+      </div>        
+       <div class="form-group">
+        <div class="label">
+          <label>职位：</label>
+        </div>
+        <div class="field">
+          <select name="pid" class="input w50">
+            <option value="">请选择职位</option>
+            <option value="">Java开发</option>
+            <option value="">Java测试</option>
+          </select>
+        </div>
+      </div>     
+        
+     <div class="form-group">
+        <div class="label">
+          <label>姓名：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" value="" name="title" data-validate="required:请输入姓名" />
+          <div class="tips"></div>
+        </div>
+      </div>
+        
+     <div class="form-group">
+        <div class="label">
+          <label>性别：</label>
+        </div>
+        <div class="field">
+          <input type="radio" value="0" name="sex" checked/>男
+          <input type="radio" value="1" name="sex"/>女
+          <div class="tips"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="label">
+          <label>照片：</label>
+        </div>
+        <div class="field">
+          <input type="text" id="url1" name="img" class="input tips" style="width:25%; float:left;"  value="" data-toggle="hover" data-place="right" data-image="" data-validate="required:请上传照片"/>
+          <input type="button" class="button bg-blue margin-left" id="image1" value="+ 浏览上传"  style="float:left;">
+          <div class="tipss">图片尺寸：1920*500</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>生日：</label>
+        </div>
+        <div class="field">
+          <input type="date" class="input w50" name="url" value=""  data-validate="required:请输入生日"/>
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>学历：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" name="url" value=""  data-validate="required:请输入学历"/>
+          <div class="tips"></div>
+        </div>
+      </div>        
+      <div class="form-group">
+        <div class="label">
+          <label>经验：</label>
+        </div>
+        <div class="field">
+          <input type="number" class="input w50" name="url" value=""  data-validate="required:请输入经验"/>
+          <div class="tips"></div>
+        </div>
+      </div>        
+      <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</div>
+</body>
+
+
+</html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- 数据库驱动:选择你的本地硬盘上面的数据库驱动包，不使用插件可以不添加 -->
+	<!-- <classPathEntry location="E:\teachspace\ssm01\WebContent\WEB-INF\lib\mysql-connector-java-5.1.26-bin.jar"/> -->
+
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<!-- 配置数据库连接信息 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/test3?useSSL=true"
+			userId="root" password="123456">
+		</jdbcConnection>
+
+		<!-- Java类型解析，不管 -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- 指定javaBean生成的位置，指定到“包”之前的位置 main方法运行project使用./即可 插件运行需要指定项目名例如ssm01/src -->
+		<!-- <javaModelGenerator targetPackage="com.sunrise.pojo" targetProject=".\src"> -->
+		<javaModelGenerator
+			targetPackage="com.sunrise.bean" targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<!-- 指定sql映射文件生成的位置，指定到“包”之前的位置 main方法运行project使用./即可 插件运行需要指定项目名例如ssm01/src -->
+		<!-- <sqlMapGenerator targetPackage="com.sunrise.dao" targetProject=".\src"> -->
+		<sqlMapGenerator targetPackage="mapper"
+			targetProject=".\src\main\resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<!-- 指定dao接口生成的位置，mapper接口，指定到“包”之前的位置 main方法运行project使用./即可 插件运行需要指定项目名例如ssm01/src -->
+		<!-- <javaClientGenerator type="XMLMAPPER" targetPackage="com.sunrise.dao" 
+			targetProject=".\src"> <property name="enableSubPackages" value="true" /> -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.sunrise.dao" targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- table指定每个表的生成策略 tableName是数据库中的表名或视图名 domainObjectName是实体类名 -->
+		<table tableName="emp" domainObjectName="Emp"></table>
+		<table tableName="user" domainObjectName="User"></table>
+
+		<!-- 选择mbg.xml文件右键 -> run -> run mybatis generator，即可自动生成文件 -->
+	</context>
+</generatorConfiguration>

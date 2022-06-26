@@ -1,0 +1,20 @@
+maven工程搭建
+0.maven配置
+	preferences->maven
+	->installations
+	选择add添加本地maven程序路径，并选择
+	->usersettings
+	选择配置的mavensettings.xml文件
+1.创建maven project->选择简单**simple project**
+ 	groupId: com.sunrise
+ 	artifactId: 11ssm02
+ 	打包：war包
+ 2.引入jar包，编写pom.xml
+ 	- springmvc&sping相关jar包
+ 		spring-webmvc、spring-jdbc、spring-test、spring-aspects
+ 	- mybatis相关jar包
+ 		mybatis、mybatis-spring
+ 	- 数据库连接池&连接驱动
+ 		c3p0、mysql-connector-java
+ 	- 其他
+ 		jstl、servlet-api、junit

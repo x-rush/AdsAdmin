@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="js/axios.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+
+</head>
+<body>
+
+	<h1>axios + restful</h1>
+	
+	<div id="app">
+		<button @click="m1">添加</button>
+		<button @click="m2">修改</button>
+		<button @click="m3">删除</button>
+		<button @click="m4">查询</button>
+	</div>
+	
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#app',
+			methods:{
+				m1:function(){
+					axios.post('/c01/jack2/30');
+				},
+				m2:function(){
+					axios.put('/c01');
+				},
+				m3:function(){
+					axios.delete('/c01');
+				},
+				m4:function(){
+					axios.get('/c01');
+				}
+			}
+		});	
+	</script>
+
+</body>
+</html>
