@@ -1,0 +1,179 @@
+﻿{layout name="public/home"/}
+<div class="header">
+    <h1 class="page-header">
+        培训报名列表
+    </h1>
+    <!--<ol class="breadcrumb">-->
+    <!--<li><a href="#">Home</a></li>-->
+    <!--<li><a href="#">Empty</a></li>-->
+    <!--<li class="active">Data</li>-->
+    <!--</ol>-->
+
+</div>
+<div id="page-inner" style="min-height: 600px">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Advanced Tables -->
+                        <div class="panel panel-default">
+                            {if(session('train_ordererror'))}
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <li>{$Think.session.train_ordererror}</li>
+                                </ul>
+                            </div>
+                            {elseif(session('train_ordersuccess'))}
+                            <div class="alert alert-success">
+                                <ul>
+                                    <li>{$Think.session.train_ordersuccess}</li>
+                                </ul>
+                            </div>
+                            {/if}
+
+                            <div class="panel-heading">
+                                activity Tables
+                                <a href="#"  data-toggle="modal" data-target="#add_dialog" style="float: right"><i class="fa fa-plus ">New Classification</i></a>
+                            </div>
+                            <div class="panel-body">
+                                <div >
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                        <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>培训名字</th>
+                                            <th>报名用户</th>
+                                            <th>操作</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {volist name='TrainOrder' id='tr'}
+                                        <tr class="odd gradeX">
+                                            <td>{$tr.toid }</td>
+                                            <td>{$tr.trname }</td>
+                                            <td>{$tr.uname }</td>
+                                            <td><a href="#" data-toggle="modal" data-target="#update_dialog" onclick="jsedit({$tr.toid})"><button type="button" class="btn btn-primary">修改</button></a>
+                                                <!--url('admin/typedel',['id'=>$v->tid])-->
+                                            </td>
+                                            <td><a href="javascript:;"><button type="button" class="btn btn-danger" onclick="train_orderdel({$tr.toid})">删除</button></a></td>
+                                        </tr>
+                                        {/volist}
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--End Advanced Tables -->
+                    </div>
+                </div>
+            </div>
+<div class="modal fade" id="update_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">修改培训</h4>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal" method="POST" action="{:url('admin/trainupdate')}" accept-charset="UTF-8">
+                    <div class="form-group">
+                        <input type="hidden" name="toid" id="train_orderdid">
+                        <label class="col-md-2 control-label">培训名字</label>
+                        <select class="form-control" name="train">
+                            {volist name="TrainOrder" id="to"}
+                            <option value={$to.trid}>{$to.trname}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">用户名字</label>
+                        <select class="form-control" name="users">
+                            {volist name="TrainOrder" id="u"}
+                            <option value={$u.uid}>{$u.uname}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="add_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabe">添加订单</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" method="POST" action="{:url('admin/train_orderadd')}" accept-charset="UTF-8">
+                    <div class="form-group">
+                       
+                        <label class="col-md-2 control-label">培训名字</label>
+                        <select class="form-control" name="trid">
+                            {volist name="TrainOrder" id="to"}
+                            <option value={$to.trid}>{$to.trname}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">用户名字</label>
+                        <select class="form-control" name="uid">
+                            {volist name="TrainOrder" id="u"}
+                            <option value={$u.uid}>{$u.uname}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                    
+                    
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function jsedit(trid){
+        //从数据库中根据tid获取记录
+        $.getJSON(
+            "{:url('admin/train_orderedit')}",{"trid":trid},function(json){
+                $("#trainid").val(json.trid);
+                $("#name").val(json.trname);
+                $("#intro").val(json.trintro);
+                $("#pic").val(json.trpic);
+                $("#date").val(json.trdate);
+                $("#address").val(json.traddress);
+                $("#price").val(json.price);
+                // alert(json.tid);
+            });
+    }
+    function train_orderdel(id) {
+        layer.confirm('确认删除',{btn:['确认','取消']},
+            function () {
+                $.post("{:url('admin/train_orderdel')}",{"toid":id},function (data) {
+                    //alert(data.msg);
+                    if(data.status==0){
+                        location.href=location.href;//刷新页面
+                        layer.msg(data.msg,{icon:6});
+                    }else{
+                        layer.msg(data.msg,{icon:5});
+                    }
+                });
+            },function () {
+
+            });
+    }
+</script>
+
+
+
+

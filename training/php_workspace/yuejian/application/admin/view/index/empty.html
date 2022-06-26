@@ -1,0 +1,295 @@
+﻿{layout name="public/home"/}
+<div class="header">
+    <h1 class="page-header">
+        精彩活动
+    </h1>
+    <!--<ol class="breadcrumb">-->
+    <!--<li><a href="#">Home</a></li>-->
+    <!--<li><a href="#">Empty</a></li>-->
+    <!--<li class="active">Data</li>-->
+    <!--</ol>-->
+
+</div>
+<div id="page-inner" style="min-height: 600px">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Advanced Tables -->
+                        <div class="panel panel-default">
+                            {if(session('activityerror'))}
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <li>{$Think.session.activityerror}</li>
+                                </ul>
+                            </div>
+                            {elseif(session('activitysuccess'))}
+                            <div class="alert alert-success">
+                                <ul>
+                                    <li>{$Think.session.activitysuccess}</li>
+                                </ul>
+                            </div>
+                            {/if}
+
+                            <div class="panel-heading">
+                                activity Tables
+                                <a href="#"  data-toggle="modal" data-target="#add_dialog" style="float: right"><i class="fa fa-plus ">New Classification</i></a>
+                            </div>
+                            <div class="panel-body">
+                                <div >
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                        <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>活动名</th>
+                                            <th>地址</th>
+                                            <th>联系电话</th>
+                                            <th>海报</th>
+                                            <th>简介</th>
+                                            <th>报名表</th>
+                                            <th>操作</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {volist name='activity' id='vo'}
+                                        <tr class="odd gradeX">
+                                            <td>{$i}</td>
+                                            <td>{$vo.aname}</td>
+                                            <td>{$vo.address}</td>
+                                            <td>{$vo.tel}</td>
+                                            <td><img src="__STATIC__/poster/{$vo.pic}" width="100px" alt=""></td>
+                                            <td>{$vo.intro|msubstr=0,20,'utf-8',true}</td>
+                                            <td><a href="#" onclick="orderlist({$vo.aid})"><button type="button" class="btn btn-primary">报名详情</button></a>
+                                                <!--url('admin/typedel',['id'=>$v->tid])-->
+                                            </td>
+                                            <td><a href="#" data-toggle="modal" data-target="#update_dialog" onclick="jsedit({$vo.aid})"><button type="button" class="btn btn-primary">修改</button></a>
+                                                <!--url('admin/typedel',['id'=>$v->tid])-->
+                                            </td>
+                                            <td><a href="javascript:;"><button type="button" class="btn btn-danger" onclick="activitydel({$vo.aid})">删除</button></a></td>
+                                        </tr>
+                                        {/volist}
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--End Advanced Tables -->
+                    </div>
+                </div>
+            </div>
+<div class="modal fade" id="update_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">修改活动信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="{:url('admin/activityupdate')}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="hidden" name="aid" id="aid">
+                        <label class="col-md-2 control-label">活动名</label>
+                        <div class="col-md-10">
+                            <input class="form-control" id="aname" placeholder="活动名" name="aname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">活动地址</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="address" id="address" placeholder="地址">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">联系电话</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="tel" id="tel" placeholder="电话">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">报名价格</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="price"  id="price" placeholder="价格"  onkeyup="clearNoNum(this)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">活动简介</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="intro" id="intro" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-md-2 control-label">海报</label>
+                        <div class="col-md-5">
+                            <input type="file" name="pic" >
+                        </div>
+                        <div class="col-md-5">
+                            <label  class="col-md-2 control-label">原海报</label>
+                            <img id="prepic" width=100px height="60px" src="" name="prepic">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">活动时间</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="datetime" name="activedate" id="activedate">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <input type="submit" name="" value="提交" class="btn btn-default">
+                        <!--<input type="reset" name="" value="重置" class="btn btn-default">-->
+                        <button type="button" class="btn btn-default" onclick="" data-dismiss="modal">关闭</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="add_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" >修改课程信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="{:url('admin/activityadd')}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="hidden" name="aid">
+                        <label class="col-md-2 control-label">活动名</label>
+                        <div class="col-md-10">
+                            <input class="form-control" placeholder="活动名" name="aname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">活动地址</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="address" placeholder="地址">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">联系电话</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="tel" placeholder="电话">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">报名价格</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="price" placeholder="价格"  onkeyup="clearNoNum(this)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">活动简介</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="intro" cols="30" rows="10" placeholder="活动简介"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-md-2 control-label">海报</label>
+                        <div class="col-md-5">
+                            <input type="file" name="pic" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">活动时间</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="date" name="activedate" placeholder="活动时间">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <input type="submit" name="" value="提交" class="btn btn-default">
+                        <!--<input type="reset" name="" value="重置" class="btn btn-default">-->
+                        <button type="button" class="btn btn-default" onclick="" data-dismiss="modal">关闭</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function jsedit(aid){
+        //从数据库中根据tid获取记录
+        $.getJSON(
+            "{:url('admin/edit')}",{"aid":aid},function(json){
+                $("#aid").val(json.aid);
+                $("#aname").val(json.aname);
+                $("#address").val(json.address);
+                $("#intro").val(json.intro);
+                $("#tel").val(json.tel);
+                $("#price").val(json.price);
+                $("#activedate").val(json.activedate);
+                $('#prepic').attr("src","__STATIC__/poster/"+json.pic);
+                // alert(json.tid);
+            });
+    }
+    function activitydel(id) {
+        layer.confirm('确认删除',{btn:['确认','取消']},
+            function () {
+                $.post("{:url('admin/activitydel')}",{"aid":id},function (data) {
+                    if(data.status==0){
+                        location.href=location.href;//刷新页面
+                        layer.msg(data.msg,{icon:6});
+                    }else{
+                        layer.msg(data.msg,{icon:5});
+                    }
+                });
+            },function () {
+
+            });
+    }
+</script>
+<script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element','form', function(){
+        var element = layui.element;
+        var form = layui.form;
+
+        form.render();
+
+        //…
+    });
+    function orderlist(id) {
+        layui.use('layer', function () {
+            var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+            // "{:url('admin/orderlist',['aid'=>$vo->aid])}"
+
+            // alert("{:url('admin/orderlist/"+id+"')}");
+            // /yuejian/public/admin/orderlist/id
+            layer.open({
+                type: 2 //此处以iframe举例
+                , title: '活动订单'
+                , area: ['800px', '600px']
+                , shade: 0
+                , maxmin: true
+                , offset: 'auto'//显示坐标-auto居中
+                , content:"/yuejian/public/admin/orderlist/"+id
+                , btn: ['关闭']//只是为了演示
+                , yes: function () {
+                    layer.closeAll();
+                    // $(that).click();
+                }
+                , zIndex: layer.zIndex //重点1
+                , success: function (layero) {
+                    layer.setTop(layero); //重点2
+                }
+            });
+        });
+    };
+</script>
+<script type="text/javascript">
+    function num(obj){
+        obj.value = obj.value.replace(/[^\d.]/g,""); //清除"数字"和"."以外的字符
+        obj.value = obj.value.replace(/^\./g,""); //验证第一个字符是数字
+        obj.value = obj.value.replace(/\.{2,}/g,"."); //只保留第一个, 清除多余的
+        obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+        obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3'); //只能输入两个小数
+    }
+</script>
+
+
+
+

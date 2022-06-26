@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js"></script>
+	</head>
+	<body>
+		<div id="myApp">
+			<p>最喜欢的游戏：{{mygame}}</p>
+			<!--	v-model:为页面输出框进行数据绑定	-->
+			<input v-model="mygame" />
+		</div>
+		<script>
+			var amApp = new Vue({
+				el:"#myApp",
+				data:{
+					mygame:'超级马里奥'
+				}
+			});
+		</script>
+	</body>
+</html>

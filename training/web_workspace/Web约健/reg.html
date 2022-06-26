@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>约健会员注册</title>
+    <link rel="stylesheet" href="css/aui.css">
+    <style>
+        header{
+            background-color: #333333;
+        }
+    </style>
+</head>
+<body>
+<div class="aui-content">
+    <header class="aui-bar aui-bar-nav "style="background-color: #EE4000;color: white  ">
+        <a href="login.html" class="aui-pull-left aui-btn">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">注册</div>
+    </header>
+    <form method="post" onsubmit="return false;" >
+    <ul class="aui-list aui-form-list">
+        <li class="aui-list-item" style="border-bottom: 1px solid #c4c4c4">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">
+                    手机号
+                </div>
+                <div class="aui-list-item-input">
+                    <input onkeyup="panduan()" id="tel" type="text" placeholder="请输入手机号">
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item" style="border-bottom: 1px solid #c4c4c4">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">
+                    密码
+                </div>
+                <div class="aui-list-item-input">
+                    <input id="password" type="password" placeholder="密码">
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">
+                    确认密码
+                </div>
+                <div class="aui-list-item-input">
+                    <input onkeyup="mima()" id="newpassword" type="password" placeholder="密码">
+                </div>
+            </div>
+        </li>
+    </ul>
+        <div class="aui-col-xs-12" style="height: 50px">
+            <p><div onclick="zhuce()" id="btnReg" class="aui-btn aui-btn-info aui-col-xs-11 aui-margin-l-15 aui-margin-t-15">注册</div></p>
+        </div>
+    </form>
+    <p style="display: none;color: red" id="yanzheng" >手机号输入错误</p>
+    <p style="display: none;color: red" id="mima">两次密码输入不一致</p>
+</div>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+    function panduan() {
+        var phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;
+        //电话
+        var phone = $.trim($('#tel').val());
+        if (phoneReg.test(phone)) {
+            document.getElementById("yanzheng").style.display='none';
+        }
+        else {
+            document.getElementById("yanzheng").style.display='block';
+        }
+    }
+    function mima() {
+        var pwd=document.getElementById("password").value;
+        var newpwd=document.getElementById("newpassword").value;
+        if (pwd!=newpwd){
+            document.getElementById("mima").style.display='block';
+        }
+        else {
+            document.getElementById("mima").style.display='none';
+        }
+    }
+</script>
+<script>
+    var obtnReg=document.getElementById("btnReg");
+    function zhuce(){     //注册提交按钮
+        var tel1=document.getElementById("tel").value;
+        var tel2="tel/"+tel1;
+        var password1=document.getElementById("password").value;
+        var password2="password/"+password1;
+        var url="http://172.24.10.175/workout/api.php/reg/"+tel2+"/"+password2;
+        $.ajax({
+            url: url,
+            type: 'post',
+            dataType: 'jsonp',
+            error: function (data) {
+                console.log(data);
+                if(!data['error']){
+                   alert('注册成功')
+                    window.location.href="login.html";
+                    console.log(data);
+                }else {
+                    alert('注册成功');
+                    window.location.href="login.html";
+                    console.log(data);
+                }
+            }
+        });
+    }
+</script>
+</html>

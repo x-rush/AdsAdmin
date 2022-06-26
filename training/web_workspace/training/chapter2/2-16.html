@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>2-16</title>
+		<style>
+			#img1{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 500px;
+				height: 350px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<img id="img1" src="../img/ice cream png icon (1).png" />
+	<script>
+		setTimeout("",2000);
+		
+		var t=0;
+		var dsq;
+		function close(){
+			dsq=setInterval("hide()",10);
+		}
+		var img=document.getElementById("img1");
+		function hide(){
+			t--;
+			console.lot(t);
+			img.style.height=t+"px";
+			if(t==-350){
+				clearInterval(dsq);
+			}
+		}
+	</script>
+	</body>
+</html>

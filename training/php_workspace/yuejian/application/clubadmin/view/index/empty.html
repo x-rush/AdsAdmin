@@ -1,0 +1,222 @@
+﻿{layout name="public/home"/}
+<div class="header">
+    <h1 class="page-header">
+       课程列表
+    </h1>
+    <!--<ol class="breadcrumb">-->
+    <!--<li><a href="#">Home</a></li>-->
+    <!--<li><a href="#">Empty</a></li>-->
+    <!--<li class="active">Data</li>-->
+    <!--</ol>-->
+
+</div>
+<div id="page-inner" style="min-height: 600px">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Advanced Tables -->
+                        <div class="panel panel-default">
+                            {if(session('typeerror'))}
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <li>{$Think.session.typeerror}</li>
+                                </ul>
+                            </div>
+                            {elseif(session('typesuccess'))}
+                            <div class="alert alert-success">
+                                <ul>
+                                    <li>{$Think.session.typesuccess}</li>
+                                </ul>
+                            </div>
+                            {/if}
+
+                            <div class="panel-heading">
+                                course Tables
+                                <a href="#"  data-toggle="modal" data-target="#add_dialog" style="float: right"><i class="fa fa-plus ">New Classification</i></a>
+                            </div>
+                            <div class="panel-body">
+                                <div >
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                        <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>课程名</th>
+                                            <th>简介</th>
+                                            <th>课程海报</th>
+                                            <th>教练</th>
+                                            <th>操作</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {volist name='course' id='vo'}
+                                        <tr class="odd gradeX">
+                                            <td>{$i}</td>
+                                            <td>{$vo.coname}</td>
+                                            <td>{$vo.cointro|msubstr=0,20,'utf-8',true}</td>
+                                             <td><img src="__STATIC__/adminMSI/posters/{$vo.copic}" width="50" height="50"></td>
+                                            <td>{$vo.tname}</td>
+                                            <td><a href="#" data-toggle="modal" data-target="#update_dialog" onclick="jsedit({$vo.coid})"><button type="button" class="btn btn-primary">修改</button></a>
+                                                <!--url('admin/typedel',['id'=>$v->tid])-->
+                                            </td>
+                                            <td><a href="javascript:;"><button type="button" class="btn btn-danger" onclick="cDel({$vo.coid})">删除</button></a></td>
+                                        </tr>
+                                        {/volist}
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--End Advanced Tables -->
+                    </div>
+                </div>
+            </div>
+
+  <div class="modal fade" id="add_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">请填写课程信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="{:url('add')}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="inputUser" class="col-md-2 control-label">课程名称</label>
+                        <div class="col-md-6">
+                            <input type="inputUser" class="form-control" id="inputUser" placeholder="课程名称" name="coname">
+                        </div>
+                    </div>
+              <div class="form-group">
+                        <label class="col-md-2 control-label">课程简介</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="cointro" id="intro" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label  class="col-md-2 control-label">课程海报</label>
+                        <div class="col-md-6">
+                            <input type="file" name="pic" >
+                        </div>
+                    </div>
+
+                     <div class="form-group">
+                    <label for="inputUser" class="col-md-2 control-label">负责教练</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="trainer">
+                            {volist name="trainer" id="tr"}
+                            <option value={$tr.trid}>{$tr.tname}</option>
+                            {/volist}
+                        </select>   
+                    </div>
+                </div>
+                    
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="submit" name="" value="添加" class="btn btn-default">
+                            <input type="reset" name="" value="重置" class="btn btn-default">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+  <div class="modal fade" id="update_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel1">请填写课程信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="{:url('lessonupdate')}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                            <input type="hidden" name="coid" id="coid">
+                        <label for="inputUser" class="col-md-2 control-label">课程名称</label>
+                        <div class="col-md-6">
+                            <input type="inputUser" class="form-control" id="coname" placeholder="课程名称" name="coname">
+                        </div>
+                    </div>
+              <div class="form-group">
+                        <label class="col-md-2 control-label">课程简介</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="cointro" id="cointro" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label  class="col-md-2 control-label">课程海报</label>
+                        <div class="col-md-6">
+                            <input type="file" name="pic" >
+                        </div>
+                    </div>
+
+                     <div class="form-group">
+                    <label for="inputUser" class="col-md-2 control-label">负责教练</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="trainer" id="trid">
+                            {volist name="trainer" id="tr"}
+                            <option value={$tr.trid}>{$tr.tname}</option>
+                            {/volist}
+                        </select>   
+                    </div>
+                </div>
+                    
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="submit" name="" value="修改" class="btn btn-default">
+                            <input type="reset" name="" value="重置" class="btn btn-default">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function jsedit(coid){
+        //从数据库中根据tid获取记录
+        $.getJSON(
+            "{:url('clubadmin/edit')}",{"coid":coid},function(json){
+                $("#coid").val(json.coid);
+                $("#coname").val(json.coname);
+                $("#cointro").val(json.cointro);
+                $("#trid").val(json.trid);
+                // alert(json.tid);
+            });
+    }
+    function cDel(id) {
+        layer.confirm('确认删除',{btn:['确认','取消']},
+            function () {
+                $.post("{:url('clubadmin/cDel')}",{"coid":id},function (data) {
+                    if(data.status==0){
+                        location.href=location.href;//刷新页面
+                        layer.msg(data.msg,{icon:6});
+                    }else{
+                        layer.msg(data.msg,{icon:5});
+                    }
+                });
+            },function () {
+
+            });
+    }
+</script>
+
+
+
+

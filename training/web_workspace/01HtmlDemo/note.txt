@@ -1,0 +1,197 @@
+分层结构
+Java项目分层结构：三层结构
+浏览器		web服务器		数据服务器
+web前台		web后台		底层
+			JavaSE		MySQL
+			JDBC		Oracle
+			Spring
+			MyBatis
+		
+浏览器		Web服务器		数据库服务器
+HTML5		Servlet
+CSS3		JSP
+JavaScript	JSTL
+jQuery		EL
+EasyUI		SpirngMVC
+表现层(UI)：通俗讲是展示给用户的界面，用户能看见的东西
+业务逻辑层（BLL）：针对具体问题的操作，对数据的操作，对业务逻辑的处理
+数据访问层（DAL）：该层所做事务直接操作数据库，针对数据进行增删改查。
+
+M：model 模型层：包括业务逻辑和数据库操作
+V：view  视图层：仅仅做一个数据的展示
+C：controller  控制层：负责接收请求输数据
+
+Java项目分层结构：五层结构
+视图层		控制层		业务层		数据层		企业信息系统层
+浏览器		Java		Java		Java		数据库
+HTML5		Servlet		Spring框架	Mybatis		Mysql
+CSS3		JSP
+JS			..
+。。。
+
+用户界面层：网页，用户实实在在看得到，能操作的界面
+控制层：控制用户层与业务层进行数据交互
+业务逻辑层：针对具体问题，对业务逻辑的处理
+数据持久层：控制事务，直接操作数据，对数据库进行CRUD操作
+			Mybatis和Hibernate负责与数据库进行通信
+系统服务层：提供公共服务型功能，供各个操作层使用。
+
+一、HTML简介
+	1、HTML：HyberText 	Markup	Language：
+			超文本		标记		语言
+		只能通过浏览器进行解析并运行的一种纯文本标记性语言
+		主要形式：.html  .htm
+		内容叫法：标记、标签、元素、节点
+		
+	W3C:文档标准的提出者  
+	浏览器厂商：文档标准实现者 
+	开发者：文档标准的使用者 
+
+HTML5的基本声明
+	<!DOCTYPE html>   //文档声明 HTML5声明
+	<html> //文档正式开始，所有HTML东西都在这里
+		<head>
+			//眼睛看不见的信息
+			<meta charset="UTF-8">
+			<title>Document</title>
+			<style></style>
+			<script></script>
+			<link></link>
+		</head>
+		<body>
+			//主要用于展示，程序员代码展示的主舞台
+		</body>
+	</html>
+
+*首行声明，一包两段
+HTML特点：
+	HTML5 三种节点
+		1、元素节点（标签）：每一个HTML标签都是一个元素的节点
+		2、属性节点（标签中的属性）
+		3、文本节点（纯文本）
+HTML语法：
+	<开始标签  [...属性]>  内容  </结束标签>	
+	例子：封闭性标签：<p>Hello HTML</p>
+		  非封闭性标签：<input type="text" value="" />
+					  </br>
+*属性只能写在开始标签中
+	
+	html文档结构
+	|-文档版本声明
+	|-html标签
+		|-head标签
+			|-meta，通常为搜索引擎robots定义页面整体，标注内容提要和关键字
+			|-title
+			|-link
+			|-style
+			|-script
+		|-body标签
+			|-可以包含style、script
+			|-其他语义化标签
+	HTML属性
+		属:给予元素基本表示
+		性:样式或描述元素特征
+		为标签添加属性
+			<标签  属性1="值"  属性2="值" />
+		通用属性/全局属性
+			id，class，style
+		特有属性
+			colspan，type，value...
+		*属性没有先后顺序，同一个属性不能赋值两次
+
+	常用HTML标签
+	HTML 标题、段落、链接、图像、列表、div
+	1、标题<h1></h1>,级别1-6，实际开发不使用默认样式，主要用它进行分级操作
+	2、段落：<p>,控制段落，出场率相对较高，一对p标签会占满一整行
+	3、字体：<font>控制字体样式，属性：size，face(字体集)，color
+		color三种表示：
+		red
+		#d8d8d8
+		rgb(168,178,188)
+	 HTML5中不推荐使用
+	 4、链接<a href="" target=""></a>
+	 	href文档内部锚点，跳转到外部文档，下载资源
+	 	target: _blank 在新页面中打开
+	 			_self	在当前页面中打开
+	 	锚点链接跳转：通过href指向id的方式（#id）
+	 5、图像：<img alt="" src="" />:插入图像
+	 支持PNG/JPG/GIF/PDF
+	 src:图像链接地址的属性
+	 alt：用于提示
+	 *相对路径：编辑文件当前所在的路径“./”，编辑文件上级所在的路径“../”
+	 绝对路径：文件在硬盘的物理位置  file:///E://img/1.jpg
+	 6、列表
+	 	无序：<ul><li></li></ul>，type属性：项目符号样式（disc，circle，square）
+	 	 有序：<ol><li></li></ol>
+	 	 定义：<dl>
+	 	 		<dt></dt>
+	 	 		<dd></dd>
+	 	 	  </dl>
+	 7、div标签（万能标签，无语义）
+	 	写法：<div></div>
+	 	用途：用于布局
+	 7ext.块级元素、行内元素
+	 	块级元素：块级元素各占一行。是垂直方向的。
+	 	行内元素：行内元素会在一条直线，是在同一行的
+	 	PS：假如将行内元素变为块级元素，样式上加上display:block
+	 		块级元素可以使用样式控制其高、宽的值，而行内元素不可以
+	 8、多媒体：
+	 	<video src="" type="" poster="" controls loop></video>
+	 	<audio src="" controls></audio>
+	 9、html新增属性和标签
+	 	hidden、contenteditable、datalist	
+	10、带格式的标签
+		文本格式化：<b> <strong> <em> <big> <small> <sub> <sup>..
+html5表格、表单
+	表格：
+	1）完整标签表示
+	<table>
+		<thead></thead>
+		<tfoot></tfoot>
+		<tbody>
+			<tr><td></td><td></td></tr>
+		</tbody>
+	</table>
+	2）重要属性
+	边框：border
+	单元格间距：cellspacing
+	单元格边距：cellpadding
+	单元格跨列：colspan
+	单元格跨行：rowspan
+	内容对齐：align
+	3）注意：
+	-表格标签属于块级元素
+	-已经不再作为全页面布局使用
+	-专注于自己应该布局的领域（表格）
+	-表格样式，多用CSS控制，很少使用自身属性
+	表单：
+	标签<form></form>
+	作用：收集用户输入的内容（文本、文件）
+	属性：
+		-action：提交到服务器端地址
+		-method：指定提交时使用哪种HTTP方法：POST/GET
+		-name：表示
+		-autocomplete：浏览器是否可以自动填充
+		-enctype：指定表单内容编码，默认utf-8
+	元素
+		-input：文本、密码、单选、多选、按钮、数字、
+				日期、颜色、范围、邮件、URL、文件
+		-select：下拉列表
+		-textarea：文本域
+		-button：按钮
+	
+	P.S.：
+		1、不管输入多少个空格，都只显示一个。需要用特殊字符代替空格&nbsp;
+		2、< > 会被认为是网页标记的开始和结尾。特殊字符显示： &gt;代表> 和 &lt;代表<
+		3、分割线<hr />
+	
+   	HTML5 Web存储
+   	  HTML5提供了两种在客户端存储数据的新方法
+   	  -localStorage 没有时间限制的数据存储
+   	  -sessionStorage 针对一个session的数据存储	
+	
+
+
+
+
+

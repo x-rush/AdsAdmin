@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>我的动态</title>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    
+        <link rel="icon" type="image/x-icon" href="__PUBLIC__/images/favicon.png">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/typo.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/simple.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/message.css">
+        
+        <script type="text/javascript" src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+       
+        
+    </head>
+    <body>
+    <{include file="../Public/head.html"}>
+<div id="sub-header" class="group_h">
+    <div class="container">
+        <div class="navbar-header col-sm-offset-1">
+            <h1><a href="__APP__/Message/mine">个人中心</a></h1>
+        </div>
+        <div class="col-md-6">
+            <ul class="navbar-left">
+                <li><a href="__APP__/Message/index">贴吧首页</a></li>
+                <li class="btn-upload-w"><a href="__APP__/Message/add" class="btn btn-default btn-upload"><i class="icon-upload-alt"></i>发帖去~</a></li>
+                <li><a href="__APP__/Question/index">问题首页</a></li>
+                <li class="btn-upload-w"><a href="__APP__/Question/add" class="btn btn-default btn-upload"><i class="icon-upload-alt"></i>提问去~</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+<div id="main">
+    <div class="container">
+        <div class="home_module row">
+            <div class="container">
+                
+                <div class="col-md-8">
+                    <div style='border:1px solid #ddd;width:100%;height:100px;background:url("__PUBLIC__/images/t_bg.jpg") 0px 40px no-repeat'>
+                        <div style='float:left;width:100px;height:100px;'>
+                            <img style='width:100px;height:100px' src="__PUBLIC__/uploads/users/<{if $user.picture!='' && $user.picture!='1.jpg'}><{$user.username}>/<{$user.picture}><{else}>0/1.jpg<{/if}>">
+                        </div>
+                        <div style='margin:15px 0px 0px 50px;float:left;width:150px;height:30px;font:bold 20px "楷体";'>
+                            <{if $user.name!=''}><{$user.name}><{else}><{$user.username}><{/if}>
+                        </div>
+                        <div class='dhf' style='margin:23px 0px 0px 7%;float:left;width:140px;height:17px;font:normal 12px "宋体";'>
+                            <{if $user.id eq $smarty.session.user.id}>
+                                <a href='__APP__/Message/mynews'>最新动态：待回复消息 <{$smarty.session.user.hfnum}></a>
+                            <{/if}>
+                        </div>
+                        <{if $user.id neq $smarty.session.user.id}>
+                        <button class='nolike' vv='y' style='display:<{if $user.like=="y"}>block<{else}>none<{/if}>;margin:15px 0px 0px 0px;float:left;width:55px;color:#f00;background:#1A7ED3;height:25px;font:bold 12px "宋体";'>已关注</button>
+                        <button class='like' vv='n' style='display:<{if $user.like=="n"}>block<{else}>none<{/if}>;margin:15px 0px 0px 0px;float:left;width:55px;color:#f00;background:#83ADCE;height:25px;font:bold 12px "宋体";'><b>+</b> 关注</button>
+                        <{/if}>
+                        <div style='float:left;width:80%;height:2px;'></div>
+                        <div style='margin:0px 0px 0px 50px;float:left;width:74%;height:17px;font:normal 12px "宋体";'>
+                            发帖：<{$mnum}>　提问：<{$mnum2}>
+                        </div>
+                        <{if $user.id eq $smarty.session.user.id}>
+                        <div class='menu'>
+                            <a href='__APP__/Message/mymess'>我的帖子</a>
+                        </div>
+                        <div class='menu'>
+                            <a href='__APP__/Message/myques'>我的问题</a>
+                        </div>
+                        <div class='menu' style='background:#A76CAF':if expand("%") == ""|browse confirm w|else|confirm w|endif
+                            >
+                            <a style='color:#fff' href='__APP__/Message/mynews'>我的动态</a>
+                        </div>
+                        <div class='menu'>
+                            <a href='__APP__/Message/mylike'>我的收藏</a>
+                        </div>
+                        <div class='menu'>
+                            <a href='__APP__/Message/myfri'>我的关注</a>
+                        </div>
+                        <{/if}>
+                    </div>
+                    <br>
+                    <div class="tt">
+                        <h3>我的动态</h3>
+                    </div>
+                    <{if $smarty.session.user.hfnum!='0'}>
+                    <form action='__APP__/Message/readall' method='post'>
+                        <input type='hidden' name='id' value='<{foreach $hf1 as $vo1}><{$vo1.id}>,<{/foreach}><{foreach $hf2 as $vo2}><{$vo2.id}>,<{/foreach}>'>
+                        <input type='hidden' name='qid' value='<{foreach $hf3 as $vo3}><{$vo3.id}>,<{/foreach}>'>
+                        <input style='background:#F02424;color:#fff;float:right;padding:1px 2px;border:0px solid red;' type='submit' name='sub' value='全部标为已读'>
+                    </form>
+                    <{/if}>
+                    <div style='float:left;width:100%;font:bold 16px "黑体";color:#F24350;margin-top:2px;'>评论消息</div>
+                    <br>
+                    <ul class="list_pb20">
+                        <{if $hf1==array()}><div style='float:left;width:90%;height:30px;margin-left:20px;'>无</div><{/if}>
+                        <{foreach $hf1 as $vo}>
+                        <div style='float:left;margin:5px;border-bottom:1px dashed #bbb;width:100%;'> 
+                            <div class="t_ml_120" style='margin-left:10px;float:left;width:73%;'>
+                                <a href="__URL__/mine/uid/<{$vo.uid}>" target='blank'><{$vo.username}></a> 评论了我的帖子 <a href="__URL__/show/id/<{$vo.mid}>" target='blank'>《<{$vo.title}>》</a>：<br>
+                                <div style='margin:5px;float:left;text-indent:6ex;font:normal 16px "宋体";color:#222;'><b><{$vo.content|strip_tags}></b><{if $vo.content|strip_tags!=$vo.content}>&lt;图片&gt;<{/if}></div>
+                            </div>
+                            <span style='margin:8px 0px 0px 10px;float:right;width:130px;font:normal 12px "宋体"'>
+                                <a class='hf' href='javascript:void(0)'><span style='font-weight:bold;margin-left:10px;'>回复</span></a>　　
+                                <a class='del' href='__APP__/Message/delcomm/cid/<{$vo.id}>'><span style='font-weight:bold'>删除</span></a><br><br>
+                                <{$vo.addtime|date_format:"%Y-%m-%d %H:%M:%S"}>
+                            </span>
+                        </div>
+                        <div class='replay' style='display:none;float:right;width:90%'>
+                            <textarea class='text' style='margin:5px' name="content" rows="2" cols="55%"></textarea>
+                            <input class='pid' type='hidden' name='pid' value='<{$vo.id}>'>
+                            <input class='mid' type='hidden' name='mid' value='<{$vo.mid}>'>
+                            <input class='hf' type='hidden' name='hf' value='<{$vo.id}>'>
+                            <input class='button' style='float:right;font:bold 14px "楷体";width:50px;height:25px;margin:5px;' type='submit' name='sub' value='回复'>
+                        </div>
+                        <{/foreach}>            
+                    </ul>
+                    <div style='float:left;width:100%;'></div>
+                    <div style='float:left;width:100%;font:bold 16px "黑体";color:#F24350;margin-top:2px;'>回复消息</div>
+                    <br>
+                    <ul class="list_pb20">
+                        <{if $hf2==array()}><div style='float:left;width:90%;height:30px;margin-left:20px;'>无</div><{/if}>
+                        <{foreach $hf2 as $vo}>
+                        <div style='float:left;margin:5px;border-bottom:1px dashed #bbb;width:100%;'> 
+                            <div class="t_ml_120" style='margin-left:10px;float:left;width:73%;'>
+                                <a href="__URL__/mine/uid/<{$vo.uid}>" target='blank'><{$vo.username}></a> 回复了我在帖子 <a href="__URL__/show/id/<{$vo.mid}>" target='blank'>《<{$vo.title}>》</a> 的评论（<{$vo.mypl|strip_tags}>）：<br>
+                                <div style='float:left;margin:5px;text-indent:6ex;font:bold 16px "宋体";color:#222;'><b><{$vo.content|strip_tags}></b><{if $vo.content|strip_tags!=$vo.content}>&lt;图片&gt;<{/if}></div>
+                            </div>
+                            <span style='margin:8px 0px 0px 15px;float:right;width:130px;font:normal 12px "宋体"'>
+                                <a class='hf' href='javascript:void(0)'><span style='margin-left:10px;font-weight:bold'>回复</span></a>　　
+                                <a class='del' href='__APP__/Message/delcomm/cid/<{$vo.id}>'><span style='font-weight:bold'>删除</span></a><br><br>
+                                <{$vo.addtime|date_format:"%Y-%m-%d %H:%M:%S"}>
+                            </span>
+                        </div>
+                        <div class='replay' style='display:none;float:right;width:90%;'>
+                            <textarea class='text' style='margin:5px' name="content" rows="2" cols="55%"></textarea>
+                            <input class='pid' type='hidden' name='pid' value='<{$vo.pid}>'>
+                            <input class='mid' type='hidden' name='mid' value='<{$vo.mid}>'>
+                            <input class='hf' type='hidden' name='hf' value='<{$vo.id}>'>
+                            <input class='button' style='float:right;font:bold 14px "楷体";width:50px;height:25px;margin:5px;' type='submit' name='sub' value='回复'>
+                        </div>
+                        <{/foreach}>            
+                    </ul>
+                    <div style='float:left;width:100%;'></div>
+                    <div style='float:left;width:100%;font:bold 16px "黑体";color:#F24350;margin-top:2px;'>我的问题提示消息</div>
+                    <br>
+                    <ul class="list_pb20">
+                        <{if $hf3==array()}><div style='float:left;width:90%;height:30px;margin-left:20px;'>无</div><{/if}>
+                        <{foreach $hf3 as $vo}>
+                        <div style='float:left;margin:5px;border-bottom:1px dashed #bbb;width:100%;'> 
+                            <div class="t_ml_120" style='margin-left:10px;float:left;width:73%;'>
+                                <a href="__URL__/mine/uid/<{$vo.tid}>" target='blank'><{$vo.username}></a> 回答了我的问题 <a href="__APP__/Question/show/id/<{$vo.id}>/r/1" target='blank'>《<{$vo.content|strip_tags}></b><{if $vo.content|strip_tags!=$vo.content}>&lt;图片&gt;<{/if}>》</a>：<br>
+                                <div style='float:left;margin:5px;text-indent:6ex;font:bold 16px "宋体";color:#222;'><b><{$vo.replay|strip_tags}></b><{if $vo.replay|strip_tags!=$vo.replay}>&lt;图片&gt;<{/if}></div>
+                            </div>
+                            <span style='margin:35px 0px 0px 15px;float:right;width:130px;font:normal 12px "宋体"'>
+                                <a href='__APP__/Question/show/id/<{$vo.id}>/r/1' target='blank'><span style='font-weight:bold'>查看详情</span></a>
+                            </span>
+                        </div>
+                        <div class='replay' style='display:none;float:right;width:90%;'>
+                            <textarea class='text' style='margin:5px' name="content" rows="2" cols="55%"></textarea>
+                            <input class='pid' type='hidden' name='pid' value='<{$vo.pid}>'>
+                            <input class='mid' type='hidden' name='mid' value='<{$vo.mid}>'>
+                            <input class='hf' type='hidden' name='hf' value='<{$vo.id}>'>
+                            <input class='button' style='float:right;font:bold 14px "楷体";width:50px;height:25px;margin:5px;' type='submit' name='sub' value='回复'>
+                        </div>
+                        <{/foreach}>            
+                    </ul>
+              
+                </div>
+
+
+                <!-- 右侧 -->
+                <div class="col-md-4">
+                    <div class="mb30 m_cats">
+                        <div class="tt">
+                            <h3>帖子标签</h3>
+                            <a href="__APP__/Cat/index" class="more">所有标签 »</a>
+                        </div>
+                        <ul class="list_ib" style='width:230px;'>
+                            <{foreach $cat as $ty }>
+                                <li><a href="__APP__/Message/index2/pid/<{$ty.id}>"><{$ty.name}></a></li>
+
+                            <{/foreach}>
+                        </ul>
+                    </div>
+
+                    
+                    <div class="m_pay_list">
+                        <div class="tt">
+                            <h3>活跃用户</h3>
+                        </div>
+                        <ol>
+                            <{foreach $person as $vo}>
+                            <li><span><{$vo@iteration}></span><a href="__APP__/Message/mine/uid/<{$vo.id}>"><img style='width:50px;height:50px;' src='__PUBLIC__/uploads/users/<{if $vo.picture!="" && $vo.picture!="1.jpg"}><{$vo.username}>/<{$vo.picture}><{else}>0/0.jpg<{/if}>'>　<{if $vo.name!=''}><{$vo.name}><{else}><{$vo.username}><{/if}></a></li>
+                            <{/foreach}>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<{include file="../Public/foot.html"}>
+</body></html>
+<script type="text/javascript" charset="utf-8">
+    $(function(){
+        //鼠标移入移除事件
+        $('.m_newlist').mouseover(function(){
+            //鼠标移入事件处理
+            $(this).css("borderColor",'blue');
+        }).mouseout(function(){
+            //鼠标移除事件处理
+            $(this).css("borderColor",'#ddd');
+        });
+        //回复按钮
+        $('.hf').click(function(){
+            if($(this).text()=='回复'){
+                $(this).parent().parent().next().slideDown("slow");
+            }else{
+                $(this).parent().parent().next().slideUp("normal");
+            }
+        });
+        //添加回复
+        $(".button").click(function(){
+            var $content=$(this).parent('.replay').find('.text').val();
+            if(!$content.trim()){
+                die;
+            }
+            var $pid=$(this).parent('.replay').find('.pid').val();
+            var $mid=$(this).parent('.replay').find('.mid').val();
+            var $hf=$(this).parent('.replay').find('.hf').val();
+            var div=$(this).parent('.replay');
+            $.ajax({
+                url:"__APP__/Message/comm",     //请求地址
+                type:"post",                    //发送方式
+                data:{content:$content,mid:$mid,pid:$pid,hf:$hf},        //发送的数据
+                dataType:"json",                //响应数据的方式
+                async:true,
+                success:function(data){
+                    div.slideUp("normal");
+                    div.prev().find('.hf').text('已回复');
+                    div.prev().find('.hf').css('color','red');
+                    $('.hfnum').text(parseInt($('.hfnum').text())-1);
+                },
+                error:function(){
+                    alert("亲，请登录！");
+                }
+            });
+        });
+    });
+</script>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格</title>
+	</head>
+	<body>
+		<!--普通表格-->
+		<table>
+			<tr>
+				<td>学号</td>
+				<td>姓名</td>
+				<td>性别</td>
+			</tr>
+			<tr>
+				<td>20181201271</td>
+				<td>王五</td>
+				<td>男</td>
+			</tr>
+		</table>
+		<!-- 带表格头的表格  -->
+		<table>
+			<tr>
+				<th>学号</th>
+				<th>姓名</th>
+				<th>性别</th>
+			</tr>
+			<tr>
+				<td>20181201271</td>
+				<td>王五</td>
+				<td>男</td>
+			</tr>
+			<tr>
+				<td>20181201272</td>
+				<td>赵红</td>
+				<td>女</td>
+			</tr>
+		</table>
+		<!--完整结构的表格 -->
+		<table>
+		<thead>
+			<tr>
+				<th>学号</th>
+				<th>姓名</th>
+				<th>性别</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<td></td>
+				<td></td>
+				<td>700</td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<tr>
+				<td>20181201271</td>
+				<td>王五</td>
+				<td>男</td>
+			</tr>
+			<tr>
+				<td>20181201272</td>
+				<td>赵红</td>
+				<td>女</td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- 表格重要属性 
+		border：边框属性
+		cellspacing：单元格间距
+		cellpadding：单元格边距
+		colspan：单元格跨列（从左到右）
+		rowspan：单元格跨行（从上到下）
+		align：内容对齐
+	-->	
+	<table border="1" cellspacing="0" cellpadding="5">
+		<thead>
+			<tr>
+				<th>学号</th>
+				<th>姓名</th>
+				<th>性别</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr align="center">
+				<td colspan="3">按钮</td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<tr>
+				<td>20181201271</td>
+				<td>王五</td>
+				<td>男</td>
+			</tr>
+			<tr>
+				<td>20181201272</td>
+				<td>赵红</td>
+				<td>女</td>
+			</tr>
+		</tbody>
+	</table>	
+		
+	</body>
+</html>

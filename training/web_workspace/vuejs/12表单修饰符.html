@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>12表单修饰符</title>
+		<script src="vue.js"></script>
+	</head>
+
+	<body>
+		<div id="myApp">
+			<h1>用户注册</h1>
+			<div>
+				<label>用户：</label>
+	<!--v-model.***
+  .lazy用于输入内容是不做绑定数据更新处理，在空间的onchange实践中更新绑定的变量提高页面处理效率 
+  .number将用户输入的内容转为数值类型，如果用户输入非数值的时候，返回NaN 控制输入内容为数值
+  .trim自动去掉用户输入内容两端的空格-->
+				<input type="text" id="username" v-model.lazy="username" @change="checkUsername" />
+				<span v-if="checkUsernameOK">可注册</span>
+			</div>
+			<div>
+				<label>年龄：</label>
+				<input type="text" id="age" v-model="age" />
+
+			</div>
+			<div>
+				<label>个人简介：</label><br />
+				<textarea id="content" v-model.trim="content" cols="55" rows="8"></textarea>
+			</div>
+			<h4>信息区</h4>
+			<p>{{username}}</p>
+			<p>{{age}}</p>
+			<p>{{content}}</p>
+		</div>
+		<script>
+			var myApp = new Vue({
+				el: "#myApp",
+				data: {
+					username: "",
+					checkUsernameOK: false,
+					age: "",
+					content: ""
+				},
+				methods: {
+					checkUsername: function() {
+						if(this.username.length > 0)
+							this.checkUsernameOK = true;
+						else
+							this.checkUsernameOK = false;
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

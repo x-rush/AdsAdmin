@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="" name="description" />
+    <meta content="webthemez" name="author" />
+    <title>Bootstrap HTML5 Admin Template</title>
+    <link rel="shortcut icon" type="image/x-icon" href="__STATIC__/favicon.ico" />
+    <link href="__STATIC__/admin/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="__STATIC__/admin/assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="__STATIC__/admin/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="__STATIC__/admin/assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <!-- TABLE STYLES-->
+    <link href="__STATIC__/admin/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="__STATIC__/layer/theme/default/layer.css" rel="stylesheet" />
+    <link href="__STATIC__/index/css/layui.css" rel="stylesheet" />
+
+    <script>
+        function startTime(){
+            var today=new Date();
+            var h=today.getHours();
+            var m=today.getMinutes();
+            var s=today.getSeconds();// 在小于10的数字前加一个‘0’
+            m=checkTime(m);
+            s=checkTime(s);
+            document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+            t=setTimeout(function(){startTime()},1000);
+        }
+        function checkTime(i){
+            if (i<10){
+                i="0" + i;
+            }
+            return i;
+        }
+    </script>
+</head>
+<body onload="startTime()">
+<div id="wrapper">
+    <nav class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="url('admin/index')"><strong><i class="icon fa fa-plane"></i> 管理员端</strong></a>
+            <div id="sideNav" href="">
+                <i class="fa fa-bars icon"></i>
+            </div>
+        </div>
+
+        <ul class="nav navbar-top-links navbar-right">
+            <!-- /.dropdown -->
+            <li class="dropdown">
+                <!--{{&#45;&#45;时钟&#45;&#45;}}-->
+                <div id="txt"></div>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="{:url('admin/logout')}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+                <!-- /.dropdown-user -->
+            </li>
+            <!-- /.dropdown -->
+        </ul>
+    </nav>
+    <!--/. NAV TOP  -->
+    <nav class="navbar-default navbar-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+                <!--李旭-->
+                <li>
+                    <a href="{:url('admin/index')}" class="<?php if(request()->path()=='admin/index') echo 'active-menu'; ?>"><i class="fa fa-dashboard"></i> 精彩活动</a>
+                </li>
+                <li>
+                    <a href="{:url('admin/masters')}" class="<?php if(request()->path()=='admin/masters') echo 'active-menu'; ?>"><i class="fa fa-desktop"></i> 权威大师</a>
+                </li>
+                <li>
+                    <a href="{:url('admin/matchs')}" class="<?php if(request()->path()=='admin/matchs') echo 'active-menu'; ?>"><i class="fa fa-anchor"></i> 最近比赛</a>
+                </li>
+
+                <!--李若星-->
+                <li>
+                    <a href="{:url('admin/user')}" class="<?php if(request()->path()=='admin/user') echo 'active-menu'; ?>"><i class="fa fa-dashboard"></i> 用户列表</a>
+                </li>
+                <li>
+                    <a href="{:url('admin/clubadmin')}" class="<?php if(request()->path()=='admin/clubadmin') echo 'active-menu'; ?>"><i class="fa fa-desktop"></i>俱乐部管理员列表</a>
+                </li>
+                <li>
+                    <a href="{:url('admin/club')}" class="<?php if(request()->path()=='admin/club') echo 'active-menu'; ?>"><i class="fa fa-qrcode"></i> 俱乐部列表</a>
+                </li>
+                <!--罗杨-->
+                <li>
+                    <a href="{:url('admin/photoshow')}"  class="<?php if(request()->path()=='admin/photoshow') echo 'active-menu'; ?>"><i class="fa fa-fw fa-file"></i> 晒图列表</a>
+                </li>
+                <li>
+                    <a href="{:url('admin/train')}" class="<?php if(request()->path()=='admin/train') echo 'active-menu'; ?>"><i class="fa fa-desktop"></i> 培训列表</a>
+                </li>
+                <li>
+                    <a href="{:url('admin/prize')}" class="<?php if(request()->path()=='admin/prize') echo 'active-menu'; ?>"><i class="fa fa-desktop"></i> 奖品列表</a>
+                </li>
+                <li>
+                    <a href="{:url('admin/train_order')}" class="<?php if(request()->path()=='admin/train_order') echo 'active-menu'; ?>"><i class="fa fa-qrcode"></i> 培训报名列表</a>
+                </li>
+
+                <!--<li class="<?php if(request()->path()=='admin/teacherpass'||request()->path()=='admin/studentpass') echo 'active'; ?>">-->
+                    <!--<a href="#"><i class="fa fa-sitemap"></i> 密码服务<span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level">-->
+                        <!--<li>-->
+                            <!--<a href="{:url('admin/teacherpass')}"  class="<?php if(request()->path()=='admin/teacherpass') echo 'active-menu'; ?>"><i class="fa fa-table"></i> 教师</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="{:url('admin/studentpass')}"  class="<?php if(request()->path()=='admin/studentpass') echo 'active-menu'; ?>"><i class="fa fa-table"></i> 学生</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+            </ul>
+        </div>
+    </nav>
+    <!-- /. NAV SIDE  -->
+    <div id="page-wrapper">
+
+        {__CONTENT__}
+        <!-- /. PAGE INNER  -->
+    </div>
+    <!-- /. PAGE WRAPPER  -->
+</div>
+<!-- /. WRAPPER  -->
+<!-- JS Scripts-->
+<script src="__STATIC__/admin/assets/js/jquery-1.10.2.js"></script>
+<!-- Bootstrap Js -->
+<script src="__STATIC__/admin/assets/js/bootstrap.min.js"></script>
+<!-- Metis Menu Js -->
+<script src="__STATIC__/admin/assets/js/jquery.metisMenu.js"></script>
+<script src="__STATIC__/admin/assets/js/morris/raphael-2.1.0.min.js"></script>
+<script src="__STATIC__/admin/assets/js/morris/morris.js"></script>
+<!-- DATA TABLE SCRIPTS -->
+<script src="__STATIC__/admin/assets/js/dataTables/jquery.dataTables.js"></script>
+<script src="__STATIC__/admin/assets/js/dataTables/dataTables.bootstrap.js"></script>
+<script src="__STATIC__/index/js/layui.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#dataTables-example').dataTable();
+    });
+</script>
+
+<!-- Custom Js -->
+<script src="__STATIC__/admin/assets/js/custom-scripts.js"></script>
+<script src="__STATIC__/admin/assets/js/custom.js"></script>
+<script src="__STATIC__/layer/layer.js"></script>
+
+</body>
+</html>

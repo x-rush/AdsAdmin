@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>关系选择器</title>
+		<style>
+			span{
+				background-color:lightcoral;
+			}
+			/*后代元素选择器*/
+			div span{
+				background-color: lightblue;
+			}
+			/*子元素选择器*/
+			div > span{
+				background-color: lightgreen;
+			}
+			/*相邻兄弟元素选择器*/
+			#one+li{
+				color:lightcoral;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<span>
+				Span1. In the div</br>
+				<span>Span2. In the span this in the div</span>
+			</span>			
+		</div>
+		<span>Span3. Not in the div</span>
+		
+		<ul>
+			<li id="one">One</li>
+			<li>Two</li>
+			<li>Three</li>
+		</ul>
+		
+	</body>
+</html>

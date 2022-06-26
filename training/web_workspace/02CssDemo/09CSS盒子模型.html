@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>盒子模型</title>
+		<style>
+			div {
+				height:100px;
+				width:200px;
+				background-color: lightgreen;
+				border: 10px lightcoral solid;
+				margin: 10px;
+				padding: 10px;
+			}
+			#d0 {
+				height: 100px;
+				width: 200px;
+				background-color: lightgreen;
+				border-width: 10px;
+				border-color: lightblue;
+				border-style: solid;
+			}
+			#d1{
+				height: 100px;
+				width: 200px;
+				background-color: lightgreen;
+				/*padding-top: 30px;
+				padding-right: 20px;
+				padding-left: 5px;
+				padding-bottom: 10px;*/
+				padding:10px; /*四周*/
+				padding: 10px 30px; /*上下    左右*/
+				padding: 10px 20px 30px; /*上   左右   下 */
+				padding: 10px 20px 30px 40px; /*上  右  下  左*/
+			}
+			#d2{
+				width: 200px;
+				height: 100px;
+				background-color: lightcoral;
+			}
+			#d3 {
+				width: 200px;
+				height: 100px;
+				background-color: lightblue;
+				margin:50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div id="d0"></div>
+		<div id="d1">
+			<div id="d2"></div>
+		</div>
+		<div id="d3"></div>
+	</body>
+</html>

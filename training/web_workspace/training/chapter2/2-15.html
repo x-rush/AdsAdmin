@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var second=10;
+			var dsq = setInterval("timer()",1000);
+			
+			function timer(){
+				second--;
+				document.body.innerHTML="您还有"+second+"秒";
+				
+				if(second==0){
+					clearInterval(dsq);
+					second=10;
+					document.write("10秒倒计时结束！");
+				}
+			}
+		</script>
+	</body>
+</html>

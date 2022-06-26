@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #container {
+            height:100%;
+        }
+    </style>
+   <script src="http://api.map.baidu.com/api?v=2.0&ak=0A5bc3c4fb543c8f9bc54b77bc155724"></script>
+    <script>
+    	window.onload=function(){
+    		   function getMyPosition(){
+            if(window.navigator.geolocation){
+                //获取当前位置..
+                alert("正在获取您的位置.");
+                //如果获取位置成功，会调用名字为successPosition 的方法.
+                navigator.geolocation.getCurrentPosition
+                (successPosition,errorPosition);
+            }else{
+                alert("您当前的浏览器不支持..");
+            }
+        }
+        function successPosition(position){
+            var jd=position.coords.longitude;//经度
+            var wd=position.coords.latitude; //纬度
+           alert(jd+","+wd);
+           	// 百度地图API功能
+		var map = new BMap.Map("container");//创建Map实例
+		var point = new BMap.Point(jd, wd);//根据经纬度定位，新建一个百度坐标
+		map.centerAndZoom(point, 15);//调用Map.centerAndZoom()方法对地图进行初始化。
+		//centerAndZoom就是map的一个方法，第一个参数Point作为地图中心坐标点，第二个参数是级别，级别数字越小看到的地图范围越大。
+		
+		//创建小狐狸
+		var pt = new BMap.Point(jd, wd);
+		var myIcon = new BMap.Icon("http://lbsyun.baidu.com/jsdemo/img/fox.gif", new BMap.Size(300,157));
+		var marker2 = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+		map.addOverlay(marker2);              // 将标注添加到地图中
+		//其他功能
+		map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+		map.addControl(new BMap.ScaleControl()); //比例尺，地图左下角
+		map.addControl(new BMap.MapTypeControl());// 地图类型，右上角
+		map.addControl(new BMap.OverviewMapControl());//缩略地图，地图右下角
+		map.addControl(new BMap.NavigationControl()); //平移缩放控件，地图左上角
+        }
+          //如果没有获取到位置，就会调用这个方法
+        function errorPosition(){
+            alert("获取位置失败.");
+        }
+        getMyPosition();
+    	}
+     
+    </script>
+</head>
+<body>
+	<div id="container"></div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>样式优先级</title>
+		<style>
+			#p1{
+				color:red;
+			}
+			.myclass{
+				color:green;
+			}
+			p{
+				color: blue !important;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="p1" class="myclass" style="color:lightgray">这是一段内容</p>
+	</body>
+</html>

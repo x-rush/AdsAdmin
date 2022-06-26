@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				text-align: center;
+			}
+			#box a{
+				color: #000;
+				text-decoration: none;
+			}
+			#box > ul > li{
+				float: left;
+				width: 150px;
+				margin: 5px;
+			}
+			#box ul{
+				padding: 0;
+				list-style-type: none;	
+			}
+			#box > ul > li > ul > li{
+				border: 1px dotted #DDDDDD;
+				height: 40px;
+				line-height: 40px;
+			}
+			#box > ul > li > ul{
+				display: none;
+			}
+			#box > ul > li:hover > ul{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>
+					<a href="#">首页</a>
+				</li>
+				<li><a href="#">网页基础</a>
+				<ul>
+					<li>HTML</li>
+					<li>CSS</li>
+				</ul>
+				</li>
+				<li>
+					<a href="#">设计工具</a>
+					<ul>
+						<li>Photoshop</li>
+						<li>Dreamweater</li>
+						<li>Flash</li>
+						<li>Fireworks</li>
+						<li>Notepad++</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">高级知识</a>
+					<ul>
+						<li>JaveScript</li>
+						<li>jQuery</li>
+						<li>HTML5</li>
+						<li>SEO</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

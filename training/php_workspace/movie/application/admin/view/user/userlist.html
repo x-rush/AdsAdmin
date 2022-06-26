@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>用户列表</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>用户名</th>
+			<th>图片</th>
+			<th>生日</th>
+			<th>操作</th>
+		</tr>
+		{volist name = "list" id="vo"}
+			<tr>
+				<td>{$vo.uname}</td>
+				<td><img src="__STATIC__/admin/images/{$vo.pic}" width="100"></td>
+				<td>{$vo.birthday}</td>
+				<td>修改 删除</td>
+			</tr>
+		{/volist}
+	</table>
+
+</body>
+</html>

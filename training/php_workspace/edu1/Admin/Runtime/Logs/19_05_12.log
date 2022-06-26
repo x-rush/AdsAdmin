@@ -1,0 +1,1680 @@
+[ 2019-05-12T19:42:17+08:00 ] 0.0.0.0 /edu1/admin.php
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+
+[ 2019-05-12T19:42:17+08:00 ] 0.0.0.0 /edu1/admin.php/Public/login.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\754afcf016435756ef11c645ae70896ba2ab8d15.file.login.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\754afcf016435756ef11c645ae70896ba2ab8d15.file.login.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index: errorinfo E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\754afcf016435756ef11c645ae70896ba2ab8d15.file.login.html.php 第 74 行.
+NOTIC: [8] Trying to get property of non-object E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\754afcf016435756ef11c645ae70896ba2ab8d15.file.login.html.php 第 74 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.028001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T19:42:17+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T19:42:23+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661343283
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001001s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001001s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T19:42:23+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661343874
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T19:42:24+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661344330
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T19:42:24+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661344826
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T19:42:25+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661345154
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2019-05-12T19:42:25+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661345306
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T19:42:27+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661347354
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T19:42:31+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661351386
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T19:42:31+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661351938
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2019-05-12T19:42:32+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661352434
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T19:42:32+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661352642
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T19:42:32+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661352802
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T19:42:32+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661352970
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+
+[ 2019-05-12T19:42:33+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661353138
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T19:42:33+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661353314
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T19:42:33+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661353722
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T19:42:34+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661354154
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T19:42:35+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661355410
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T19:42:36+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557661356306
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T19:43:22+08:00 ] 0.0.0.0 /edu1/admin.php/Public/checkLogin
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: verify E:\PHP\wamp64\www\edu1\Admin\Lib\Action\PublicAction.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2019-05-12T19:43:22+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001001s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001001s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:03:08+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557662588604
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:03:11+08:00 ] 0.0.0.0 /edu1/admin.php/Public/checkLogin
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: verify E:\PHP\wamp64\www\edu1\Admin\Lib\Action\PublicAction.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T20:03:11+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002001s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002001s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:03:12+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557662592740
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T20:03:13+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557662593340
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001001s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001001s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T20:03:13+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557662593556
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T20:03:13+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557662593748
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:03:13+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557662593924
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T20:03:14+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557662594124
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T20:03:16+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557662596603
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T20:03:17+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557662597020
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:03:17+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557662597244
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:21+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663201165
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T20:13:21+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663201613
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:21+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663201756
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:21+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663201925
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:22+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663202101
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:22+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663202253
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:22+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663202396
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:22+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663202541
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:22+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663202693
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:23+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663203276
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:32+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663212452
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T20:13:32+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663212860
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:33+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663213036
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:33+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663213221
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T20:13:33+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663213372
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2019-05-12T20:13:33+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663213540
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:33+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663213700
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:33+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663213868
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:38+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663218172
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:13:38+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663218756
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:17:01+08:00 ] 0.0.0.0 /edu1/admin.php/Public/checkLogin
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: verify E:\PHP\wamp64\www\edu1\Admin\Lib\Action\PublicAction.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:17:01+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:23:41+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557663820998
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T20:31:25+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557664285901
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:31:26+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557664286303
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2019-05-12T20:31:26+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557664286862
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2019-05-12T20:55:35+08:00 ] 0.0.0.0 /edu1/admin.php/Public/checkLogin
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: verify E:\PHP\wamp64\www\edu1\Admin\Lib\Action\PublicAction.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T20:55:35+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:55:37+08:00 ] 0.0.0.0 /edu1/admin.php/Public/checkLogin
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: verify E:\PHP\wamp64\www\edu1\Admin\Lib\Action\PublicAction.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001001s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:55:37+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:55:38+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557665738333
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:55:38+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557665738790
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T20:55:38+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557665738958
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:55:39+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557665739110
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:55:39+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557665739270
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001001s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001001s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:56:03+08:00 ] 0.0.0.0 /edu1/admin.php/Public/checkLogin
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002001s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002001s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: verify E:\PHP\wamp64\www\edu1\Admin\Lib\Action\PublicAction.class.php 第 16 行.
+NOTIC: [8] Undefined index: verify E:\PHP\wamp64\www\edu1\Admin\Lib\Action\PublicAction.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001001s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T20:56:04+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2019-05-12T21:05:04+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557666304413
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T21:05:22+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557666322564
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T21:05:23+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557666323035
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T21:41:46+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557668505989
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T21:41:47+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557668507292
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T21:41:48+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557668508366
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T21:41:49+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557668509421
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-05-12T21:41:50+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557668510669
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T21:41:51+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557668511421
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T21:41:52+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557668512804
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T21:42:13+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557668533403
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T21:42:14+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557668534428
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T21:42:15+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/1557668535963
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2019-05-12T21:47:04+08:00 ] 0.0.0.0 /edu1/admin.php/verify
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:verify
+
+[ 2019-05-12T21:47:08+08:00 ] 0.0.0.0 /edu1/admin.php/verify
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:verify
+
+[ 2019-05-12T21:47:30+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2019-05-12T21:48:05+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T21:57:51+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T21:57:54+08:00 ] 0.0.0.0 /edu1/admin.php/Public/checkLogin
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: verify E:\PHP\wamp64\www\edu1\Admin\Lib\Action\PublicAction.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T21:57:54+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:09:18+08:00 ] 0.0.0.0 /edu1/admin.php/Public/checkLogin
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `edu_users` [ RunTime:0.001001s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_users` WHERE ( username = 'admin' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `edu_users` SET `username`='admin',`userpass`='21232f297a57a5a743894a0e4a801fc3',`name`='管理员',`sex`=1,`age`=22,`email`='admin@admin.com',`class`='74',`picture`='530e9f9d3b45b.jpg',`level`=10,`point`=999,`addtime`=1393430863,`introduce`='无',`logintime`=1453208448,`logouttime`=1453310061,`loginnum`=34 WHERE ( `id` = 55 ) [ RunTime:0.000000s ]
+SQL: select n.mname,n.aname from edu_userrole ur,edu_role_node rn,edu_node n where ur.rid=rn.rid and rn.nid=n.id and ur.uid=55 [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `edu_userrole` [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_userrole` WHERE ( uid='55' )  [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:09:18+08:00 ] 0.0.0.0 /edu1/admin.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `edu_users` [ RunTime:0.002000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_users` WHERE (  (`addtime` BETWEEN '1453310061' AND '1557673758' ) ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `edu_video` [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_video` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `edu_library` [ RunTime:0.002000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_library` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `edu_clicknum` [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_clicknum` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\46433abaf19f4a45af2d886fe791fa1fa6390c68.file.index.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\46433abaf19f4a45af2d886fe791fa1fa6390c68.file.index.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.047003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047003s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:09:25+08:00 ] 0.0.0.0 /edu1/admin.php/Limit/index?_=1557673765175
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `edu_limit` [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `edu_userrole` [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `edu_roles` [ RunTime:0.002000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_users`  [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_userrole`  [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_roles`  [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_users` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_users` ORDER BY id desc LIMIT 0,10   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: search E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 310 行.
+NOTIC: [8] Undefined index: values E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 311 行.
+NOTIC: [8] Undefined index: id E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\PHP\wamp64\www\edu1\Admin\Lib\Action\LimitAction.class.php 第 34 行.
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\0267d81316bb86ff66855ce78b47fe1ceba78c35.file.index.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\0267d81316bb86ff66855ce78b47fe1ceba78c35.file.index.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index: _order E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index: username E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\0267d81316bb86ff66855ce78b47fe1ceba78c35.file.index.html.php 第 45 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\0267d81316bb86ff66855ce78b47fe1ceba78c35.file.index.html.php 第 69 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.079005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.079005s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:09:28+08:00 ] 0.0.0.0 /edu1/admin.php/Roles/index?_=1557673767959
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `edu_roles` [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_roles` LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_roles` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: search E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 310 行.
+NOTIC: [8] Undefined index: values E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 311 行.
+NOTIC: [8] Undefined index: id E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\3dd1b75cdfc7db12ad968d3c64c9afad82e5dc60.file.index.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\3dd1b75cdfc7db12ad968d3c64c9afad82e5dc60.file.index.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index: _order E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index: keyword E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\3dd1b75cdfc7db12ad968d3c64c9afad82e5dc60.file.index.html.php 第 38 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.056004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.057004s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2019-05-12T23:09:29+08:00 ] 0.0.0.0 /edu1/admin.php/Roles/add?_=1557673768886
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: id E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\139ddbf2af11f736282c99a4f48842dd2aaf2cc8.file.add.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\139ddbf2af11f736282c99a4f48842dd2aaf2cc8.file.add.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.041002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042002s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2019-05-12T23:09:36+08:00 ] 0.0.0.0 /edu1/admin.php/Node/index?_=1557673776685
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `edu_node` [ RunTime:0.002000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_node` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_node` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: search E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 310 行.
+NOTIC: [8] Undefined index: values E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 311 行.
+NOTIC: [8] Undefined index: id E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.002001s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\56ff90ceab0039dde19f3ed165b8e480193371a2.file.index.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\56ff90ceab0039dde19f3ed165b8e480193371a2.file.index.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index: _order E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index: name E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\56ff90ceab0039dde19f3ed165b8e480193371a2.file.index.html.php 第 38 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.039002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039002s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:09:41+08:00 ] 0.0.0.0 /edu1/admin.php/Node/add?_=1557673781185
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: id E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\b5be9b6624f7808d5ce5daab933d2b3527cfda81.file.add.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\b5be9b6624f7808d5ce5daab933d2b3527cfda81.file.add.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.026002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026002s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:09:44+08:00 ] 0.0.0.0 /edu1/admin.php/Node/add?_=1557673784866
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: id E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:10:00+08:00 ] 0.0.0.0 /edu1/admin.php/Library/index?_=1557673800877
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_library` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_library` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `edu_users` [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 95 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 95 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 70 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 27 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 70 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 67 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 68 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 19 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 64 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 14 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 64 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 10 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 63 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 17 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 61 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 26 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: search E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 310 行.
+NOTIC: [8] Undefined index: values E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 311 行.
+NOTIC: [8] Undefined index: id E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 179 行.
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\68b8faa12b2473ad5f86c5375814ba75b59cef6d.file.index.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\68b8faa12b2473ad5f86c5375814ba75b59cef6d.file.index.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index: _order E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index: title E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\68b8faa12b2473ad5f86c5375814ba75b59cef6d.file.index.html.php 第 49 行.
+NOTIC: [8] Undefined index: username E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\68b8faa12b2473ad5f86c5375814ba75b59cef6d.file.index.html.php 第 53 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\68b8faa12b2473ad5f86c5375814ba75b59cef6d.file.index.html.php 第 79 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.044003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044003s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:10:04+08:00 ] 0.0.0.0 /edu1/admin.php/Video/index?_=1557673804813
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `edu_video` [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_video` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_video` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `edu_users` [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.002000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 63 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 65 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 26 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 65 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 65 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 17 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 93 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 29 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 75 ) LIMIT 1   [ RunTime:0.001001s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 29 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 75 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 19 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 70 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 17 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 69 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` WHERE ( `id` = 69 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `name` FROM `edu_cat` WHERE ( `id` = 23 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: search E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 310 行.
+NOTIC: [8] Undefined index: values E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 311 行.
+NOTIC: [8] Undefined index: id E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 179 行.
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\8bda5c121dc61930d0dd84fa7a1d8506b8232520.file.index.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\8bda5c121dc61930d0dd84fa7a1d8506b8232520.file.index.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index: _order E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index: videoname E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\8bda5c121dc61930d0dd84fa7a1d8506b8232520.file.index.html.php 第 49 行.
+NOTIC: [8] Undefined index: username E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\8bda5c121dc61930d0dd84fa7a1d8506b8232520.file.index.html.php 第 53 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\8bda5c121dc61930d0dd84fa7a1d8506b8232520.file.index.html.php 第 79 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.045002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045002s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:10:11+08:00 ] 0.0.0.0 /edu1/admin.php/Note/index?_=1557673811164
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `edu_note` [ RunTime:0.001000s ]
+ERR: 1146:Table 'edu002.edu_note' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `edu_note`
+NOTIC: [2] Invalid argument supplied for foreach() E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 219 行.
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_note` LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1146:Table 'edu002.edu_note' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `edu_note` LIMIT 1  
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_note` ORDER BY id desc LIMIT 0,10   [ RunTime:0.001000s ]
+ERR: 1146:Table 'edu002.edu_note' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `edu_note` ORDER BY id desc LIMIT 0,10  
+SQL: SHOW COLUMNS FROM `edu_users` [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `edu_video` [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\PHP\wamp64\www\edu1\Admin\Lib\Action\NoteAction.class.php 第 48 行.
+NOTIC: [8] Undefined variable: search E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 310 行.
+NOTIC: [8] Undefined index: values E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 311 行.
+NOTIC: [8] Undefined index: id E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\70cb5ef87f46d5a940520e4b1135932a2e33cb13.file.index.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\70cb5ef87f46d5a940520e4b1135932a2e33cb13.file.index.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index: _order E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index: username E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\70cb5ef87f46d5a940520e4b1135932a2e33cb13.file.index.html.php 第 42 行.
+NOTIC: [8] Undefined index: videoname E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\70cb5ef87f46d5a940520e4b1135932a2e33cb13.file.index.html.php 第 46 行.
+NOTIC: [8] Undefined index: content E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\70cb5ef87f46d5a940520e4b1135932a2e33cb13.file.index.html.php 第 50 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\70cb5ef87f46d5a940520e4b1135932a2e33cb13.file.index.html.php 第 76 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.048003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048003s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:10:13+08:00 ] 0.0.0.0 /edu1/admin.php/Videocom/index?_=1557673813422
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `edu_videocom` [ RunTime:0.001000s ]
+ERR: 1146:Table 'edu002.edu_videocom' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `edu_videocom`
+NOTIC: [2] Invalid argument supplied for foreach() E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 219 行.
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_videocom` LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1146:Table 'edu002.edu_videocom' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `edu_videocom` LIMIT 1  
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_videocom` ORDER BY id desc LIMIT 0,10   [ RunTime:0.001000s ]
+ERR: 1146:Table 'edu002.edu_videocom' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `edu_videocom` ORDER BY id desc LIMIT 0,10  
+SQL: SHOW COLUMNS FROM `edu_users` [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `edu_video` [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\PHP\wamp64\www\edu1\Admin\Lib\Action\VideocomAction.class.php 第 44 行.
+NOTIC: [8] Undefined variable: search E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 310 行.
+NOTIC: [8] Undefined index: values E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 311 行.
+NOTIC: [8] Undefined index: id E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\37234747af1fd3b523b774613f3a3ed77e2225b6.file.index.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\37234747af1fd3b523b774613f3a3ed77e2225b6.file.index.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index: _order E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index: username E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\37234747af1fd3b523b774613f3a3ed77e2225b6.file.index.html.php 第 42 行.
+NOTIC: [8] Undefined index: videoname E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\37234747af1fd3b523b774613f3a3ed77e2225b6.file.index.html.php 第 46 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\37234747af1fd3b523b774613f3a3ed77e2225b6.file.index.html.php 第 71 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\37234747af1fd3b523b774613f3a3ed77e2225b6.file.index.html.php 第 77 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.042003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042003s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:10:14+08:00 ] 0.0.0.0 /edu1/admin.php/Libcom/index?_=1557673814382
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `edu_libcom` [ RunTime:0.000000s ]
+ERR: 1146:Table 'edu002.edu_libcom' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `edu_libcom`
+NOTIC: [2] Invalid argument supplied for foreach() E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 219 行.
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_libcom` LIMIT 1   [ RunTime:0.001000s ]
+ERR: 1146:Table 'edu002.edu_libcom' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `edu_libcom` LIMIT 1  
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_libcom` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000000s ]
+ERR: 1146:Table 'edu002.edu_libcom' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `edu_libcom` ORDER BY id desc LIMIT 0,10  
+SQL: SHOW COLUMNS FROM `edu_users` [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `edu_library` [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\PHP\wamp64\www\edu1\Admin\Lib\Action\LibcomAction.class.php 第 43 行.
+NOTIC: [8] Undefined variable: search E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 310 行.
+NOTIC: [8] Undefined index: values E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 311 行.
+NOTIC: [8] Undefined index: id E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.001001s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\f563976a4deb5ca30924030bf3e94275b7217d7c.file.index.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\f563976a4deb5ca30924030bf3e94275b7217d7c.file.index.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index: _order E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index: username E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\f563976a4deb5ca30924030bf3e94275b7217d7c.file.index.html.php 第 42 行.
+NOTIC: [8] Undefined index: title E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\f563976a4deb5ca30924030bf3e94275b7217d7c.file.index.html.php 第 46 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\f563976a4deb5ca30924030bf3e94275b7217d7c.file.index.html.php 第 71 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\f563976a4deb5ca30924030bf3e94275b7217d7c.file.index.html.php 第 77 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.260014s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.260014s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:10:15+08:00 ] 0.0.0.0 /edu1/admin.php/Notecom/index?_=1557673815358
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.003001s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003001s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `edu_notecom` [ RunTime:0.001000s ]
+ERR: 1146:Table 'edu002.edu_notecom' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `edu_notecom`
+NOTIC: [2] Invalid argument supplied for foreach() E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 219 行.
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_notecom` LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1146:Table 'edu002.edu_notecom' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `edu_notecom` LIMIT 1  
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_notecom` ORDER BY id desc LIMIT 0,10   [ RunTime:0.001001s ]
+ERR: 1146:Table 'edu002.edu_notecom' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `edu_notecom` ORDER BY id desc LIMIT 0,10  
+SQL: SHOW COLUMNS FROM `edu_users` [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `edu_note` [ RunTime:0.000000s ]
+ERR: 1146:Table 'edu002.edu_note' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `edu_note`
+NOTIC: [2] Invalid argument supplied for foreach() E:\PHP\wamp64\www\edu1\Admin\Lib\Action\NotecomAction.class.php 第 53 行.
+NOTIC: [8] Undefined variable: search E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 310 行.
+NOTIC: [8] Undefined index: values E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CommonAction.class.php 第 311 行.
+NOTIC: [8] Undefined index: id E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\970a8fd0f63477752f121f7b80819114ba67e68f.file.index.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\970a8fd0f63477752f121f7b80819114ba67e68f.file.index.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index: _order E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index: username E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\970a8fd0f63477752f121f7b80819114ba67e68f.file.index.html.php 第 42 行.
+NOTIC: [8] Undefined index: title E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\970a8fd0f63477752f121f7b80819114ba67e68f.file.index.html.php 第 46 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\970a8fd0f63477752f121f7b80819114ba67e68f.file.index.html.php 第 71 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\970a8fd0f63477752f121f7b80819114ba67e68f.file.index.html.php 第 77 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.040002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040002s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:10:17+08:00 ] 0.0.0.0 /edu1/admin.php/Cat/index?_=1557673817670
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_cat` WHERE ( `pid` = '0' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT * FROM `edu_cat` WHERE ( `pid` = '0' ) ORDER BY id asc LIMIT 0,15   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `edu_users` [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: uid E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 125 行.
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: uid E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 125 行.
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: uid E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 125 行.
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` LIMIT 1   [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: uid E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 125 行.
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: uid E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 125 行.
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: uid E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 125 行.
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: uid E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 125 行.
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: uid E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 125 行.
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: uid E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 125 行.
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `username` FROM `edu_users` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: cid E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 81 行.
+NOTIC: [8] Undefined variable: search E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 101 行.
+NOTIC: [8] Undefined index: values E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 102 行.
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\d7064a106058fb5b4a68cbe3af83faa3c0c13d62.file.index.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\d7064a106058fb5b4a68cbe3af83faa3c0c13d62.file.index.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index: _order E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index: menu E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\d7064a106058fb5b4a68cbe3af83faa3c0c13d62.file.index.html.php 第 43 行.
+NOTIC: [8] Trying to get property of non-object E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\d7064a106058fb5b4a68cbe3af83faa3c0c13d62.file.index.html.php 第 43 行.
+NOTIC: [8] Undefined index: _sort E:\PHP\wamp64\www\edu1\Admin\Runtime\Cache\d7064a106058fb5b4a68cbe3af83faa3c0c13d62.file.index.html.php 第 71 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.043002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043002s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:10:19+08:00 ] 0.0.0.0 /edu1/admin.php/Cat/add?_=1557673819461
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.003000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: id E:\PHP\wamp64\www\edu1\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.003001s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Db.class.php 第 604 行.
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for ./Admin/Runtime/Cache\746652ed73709b454d61cfcb49f83e58e7284cda.file.add.html.php E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\746652ed73709b454d61cfcb49f83e58e7284cda.file.add.html.php): No such file or directory E:\PHP\wamp64\www\edu1\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.042002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043002s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:30:51+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.004001s ]
+INFO: [ route_check ] --END-- [ RunTime:0.004001s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+
+[ 2019-05-12T23:30:52+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-05-12T23:30:53+08:00 ] 0.0.0.0 /edu1/admin.php/Public/verify
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.003000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003000s ]
+NOTIC: [2] preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead E:\PHP\wamp64\www\edu1\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+

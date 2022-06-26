@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>表单控件1</title>
+</head>
+<body>
+<center>
+表单控件：<hr />
+<form name="form_name" method="post" action="getFromHTML-DEMO.jsp">
+单行文本框：<br />
+  <input type="text" name="txt" size="25" value="请修改文本内容" /><br />
+  <input type="text" name="txt2" size="25" onfocus="if(this.value=='请输入关键词')this.value=''" value="请输入关键词" /><br />
+  密码框：<input type="password" name="pwd" size="10" maxlength="4" /><br /> 
+  密码框字符宽度为10，但只能输入4个字符。
+</form>
+</center>
+</body>
+</html>

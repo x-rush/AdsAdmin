@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Realm - Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bluth Company">
+    <link rel="shortcut icon" href="__STATIC__/admin/assets/ico/favicon.html">
+    <link href="__STATIC__/admin/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="__STATIC__/admin/assets/css/theme.css" rel="stylesheet">
+    <link href="__STATIC__/admin/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__STATIC__/admin/assets/css/alertify.css" rel="stylesheet">
+    <link rel="Favicon Icon" href="favicon.ico">
+
+  </head>
+  <body>
+    {include file="public:header"/}
+
+    <div class="container-fluid">
+
+      {include file="public:sidemenu"/}
+
+      <!-- Main window -->
+      <div class="main_container" id="users_page">
+
+        <div class="row-fluid">
+          <ul class="breadcrumb">
+            <li><a href="#">Home</a> <span class="divider">/</span></li>
+            <li><a href="#">Pages</a> <span class="divider">/</span></li>
+            <li class="active">Users</li>
+          </ul>
+
+        </div> <!-- /row-fluid -->
+
+        
+        <div class="row-fluid">
+          <div class="widget widget-padding span12">
+            <div class="widget-header">
+              <i class="icon-group"></i>
+              <h5>Users</h5>
+              <div class="widget-buttons">
+                  <a href="#" data-title="Add User" data-toggle="modal" data-target="#example_modal"><i class="icon-plus"></i></a>
+                  <a href="#" data-title="Collapse" data-collapsed="false" class="collapse"><i class="icon-chevron-up"></i></a>
+              </div>
+            </div>  
+            <div class="widget-body">
+              <table id="users" class="table table-striped table-bordered dataTable">
+                <thead>
+                  <tr>
+                    <th>编号</th>
+                    <th>用户名</th>
+                    <th>图片</th>
+                    <th>生日</th>
+                    <th>性别</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {volist name="list" id="vo"}
+                  <tr>
+                    <td>{$i}</td>
+                    <td>{$vo.uname}</td>
+                    <td><img src="__STATIC__/admin/images/{$vo.pic}" width="100"></td>
+                    <td>{$vo.birthday}</td>
+                    <td>
+                     <?php
+                        if($vo['gender']==0)
+                        echo "男";
+                        else
+                        echo "女";
+                     ?>
+                      </td>
+                     
+                    <td>
+                      <div class="btn-group">
+                        <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+                        Action
+                          <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                          <li><a href="#"><i class="icon-envelope"></i> Email</a></li>
+                        <li><a href="#" data-title="Add User" data-toggle="modal" data-target="#edit_modal" onclick="jsedit({$vo.uid})"><i class="icon-edit"></i>Edit</a></li>
+                          <li><a href="{:url('user/delete',['id'=>$vo.uid])}"><i class="icon-trash"></i> Delete</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  {/volist}
+                </tbody>
+              </table>
+            </div> <!-- /widget-body -->
+          </div> <!-- /widget -->
+        </div> <!-- /row-fluid -->
+
+      </div>
+      <!-- /Main window -->
+
+    </div><!--/.fluid-container-->
+    </div><!-- wrap ends-->
+
+    <!-- Example Modal -->
+    <div id="example_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">添加用户</h3>
+  </div>
+  <div class="modal-body">
+    <form class="form-horizontal" action="{:url('add')}" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="inputUser" class="col-md-2 control-label">用户名:  </label>
+        <div  class="col-md-6">
+          <input type="text" class="form-control" id="inputUser" placeholder="用户名" name="username"> 
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputPassword3" class="col-md-2 control-label">密码:  </label>
+        <div class="col-md-6">
+          <input type="password" class="form-control" id="inputPassword3" placeholder="密码" name="password">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label">性别:  </label>
+        <div class="col-md-6">
+          <label class="radio-inline">
+            <input type="radio" name="gender" id="inlineRadio1" value="0">男
+          </label>
+          <label>
+            <input type="radio" name="gender" id="inlineRadio2" value="1">女
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputBirth3" class="col-md-2 control-label">生日:  </label>
+        <div>
+          <input type="date" class="form-control" id="inputBirth3" name="birthday">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label">头像:  </label>
+        <div class="col-md-6">
+          <input type="file" name="pic" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-md-2 control-label">电子邮箱:  </label>
+        <div class="col-md-6">
+          <input type="email" class="form-control" placeholder="电子邮件" name="email">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10" style="margin:20px 0 0 100px">
+          <input type="submit" name="" value="注册" class="btn btn-default">
+          <input type="reset" name="" value="重置" class="btn btn-default">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+  </div>
+</div>  
+
+
+    <div id="edit_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">修改用户信息</h3>
+  </div>
+  <div class="modal-body">
+    <form class="form-horizontal" action="{:url('update')}" method="post" enctype="multipart/form-data">
+      <input type="hidden" id="uid-modal" name="uid">
+      <div class="form-group">
+        <label for="username-modal" class="col-md-2 control-label">用户名:  </label>
+        <div  class="col-md-6">
+          <input type="text" class="form-control" id="username-modal" placeholder="用户名" name="username"> 
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password-modal" class="col-md-2 control-label">密码:  </label>
+        <div class="col-md-6">
+          <input type="password" class="form-control" placeholder="密码" name="password">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label">性别:  </label>
+        <div class="col-md-6">
+          <label class="radio-inline">
+            <input type="radio" name="gender" id="rad-modal-01" value="0">男
+          </label>
+          <label>
+            <input type="radio" name="gender" id="rad-modal-02" value="1">女
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label">生日:  </label>
+        <div>
+          <input type="date" class="form-control" id="birthdate-modal" name="birthday">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label">头像:  </label>
+        <div class="col-md-6">
+          <input type="file" name="pic" id="pic-modal">
+          
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email-modal" class="col-md-2 control-label">电子邮箱:  </label>
+        <div class="col-md-6">
+          <input id="email-modal" type="email" class="form-control" placeholder="电子邮件" name="email">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10" style="margin:20px 0 0 100px">
+          <input type="submit" name="" value="修改" class="btn btn-default">
+          <input type="reset" name="" value="重置" class="btn btn-default">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+  </div>
+</div>
+
+    {include file="public:footer"/}
+  <script type="text/javascript">
+  function jsedit(uid){
+    $.getJSON(
+      "{:url('edit')}",{"uid":uid},function(json){
+        $("#uid-modal").val(json.uid);
+        $("#username-modal").val(json.uname);
+        $("#birthdate-modal").val(json.birthday);
+        if(json.gender==1)
+          $("#rad-modal-02").attr("checked",true);
+        else
+          $("#rad-modal-01").attr("checked",true);
+        $("#email-modal").val(json.email);
+      }
+    );
+  }
+</script>
+
+  </body>
+</html>

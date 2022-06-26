@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>09设置计算属性</title>
+		<script src="vue.js"></script>
+	</head>
+	<body>
+		<div id="myApp">
+			<p>
+			一台Switch的价格:{{price}}円,<br />
+			含税价格为:{{priceInTax}}円,<br />
+			折合人民币:{{priceInChinaRMB}}元<br />
+			<button @click="btnClick(10800)">含税价格该为10800円</button>
+			</p>
+		</div>
+		<script>
+			var myApp = new Vue({
+				el:'#myApp',
+				data:{price:29980},
+				computed:{
+					priceInTax:{
+						get:function(){
+							return this.price*1.08;
+						},
+						//设置计算属性，同步更新元数据的值
+						set:function(value){
+							this.price = value/1.08;
+						}
+					},
+					priceInChinaRMB:function(){
+						return Math.round(this.priceInTax/15.69);
+					}
+					
+				},
+				methods:{
+					btnClick:function(newPrice){
+						this.priceInTax = newPrice;
+					}
+				}
+			});
+			
+		</script>
+		
+		
+	</body>
+</html>

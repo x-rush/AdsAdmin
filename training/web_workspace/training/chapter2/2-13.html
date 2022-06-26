@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#form1{
+				width: 350px;
+				font-size: 14px;
+			}
+			#form1 label{
+				display: inline-block;
+				width: 100px;
+				text-align: right;
+			}
+		</style>
+		<script>
+			function checkForm(){
+				var sUser=document.form1.user.value;
+				var sPsw=document.form1.psw.value;
+				var sPsw2=document.form1.psw2.value;
+				
+				if(sUser==""){
+					alert("用户名不能为空！");
+					return false;
+				}
+				if(sUser.length<4||sUser.length>8){
+					alert("用户名长度4-8位。")
+					return false;
+				}
+				if(sPsw==""){
+					alert("密码不能为空！");
+					return false;
+				}
+				if(sPsw2==""){
+					alert("重复密码不能为空！");
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form id="form1" name="form1" method="get" action="" onsubmit="">
+			<fieldset>
+				<legend>用户注册</legend>
+				<p>
+					<label for="user">用户名：</label>
+					<input name="user" type="text" id="user"/>
+				</p>
+				<p>
+					<label for="psw">密码：</label>
+					<input type="text" name="psw" id="psw" />
+				</p>
+				<p>
+					<label for="psw2">重复密码：</label>
+					<input type="text" name="psw2" id="psw2" />
+				</p>
+				<p>
+					<label></label>
+					<input type="submit" name="button" id="button" value="提交">
+					<input type="submit" name="button" id="button" value="重置">
+				</p>
+			</fieldset>
+		</form>
+	</body>
+</html>

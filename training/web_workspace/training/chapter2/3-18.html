@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3-18</title>
+		<style>
+			#box #b1{
+				display: block;
+				width:500px;
+				height:300px;
+				position:absolute;
+				top:0;
+				left: 0;
+			}
+			#box #b1 img{
+				width:500px;
+				height:300px;
+			}
+			#box #b1 .mask{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width:500px;
+				height:300px;
+				z-index: 100;
+				background: ragb(0,0,0,0,5);
+			}
+			#box #b2{
+				display: block;
+				width:250px;
+				height:200px;
+				position:absolute;
+				top:0;
+				left: 500px;
+			}
+			#box #b2 img{
+				width:250px;
+				height:200px;
+			}
+			#box #b2 .mask{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width:250px;
+				height:200px;
+				z-index: 100;
+				background: ragb(0,0,0,0,5);
+			}
+			#box #b3{
+				display: block;
+				width:250px;
+				height:200px;
+				position:absolute;
+				top:0;
+				left: 750px;
+			}
+			#box #b3 img{
+				width:250px;
+				height:200px;
+			}
+			#box #b3 .mask{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width:250px;
+				height:200px;
+				z-index: 100;
+				background: ragb(0,0,0,0,5);
+			}
+			#box #b4{
+				display: block;
+				width:250px;
+				height:200px;
+				position:absolute;
+				top:300px;
+				left: 0;
+			}
+			#box #b4 img{
+				width:250px;
+				height:200px;
+			}
+			#box #b4 .mask{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width:250px;
+				height:200px;
+				z-index: 100;
+				background: ragb(0,0,0,0,5);
+			}
+			#box #b5{
+				display: block;
+				width:250px;
+				height:200px;
+				position:absolute;
+				top:300px;
+				left: 250px;
+			}
+			#box #b5 img{
+				width:250px;
+				height:200px;
+			}
+			#box #b5 .mask{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width:250px;
+				height:200px;
+				z-index: 100;
+				background: ragb(0,0,0,0,5);
+			}
+			#box #b6{
+				display: block;
+				width:500px;
+				height:300px;
+				position:absolute;
+				top:200px;
+				left: 500px;
+			}
+			#box #b6 img{
+				width:500px;
+				height:300px;
+			}
+			#box #b6 .mask{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width:500px;
+				height:300px;
+				z-index: 100;
+				background: ragb(0,0,0,0,5);
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+			<script>
+				$(document).ready(function(){
+//					$(".mask").hide();
+//					$(".brick").on("mouseover",function(){
+//						$(".mask").show();
+//						$(this).find(".mask").hide();
+//					});
+//					$(".brick").on("mouseout",function(){
+//						$(".mask").hide();
+//					});
+					
+					$(.brick).hover(function(){
+						$(".mask").show();
+						$(this).find(".mask").hide();
+					},function(){
+						$(".mask").hide();
+					});
+				});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<a href="#" class="brick" id="b1">
+				<img src="../img/ice cream png icon (1).png" />
+				<div class="mask"></div>
+			</a>
+			<a href="#" class="brick" id="b2">
+				<img src="../img/ice cream png icon (2).png" />
+				<div class="mask"></div>
+			</a>
+			<a href="#" class="brick" id="b3">
+				<img src="../img/ice cream png icon (3).png" />
+				<div class="mask"></div>
+			</a>
+			<a href="#" class="brick" id="b4">
+				<img src="../img/ice cream png icon (4).png" />
+				<div class="mask"></div>
+			</a>
+			<a href="#" class="brick" id="b5">
+				<img src="../img/ice cream png icon (5).png" />
+				<div class="mask"></div>
+			</a>
+			<a href="#" class="brick" id="b6">
+				<img src="../img/ice cream png icon.png" />
+				<div class="mask"></div>
+			</a>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,429 @@
+[ 2016-02-04T13:06:53+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+
+[ 2016-02-04T13:06:53+08:00 ] 127.0.0.1 /admin.php/Public/login.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000773s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000849s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000550s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  errorinfo D:\wwwroot\dedeceshi\Admin\Runtime\Cache\754afcf016435756ef11c645ae70896ba2ab8d15.file.login.html.php 第 74 行.
+NOTIC: [8] Trying to get property of non-object D:\wwwroot\dedeceshi\Admin\Runtime\Cache\754afcf016435756ef11c645ae70896ba2ab8d15.file.login.html.php 第 74 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013486s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013564s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000438s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001548s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000593s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000521s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003384s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000638s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000692s ]
+
+[ 2016-02-04T13:06:53+08:00 ] 127.0.0.1 /admin.php/Public/verify/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000968s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001056s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000700s ]
+
+[ 2016-02-04T13:06:59+08:00 ] 127.0.0.1 /admin.php/Public/login.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000760s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000836s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000526s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  errorinfo D:\wwwroot\dedeceshi\Admin\Runtime\Cache\754afcf016435756ef11c645ae70896ba2ab8d15.file.login.html.php 第 74 行.
+NOTIC: [8] Trying to get property of non-object D:\wwwroot\dedeceshi\Admin\Runtime\Cache\754afcf016435756ef11c645ae70896ba2ab8d15.file.login.html.php 第 74 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012030s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012089s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000319s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000313s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000213s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000389s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001364s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000527s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000572s ]
+
+[ 2016-02-04T13:06:59+08:00 ] 127.0.0.1 /admin.php/Public/verify/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001237s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001364s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001088s ]
+
+[ 2016-02-04T13:07:33+08:00 ] 127.0.0.1 /admin.php/Public/verify/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001299s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001434s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000992s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001110s ]
+
+[ 2016-02-04T13:09:59+08:00 ] 127.0.0.1 /admin.php/Public/verify/1454562599578
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001424s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001516s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000844s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000911s ]
+
+[ 2016-02-04T13:10:04+08:00 ] 127.0.0.1 /admin.php/Public/checkLogin
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000725s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000804s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000519s ]
+SQL: SHOW COLUMNS FROM `edu_users` [ RunTime:0.004359s ]
+SQL: SELECT * FROM `edu_users` WHERE ( username = 'admin' ) LIMIT 1   [ RunTime:0.000307s ]
+SQL: SELECT * FROM `edu_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000220s ]
+SQL: UPDATE `edu_users` SET `username`='admin',`userpass`='21232f297a57a5a743894a0e4a801fc3',`name`='管理员',`sex`=1,`age`=22,`email`='admin@admin.com',`class`='74',`picture`='530e9f9d3b45b.jpg',`level`=10,`point`=999,`addtime`=1393430863,`introduce`='无',`logintime`=1453208448,`logouttime`=1453310061,`loginnum`=34 WHERE ( `id` = 55 ) [ RunTime:0.000253s ]
+SQL: select n.mname,n.aname from edu_userrole ur,edu_role_node rn,edu_node n where ur.rid=rn.rid and rn.nid=n.id and ur.uid=55 [ RunTime:0.002599s ]
+SQL: SHOW COLUMNS FROM `edu_userrole` [ RunTime:0.002965s ]
+SQL: SELECT * FROM `edu_userrole` WHERE ( uid='55' )  [ RunTime:0.000214s ]
+
+[ 2016-02-04T13:10:04+08:00 ] 127.0.0.1 /admin.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000756s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000829s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000521s ]
+SQL: SHOW COLUMNS FROM `edu_users` [ RunTime:0.004303s ]
+SQL: SELECT * FROM `edu_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000297s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_users` WHERE (  (`addtime` BETWEEN '1453310061' AND '1454562604' ) ) LIMIT 1   [ RunTime:0.012549s ]
+SQL: SHOW COLUMNS FROM `edu_video` [ RunTime:0.004262s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_video` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.000244s ]
+SQL: SHOW COLUMNS FROM `edu_library` [ RunTime:0.004347s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_library` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.000244s ]
+SQL: SHOW COLUMNS FROM `edu_clicknum` [ RunTime:0.003833s ]
+SQL: SELECT * FROM `edu_clicknum` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000203s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] include(D:\Site\demo8\wwwroot\ThinkPHP\Extend\Vendor\Smarty\plugins\modifier.date_format.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory D:\wwwroot\dedeceshi\Admin\Runtime\Cache\46433abaf19f4a45af2d886fe791fa1fa6390c68.file.index.html.php 第 34 行.
+NOTIC: [2] include(D:\Site\demo8\wwwroot\ThinkPHP\Extend\Vendor\Smarty\plugins\modifier.date_format.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory D:\wwwroot\dedeceshi\Admin\Runtime\Cache\46433abaf19f4a45af2d886fe791fa1fa6390c68.file.index.html.php 第 34 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening 'D:\Site\demo8\wwwroot\ThinkPHP\Extend\Vendor\Smarty\plugins\modifier.date_format.php' for inclusion (include_path='.;C:\php5\pear;D:\wwwroot\dedeceshi\ThinkPHP/Extend/Vendor/') D:\wwwroot\dedeceshi\Admin\Runtime\Cache\46433abaf19f4a45af2d886fe791fa1fa6390c68.file.index.html.php 第 34 行.
+
+[ 2016-02-04T13:10:30+08:00 ] 127.0.0.1 /admin.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000750s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000821s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000524s ]
+SQL: SHOW COLUMNS FROM `edu_users` [ RunTime:0.003986s ]
+SQL: SELECT * FROM `edu_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000300s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_users` WHERE (  (`addtime` BETWEEN '1453310061' AND '1454562604' ) ) LIMIT 1   [ RunTime:0.000227s ]
+SQL: SHOW COLUMNS FROM `edu_video` [ RunTime:0.003394s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_video` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.000243s ]
+SQL: SHOW COLUMNS FROM `edu_library` [ RunTime:0.003067s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_library` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.000231s ]
+SQL: SHOW COLUMNS FROM `edu_clicknum` [ RunTime:0.003048s ]
+SQL: SELECT * FROM `edu_clicknum` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000212s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime() [<a href='function.filemtime'>function.filemtime</a>]: stat failed for ./Admin/Runtime/Cache\46433abaf19f4a45af2d886fe791fa1fa6390c68.file.index.html.php D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\46433abaf19f4a45af2d886fe791fa1fa6390c68.file.index.html.php) [<a href='function.unlink'>function.unlink</a>]: No such file or directory D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.148173s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.148241s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000692s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000705s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000572s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000763s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002882s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000879s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000928s ]
+
+[ 2016-02-04T13:10:34+08:00 ] 127.0.0.1 /admin.php/Users/index?_=1454562634351
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001442s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001526s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001365s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_users` LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT * FROM `edu_users` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000312s ]
+NOTIC: [8] Undefined variable: search D:\wwwroot\dedeceshi\Admin\Lib\Action\CommonAction.class.php 第 310 行.
+NOTIC: [8] Undefined index:  values D:\wwwroot\dedeceshi\Admin\Lib\Action\CommonAction.class.php 第 311 行.
+NOTIC: [8] Undefined index:  id D:\wwwroot\dedeceshi\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.005780s ]
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000368s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime() [<a href='function.filemtime'>function.filemtime</a>]: stat failed for ./Admin/Runtime/Cache\837fee60bdf7e913281f29dca31b23be38bc311f.file.index.html.php D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\837fee60bdf7e913281f29dca31b23be38bc311f.file.index.html.php) [<a href='function.unlink'>function.unlink</a>]: No such file or directory D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [2] filemtime() [<a href='function.filemtime'>function.filemtime</a>]: stat failed for ./Admin/Runtime/Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php) [<a href='function.unlink'>function.unlink</a>]: No such file or directory D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index:  _order D:\wwwroot\dedeceshi\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index:  _sort D:\wwwroot\dedeceshi\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index:  username D:\wwwroot\dedeceshi\Admin\Runtime\Cache\837fee60bdf7e913281f29dca31b23be38bc311f.file.index.html.php 第 45 行.
+NOTIC: [8] Undefined index:  _sort D:\wwwroot\dedeceshi\Admin\Runtime\Cache\837fee60bdf7e913281f29dca31b23be38bc311f.file.index.html.php 第 72 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.124820s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.124880s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000860s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000653s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000528s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000721s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002891s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000940s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000986s ]
+
+[ 2016-02-04T13:10:35+08:00 ] 127.0.0.1 /admin.php/Users/add?_=1454562635396
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001031s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001099s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000872s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+NOTIC: [8] Undefined index:  id D:\wwwroot\dedeceshi\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.003321s ]
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000273s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime() [<a href='function.filemtime'>function.filemtime</a>]: stat failed for ./Admin/Runtime/Cache\97e285a148c459a15a26611875b2ea573004114c.file.add.html.php D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\97e285a148c459a15a26611875b2ea573004114c.file.add.html.php) [<a href='function.unlink'>function.unlink</a>]: No such file or directory D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.061292s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061360s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000673s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000846s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000551s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000708s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002923s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000846s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000888s ]
+
+[ 2016-02-04T13:10:45+08:00 ] 127.0.0.1 /admin.php/Flink/index?_=1454562645131
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001827s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001961s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001367s ]
+SQL: SHOW COLUMNS FROM `edu_flink` [ RunTime:0.004093s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_flink` LIMIT 1   [ RunTime:0.000165s ]
+SQL: SELECT * FROM `edu_flink` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000468s ]
+NOTIC: [8] Undefined variable: search D:\wwwroot\dedeceshi\Admin\Lib\Action\CommonAction.class.php 第 310 行.
+NOTIC: [8] Undefined index:  values D:\wwwroot\dedeceshi\Admin\Lib\Action\CommonAction.class.php 第 311 行.
+NOTIC: [8] Undefined index:  id D:\wwwroot\dedeceshi\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.003241s ]
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000243s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime() [<a href='function.filemtime'>function.filemtime</a>]: stat failed for ./Admin/Runtime/Cache\d1050123dbd63cdff86d8b44f98f8156ec0a09f3.file.index.html.php D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\d1050123dbd63cdff86d8b44f98f8156ec0a09f3.file.index.html.php) [<a href='function.unlink'>function.unlink</a>]: No such file or directory D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index:  _order D:\wwwroot\dedeceshi\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index:  _sort D:\wwwroot\dedeceshi\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index:  webname D:\wwwroot\dedeceshi\Admin\Runtime\Cache\d1050123dbd63cdff86d8b44f98f8156ec0a09f3.file.index.html.php 第 42 行.
+NOTIC: [8] Undefined index:  descr D:\wwwroot\dedeceshi\Admin\Runtime\Cache\d1050123dbd63cdff86d8b44f98f8156ec0a09f3.file.index.html.php 第 46 行.
+NOTIC: [8] Undefined index:  _sort D:\wwwroot\dedeceshi\Admin\Runtime\Cache\d1050123dbd63cdff86d8b44f98f8156ec0a09f3.file.index.html.php 第 72 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.107174s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.107233s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000646s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000639s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000527s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000707s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002644s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000881s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000930s ]
+
+[ 2016-02-04T13:14:49+08:00 ] 127.0.0.1 /admin.php/Users/index?_=1454562889876
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000835s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000922s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000603s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_users` LIMIT 1   [ RunTime:0.000124s ]
+SQL: SELECT * FROM `edu_users` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000292s ]
+NOTIC: [8] Undefined variable: search D:\wwwroot\dedeceshi\Admin\Lib\Action\CommonAction.class.php 第 310 行.
+NOTIC: [8] Undefined index:  values D:\wwwroot\dedeceshi\Admin\Lib\Action\CommonAction.class.php 第 311 行.
+NOTIC: [8] Undefined index:  id D:\wwwroot\dedeceshi\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.003282s ]
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000280s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  _order D:\wwwroot\dedeceshi\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index:  _sort D:\wwwroot\dedeceshi\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index:  username D:\wwwroot\dedeceshi\Admin\Runtime\Cache\837fee60bdf7e913281f29dca31b23be38bc311f.file.index.html.php 第 45 行.
+NOTIC: [8] Undefined index:  _sort D:\wwwroot\dedeceshi\Admin\Runtime\Cache\837fee60bdf7e913281f29dca31b23be38bc311f.file.index.html.php 第 72 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.014966s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015024s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000377s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000332s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000216s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000513s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001579s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000558s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000608s ]
+
+[ 2016-02-04T13:14:53+08:00 ] 127.0.0.1 /admin.php/Users/add?_=1454562893495
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000798s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000877s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+NOTIC: [8] Undefined index:  id D:\wwwroot\dedeceshi\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.005616s ]
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000590s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.016717s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016810s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000330s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000327s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000218s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000397s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001393s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000533s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000574s ]
+
+[ 2016-02-04T13:14:56+08:00 ] 127.0.0.1 /admin.php/Limit/index?_=1454562896194
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000823s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000900s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+SQL: SHOW COLUMNS FROM `edu_limit` [ RunTime:0.003910s ]
+SQL: SHOW COLUMNS FROM `edu_userrole` [ RunTime:0.002858s ]
+SQL: SHOW COLUMNS FROM `edu_roles` [ RunTime:0.003722s ]
+SQL: SELECT * FROM `edu_users`  [ RunTime:0.000684s ]
+SQL: SELECT * FROM `edu_userrole`  [ RunTime:0.000180s ]
+SQL: SELECT * FROM `edu_roles`  [ RunTime:0.000135s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_users` LIMIT 1   [ RunTime:0.000098s ]
+SQL: SELECT * FROM `edu_users` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000323s ]
+NOTIC: [8] Undefined variable: search D:\wwwroot\dedeceshi\Admin\Lib\Action\CommonAction.class.php 第 310 行.
+NOTIC: [8] Undefined index:  values D:\wwwroot\dedeceshi\Admin\Lib\Action\CommonAction.class.php 第 311 行.
+NOTIC: [8] Undefined index:  id D:\wwwroot\dedeceshi\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.003233s ]
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000238s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wwwroot\dedeceshi\Admin\Lib\Action\LimitAction.class.php 第 34 行.
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime() [<a href='function.filemtime'>function.filemtime</a>]: stat failed for ./Admin/Runtime/Cache\0267d81316bb86ff66855ce78b47fe1ceba78c35.file.index.html.php D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\0267d81316bb86ff66855ce78b47fe1ceba78c35.file.index.html.php) [<a href='function.unlink'>function.unlink</a>]: No such file or directory D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index:  _order D:\wwwroot\dedeceshi\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index:  _sort D:\wwwroot\dedeceshi\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index:  username D:\wwwroot\dedeceshi\Admin\Runtime\Cache\0267d81316bb86ff66855ce78b47fe1ceba78c35.file.index.html.php 第 45 行.
+NOTIC: [8] Undefined index:  _sort D:\wwwroot\dedeceshi\Admin\Runtime\Cache\0267d81316bb86ff66855ce78b47fe1ceba78c35.file.index.html.php 第 69 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.120717s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.120789s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000709s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000646s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000534s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000765s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002785s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000870s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000915s ]
+
+[ 2016-02-04T13:15:00+08:00 ] 127.0.0.1 /admin.php/Roles/index?_=1454562900406
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.013963s ]
+INFO: [ route_check ] --END-- [ RunTime:0.014050s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001139s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001200s ]
+SQL: SHOW COLUMNS FROM `edu_roles` [ RunTime:0.003206s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_roles` LIMIT 1   [ RunTime:0.000148s ]
+SQL: SELECT * FROM `edu_roles` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000264s ]
+NOTIC: [8] Undefined variable: search D:\wwwroot\dedeceshi\Admin\Lib\Action\CommonAction.class.php 第 310 行.
+NOTIC: [8] Undefined index:  values D:\wwwroot\dedeceshi\Admin\Lib\Action\CommonAction.class.php 第 311 行.
+NOTIC: [8] Undefined index:  id D:\wwwroot\dedeceshi\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.003280s ]
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000460s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime() [<a href='function.filemtime'>function.filemtime</a>]: stat failed for ./Admin/Runtime/Cache\3dd1b75cdfc7db12ad968d3c64c9afad82e5dc60.file.index.html.php D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\3dd1b75cdfc7db12ad968d3c64c9afad82e5dc60.file.index.html.php) [<a href='function.unlink'>function.unlink</a>]: No such file or directory D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index:  _order D:\wwwroot\dedeceshi\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index:  _sort D:\wwwroot\dedeceshi\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index:  keyword D:\wwwroot\dedeceshi\Admin\Runtime\Cache\3dd1b75cdfc7db12ad968d3c64c9afad82e5dc60.file.index.html.php 第 38 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.092986s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.093056s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000643s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000622s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000495s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000683s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002562s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000892s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000940s ]
+
+[ 2016-02-04T13:15:02+08:00 ] 127.0.0.1 /admin.php/Roles/add?_=1454562902496
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001103s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001181s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000993s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001047s ]
+NOTIC: [8] Undefined index:  id D:\wwwroot\dedeceshi\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.003899s ]
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000271s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime() [<a href='function.filemtime'>function.filemtime</a>]: stat failed for ./Admin/Runtime/Cache\139ddbf2af11f736282c99a4f48842dd2aaf2cc8.file.add.html.php D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\139ddbf2af11f736282c99a4f48842dd2aaf2cc8.file.add.html.php) [<a href='function.unlink'>function.unlink</a>]: No such file or directory D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.046933s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046997s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000764s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000661s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000532s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000720s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002810s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001119s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001180s ]
+
+[ 2016-02-04T13:15:10+08:00 ] 127.0.0.1 /admin.php/Notice/index?_=1454562910640
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001272s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001378s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000956s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001048s ]
+SQL: SHOW COLUMNS FROM `edu_notice` [ RunTime:0.003583s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `edu_notice` LIMIT 1   [ RunTime:0.000173s ]
+SQL: SELECT * FROM `edu_notice` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000293s ]
+NOTIC: [8] Undefined variable: search D:\wwwroot\dedeceshi\Admin\Lib\Action\CommonAction.class.php 第 310 行.
+NOTIC: [8] Undefined index:  values D:\wwwroot\dedeceshi\Admin\Lib\Action\CommonAction.class.php 第 311 行.
+NOTIC: [8] Undefined index:  id D:\wwwroot\dedeceshi\Admin\Lib\Action\CatAction.class.php 第 179 行.
+SQL: SHOW COLUMNS FROM `edu_cat` [ RunTime:0.003422s ]
+SQL: SELECT `id`,`name`,`path` FROM `edu_cat` ORDER BY concat(path,id)  [ RunTime:0.000275s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime() [<a href='function.filemtime'>function.filemtime</a>]: stat failed for ./Admin/Runtime/Cache\97d4388f749ecd4a45da5257b9f02e0ba759a60a.file.index.html.php D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(./Admin/Runtime/Cache\97d4388f749ecd4a45da5257b9f02e0ba759a60a.file.index.html.php) [<a href='function.unlink'>function.unlink</a>]: No such file or directory D:\wwwroot\dedeceshi\ThinkPHP\Extend\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+NOTIC: [8] Undefined index:  _order D:\wwwroot\dedeceshi\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 32 行.
+NOTIC: [8] Undefined index:  _sort D:\wwwroot\dedeceshi\Admin\Runtime\Cache\9b58476071dcf322d7a032b16e5bfba3e2c4a166.file.pagerForm.html.php 第 34 行.
+NOTIC: [8] Undefined index:  title D:\wwwroot\dedeceshi\Admin\Runtime\Cache\97d4388f749ecd4a45da5257b9f02e0ba759a60a.file.index.html.php 第 41 行.
+NOTIC: [8] Undefined index:  _sort D:\wwwroot\dedeceshi\Admin\Runtime\Cache\97d4388f749ecd4a45da5257b9f02e0ba759a60a.file.index.html.php 第 67 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.099916s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.099977s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000721s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000644s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000532s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000731s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002762s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000910s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000966s ]
+

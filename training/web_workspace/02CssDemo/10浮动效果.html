@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>浮动效果</title>
+		<style>
+			.container {
+				width: 800px;
+				/* height:600px; */
+				/* overflow:hidden; */
+				border: 2px solid #333;
+				zoom: 1;
+			}
+			
+			.box01 {
+				width: 100px;
+				height: 100px;
+				background: blue;
+				color: #fff;
+				float: left;
+			}
+			
+			.box02 {
+				width: 100px;
+				height: 100px;
+				background: red;
+				color: #fff;
+				float: left
+			}
+			
+			.box03 {
+				width: 100px;
+				height: 100px;
+				background: orange;
+				color: #fff;
+				float: left
+			}
+			
+			/* clearfix:after {
+				content: ".";
+				display: block;
+				height: 0;
+				visibility: hidden;
+				clear: both;
+			}
+			
+			.clearfix {
+				zoom: 1
+			}
+			
+			.clear {
+				clear: both;
+			} */
+		</style>
+	</head>
+
+	<body>
+		<div class="container clearfix">
+			<div class="box01">111</div>
+			<div class="box02">222</div>
+			<div class="box03">333</div>
+			<!--<div class="clear"></div>-->
+		</div>
+		<div class="box10">0000</div>
+	</body>
+
+</html>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">约健</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_mine_focus">MineFocusActivity</string>
+</resources>

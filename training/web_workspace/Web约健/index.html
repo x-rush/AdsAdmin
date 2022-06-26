@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/aui.css">
+    <link rel="stylesheet" href="css/aui-flex.css">
+    <link rel="stylesheet" href="css/aui-pull-refresh.css">
+    <link rel="stylesheet" href="css/aui-skin.css">
+    <link rel="stylesheet" href="css/aui-skin-night.css">
+    <link rel="stylesheet" href="css/aui-slide.css">
+    <style>
+        #app6{
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body style="background-color: white">
+<header class="aui-bar aui-bar-nav " style="background-color: #EE4000;color: white  ">
+    <a href="login.html" class="aui-pull-left aui-btn">
+        <span class="aui-iconfont aui-icon-left" style="color: white"></span>
+    </a>
+    <div class="aui-title"style="color:white;">约健联盟</div>
+</header>
+<div class="tab-ct">
+    <div class="tab-ct-item">
+       <div id="aui-slide">
+           <div class="aui-slide-wrap">
+               <div class="aui-slide-node bg-dark">
+                   <img src="img/f101.jpg" />
+               </div>
+               <div class="aui-slide-node bg-dark">
+                   <img src="img/f102.jpg" />
+               </div>
+               <div class="aui-slide-node bg-dark">
+                   <img src="img/f103.jpg" />
+               </div>
+           </div>
+           <div class="aui-slide-page-wrap"><!--分页容器--></div>
+       </div>
+
+       <div  id="app">
+       	<h1 style="color: black;text-align: center">精彩活动</h1>
+           <div v-for="site in sites" style="width: 90%;margin-left: auto;margin-right: auto;margin-bottom: 20px;margin-top: 30px">
+               <img v-bind:src="'http://172.24.10.175/workout/Uploads/'+site.thumb" style="width: 100%" >
+               <p v-text="'发起人：'+site.rec_name"></p>
+               <p v-text="'活动时间：'+site.update_time"></p>
+           </div>
+       <div class="main-service">
+		<div class="service-hd">
+			<h1 style="color: black;text-align: center">权威大师</h1>
+				<p>让运动成为习惯</p>
+			</div>
+			<div class="service-bd">
+				<ul>
+					<li>
+						<img class="active_img1" src="img/jianshen.png" alt="" />
+						<h2 class="active_text1">乒乓球</h2>
+						<p class="">俱乐部：</p>
+					</li>
+					<li class="yingxiao">
+						<img class="active_img2" src="img/ping.png" alt="" />
+						<h2 class="active_text2">乒乓球</h2>
+						<p>俱乐部：</p>
+					</li>
+					<li>
+						<img class="active_img1" src="img/jianshen.png" alt="" />
+						<h2 class="active_text2">乒乓球</h2>
+						<p> 俱乐部：</p>
+					</li>
+				</ul>
+			</div>
+
+		</div>    
+       <div class="main-service">
+		<div class="service-hd">
+			<h1 style="color: black;text-align: center">最近比赛</h1>
+				<p>让运动成为习惯</p>
+			</div>
+			<div class="service-bd">
+				<ul>
+					<li>
+						<img class="active_img1" src="img/mala.jpg" alt="" />
+						<h2 class="active_text1">国际马拉松</h2>
+						<p class="">竞争激烈</p>
+						<a href="#">我要报名</a>
+					</li>
+					<li class="yingxiao">
+						<img class="active_img2" src="img/mala.jpg" alt="" />
+						<h2 class="active_text2">国际马拉松</h2>
+						<p>竞争激烈</p>
+						<a href="#">我要报名</a>
+					</li>
+					<li>
+						<img class="active_img1" src="img/mala.jpg" alt="" />
+						<h2 class="active_text2">国际马拉松</h2>
+						<p> 竞争激烈</p>
+						<a href="#">我要报名</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+       </div>
+	</div>
+   <div class="tab-ct-item aui-hide" >
+
+       <div id="app3">
+           <h1 style="color: black;text-align: center">线下训练</h1>
+           <div v-for="site in sites" style="width: 90%;margin-left: auto;margin-right: auto;margin-bottom: 20px;margin-top: 30px">
+               <p v-text="'训练标题：'+site.name"></p>
+               <video :poster="'http://172.24.10.175/workout/Uploads/'+site.thumb" style="width: 100%" controls >
+                   <source src="video/1.mp4"  type="video/mp4">
+                   您的浏览器不支持 HTML5 video 标签。
+               </video>
+               <p v-text="'训练简介：'+site.intro    "></p>
+               <p v-html="'注意事项：'+site.notice"></p>
+               <p v-text="'训练时间：'+site.traintime"></p>
+               <p v-text="'训练地点：'+site.place"></p>
+               <p v-text="'所需金钱：'+site.price"></p>
+               <p v-text="'联系方式：'+site.tel"></p>
+               <p v-text="'截止报名：'+site.bmnotice"></p>
+           </div>
+       </div>
+   </div>
+   <div class="tab-ct-item aui-hide">
+       <div id="app4">
+           <h1 style="color: black;text-align: center">俱乐部列表</h1>
+           <div v-for="site in sites" style="width: 90%;margin-left: auto;margin-right: auto;margin-bottom: 20px;margin-top: 30px">
+               <p v-text="'俱乐部名：'+site.club_name"></p>
+               <a :href="'clubxiangqing.html?id='+site.id">
+                   <img v-bind:src="'http://172.24.10.175/workout/Uploads/'+site.thumb" style="width: 100%" >
+               </a>
+               <p v-text="'所在城市：'+site.city_name"></p>
+               <p v-text="'俱乐部地点：'+site.club_contact"></p>
+               <p v-text="'开放时间：'+site.open_time"></p>
+               <p v-text="'联系方式：'+site.club_tel"></p>
+           </div>
+       </div>
+   </div>
+   <div class="tab-ct-item aui-hide">
+       <div id="app5">
+           <h1 style="color: black;text-align: center">我要晒图</h1>
+           <form action="javascript:;" method="post" enctype="multipart/form-data" onsubmit="tijiao()" class="biaodan">
+               <div class="aui-content aui-margin-b-15">
+                   <ul class="aui-list aui-form-list">
+                       <li class="aui-list-item" style="background-color: white">
+                           <div class="aui-list-item-inner">
+                               <div class="aui-list-item-label" style="color: black">
+                                   发表评论
+                               </div>
+                               <div class="aui-list-item-input">
+                                   <textarea id="text1" class="text1" placeholder="评论" name="title">
+                                   </textarea>
+                               </div>
+                           </div>
+                       </li>
+                   </ul>
+               </div>
+               <input style="display: block" type="file" id="inFile" accept="image/*" name="thumb0"/>
+               <button class="aui-btn aui-btn-info aui-col-xs-12" type="submit">发布</button>
+           </form>
+           <h1 style="color: black;text-align: center">晒图列表</h1>
+           <div v-for="site in sites" style="width: 90%;margin-left: auto;margin-right: auto;margin-bottom: 20px;margin-top: 30px">
+               <a :href="'shaituxiangqing.html?id='+site.id">
+                   <img v-bind:src="'http://172.24.10.175/workout/Uploads/'+site.thumb0" style="width: 100%;height: 200px" >
+               </a>
+           </div>
+       </div>
+   </div>
+   <div class="tab-ct-item aui-hide">
+       <div id="app6">
+           <div  class="aui-col-xs-12" style="height: 200px;background: url('img/back1.jpg')">
+               <img v-bind:src="'http://172.24.10.175/workout/Uploads/'+sites.photo"
+                    alt="" class="aui-col-xs-4" style="height: 100px;margin-top: 50px;margin-left: 40px;">
+                    
+               <p v-text="'ID：'+sites.user_name" class="aui-col-xs-6 " style="line-height: 200px;margin-left: 20px"></p>
+               <br>
+           </div>
+           <!--<div style="text-align: center;background: #EE4000;border-bottom: 1px solid white;color:#fff" class="aui-col-xs-12"><a style="color: white" href="myxinxi.html">我的信息</a></div>-->
+           <div style="text-align: center;background: #EE4000;border-bottom: 1px solid white;color:#fff" class="aui-col-xs-12"><a style="color: white" href="changeHead.html">修改头像</a></div>
+           <div style="text-align: center;background: #EE4000;border-bottom: 1px solid white;color:#fff" class="aui-col-xs-12"><a style="color: white" href="changepassword.html">修改密码</a></div>
+           <div style="text-align: center;background: #EE4000;border-bottom: 1px solid white;color:#fff" class="aui-col-xs-12"><a style="color: white" href="guanzhu.html">我的关注</a></div>
+           <div style="text-align: center;background: #EE4000;border-bottom: 1px solid white;color:#fff" class="aui-col-xs-12"><a style="color: white" href="myshaitu.html">我的晒图</a></div>
+       </div>
+   </div>
+</div>
+<footer class="aui-bar aui-bar-tab" id="footer">
+    <div class="aui-bar-tab-item aui-active" tapmode>
+        <i class="aui-iconfont aui-icon-home"></i>
+        <div class="aui-bar-tab-label">约健联盟</div>
+    </div>
+    <div class="aui-bar-tab-item" tapmode>
+        <i class="aui-iconfont aui-icon-star"></i>
+        <div class="aui-bar-tab-label">训练页</div>
+    </div>
+    <div class="aui-bar-tab-item" tapmode>
+        <!--<div class="aui-badge">99</div>-->
+        <i class="aui-iconfont aui-icon-location"></i>
+        <div class="aui-bar-tab-label">俱乐部</div>
+    </div>
+    <div class="aui-bar-tab-item" tapmode>
+        <div class="aui-dot"></div>
+        <i class="aui-iconfont aui-icon-image"></i>
+        <div class="aui-bar-tab-label">晒图</div>
+    </div>
+    <div class="aui-bar-tab-item" tapmode>
+        <div class="aui-dot"></div>
+        <i class="aui-iconfont aui-icon-my"></i>
+        <div class="aui-bar-tab-label">我的约健</div>
+    </div>
+</footer>
+</body>
+<script src="js/aui-tab.js"></script>
+<script src="js/aui-toast.js"></script>
+<script src="js/aui-slide.js"></script>
+<script src="js/aui-skin.js"></script>
+<script src="js/aui-sharebox.js"></script>
+<script src="js/aui-scroll.js"></script>
+<script src="js/aui-range.js"></script>
+<script src="js/aui-pull-refresh.js"></script>
+<script src="js/aui-popup-new.js"></script>
+<script src="js/aui-popup.js"></script>
+<script src="js/aui-list-swipe-backup.js"></script>
+<script src="js/aui-list-swipe.js"></script>
+<script src="js/aui-lazyload.js"></script>
+<script src="js/aui-dialog.js"></script>
+<script src="js/aui-collapse.js"></script>
+<script src="js/aui-actionsheet.js"></script>
+<script src="js/api.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/jquery.form.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            sites: []
+        },
+        created: function () {
+            //为了在内部函数能使用外部函数的this对象，要给它赋值了一个名叫self的变量。
+            var self = this;
+            $.ajax({
+                url: 'http://172.24.10.175/workout/api.php/lists/mod/acmrecom',
+                type: 'post',
+                data: {},
+                dataType: 'jsonp'
+            }).then(function (res) {
+                console.log(res);
+                //把从json获取的数据赋值给数组
+                self.sites = res;
+            }).fail(function () {
+                console.log('失败');
+            })
+        }
+    })
+</script>
+
+<script>
+    new Vue({
+        el: '#app3',
+        data: {
+            sites: []
+        },
+        created: function () {
+            //为了在内部函数能使用外部函数的this对象，要给它赋值了一个名叫self的变量。
+            var self = this;
+            $.ajax({
+                url: 'http://172.24.10.175/workout/api.php/lists/mod/train',
+                type: 'post',
+                data: {},
+                dataType: 'jsonp'
+            }).then(function (res) {
+                console.log(res);
+                //把从json获取的数据赋值给数组
+                self.sites = res;
+            }).fail(function () {
+                console.log('失败');
+            })
+        }
+    })
+</script>
+<script>
+    new Vue({
+        el: '#app4',
+        data: {
+            sites: []
+        },
+        created: function () {
+            //为了在内部函数能使用外部函数的this对象，要给它赋值了一个名叫self的变量。
+            var self = this;
+            $.ajax({
+                url: 'http://172.24.10.175/workout/api.php/lists/mod/club',
+                type: 'post',
+                data: {},
+                dataType: 'jsonp'
+            }).then(function (res) {
+                console.log(res);
+                //把从json获取的数据赋值给数组
+                self.sites = res;
+            }).fail(function () {
+                console.log('失败');
+            })
+        }
+    })
+</script>
+<script>
+    new Vue({
+        el: '#app5',
+        data: {
+            sites: []
+        },
+        created: function () {
+            //为了在内部函数能使用外部函数的this对象，要给它赋值了一个名叫self的变量。
+            var self = this;
+            $.ajax({
+                url: 'http://172.24.10.175/workout/api.php/lists/mod/shaitu',
+                type: 'post',
+                data: {},
+                dataType: 'jsonp'
+            }).then(function (res) {
+                console.log(res);
+                //把从json获取的数据赋值给数组
+                self.sites = res;
+            }).fail(function () {
+                console.log('失败');
+            })
+        }
+    });
+    function tijiao(){
+        var id=$.cookie("uid");
+        var txt=$("#text1").val();
+        console.log(id);
+        var url="http://172.24.10.175/workout/api.php/fcreate/SessionID/1set9n4vfeaj51jmc2pcnncg71/mod/shaitu/userid/"+id+"/title/"+txt;
+        $(".biaodan").ajaxSubmit({
+            url:url,
+            dataType: 'json',
+            beforeSubmit : function() {
+                alert('发布成功');
+                setTimeout(function () {
+                    location.href = "index.html";
+                }, 1000);
+            },
+        })
+
+
+    }
+</script>
+<script>
+    new Vue({
+        el: '#app6',
+        data: {
+            sites: []
+        },
+        created: function () {
+            //为了在内部函数能使用外部函数的this对象，要给它赋值了一个名叫self的变量。
+            var self = this;
+            $.ajax({
+                url: "http://172.24.10.175/workout/api.php/getmine/userid/"+$.cookie("uid"),
+                type: 'post',
+                data: {},
+                dataType: 'jsonp'
+            }).then(function (res) {
+                console.log(res);
+                //把从json获取的数据赋值给数组
+                self.sites = res;
+            }).fail(function () {
+                console.log('失败');
+            })
+        }
+    });
+</script>
+<script type="text/javascript">
+    var tab = new auiTab({
+        element:document.getElementById("footer"),
+        index:1,
+        repeatClick:false
+    },function(ret){
+        console.log(ret);
+        $('.tab-ct .tab-ct-item').addClass('aui-hide');
+        $('.tab-ct .tab-ct-item').eq(ret.index-1).removeClass('aui-hide');
+    });
+</script>
+<script>
+    var slide = new auiSlide({
+        container:document.getElementById("aui-slide"), //容器
+        // "width":300, //宽度
+        "height":240, //高度
+        "speed":500, //速度
+        "autoPlay": 3000, //自动播放
+        "loop":true,//是否循环
+        "pageShow":true,//是否显示分页器
+        "pageStyle":'dot', //分页器样式，分dot,line
+        'dotPosition':'center' //当分页器样式为dot时控制分页器位置，left,center,right
+    });
+
+
+</script>
+</html>

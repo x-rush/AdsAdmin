@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>2-14</title>
+	</head>
+	<body>
+		<img src="../img/QQ图片20160826095608.jpg"
+	<script>
+		
+		
+		var arrImg=["QQ图片20160826095608.jpg",
+					"YF_{G_%G~%%UIHU`9Z89N{G.jpg",
+					"timg (1).jpg"];
+		var i=0;
+		var img=document.getElementsByTagName("img")[0];
+		setInterval("changeImg()",2000);
+		function changeImg(){
+			i++;
+			img.src="../img/"+arrImg[i];
+			
+			if(i>=arrImg.length-1)i=0;
+		}
+	</script>
+	</body>
+</html>

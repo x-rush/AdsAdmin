@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>07计算属性</title>
+		<script src="vue.js"></script>
+	</head>
+	<body>
+		<div id="myApp">
+			一台Switch的价格:{{price}}円,<br />
+			含税价格为:{{priceInTax}}円,<br />
+			折合人民币:{{priceInChinaRMB}}元
+			
+		</div>
+		<script>
+			var myApp = new Vue({
+				el:"#myApp",
+				data:{price:29980},
+				computed:{
+					priceInTax:function(){
+						return this.price*1.08;
+					},
+					priceInChinaRMB:function(){
+						return Math.round(this.priceInTax/15.69);
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

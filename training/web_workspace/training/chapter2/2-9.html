@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.none{
+				display: none;
+			}
+			#tab li{
+				list-style: none;
+				float: left;
+				width: 60px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				border: 2px solid #000;
+			}
+			#tab{
+				position: relative;
+			}
+			.content{
+				position:absolute;
+				left: 40px;
+				top: 34px;
+				width: 182px;
+				border: 2px solid #000;
+				height: 200px;
+				background: #eee;
+				text-align: center;
+				clear: both;
+			}
+			
+		</style>
+		<script>
+			function showTab(n){
+				var t1=document.getElementById("tab1");
+				var t2=document.getElementById("tab2");
+				var t3=document.getElementById("tab3");
+				
+				t1.style.display="none";
+				t2.style.display="none";
+				t3.style.display="none";
+				
+				if(n== 1)t1.style.display="block";
+				if(n== 2)t2.style.display="block";
+				if(n== 3)t3.style.display="block";
+			}
+		</script>
+	</head>
+	<body>
+		<div id="tab">
+			<div id="tab-top"
+				<ul>
+					<li onmouseover="showTap(1)">手机</li>
+					<li onmouseover="showTap(2)">数码</li>
+					<li onmouseover="showTap(3)">咨询</li>
+				</ul>
+			</div>
+			<div id="tab1" class="content">1</div>
+			<div id="tab2" class="content none">2</div>
+			<div id="tab3" class="content none">3</div>
+		</div>
+	</body>
+</html>

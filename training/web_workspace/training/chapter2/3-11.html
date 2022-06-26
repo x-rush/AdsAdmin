@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>下拉菜单</title>
+		<style>
+			ul{
+				margin: 0px;
+				padding: 0px;
+				list-style-type: none;
+			}
+			#box{
+				width: 700px;
+			}
+			#box ul li{
+				float: left;
+			  width: 95px;
+			  font-size: 14px;
+			  position: relative;
+                line-height: 30px; 
+			}
+			#box ul li a{
+				color: #903;
+				text-decoration: none;
+				font-size: 14px;
+				font-weight: bold;
+				text-align: center;
+				
+			}
+			#box ul li  ul li{
+				text-align: center;
+				color: #009;
+				padding-bottom: 4px;
+				border-bottom-width: 1px;
+				border-bottom-style: dotted;
+				border-bottom-color: #0000CC;
+				line-height: 18px;
+				padding-top: 4px;
+				width: 90px;
+			}
+			#box ul li ul{
+				position: absolute;
+				left: -10px;
+				top: 30px;
+				display: none;
+				border-top: 1px dotted #009;
+				border-right: 1px dotted #009;
+				border-left: 1px dotted #009;
+				width: 90px;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+		
+	</head>
+	
+	<body>
+		<div id="box">
+			<ul>
+				<li><a href="#">首页</a>
+				<li><a href="#">网页基础</a>
+					<ul>
+						<li>HTML<>
+						<li>CSS<>
+					</ul>
+				
+				<li><a href="#">设计工具</a>
+					<ul>
+						<li>PhotoShop<>
+						<li>Dreamweaver<>
+						<li>Flash<>
+					    <li>Fireworks<>
+					    <li>Notepad<>
+					</ul>
+				
+				<li><a href="#">高级知识</a>
+					<ul>
+						<li>JavaScript<>
+						<li>JQuery<>
+						<li>HTML5<>
+						<li>SEO<>	
+					</ul>
+				
+			</ul>	
+		</div>
+	</body>
+<ml>

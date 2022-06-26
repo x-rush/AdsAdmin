@@ -1,0 +1,160 @@
+﻿{layout name="public/home"/}
+<div class="header">
+    <h1 class="page-header">
+        俱乐部管理员列表
+    </h1>
+</div>
+<div id="page-inner" style="min-height: 600px">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Advanced Tables -->
+                        <div class="panel panel-default">
+                            {if(session('clubadminerror'))}
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <li>{$Think.session.clubadminerror}</li>
+                                </ul>
+                            </div>
+                            {elseif(session('clubadminsuccess'))}
+                            <div class="alert alert-success">
+                                <ul>
+                                    <li>{$Think.session.clubadminsuccess}</li>
+                                </ul>
+                            </div>
+                            {/if}
+
+                            <div class="panel-heading">
+                                Clubadmins Tables
+                                <a href="#"  data-toggle="modal" data-target="#edit" style="float: right"><i class="fa fa-plus ">New Clubadmin</i></a>
+                            </div>
+                            <div class="panel-body">
+                                <div >
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                        <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>管理员名</th>
+                                            <th>密码</th>
+                                            <th>操作</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {volist name='club_admin' id='vo'}
+                                        <tr class="odd gradeX">
+                                            <td>{$i}</td>
+                                            <td>{$vo.cadminname}</td>
+                                            <td>{$vo.password}</td>
+                                            <td><a href="#" data-toggle="modal" data-target="#update_dialog" onclick="jsedit({$vo.cadminid})"><button type="button" class="btn btn-primary">修改</button></a>
+                                            </td>
+                                            <td><a href="javascript:;"><button type="button" class="btn btn-danger" onclick="clubAdminDel({$vo.cadminid})">删除</button></a></td>
+                                        </tr>
+                                        {/volist}
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--End Advanced Tables -->
+                    </div>
+                </div>
+            </div>
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">请填写管理员信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="{:url('admin/clubAdminadd')}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="inputUser" class="col-md-2 control-label">管理员名</label>
+                        <div class="col-md-6">
+                            <input type="inputUser" class="form-control" placeholder="俱乐部名" name="cadminname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-md-2 control-label">密码</label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" placeholder="密码" name="password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="submit" name="" value="提交" class="btn btn-default">
+                            <input type="reset" name="" value="重置" class="btn btn-default">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="update_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel1">修改俱乐部管理员信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="{:url('admin/clubAdminUpdate')}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="hidden" name="cadminid" id="cadminid">
+                        <label for="inputUser" class="col-md-2 control-label">管理员名</label>
+                        <div class="col-md-6">
+                            <input type="inputUser" class="form-control" name="cadminname" id="cadminname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-md-2 control-label">密码</label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" name="" value="提交" class="btn btn-default">
+                        <button type="button" class="btn btn-default" onclick="" data-dismiss="modal">关闭</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function jsedit(cadminid){
+        $.getJSON(
+            "{:url('admin/clubAdminedit')}",{"cadminid":cadminid},function(json){
+                $("#cadminid").val(json.cadminid);
+                $("#cadminname").val(json.cadminname);
+                $("#password").val(json.password);
+            });
+    }
+    
+    function clubAdminDel(id) {
+        layer.confirm('确认删除',{btn:['确认','取消']},
+            function () {
+                $.post("{:url('admin/clubAdminDel')}",{"cadminid":id},function (data) {
+                    if(data.status==0){
+                        location.href=location.href;//刷新页面
+                        layer.msg(data.msg,{icon:6});
+                    }else{
+                        layer.msg(data.msg,{icon:5});
+                    }
+                });
+            },function () {
+
+            });
+    }
+
+</script>
+
+
+
+

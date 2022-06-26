@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>05组件</title>
+		<script src="vue.js"></script>
+	</head>
+	<body>
+		<div id="myApp">
+			<ol>
+				<game-item v-for="item in games" v-bind:game="item"></game-item>
+				
+			</ol>
+		</div>
+		
+		<script>
+			/*Vue.component():定义全局组件
+			 定义页面的局部区域块，完成单独的页面小功能*/
+			/*组件定义：game-item,必须在实例化对象之前定义*/
+			Vue.component('game-item',{
+				props:['game'],
+				template:'<li>{{game.title}}</li>'
+			});
+			/*vue对象实例化*/
+			var myApp = new Vue({
+				el:"#myApp",
+				data:{
+					games:[
+						{title:"五子棋"},
+						{title:"麻将"},
+						{title:"扑克牌"}
+					]
+				}
+			});
+			
+		</script>
+		
+	</body>
+</html>

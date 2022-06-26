@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Realm - Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bluth Company">
+    <link rel="shortcut icon" href="__STATIC__/admin/assets/ico/favicon.html">
+    <link href="__STATIC__/admin/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="__STATIC__/admin/assets/css/theme.css" rel="stylesheet">
+    <link href="__STATIC__/admin/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__STATIC__/admin/assets/css/alertify.css" rel="stylesheet">
+    <link rel="Favicon Icon" href="favicon.ico">
+
+  </head>
+  <body>
+    {include file="public:header"/}
+
+    <div class="container-fluid">
+
+      {include file="public:sidemenu"/}
+
+      <!-- Main window -->
+      <div class="main_container" id="users_page">
+
+        <div class="row-fluid">
+          <ul class="breadcrumb">
+            <li><a href="#">Home</a> <span class="divider">/</span></li>
+            <li><a href="#">Pages</a> <span class="divider">/</span></li>
+            <li class="active">Video</li>
+          </ul>
+
+        </div> <!-- /row-fluid -->
+
+        
+        <div class="row-fluid">
+          <div class="widget widget-padding span12">
+            <div class="widget-header">
+              <i class="icon-group"></i>
+              <h5>Users</h5>
+              <div class="widget-buttons">
+                  <a href="#" data-title="Add User" data-toggle="modal" data-target="#example_modal"><i class="icon-plus"></i></a>
+                  <a href="#" data-title="Collapse" data-collapsed="false" class="collapse"><i class="icon-chevron-up"></i></a>
+              </div>
+            </div>  
+            <div class="widget-body">
+              <table id="users" class="table table-striped table-bordered dataTable">
+                <thead>
+                  <tr>
+                  	<th>序号</th>
+                    <th>视频名称</th>
+                    <th>类别</th>
+                    <th>添加时间</th>
+                    <th>海报</th>                
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  {volist name="video" id="vo"}
+
+              
+                  <tr>
+                  	<td>{$vo.vid}</td>
+                    <td>{$vo.videoname}</td>
+                    <td>{$vo.typename}
+                    	
+                    </td>
+                    <td>{$vo.uploaddate}</td>
+                     <td><img src="__STATIC__/admin/posters/{$vo.pic}" width="100"></td>
+                    <td>
+                      <div class="btn-group">
+                        <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+                        Action
+                          <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                          <li><a href="#"><i class="icon-envelope"></i> Email</a></li>
+                          <li><a href="#" data-title="Add User" data-toggle="modal" data-target="#edit_modal" onclick="jsedit({$vo.vid})"><i class="icon-edit" ></i>Edit</a></li>
+                          <li><a href="#"><i class="icon-trash"></i> Delete</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  {/volist}
+                </tbody>
+              </table>
+            </div> <!-- /widget-body -->
+          </div> <!-- /widget -->
+        </div> <!-- /row-fluid -->
+
+      </div>
+      <!-- /Main window -->
+
+    </div><!--/.fluid-container-->
+    </div><!-- wrap ends-->
+
+   <!-- Example Modal -->
+<div id="example_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">添加视频信息</h3>
+  </div>
+  <div class="modal-body">
+      <form class="form-horizontal" action="{:url('add')}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="inputUser" class="col-md-2 control-label">视频名称:</label>
+          <div class="col-sm-6"> 
+            <input type="text" class="form-control" id="inputUser" placeholder="视频名称" name="videoname"> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputUser" class="col-md-2 control-label">视频类型:</label>
+          <div class="col-sm-6">
+            <select class="form-control" name="videotype">
+              {volist name="types" id="tp"}
+              <option value={$tp.tid}>{$tp.typename}</option>
+              {/volist}
+            </select> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">视频海报:</label>
+          <div class="col-sm-6">
+            <input type="file" name="pic" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">视频简介:</label>
+          <div>
+            <textarea class="form-control"  rows="3" name="intro"></textarea>
+          </div>
+        </div>
+        <div class="form-group" >
+          <label for="inputUser" class="col-md-2 control-label">下载地址:</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" id="inputAddress" placeholder="下载地址" name="address"> 
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10" style="margin:20px 0 0 100px">
+            <input type="submit" name="" value="添加" class="btn btn-default">
+            <input type="reset" name="" value="重置" class="btn btn-default">
+          </div>
+        </div>
+
+      </form>
+
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+  </div>
+</div>  
+
+    <div id="edit_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">修改视频信息</h3>
+  </div>
+  <div class="modal-body">
+      <form class="form-horizontal" action="{:url('update')}" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="vid" id="vid-modal">
+        <div class="form-group">
+          <label for="videoname-modal" class="col-md-2 control-label">视频名称:</label>
+          <div class="col-sm-6"> 
+            <input type="text" class="form-control" id="videoname-modal" placeholder="视频名称" name="videoname"> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputUser" class="col-md-2 control-label">视频类型:</label>
+          <div class="col-sm-6">
+            <select class="form-control" name="videotype" id="select-modal">
+              {volist name="types" id="tp"}
+              <option value={$tp.tid}>{$tp.typename}</option>
+              {/volist}
+            </select> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">视频海报:</label>
+          <div class="col-sm-6">
+            <input type="file" name="pic" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">视频简介:</label>
+          <div>
+            <textarea id="intro-modal" class="form-control"  rows="3" name="intro"></textarea>
+          </div>
+        </div>
+        <div class="form-group" >
+          <label class="col-md-2 control-label">下载地址:</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" id="address-modal" placeholder="下载地址" name="address"> 
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10" style="margin:20px 0 0 100px">
+            <input type="submit" name="" value="修改" class="btn btn-default">
+            <input type="reset" name="" value="重置" class="btn btn-default">
+          </div>
+        </div>
+
+      </form>
+
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+  </div>
+</div>
+
+    {include file="public:footer"/}
+    <script type="text/javascript">
+        function jsedit(vid){
+           $.getJSON(
+               "{:url('edit')}",{"vid":vid},function(json){
+                $("#videoname-modal").val(json.videoname);
+                $("#intro-modal").val(json.intro);
+                $("#vid-modal").val(json.vid);
+                $("#address-modal").val(json.address);
+                $("#select-modal").val(json.tid);
+           }
+         );
+        }
+  </script>
+  </body>
+</html>

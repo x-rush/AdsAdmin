@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>老虎机</title>
+		<style>
+			div{
+				border-radius:5px;
+				margin:10px auto;
+				color:#fff;
+				font-family:"黑体";
+				font-size:20px;
+				text-align: center;
+			}
+			#container{
+				background:#CD661D;
+				width:500px;
+				border:0;
+				padding-top:30px;
+				padding-bottom:30px;
+			}
+			#title-box,#img-box,#button-box,#result-box{
+				background:#00B2EE;
+				border: 2px solid #fff;
+				width:400px; 
+			}
+			#title-box{
+				font-family:"楷体";
+				font-size:30px;
+			}
+			#img-box img{
+				border:2px solid #999;
+				border-radius:3px;
+				width: 100px;
+				height: 120px;
+				background:#FFFFFF;
+				margin-top:20px;
+				margin-bottom:20px;
+			}
+			#title-box{
+				margin-top:30px;
+			}
+			#result-box{
+				margin-bottom:30px;
+				height: 300px;
+			}
+			#button-box:hover{
+				cursor: pointer;
+				background:#AEEEEE;
+				width: 340px;
+			}
+		</style>
+		<script>
+			function gameStart(){
+				var imgArr=["ice cream png icon.png","ice cream png icon (1).png",
+				"ice cream png icon (2).png","ice cream png icon (3).png",
+				"ice cream png icon (4).png","ice cream png icon (5).png"];
+				
+				var index1 = Math.floor(Math.random()*3);
+				var index2 = Math.floor(Math.random()*3);
+				var index3 = Math.floor(Math.random()*3);
+				
+				var s1=document.getElementById("slot1");
+				var s2=document.getElementById("slot2");
+				var s3=document.getElementById("slot3");
+				
+				s1.src="../img/"+imgArr[index1];
+				s2.src="../img/"+imgArr[index2];
+				s3.src="../img/"+imgArr[index3];
+				
+				var r = document.getElementById("result-box");
+				
+				if(index1 == index2 && index1 == index3){
+					r.innerHTML = "你赢了5元";
+					document.body.style.backgroundColor="#EE0000";
+					document.body.style.backgroundImage="url(../img/timg.gif)";
+				}else{
+					r.innerHTML = "很遗憾，你输掉了。";
+					
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="title-box">
+				东软老虎机
+			</div>
+			<div id="img-box">
+				<img id="slot1" src="../img/ice cream png icon (1).png" />
+				<img id="slot2" src="../img/ice cream png icon (1).png" />
+				<img id="slot3" src="../img/ice cream png icon (1).png" />
+			
+			</div>
+			<div id="button-box" onclick="gameStart()" >
+				GO
+			</div>
+	
+			<div id="result-box">
+				2元1次
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Realm - Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bluth Company">
+    <link rel="shortcut icon" href="__STATIC__/admin/assets/ico/favicon.html">
+    <link href="__STATIC__/admin2/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="__STATIC__/admin2/assets/css/theme.css" rel="stylesheet">
+    <link href="__STATIC__/admin2/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__STATIC__/admin2/assets/css/alertify.css" rel="stylesheet">
+    <link rel="Favicon Icon" href="favicon.ico">
+   
+  </head>
+  <body>
+    <div id="wrap">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+          	<div class="row-fluid">
+				<div class="widget container-narrow">
+					<div class="widget-header">
+						<i class="icon-user"></i>
+						<h5>管理员登录</h5>
+					</div>  
+					<div class="widget-body clearfix" style="padding:25px;">
+		      			<form action="{:url('index')}" method="post">
+							<div class="control-group">
+								<div class="controls">
+									<input class="btn-block" type="text" name="adminname" id="inputEmail" placeholder="账号">
+								</div>
+							</div>
+							<div class="control-group">
+								<div class="controls">
+									<input class="btn-block" type="password" id="inputPassword" placeholder="密码" name="password">
+								</div>
+							</div>
+							<div>
+						<input class="btn-block" type="text" id="verifycode" placeholder="验证码" name="verifycode">  
+							</div>
+							<div><img src="{:url('show_captcha')}" alt="captcha" onclick="this.src=this.src+'?'" /></div>
+
+
+							 <div class="control-group">
+								<div class="controls clearfix">
+									<label style="width:auto" class="checkbox pull-left">
+										<input type="checkbox"> Remember me
+									</label>
+								</div>
+							</div>					
+							<button type="submit" class="btn pull-right">登录</button>
+		      			</form>
+					</div>  
+				</div>  
+        	</div><!--/row-fluid-->
+        </div><!--/span10-->
+      </div><!--/row-fluid-->
+    </div><!--/.fluid-container-->
+    </div><!-- wrap ends-->
+
+{include file="public:footer"/}
+
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>weather</title>
+		<meta name="author" content="jiangmin"/>
+		<meta name="viewport" content="width=device-width"/>
+		<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<script src="ajax.js"></script>
+		<style>
+			body{
+				margin:0;
+				padding:0;
+				background: lightblue;
+				text-align: center;
+				font-family:"STXingkai",Helvetica,Arial,'宋体',sans-serif;
+			}
+			.container{
+				margin-top:10%;
+				max-width: 150px;
+				border-radius: 5px;
+				background: white;
+				box-shadow: 5px 5px 5px #666;
+			}
+			@keyframes mymove{
+				from {
+					transform: scale(1);
+				}
+				to {
+					transform: scale(1.1);
+				}
+			}
+			 /*Safari and Chrome*/
+			@-webkit-keyframes mymove{
+				from {
+					transform: scale(1);
+				}
+				to {
+					transform: scale(1.1);
+				}
+			}
+			#logo{
+				width:100%;
+				animation:mymove 1s infinite;
+    			-webkit-animation:mymove 1s infinite; /* Safari 和 Chrome */
+			}
+			#weather{
+				font-size:2em;
+			}
+			#tmp{
+				font-size:3.5em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<img id="logo" src="" alt="" class="img-responsive" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<span id="weather">loading</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<span id="tmp">loading</span>℃
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<span id="loc">loading</span>,<span id="cnty">loading</span>
+				</div>
+			</div>
+		</div>
+		<p class="by"></p>
+<script>
+
+</script>
+	</body>
+</html>

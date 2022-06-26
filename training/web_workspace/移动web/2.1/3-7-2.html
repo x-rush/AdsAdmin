@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-7</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Zuo Yan">
+    <style>
+        html{
+            height:100%;
+        }
+        body{
+            height:100%;
+            margin:0;
+            padding:0;
+        }
+        #container{
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=0A5bc3c4fb543c8f9bc54b77bc155724"></script>
+    <script>
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(function(position){
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+
+                console.log(position);
+
+                var map = new BMap.Map("container");
+                map.setMapStyle({style:'hardedge'});//强边界风格
+
+                var point = new BMap.Point(longitude,latitude);
+
+                //坐标转换完之后的回调函数
+                var translateCallback = function (data){
+                    if(data.status === 0) {
+
+                        map.centerAndZoom(data.points[0], 15);
+
+                        var myIcon = new BMap.Icon("http://developer.baidu.com/map/jsdemo/img/fox.gif",
+                            new BMap.Size(300,157));
+
+                        var marker = new BMap.Marker(data.points[0], {icon: myIcon});
+                        map.addOverlay(marker);
+
+                    }
+                };
+                //坐标转换
+                setTimeout(function(){
+                    var convertor = new BMap.Convertor();
+                    var pointArr = [];
+                    pointArr.push(point);
+                    convertor.translate(pointArr, 1, 5, translateCallback)
+                }, 1000);
+
+                map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+                map.addControl(new BMap.NavigationControl()); //平移缩放控件，地图左上角
+                map.addControl(new BMap.ScaleControl()); //比例尺，地图左下角
+                map.addControl(new BMap.OverviewMapControl());//缩略地图，地图右下角
+                map.addControl(new BMap.MapTypeControl());// 地图类型，右上角
+                map.setCurrentCity("大连"); // 仅当设置城市信息时，MapTypeControl的切换功能才能可用
+
+            });
+        }
+    </script>
+</body>
+</html>

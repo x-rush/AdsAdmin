@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/aui.css">
+    <link rel="stylesheet" href="css/aui-flex.css">
+    <link rel="stylesheet" href="css/aui-pull-refresh.css">
+    <link rel="stylesheet" href="css/aui-skin.css">
+    <link rel="stylesheet" href="css/aui-skin-night.css">
+    <link rel="stylesheet" href="css/aui-slide.css">
+
+</head>
+<body  style="background-color: white">
+    <div id="app">
+        <div v-for="site in sites" style="width: 90%;margin-left: auto;margin-right: auto;margin-bottom: 20px;margin-top: 30px">
+            <p v-text="'视频标题：'+site.tvideo_name"></p>
+
+
+            </video>
+        </div>
+    </div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            sites: []
+        },
+        created: function () {
+            //为了在内部函数能使用外部函数的this对象，要给它赋值了一个名叫self的变量。
+            var self = this;
+            $.ajax({
+                url: 'http://172.24.10.175/workout/api.php/get/mod/training/SessionID/2ul9sj8vlfoZ122e1s98048k2/related/1/id/1/map/tvideo\t',
+                type: 'get',
+                data: {},
+                dataType: 'json'
+            }).then(function (res) {
+                console.log(res);
+                //把从json获取的数据赋值给数组
+                self.sites = res;
+            }).fail(function () {
+                console.log('失败');
+            })
+        }
+    })
+</script>
+
+</html>

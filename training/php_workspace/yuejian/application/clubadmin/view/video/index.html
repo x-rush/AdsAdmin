@@ -1,0 +1,268 @@
+{layout name="public/home"/}
+<div class="header">
+    <h1 class="page-header">
+        视频总览
+    </h1>
+    <!--<ol class="breadcrumb">-->
+    <!--<li><a href="#">Home</a></li>-->
+    <!--<li><a href="#">Empty</a></li>-->
+    <!--<li class="active">Data</li>-->
+    <!--</ol>-->
+
+</div>
+<div id="page-inner" style="min-height: 600px">
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Advanced Tables -->
+            <div class="panel panel-default">
+                {if(session('videoerror'))}
+                <div class="alert alert-danger">
+                    <ul>
+                        <li>{$Think.session.videoerror}</li>
+                    </ul>
+                </div>
+                {elseif(session('videosuccess'))}
+                <div class="alert alert-success">
+                    <ul>
+                        <li>{$Think.session.videosuccess}</li>
+                    </ul>
+                </div>
+                {/if}
+                <div class="panel-heading">
+                    Videos Tables
+                    <a href="#"  data-toggle="modal" data-target="#add_dialog" style="float: right"><i class="fa fa-plus ">New Classification</i></a>
+                </div>
+                <div class="panel-body">
+                    <div >
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>视频名</th>
+                                <th>所属课程</th>
+                                <th>视频简介</th>
+                                <th>视频海报</th>
+                                <th>视频路径</th>
+                                <th>操作</th>
+                                <th>操作</th>
+                                <th>播放</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name='video' id='vo'}
+                            <tr class="odd gradeX">
+                                <td>{$i}</td>
+                                <td>{$vo.vname}</a></td>
+                                <td>{$vo.coname}</td>
+                                <td>{$vo.vintro}</td>
+                                <td><img src="__STATIC__/adminMSI/vposters/{$vo.pic}" width="50px" alt=""></td>
+                                <td>{$vo.address}</td>
+                                <td><a href="#" data-toggle="modal" data-target="#update_dialog" onclick="jsedit({$vo.vid})"><button type="button" class="btn btn-primary">修改</button></a>
+                                    <!--url('admin/typedel',['id'=>$v->tid])-->
+                                </td>
+                                <td><a href="javascript:;"><button type="button" class="btn btn-danger" onclick="videodel({$vo.vid})">删除</button></a></td>
+                               <td><a href="#" data-toggle="modal" data-target="#watch_dialog" onclick="watch({$vo.vid})"><button type="button" class="btn btn-default">播放</button></a>
+                                </td>
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            <!--End Advanced Tables -->
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="add_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">请填写视频信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="{:url('add')}" accept-charset="UTF-8" method="post" enctype="multipart/form-data">
+              
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">视频名称</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control"  placeholder="视频名称" name="vname">
+                        </div>
+                    </div>
+                      <div class="form-group">
+                        <label class="col-md-2 control-label">视频简介</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="vintro"  cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label  class="col-md-2 control-label">视频海报</label>
+                        <div class="col-md-6">
+                            <input type="file" name="pic" >
+                        </div>
+                    </div>
+
+                     <div class="form-group">
+                    <label for="inputUser" class="col-md-2 control-label">所属课程</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="course">
+                            {volist name="course" id="co"}
+                            <option value={$co.coid}>{$co.coname}</option>
+                            {/volist}
+                        </select>   
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">视频路径</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control"  placeholder="路径" name="path">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" name="" value="提交" class="btn btn-default">
+                        <button type="button" class="btn btn-default" onclick="" data-dismiss="modal">关闭</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="update_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel1">请填写视频信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="{:url('vupdate')}" accept-charset="UTF-8" method="post" enctype="multipart/form-data">
+                    
+                    <div class="form-group">
+                        <input type="hidden" name="vid" id="vid">
+                        <label class="col-md-2 control-label">视频名称</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="vname" placeholder="视频名称" name="vname">
+                        </div>
+                    </div>
+                      <div class="form-group">
+                        <label class="col-md-2 control-label">视频简介</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="vintro" id="vintro" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label  class="col-md-2 control-label">视频海报</label>
+                        <div class="col-md-6">
+                            <input type="file" name="pic" >
+                        </div>
+                    </div>
+
+                     <div class="form-group">
+                    <label for="inputUser" class="col-md-2 control-label">所属课程</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="course" id="course">
+                            {volist name="course" id="co"}
+                            <option value={$co.coid}>{$co.coname}</option>
+                            {/volist}
+                        </select>   
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">视频路径</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="path" placeholder="路径" name="path">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" name="" value="修改" class="btn btn-default">
+                        <button type="button" class="btn btn-default" onclick="" data-dismiss="modal">关闭</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="watch_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel2">视频播放</h4>
+            </div>
+      
+            <div class="modal-body">
+
+               <video width="100%" height="345px" controls="controls" src="" id="video" >
+                    
+                   </video>  
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    function jsedit(vid){
+        //从数据库中根据tid获取记录
+        $.getJSON(
+            "{:url('clubadmin/videoedit')}",{"vid":vid},function(json){
+                $("#vid").val(json.vid);
+                $("#vname").val(json.vname);
+                $("#vintro").val(json.vintro);
+                $("#course").val(json.coid);
+                $("#path").val(json.address);
+            });
+    }
+    function videodel(id) {
+        layer.confirm('确认删除',{btn:['确认','取消']},
+            function () {
+                $.post("{:url('clubadmin/videodel')}",{"vid":id},function (data) {
+                    if(data.status==0){
+                        location.href=location.href;//刷新页面
+                        layer.msg(data.msg,{icon:6});
+                    }else{
+                        layer.msg(data.msg,{icon:5});
+                    }
+                });
+            },function () {
+
+            });
+    }
+
+     function watch(vid){
+        //从数据库中根据vid获取记录
+        $.getJSON(
+            "{:url('clubadmin/watch')}",{"vid":vid},function(json){
+
+                var curWwwPath=window.document.location.href;
+
+                //获取主机地址之后的目录如：/Tmall/index.jsp
+                var pathName=window.document.location.pathname;
+                var pos=curWwwPath.indexOf(pathName);
+
+                //获取主机地址，如：//localhost:8080
+                var localhostPaht=curWwwPath.substring(0,pos);
+
+                //获取带"/"的项目名，如：/Tmall
+                var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+                // $("video1").attr("src","/video/1.mp4");
+                document.getElementById("video").src = projectName+'/'+json.address;
+          
+            });
+    }
+
+</script>
