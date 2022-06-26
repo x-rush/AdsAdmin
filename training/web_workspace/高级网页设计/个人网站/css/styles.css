@@ -1,0 +1,170 @@
+/*
+Design by Free Responsive Templates
+http://www.free-responsive-templates.com
+Released for free under a Creative Commons Attribution 3.0 Unported License (CC BY 3.0)
+Coder: lsa, free.responsive.templates@gmail.com
+Created: 11 September 2012 
+*/
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	font-family: 'Cutive', serif;
+	font-size:100%;
+	background: url(../images/siteBackground.jpg);
+	margin: 0;
+	padding: 0;
+	color: #e0e0df;
+	text-shadow:0 0px, 1px 1px #000000;
+}
+h1 {
+	font-size:1.7em; 
+	color:#ffffff;
+	text-decoration:none;
+	line-height:30px;
+	font-weight:inherit;
+}
+h2 {
+	font-size:0.8em;
+	color:#e2bf00;
+	font-weight:inherit;
+	text-transform:uppercase;
+	padding:0 0 20px 0;
+}
+h3 {
+	font-size:1.1em;
+	color:#a09f9f;
+	font-weight:inherit;
+	line-height:15px;
+}
+a img { 
+	border: none;
+}
+a {
+	color: #0191d6;
+	text-decoration: none; 
+}
+a:hover { 
+	color: #00adff;
+	text-decoration: underline;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	width: auto;
+}
+p {
+	line-height:140%;
+	padding:10px 0 20px 0;
+}
+ul li {
+	list-style:none;
+}
+hr {
+	background: none repeat scroll 0 0 #3f3f3f;
+	box-shadow:0 1px #000000;
+    border: 0 none;
+    height: 2px;
+    margin: 30px 0;
+}
+.wrapper {
+	width:93.75%; /* 960px/1024px  */
+	margin:0 auto;
+}
+header {
+	padding:30px 0 0 0;
+}
+.about {
+	margin-top:10px;
+}
+.description {
+	position:relative;
+}
+.icons, .date {
+	position:absolute;
+	top:0;
+	right:0;
+}
+.date {
+	background:none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+	padding:3px 10px;
+	text-align:right;
+}
+span, .date {
+	color:#a09f9f;
+	font-style:italic;
+	font-size:0.7em;
+}
+.icons li {
+	display:inline;
+}
+.colLeft {
+	width:31.041666666666666666666666666667%;
+	float:left;
+	text-align:right;
+}
+.colRight {
+	width:64.166666666666666666666666666667%;
+	float:right;
+}
+.listContent li {
+	background:url(../images/p.png) no-repeat left 5px;
+	padding-left:20px;
+}
+.listLinks li {
+	background:url(../images/p2.png) no-repeat left 5px;
+	padding-left:20px;
+}
+footer {
+	text-align: center;
+	padding:0 10px 30px 10px;
+}
+.clearfloat { 
+	clear:both;
+	height:0;
+	line-height: 0px;
+}
+/**************************/
+/*********************************Begin main menu****************************************/
+/**************************/
+
+/**************************/
+/*********************************End main menu****************************************/
+/**************************/
+/*********************************Begin Media Queries****************************************/
+/**************************/
+/* for 960px or less */
+@media screen and (max-width: 960px) {
+	.wrapper {
+		width:93.75%; /* 960px/1024px  */
+		margin:0 auto;
+	}
+}
+/* for 768px or less */
+@media screen and (max-width: 768px) {
+	.icons {
+		position: relative;
+		padding:10px 0 0 0;
+	}
+	.date {
+		position: relative;
+		padding:3px 10px;
+	}	
+}
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+	.colLeft {
+		float:none;
+		width:auto;
+		text-align:center;
+	}
+	.colRight {
+		float:none;
+		width:auto;
+	}
+
+}
+/**************************/
+/*********************************End Media Queries****************************************/
+/**************************/

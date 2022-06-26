@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+	    <script>
+	    	$(document).ready(function(){
+//	    		$("#box > ul > li > ul > li:nth-child(2)").css({
+//	    			background:"999",
+//	    			color:"fff"
+//	    		});
+                $("#box > ul > li > ul > li").on("click",function(){
+	    			$(this).toggleClass("list");
+	    		});
+	    </script>
+	    <style>
+	    	/*li{
+	    		background: #999;
+	    	}*/
+	    	/*#box > ul > li > ul > li {
+	    		background: #999;
+	    	}*/
+	    	/*#box > ul > li a {
+	    		background: #999;
+	    	}*/
+	    	/*#box > ul > li:nth-child(2) a{
+	    		background: #999;
+	    	}*/
+	    	.list{
+	    		background: #999;
+	    	}
+	    </style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>
+					<a href="#">首页</a>
+				</li>
+				<li>
+					<a href="#">网站基础</a>
+					<ul>
+						<li>HTML</li>
+						<li>CSS</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">设计工具</a>
+					<ul>
+					    <li>Photoshop</li>
+					    <li>Dreamweaver</li>
+					    <li>Flash</li>
+					    <li>Fireworks</li>
+					    <li>Notepad++</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">高级知识</a>
+					<ul>
+						<li>Javascript</li>
+						<li>jQuery</li>
+						<li>HTML5</li>
+						<li>SEO</li>
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#form1{
+				width: 350px;
+				font-size: 14px;
+			}
+			#form1 label{
+				display: inline-block;
+				width: 100px;
+				text-align: right;
+			}
+		</style>
+		<script>
+			function isNull(s){
+				if(s == "") return true;
+				var regu = "^[]+$";
+				var re = new RegExp(regu);
+				return re.test(s);
+			}
+			function checkMobile(s){
+				var regu = /^[1][3578][0-9]{9}$/;
+				return regu.test(s);
+			}
+			function checkEmail(s){
+				var regu = /^[0-9a-zA-Z][0-9a-zA-Z]*@([_0-9a-zA-Z]+\.)+[A-Za-z]{2,3}$/;
+				return regu.test(s);
+			}
+			function checkForm(){
+				var sUser = document.form1.user.value;
+				var sPsw = document.form1.psw.value;
+				var sPsw2 = document.form1.psw2.value;
+				var sMobile = document.form1.mobile.value;
+				var sEmail = document.form1.email.value;
+				
+				if(isNull(sUser)){
+					alert("用户名不能为空！");
+					return false;
+				}
+				if(sUser.length < 4 || sUser.length >8 ){
+					alert("用户名长度4-8位！")
+				}
+				if(isNull(sUser)){
+					alert("密码不能为空！");
+					return false;
+				}
+				if(sPsw.length < 5 || sPsw.length >14 ){
+					alert("用户名长度5-14位！")
+				}
+				if(isNull(sUser)){
+					alert("重置密码不能为空！");
+					return false;
+				}
+				if(sPsw !== sPsw2){
+					alert("两次输入密码不一致！");
+					return false;
+				}
+				if(!checkMobile(sMobile)){
+					alert("请输入正确手机号！");
+					return false;
+				}
+				if(!checkEmail(sEmail)){
+					alert("请输入正确的邮箱！");
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form id="form1" name="form1" method="get" action="" onsubmit="return checkForm()">
+			<fieldset>
+				<legend>用户注册</legend>
+				<p>
+					<label for="user">用户名：</label>
+					<input type="text" name="user" id="user" />
+				</p>
+				<p>
+					<label for="psw">密码：</label>
+					<input type="text" name="psw" id="psw" />
+				</p>
+				<p>
+					<label for="psw2">重复密码：</label>
+					<input type="text" name="psw2" id="psw2" />
+				</p>
+				<p>
+					<label for="mobile">手机号：</label>
+					<input type="text" name="mobile" id="mobile" />
+				</p>
+				<p>
+					<label for="email">邮箱：</label>
+					<input type="text" name="email" id="email" />
+				</p>
+				<p>
+					<label></label>
+					<input type="submit" name="button" id="button" value="提交" />
+					<input type="reset" name="button" id="button" value="重置" />
+				</p>
+			</fieldset>
+		</form>
+	</body>
+</html>

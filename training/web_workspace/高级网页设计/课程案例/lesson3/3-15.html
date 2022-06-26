@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+	    <style>
+	    	.top li{
+	    		float: left;
+	    		list-style: none;
+	    		width: 60px;
+	    		height: 20px;
+	    		line-height: 20px;
+	    		text-align: center;
+	    		position: relative;
+	  	    }
+	  	    .top li i{
+	  	    	position: absolute;
+	  	    	top: 15px;
+	  	    	left: 42%;
+	  	    	color: #f00;
+	  	    }
+	  	    .top{
+	  	    	border-bottom: 1px solid #f00;
+	  	    	width: 180px;
+	  	    	height: 20px;
+	  	    }
+	  	    .top ul{
+	  	    	padding: 0;
+	  	    }
+	  	    .box{
+	  	    	clear: both;
+	  	    }
+	  	    .box > ul > li > div{
+	  	    	float: left;
+	  	    }
+	  	    .box li{
+	  	    	clear: both;
+	  	    }
+	  	    .box .img{
+	  	    	position: relative;
+	  	    }
+	  	    .box .img img{
+	  	    	width: 65px;
+	  	    	height: 65px;
+	  	    }
+	  	    .box .img i{
+	  	    	display: block;
+	  	    	position: absolute;
+	  	    	top: 0;
+	  	    	left: 0;
+	  	    	color: #f00;
+	  	    	width: 20px;
+	  	    	height: 20px;
+	  	    	line-height: 20px;
+	  	    	text-align: center;
+	  	    }
+	  	    .box ul{
+	  	    	padding: 0;
+	  	    	list-style-type: none;
+	  	    }
+	  	    .box .img .num{
+	  	    	position: absolute;
+	  	    	top: 0;
+	  	    	left: 0;
+	  	    	z-index: 100;
+	  	    	color: #fff;
+	  	    	font-size:10px;
+	  	    	width: 20px;
+	  	    	height: 20px;
+	  	    	line-height: 20px;
+	  	    	text-align: center;
+	  	    	font-weight: bold;
+	  	    }
+	  	    .box .text{
+	  	    	width: 115px;
+	  	    	height: 65px;
+	  	    }
+	  	    .box .text .now{
+	  	    	color: #f00;
+	  	    	font-weight: bold;
+	  	    }
+	  	    .box .text .old{
+	  	    	color: #ccc;
+	  	    	text-decoration: line-through;
+	  	    }
+	  	    .selected{
+	  	    	color: #fff;
+	  	    	background: #f00;
+	  	    }
+	  	    .none{
+	  	    	display: none;
+	  	    }
+	    </style>
+	    <script src="js/jquery-3.2.1.js"></script>
+	    <script>
+	    	$(document).ready(function(){
+	    		$(".top li").on("mouseover",function(){
+	    			$(this).addClass("selected").siblings("li").removeClass("selected");
+	    			$("top i").addClass("none");
+	    			$(this).find("i").removeClass("none");
+	    			 
+	    			var i = $(".top li").index(this);
+	    			$(".box").addClass("none").eq(i).removeClass("none");
+	    		});
+	    	});
+	    </script>
+	</head>
+	
+	<body>
+		<div class="main">
+			<div class="title">热销排行榜</div>
+			<div class="top">
+				<ul>
+					<li class="selected">同分类<i class="fa fa-caret-down"></i></li>
+					<li>同品牌<i class="fa fa-caret-down none"></i></li>
+					<li>同价位<i class="fa fa-caret-down none"></i></li>
+				</ul>
+			</div>
+			<div class="box">
+				<ul>
+					<li>
+						<div class="img">
+							<i class="fa fa-circle"></i>
+							<div class="num">1</div>
+							<img src="img/DSC_0028.JPG">
+						</div>
+						<div class="text">
+							<strong>手机手机手机手机手机手机</strong>
+							<span class="now">￥799</span>
+							<span class="old">￥1499</span>
+						</div>	
+					</li>
+					<li>
+						<div class="img">
+							<i class="fa fa-circle"></i>
+							<div class="num">2</div>
+							<img src="img/DSC_0049.JPG">
+						</div>
+						<div class="text">
+							<strong>手机手机手机手机手机手机</strong>
+							<span class="now">￥799</span>
+							<span class="old">￥1499</span>
+						</div>	
+					</li>
+					<li>
+						<div class="img">
+							<i class="fa fa-circle"></i>
+							<div class="num">3</div>
+							<img src="img/DSC_0068.JPG">
+						</div>
+						<div class="text">
+							<strong>手机手机手机手机手机手机</strong>
+							<span class="now">￥799</span>
+							<span class="old">￥1499</span>
+						</div>	
+					</li>
+					<li>
+						<div class="img">
+							<i class="fa fa-circle"></i>
+							<div class="num">4</div>
+							<img src="img/DSC_0028.JPG">
+						</div>
+						<div class="text">
+							<strong>手机手机手机手机手机手机</strong>
+							<span class="now">￥799</span>
+							<span class="old">￥1499</span>
+						</div>	
+					</li>
+					<li>
+						<div class="img">
+							<i class="fa fa-circle"></i>
+							<div class="num">5</div>
+							<img src="img/DSC_0028.JPG">
+						</div>
+						<div class="text">
+							<strong>手机手机手机手机手机手机</strong>
+							<span class="now">￥799</span>
+							<span class="old">￥1499</span>
+						</div>	
+					</li>
+				</ul>
+			</div>
+			<div class="box none">
+				<ul>
+					<li>
+						<div class="img">
+							<i class="fa fa-circle"></i>
+							<div class="num">1</div>
+							<img src="img/DSC_0028.JPG">
+						</div>
+						<div class="text">
+							<strong>手机手机手机手机手机手机</strong>
+							<span class="now">￥799</span>
+							<span class="old">￥1499</span>
+						</div>	
+					</li>
+					<li>
+						<div class="img">
+							<i class="fa fa-circle"></i>
+							<div class="num">2</div>
+							<img src="img/DSC_0049.JPG">
+						</div>
+						<div class="text">
+							<strong>手机手机手机手机手机手机</strong>
+							<span class="now">￥799</span>
+							<span class="old">￥1499</span>
+						</div>	
+					</li>
+					<li>
+						<div class="img">
+							<i class="fa fa-circle"></i>
+							<div class="num">3</div>
+							<img src="img/DSC_0068.JPG">
+						</div>
+						<div class="text">
+							<strong>手机手机手机手机手机手机</strong>
+							<span class="now">￥799</span>
+							<span class="old">￥1499</span>
+						</div>	
+					</li>
+					<li>
+						<div class="img">
+							<i class="fa fa-circle"></i>
+							<div class="num">4</div>
+							<img src="img/DSC_0028.JPG">
+						</div>
+						<div class="text">
+							<strong>手机手机手机手机手机手机</strong>
+							<span class="now">￥799</span>
+							<span class="old">￥1499</span>
+						</div>	
+					</li>
+					<li>
+						<div class="img">
+							<i class="fa fa-circle"></i>
+							<div class="num">5</div>
+							<img src="img/DSC_0028.JPG">
+						</div>
+						<div class="text">
+							<strong>手机手机手机手机手机手机</strong>
+							<span class="now">￥799</span>
+							<span class="old">￥1499</span>
+						</div>	
+					</li>
+				</ul>
+			</div>
+			<div class="box none">
+				<ul>
+					<li>
+						<div class="img">
+							<i class="fa fa-circle"></i>
+							<div class="num">1</div>
+							<img src="img/DSC_0028.JPG">
+						</div>
+						<div class="text">
+							<strong>手机手机手机手机手机手机</strong>
+							<span class="now">￥799</span>
+							<span class="old">￥1499</span>
+						</div>	
+					</li>
+					<li>
+						<div class="img">
+							<i class="fa fa-circle"></i>
+							<div class="num">2</div>
+							<img src="img/DSC_0049.JPG">
+						</div>
+						<div class="text">
+							<strong>手机手机手机手机手机手机</strong>
+							<span class="now">￥799</span>
+							<span class="old">￥1499</span>
+						</div>	
+					</li>
+					<li>
+						<div class="img">
+							<i class="fa fa-circle"></i>
+							<div class="num">3</div>
+							<img src="img/DSC_0068.JPG">
+						</div>
+						<div class="text">
+							<strong>手机手机手机手机手机手机</strong>
+							<span class="now">￥799</span>
+							<span class="old">￥1499</span>
+						</div>	
+					</li>
+					<li>
+						<div class="img">
+							<i class="fa fa-circle"></i>
+							<div class="num">4</div>
+							<img src="img/DSC_0028.JPG">
+						</div>
+						<div class="text">
+							<strong>手机手机手机手机手机手机</strong>
+							<span class="now">￥799</span>
+							<span class="old">￥1499</span>
+						</div>	
+					</li>
+					<li>
+						<div class="img">
+							<i class="fa fa-circle"></i>
+							<div class="num">5</div>
+							<img src="img/DSC_0028.JPG">
+						</div>
+						<div class="text">
+							<strong>手机手机手机手机手机手机</strong>
+							<span class="now">￥799</span>
+							<span class="old">￥1499</span>
+						</div>	
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
