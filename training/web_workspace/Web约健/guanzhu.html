@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/aui.css">
+    <link rel="stylesheet" href="css/aui-flex.css">
+    <link rel="stylesheet" href="css/aui-pull-refresh.css">
+    <link rel="stylesheet" href="css/aui-skin.css">
+    <link rel="stylesheet" href="css/aui-skin-night.css">
+    <link rel="stylesheet" href="css/aui-slide.css">
+</head>
+<body style="background: white">
+<header class="aui-bar aui-bar-nav " style="background-color: #EE4000;color: white  ">
+    <a href="index.html" class="aui-pull-left aui-btn">
+        <span class="aui-iconfont aui-icon-left" style="color: white"></span>
+    </a>
+    <div class="aui-title"style="color:white;">我的关注</div>
+</header>
+<div id="person">
+    <div  class="aui-col-xs-12" style="height: 200px;background: url('img/back1.jpg')">
+        <img v-bind:src="'http://172.24.10.175/workout/Uploads/'+list.photo"
+             alt="" class="aui-col-xs-4" style="height: 100px;margin-top: 50px;margin-left: 40px;">
+        <p v-text="list.user_name" class="aui-col-xs-6 " style="line-height: 200px;margin-left: 20px"></p>
+        <br>
+    </div>
+</div>
+<div class="care-list" id="persons">
+    <div class="care-item" v-for="item in list">
+        <img :src="'http://172.24.10.175/workout/Uploads/'+item.thumb" >
+
+        <span>{{item.club_name}}</span>
+
+        <button class="layui-btn" lay-submit="" lay-filter="demo1" onclick="delLike()">取消关注</button>
+        <p id="club_id" style="display: none">{{item.id}}</p>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/jquery.form.js"></script>
+<script type="text/javascript" >
+
+    var uid= $.cookie('uid');
+
+    $.ajax({
+        url: "http://172.24.10.175/workout/api.php/getmine/userid/"+uid,
+        type: 'post',
+        async: false,
+        dataType: 'jsonp',
+        success: function (data) {
+            console.log( $.cookie('uid'));
+            var example1 = new Vue({
+                el: '#person',
+                data: {
+                    list: data
+                }
+
+            })
+        }
+
+    });
+    $.ajax({
+        url: "http://172.24.10.175/workout/api.php/get/mod/user/id/"+uid+"/related/1/map/fanclub",
+        type: 'post',
+        async: false,
+        dataType: 'jsonp',
+        success: function (data) {
+            var example1 = new Vue({
+                el: '#persons',
+                data: {
+                    list: data.fanclub
+                }
+            })
+            console.log(data);
+        }
+
+    });
+    $.ajax({
+        url: "http://172.24.10.175/workout/api.php/get/mod/user/id/"+uid+"/related/1/map/shaitu",
+        type: 'post',
+        async: false,
+        dataType: 'jsonp',
+        success: function (data) {
+            var example1 = new Vue({
+                el: '#shaitu',
+                data: {
+                    list: data.shaitu
+                }
+
+            })
+        }
+
+    });
+    function delLike(id) {
+        var club_id = document.getElementById('club_id').innerText;
+        var url11 ="http://172.24.10.175/workout/api.php/delete/mod/clubfans/club_id/"+club_id+"/user_id/"+uid+"/fans_type=1";
+        $.ajax({
+            url:"http://172.24.10.175/workout/api.php/delete/mod/clubfans/club_id/"+club_id+"/user_id/"+uid+"/fans_type=1",
+            dataType:'json',
+            type:'post',
+            success:function (data) {
+
+            },
+            error:function (data) {
+                alert("取消成功");
+                setTimeout(function () {
+                    location.href='guanzhu.html';
+                }, 1000);
+            }
+        })
+    }
+</script>
+
+</html>

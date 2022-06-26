@@ -1,0 +1,307 @@
+﻿{layout name="public/home"/}
+<div class="header">
+    <h1 class="page-header">
+        精彩活动
+    </h1>
+    <!--<ol class="breadcrumb">-->
+    <!--<li><a href="#">Home</a></li>-->
+    <!--<li><a href="#">Empty</a></li>-->
+    <!--<li class="active">Data</li>-->
+    <!--</ol>-->
+
+</div>
+<div id="page-inner" style="min-height: 600px">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Advanced Tables -->
+                        <div class="panel panel-default">
+                            {if(session('matchserror'))}
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <li>{$Think.session.matchserror}</li>
+                                </ul>
+                            </div>
+                            {elseif(session('matchssuccess'))}
+                            <div class="alert alert-success">
+                                <ul>
+                                    <li>{$Think.session.matchssuccess}</li>
+                                </ul>
+                            </div>
+                            {/if}
+
+                            <div class="panel-heading">
+                                matchs Tables
+                                <a href="#"  data-toggle="modal" data-target="#add_dialog" style="float: right"><i class="fa fa-plus ">New Classification</i></a>
+                            </div>
+                            <div class="panel-body">
+                                <div >
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                        <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>比赛名</th>
+                                            <th>地址</th>
+                                            <th>联系电话</th>
+                                            <th>海报</th>
+                                            <th>简介</th>
+                                            <th>报名表</th>
+                                            <th>操作</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {volist name='matchs' id='vo'}
+                                        <tr class="odd gradeX">
+                                            <td>{$i}</td>
+                                            <td>{$vo.mname}</td>
+                                            <td>{$vo.maddress}</td>
+                                            <td>{$vo.mtel}</td>
+                                            <td><img src="__STATIC__/poster/{$vo.mpic}" width="100px" alt=""></td>
+                                            <td>{$vo.cintro|msubstr=0,20,'utf-8',true}</td>
+                                            <td><a href="#" onclick="orderlist({$vo.mid})"><button type="button" class="btn btn-primary">报名详情</button></a>
+                                                <!--url('admin/typedel',['id'=>$v->tid])-->
+                                            </td>
+                                            <td><a href="#" data-toggle="modal" data-target="#update_dialog" onclick="jsedit({$vo.mid})"><button type="button" class="btn btn-primary">修改</button></a>
+                                                <!--url('admin/typedel',['id'=>$v->tid])-->
+                                            </td>
+                                            <td><a href="javascript:;"><button type="button" class="btn btn-danger" onclick="activitydel({$vo.mid})">删除</button></a></td>
+                                        </tr>
+                                        {/volist}
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--End Advanced Tables -->
+                    </div>
+                </div>
+            </div>
+<div class="modal fade" id="update_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">修改比赛信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="{:url('admin/matchsupdate')}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="hidden" name="mid" id="mid">
+                        <label class="col-md-2 control-label">比赛名</label>
+                        <div class="col-md-10">
+                            <input class="form-control" id="mname" placeholder="比赛名" name="mname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">比赛地址</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="maddress" id="maddress" placeholder="地址">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">联系电话</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="mtel" id="mtel" placeholder="电话">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">报名价格</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="price"  id="price" placeholder="价格"  onkeyup="clearNoNum(this)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">比赛简介</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="cintro" id="cintro" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-md-2 control-label">海报</label>
+                        <div class="col-md-5">
+                            <!--<input type="file" name="mpic" value="请选择图片">-->
+                            <input type="file" id="infile" name="mpic" style="display: none" onchange="getFilename()"/>
+
+                            <input type="button" class="btn btn-default" value="选择图片" onclick="javascript:clp();"><p id="filename">暂未选择图片</p>
+                        </div>
+
+                        <div class="col-md-5">
+                            <label  class="col-md-2 control-label">原海报</label>
+                            <img id="prepic" width=100px height="60px" src="" name="prepic">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">比赛时间</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="datetime" name="mdate" id="mdate">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <input type="submit" name="" value="提交" class="btn btn-default">
+                        <!--<input type="reset" name="" value="重置" class="btn btn-default">-->
+                        <button type="button" class="btn btn-default" onclick="" data-dismiss="modal">关闭</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="add_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" >修改课程信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="{:url('admin/matchsadd')}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">比赛名</label>
+                        <div class="col-md-10">
+                            <input class="form-control" placeholder="比赛名" name="mname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">比赛地址</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="maddress" placeholder="地址">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">联系电话</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="mtel" placeholder="电话">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">报名价格</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="price" placeholder="价格"  onkeyup="clearNoNum(this)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">比赛简介</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="cintro" cols="30" rows="10" placeholder="比赛简介"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-md-2 control-label">海报</label>
+                        <div class="col-md-5">
+                            <input type="file" name="mpic" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">比赛时间</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="date" name="mdate" placeholder="比赛时间">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <input type="submit" name="" value="提交" class="btn btn-default">
+                        <!--<input type="reset" name="" value="重置" class="btn btn-default">-->
+                        <button type="button" class="btn btn-default" onclick="" data-dismiss="modal">关闭</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function jsedit(mid){
+        //从数据库中根据tid获取记录
+        $.getJSON(
+            "{:url('admin/matchsedit')}",{"mid":mid},function(json){
+                $("#mid").val(json.mid);
+                $("#mname").val(json.mname);
+                $("#maddress").val(json.maddress);
+                $("#cintro").val(json.cintro);
+                $("#mtel").val(json.mtel);
+                $("#price").val(json.price);
+                $("#mdate").val(json.mdate);
+                $('#prepic').attr("src","__STATIC__/poster/"+json.mpic);
+                // alert(json.tid);
+            });
+    }
+    function activitydel(id) {
+        layer.confirm('确认删除',{btn:['确认','取消']},
+            function () {
+                $.post("{:url('admin/matchsdel')}",{"mid":id},function (data) {
+                    if(data.status==0){
+                        location.href=location.href;//刷新页面
+                        layer.msg(data.msg,{icon:6});
+                    }else{
+                        layer.msg(data.msg,{icon:5});
+                    }
+                });
+            },function () {
+
+            });
+    }
+
+    function clp(){
+        $("#infile").click();
+        // document.getElementById("picfile").click();
+        // document.getElementById("filename").value=document.getElementById("picfile").value;
+    }
+    function getFilename(){
+        var f = document.getElementById("infile").files;
+        //名称
+        $("#filename").text("文件名:"+f[0].name);
+    }
+</script>
+<script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element','form', function(){
+        var element = layui.element;
+        var form = layui.form;
+
+        form.render();
+
+        //…
+    });
+    function orderlist(id) {
+        layui.use('layer', function () {
+            var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+            // alert("{:url('admin/orderlist/"+id+"')}");
+            // /yuejian/public/admin/orderlist/id
+            layer.open({
+                type: 2 //此处以iframe举例
+                , title: '比赛订单'
+                , area: ['800px', '600px']
+                , shade: 0
+                , maxmin: true
+                , offset: 'auto'//显示坐标-auto居中
+                , content:"/yuejian/public/admin/matchsorder/"+id
+                , btn: ['关闭']//只是为了演示
+                , yes: function () {
+                    layer.closeAll();
+                    // $(that).click();
+                }
+                , zIndex: layer.zIndex //重点1
+                , success: function (layero) {
+                    layer.setTop(layero); //重点2
+                }
+            });
+        });
+    };
+</script>
+<script type="text/javascript">
+    function num(obj){
+        obj.value = obj.value.replace(/[^\d.]/g,""); //清除"数字"和"."以外的字符
+        obj.value = obj.value.replace(/^\./g,""); //验证第一个字符是数字
+        obj.value = obj.value.replace(/\.{2,}/g,"."); //只保留第一个, 清除多余的
+        obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+        obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3'); //只能输入两个小数
+    }
+</script>
+
+
+
+

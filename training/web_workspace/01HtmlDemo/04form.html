@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Form</title>
+	</head>
+	<body>
+		<form id="test" action="http://api.abc.com/user" method="post" 
+			enctype="utf-8">
+			<input type="text" value="i'm text" maxlength="10"/>
+			</br>
+			<input type="password" value="i'm password"/>
+			<br />
+			<input type="radio" checked value="0" name="gender"/>男
+			<input type="radio" value="1" name="gender"/>女
+			<br />
+			<input type="checkbox" checked value="1"/>电影
+			<input type="checkbox"  value="2"/>美食
+			<input type="checkbox"  value="3"/>K歌
+			<br />
+			<input type="button" value="按钮一枚" />
+			<br />
+			<input type="number" />
+			<br />
+			<input type="date" />
+			<br />
+			<input type="color" />
+			<br />
+			<input type="range" min="1" max="500" />
+			<br />
+			<input type="email" />
+			<br />
+			<input type="submit" />
+			<br />
+			<input type="URL" />
+			<br />
+			<input type="file"  multiple="multiple"/>
+			<br />
+			
+			<select name="" id="">
+				<option value="0">西瓜</option>	
+				<option selected value="1">芒果</option>	
+				<option value="2">山竹</option>	
+			</select>
+			<br />
+			
+			<style>
+				textarea{
+					resize:none;
+				}
+			</style>
+			<textarea rows="3" cols="16">
+				一大段文本值
+			</textarea>
+			
+		</form>
+	</body>
+</html>

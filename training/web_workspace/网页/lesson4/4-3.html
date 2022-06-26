@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>4-3</title>
+		<script src="https://cdn.bootcss.com/p5.js/0.5.16/p5.js"></script>
+		<script>
+			var colors=[
+			{
+				"r":255,
+				"g":193,
+				"b":37
+			},
+			{
+				"r":139,
+				"g":101,
+				"b":8
+			},
+			{
+				"r":144,
+				"g":238,
+				"b":144
+			}
+			];
+			function bubble(x,y,r,speedX,speedY,red,green,blue){
+				this.x=x;
+				this.y=y;
+				this.r=r;
+				this.speedX=speedX;
+				this.speedY=speedY;
+				this.red=red;
+				this.green=green;
+				this.blue=blue;
+				this.overflow = 0;
+				this.move = function(){
+					this.x +=this.speedX;
+					if(this.x < 0 || this.x > windowWidth)
+					    this.speedX = -this.speedX;
+					this.y +=this.speedY;
+					if(this.y < 0 || this.y > windowHeight)
+					    this.speedY = -this.speedY;
+				};
+				this.display = function(){
+					noStroke();
+					fill(this.red,this.green,this.blue);
+					ellipse(this.x,this.y,this.r+this.overflow,this.r+this.overflow);
+				};
+			}
+			var bubbles = [];
+			function setup(){
+				createCanvas(windowWidth,windowHeight);
+				background(255);
+				for(var i = 0;i<500;i++){
+					var randomX = random(0,windowWidth);
+					var randomY = random(0,windowHeight);
+					var randomR = random(0,10);
+					var randomSpeedX = random(-2,2);
+					var randomSpeedY = random(-2,2);
+					var r = colors[i%3].r;
+					var g = colors[i%3].g;
+					var b = colors[i%3].b;
+					
+					bubbles[i] = new bubble(randomX,randomY,randomR,randomSpeedX,randomSpeedY,r,g,b);
+					bubbles[i].display();		
+				}
+			}
+			function draw(){
+				background(255);
+				for(var i = 0;i < 500;i++){
+					bubbles[i].move();
+					bubbles[i].display();
+				}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

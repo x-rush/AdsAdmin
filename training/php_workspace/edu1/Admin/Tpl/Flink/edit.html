@@ -1,0 +1,41 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/listflink/callbackType/closeCurrent" class="pageForm required-validate" 
+        onsubmit="return validateCallback(this,dialogAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+        <input type="hidden" name="id" value="<{$vo.id}>">
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+                <dt>友情链接</dt>
+                <dd><input type="text" class="required" style="width:100%" name="webname" value="<{$vo.webname}>"/></dd>
+            </dl>
+			<dl>
+				<dt>url地址</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="url" value="<{$vo.url}>"/></dd>
+            </dl>
+            <dl>
+				<dt>Email</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="email" value="<{$vo.email}>"/></dd>
+            </dl>
+            <dl>
+				<dt>描述</dt>
+				<dd><textarea class="required" cols="40" rows="2" name="descr"><{$vo.descr}></textarea></dd>
+            </dl>
+            <dl></dl>
+            <dl>
+				<dt>链接状态：</dt>
+                <dd>
+                    <input type="radio" name="status" value="2" <{if $vo.status == 2}>checked<{/if}>>在用
+                    <input type="radio" name="status" value="3" <{if $vo.status == 3}>checked<{/if}>>废弃
+                </dd>
+            </dl>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

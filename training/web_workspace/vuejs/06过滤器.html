@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>06过滤器</title>
+		<script src="vue.js"></script>
+	</head>
+	<body>
+		<div id="myApp">
+			
+			<p>{{message|toupper}}</p>
+			<hr />
+			<!--
+				通过{{变量名|过滤器名称}}
+            -->
+			<p>数值{{num|topercentage}}</p>
+		</div>
+		<script>
+			var myApp = new Vue({
+				el:"#myApp",
+				data:{
+					message:"hello message",
+					num:0.3
+				},
+				/*过滤器作用：格式化变量的输出：(日期字母数字)*/
+				filters:{
+					toupper:function(value){
+						return value.toUpperCase();
+					},
+					topercentage:function(value){
+						return value*100;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

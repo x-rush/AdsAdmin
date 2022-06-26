@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Home</title>
+    <!-- Custom Theme files -->
+    <link href="__STATIC__/admin/assets/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- Custom Theme files -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <style>
+        body{
+            background: url(__STATIC__/admin/assets/img/banner.jpg)repeat;
+            padding:100px 0px 30px 0px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 100%;
+        }
+    </style>
+</head>
+<body style="padding-top: 50px">
+<div class="login">
+    <h2>约健</h2>
+    <div class="login-top">
+        <h1>LOGIN FORM</h1>
+        <form method="post" action="">
+            <input type="text" name="Username"   onfocus="this.value = '';" required placeholder="Username" >
+            <input type="password" name="password"  onfocus="this.value = '';" required placeholder="Pass">
+            <!--<div>-->
+            <!--</div>   -->
+            <div class="control-group">
+                <div class="controls">
+                    <input class="btn-block" type="text" id="verifycode" placeholder="验证码" name="verifycode">
+                    <img src="{:url('show_captcha')}" alt="captcha" onclick="this.src=this.src"+'?' />
+                </div>
+            </div>
+            {if(session('message'))}
+            <p style="text-align: center ;color:#F45B4B ">{$Think.session.message} </p>
+            {/if}
+            <div class="forgot">
+                <a href="#">forgot Password</a>
+                <input type="submit" value="Login" >
+            </div>
+        </form>
+
+    </div>
+    <div class="login-bottom">
+        <h3>New User &nbsp;<a href="#">Register</a>&nbsp Here</h3>
+    </div>
+</div>
+
+</body>
+</html>

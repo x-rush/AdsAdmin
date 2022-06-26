@@ -1,0 +1,214 @@
+<html>
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMOOC</title>
+
+	<!-- Bootstrap Styles-->
+    <link href="__STATIC__/adminMSI/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="__STATIC__/adminMSI/css/font-awesome.css" rel="stylesheet" />
+     <!-- Morris Chart Styles-->
+   
+        <!-- Custom Styles-->
+    <link href="__STATIC__/adminMSI/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+ 
+     <!-- TABLE STYLES-->
+    <link href="__STATIC__/adminMSI/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="__STATIC__/admin2/assets/ico/favicon.html">
+    
+ 
+    <link href="__STATIC__/admin2/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__STATIC__/admin2/assets/css/alertify.css" rel="stylesheet">
+    <link rel="Favicon Icon" href="favicon.ico">
+
+</head>
+<body>
+    <div id="wrapper">
+         {include file="public:header"/}
+        <!--/. NAV TOP  -->
+         <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                     <li>
+                        <a href="{:url('video/index')}"  ><i class="fa fa-desktop"></i>视频管理</a>
+                                           
+                    </li> 
+                    <li>
+                        <a href="{:url('videotype/index')}"  class="active-menu"><i class="fa fa-edit"></i>视频类型管理</a>
+                    </li>
+                     <li>
+                        <a href="{:url('user/index')}"><img src="__STATIC__/adminMSI/icon/people.png" class="fa fa-fw" >&nbsp&nbsp用户管理</a>
+                    </li>
+                    
+                    <li>
+                        <a href="{:url('comments/index')}" ><i class="fa fa-table"></i>留言管理</a>
+                    </li>
+                   
+                    <li>
+                        <a href="{:url('article/index')}"><i class="fa fa-fw fa-file"></i>文章管理</a>
+                    </li>
+                     <li>
+                        <a href="{:url('analyse/index')}"><i class="fa fa-dashboard"></i>数据分析</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper" >
+            <div id="page-inner">
+			 <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            视频类型管理 <small>IMOOC</small>
+                        </h1>
+                    </div>
+                </div> 
+                 <!-- /. ROW  -->
+               
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             VIDEOTYPE列表                                   
+                            <a href="#" data-title="Add User" data-toggle="modal" data-target="#add_modal"><i class="icon-plus"></i></a>
+                            <a href="#" data-title="Collapse" data-collapsed="false" class="collapse"><i class="icon-chevron-up"></i></a>
+
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>序号</th>
+                                        
+                                            <th>视频类型</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                        <tbody>
+                                        {volist name="videotype" id="vo"}
+                                <tr>
+                                    <td>{$vo.tid}</td>
+                                    <td>{$vo.typename}</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+                                                Action
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li><a href="#" data-title="Add User" data-toggle="modal" data-target="#edit_modal" onclick="jsedit({$vo.tid})"><i class="icon-edit"></i>Edit</a></li>
+                                                <li><a href="{:url('videotype/delete',['id'=>$vo.tid])}"><i class="icon-trash"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {/volist}
+                            </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+              
+                <!-- /. ROW  -->
+        </div>
+               <footer><p>Copyright &copy; 2018.Company name All rights reserved.More Templates <a href="#" target="_blank" title="慕课网">慕课网</a> </p></footer>
+    </div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+  
+
+<div class="modal fade" id="add_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                 <div class="modal-content">
+                      <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">添加课程类型</h4>
+                        </div>
+          <div class="modal-body">
+               <div class="modal-body">
+        <p>
+            <form method="post" action="{:url('add')}">
+                <input type="text" name="typename" placeholder="typename">
+                <input type="submit" value="添加">
+            </form>
+        </p>
+    </div>
+
+    </div>
+           <div class="modal-footer">
+                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                 <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                </div>
+           </div>
+       </div>
+ <!-- 修改视频类型模块 -->
+       <div class="modal fade" id="edit_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                 <div class="modal-content">
+                      <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">修改课程类型</h4>
+                        </div>
+          <div class="modal-body">
+               <div class="modal-body">
+        <p>
+            <form method="post" action="{:url('update')}">
+                <input type="hidden" name="tid" id="tid-modal">
+                <input type="text" name="typename" placeholder="typename" id="typename-modal">
+                <input type="submit" value="修改">
+            </form>
+        </p>
+    </div>
+
+    </div>
+           <div class="modal-footer">
+                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                 <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                </div>
+           </div>
+       </div>
+
+    <script src="__STATIC__/adminMSI/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="__STATIC__/adminMSI/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="__STATIC__/adminMSI/js/jquery.metisMenu.js"></script>
+     <!-- DATA TABLE SCRIPTS -->
+    <script src="__STATIC__/adminMSI/js/dataTables/jquery.dataTables.js"></script>
+    <script src="__STATIC__/adminMSI/js/dataTables/dataTables.bootstrap.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
+         <!-- Custom Js -->
+    <script src="__STATIC__/adminMSI/js/custom-scripts.js"></script>
+    <script type="text/javascript">
+        function jsedit(tid){
+            $.getJSON(
+               "{:url('edit')}",{"tid":tid},function(json){
+                $("#tid-modal").val(json.tid);
+                $("#typename-modal").val(json.typename);
+      }
+    );
+  }
+    </script>
+    
+   
+</body>
+</html>

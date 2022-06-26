@@ -1,0 +1,67 @@
+{layout name="public/home"/}
+<div class="header">
+    <h1 class="page-header">
+        晒图列表
+    </h1>
+
+</div>
+<div id="page-inner" style="min-height: 600px">
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Advanced Tables -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Photos Tables
+                </div>
+                <div class="panel-body">
+                    <div >
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>晒图用户</th>
+                                <th>晒图内容</th>
+                                <th>晒图图片</th>
+                                <th>操作</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name='photoshow' id='vo'}
+                            <tr class="odd gradeX">
+                                <td>{$i}</td>
+                                <td>{$vo.uname}</td>
+                                <td>{$vo.content}</td>
+                                <td><img src="__STATIC__/img/{$vo.pic}" width="50px" alt=""></td>
+                                <td><a href="{:url('admin/comment',['pid'=>$vo.pid])}"><button type="button" class="btn btn-primary">评论详情</button></a></td>
+                                <td><a href="javascript:;"><button type="button" class="btn btn-danger" onclick="photoshowdel({$vo.pid})">删除</button></a></td>
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            <!--End Advanced Tables -->
+        </div>
+    </div>
+</div>
+<script>
+    function photoshowdel(id) {
+        layer.confirm('确认删除',{btn:['确认','取消']},
+            function () {
+                $.post("{:url('admin/photoshowdel')}",{"pid":id},function (data) {
+                    if(data.status==0){
+                        location.href=location.href;//刷新页面
+                        layer.msg(data.msg,{icon:6});
+                    }else{
+                        layer.msg(data.msg,{icon:5});
+                    }
+                });
+            },function () {
+
+            });
+    }
+</script>

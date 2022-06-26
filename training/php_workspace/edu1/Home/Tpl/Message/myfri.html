@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>我的关注</title>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" type="image/x-icon" href="__PUBLIC__/images/favicon.png">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/typo.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/simple.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/message.css">
+        <style type="text/css">
+        .ml10{
+            margin-left:100px;
+        }
+        </style>
+        <script type="text/javascript" src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+       
+    </head>
+    <body>
+    <{include file="../Public/head.html"}>
+<div id="sub-header" class="group_h">
+    <div class="container">
+        <div class="navbar-header col-sm-offset-1">
+            <h1><a href="__APP__/Message/mine">个人中心</a></h1>
+        </div>
+        <div class="col-md-6">
+            <ul class="navbar-left">
+                <li><a href="__APP__/Message/index">贴吧首页</a></li>
+                <li class="btn-upload-w"><a href="__APP__/Message/add" class="btn btn-default btn-upload"><i class="icon-upload-alt"></i>发帖去~</a></li>
+                <li><a href="__APP__/Question/index">问题首页</a></li>
+                <li class="btn-upload-w"><a href="__APP__/Question/add" class="btn btn-default btn-upload"><i class="icon-upload-alt"></i>提问去~</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+<div id="main">
+    <div class="container">
+        <div class="home_module row">
+            <div class="container">
+                
+                <div class="col-md-8">
+                    <div style='border:1px solid #ddd;width:100%;height:100px;background:url("__PUBLIC__/images/t_bg.jpg") 0px 40px no-repeat'>
+                        <div style='float:left;width:100px;height:100px;'>
+                            <img style='width:100px;height:100px' src="__PUBLIC__/uploads/users/<{if $user.picture!='' && $user.picture!='1.jpg'}><{$user.username}>/<{$user.picture}><{else}>0/1.jpg<{/if}>">
+                        </div>
+                        <div style='margin:15px 0px 0px 50px;float:left;width:150px;height:30px;font:bold 20px "楷体";'>
+                            <{if $user.name!=''}><{$user.name}><{else}><{$user.username}><{/if}>
+                        </div>
+                        <div class='dhf' style='margin:23px 0px 0px 7%;float:left;width:140px;height:17px;font:normal 12px "宋体";'>
+                            <{if $user.id eq $smarty.session.user.id}>
+                                <a href='__APP__/Message/mynews'>最新动态：待回复消息 <{$smarty.session.user.hfnum}></a>
+                            <{/if}>
+                        </div>
+                        <div style='float:left;width:80%;height:2px;'></div>
+                        <div style='margin:0px 0px 0px 50px;float:left;width:74%;height:17px;font:normal 12px "宋体";'>
+                            发帖：<{$mnum}>　提问：<{$mnum2}>
+                        </div>
+                        <{if $user.id eq $smarty.session.user.id}>
+                        <div class='menu'>
+                            <a href='__APP__/Message/mymess'>我的帖子</a>
+                        </div>
+                        <div class='menu'>
+                            <a href='__APP__/Message/myques'>我的问题</a>
+                        </div>
+                        <div class='menu'>
+                            <a href='__APP__/Message/mynews'>我的动态</a>
+                        </div>
+                        <div class='menu'>
+                            <a href='__APP__/Message/mylike'>我的收藏</a>
+                        </div>
+                        <div class='menu' style='background:#A76CAF'>
+                            <a style='color:#fff' href='__APP__/Message/myfri'>我的关注</a>
+                        </div>
+                        <{else}>
+                        <div class='menu'>
+                            <a href='__APP__/Message/mymess/uid/<{$smarty.get.uid}>'>他的帖子</a>
+                        </div>
+                        <div class='menu'>
+                            <a href='__APP__/Message/myques/uid/<{$smarty.get.uid}>'>他的问题</a>
+                        </div>
+                        <div class='menu'>
+                            <a href='__APP__/Message/mylike/uid/<{$smarty.get.uid}>'>他的收藏</a>
+                        </div>
+                        <div class='menu' style='background:#A76CAF'>
+                            <a style='color:#fff' href='__APP__/Message/myfri/uid/<{$smarty.get.uid}>'>他的关注</a>
+                        </div>
+                        <{/if}>
+                    </div>
+                    <br>
+                    <div>
+                        <a href='javascript:void(0)'><span class='myfri' style='background:#6FB4EA;padding:3px;font:bold 14px "宋体";color:#fff;'><{if $user.id eq $smarty.session.user.id}>我的关注<{else}>他的关注<{/if}>(<span id='num'><{$myfri}></span>)</span></a> | 
+                        <a href='javascript:void(0)'><span class='myfs' style='background:#fff;padding:3px;font:bold 14px "宋体";color:#888;'><{if $user.id eq $smarty.session.user.id}>我的粉丝<{else}>他的粉丝<{/if}>(<{$myfs}>)</span></a>
+                    </div>
+                    <br>
+                    <ul class="list_pb20" id='myfri'>
+                        <{foreach $list as $vo}>
+                        <li style='float:left;width:48%;margin:5px;height:70px;border-bottom:1px dashed #bbb;'>
+                            <div style='margin:5px 20px;float:left;width:50px;height:50px;'>
+                                <a href='__APP__/Message/mine/uid/<{$vo.fid}>'><img style='width:50px;height:50px' src='__PUBLIC__/uploads/users/<{if $vo.picture!="" && $vo.picture!="1.jpg"}><{$vo.username}>/<{$vo.picture}><{else}>0/0.jpg<{/if}>'></a>
+                            </div>
+                            <div style='float:left;margin-top:3px;width:150px;font:bold 16px "宋体";'>
+                                <a href='__APP__/Message/mine/uid/<{$vo.fid}>'><{if $vo.name!=''}><{$vo.name}><{else}><{$vo.username}><{/if}></a>
+                            </div>
+                            <div style='float:left;width:60%'></div>
+                            <div style='float:left;width:60px;font:normal 12px "宋体";'>
+                                Sex：<{if $vo.sex==''}>保密<{else}><{if $vo.sex=='1'}>男<{else}>女<{/if}><{/if}>
+                            </div>
+                            <div style='float:left;width:50px;font:normal 12px "宋体";'>
+                                <{if $vo.age!=''}>Age：<{$vo.age}><{/if}>
+                            </div>
+                            <div style='float:left;font:normal 12px "宋体";'>
+                                <{if $vo.class!=''}>Class：<{$vo.class}><{/if}>
+                            </div>
+                            <div class='ll' style='margin-top:8px;float:left;height:25px;width:65%;font:normal 14px "楷体";'>
+                                <div style='float:left;'>关注<{$vo.fri}> | 粉丝<{$vo.fs}></div>
+                                <{if $smarty.session.user.id!=$vo.fid}>
+                                <a href='javascript:void(0)'>
+                                    <div class='nolike' vv='y' fid='<{$vo.fid}>' style='display:<{if $vo.like=="y"}>block<{else}>none<{/if}>;width:70px;text-align:center;float:right;border:1px solid blue;padding:2px;color:red;'>取消关注</div>
+                                    <div class='like' vv='n' fid='<{$vo.fid}>' style='display:<{if $vo.like=="n"}>block<{else}>none<{/if}>;width:70px;text-align:center;float:right;border:1px solid red;padding:2px;color:blue;'>+ 关注</div>
+                                </a>
+                                <{/if}>
+                            </div>
+                        </li>
+                        <{/foreach}>
+                        <div style='width:100%;float:left'>
+                        <li style='float:right'><{$pageinfo}></li>
+                    </ul>
+                    <ul class="list_pb20" id='myfs' style='display:none'>
+                        <{foreach $list2 as $vo}>
+                        <li style='float:left;width:48%;margin:5px;height:70px;border-bottom:1px dashed #bbb;'>
+                            <div style='margin:5px 20px;float:left;width:50px;height:50px;'>
+                                <a href='__APP__/Message/mine/uid/<{$vo.uid}>'><img style='width:50px;height:50px' src='__PUBLIC__/uploads/users/<{if $vo.picture!="" && $vo.picture!="1.jpg"}><{$vo.username}>/<{$vo.picture}><{else}>0/0.jpg<{/if}>'></a>
+                            </div>
+                            <div style='float:left;margin-top:3px;width:150px;font:bold 16px "宋体";'>
+                                <a href='__APP__/Message/mine/uid/<{$vo.uid}>'><{if $vo.name!=''}><{$vo.name}><{else}><{$vo.username}><{/if}></a>
+                            </div>
+                            <div style='float:left;width:60%'></div>
+                            <div style='float:left;width:60px;font:normal 12px "宋体";'>
+                                Sex：<{if $vo.sex==''}>保密<{else}><{if $vo.sex=='1'}>男<{else}>女<{/if}><{/if}>
+                            </div>
+                            <div style='float:left;width:50px;font:normal 12px "宋体";'>
+                                <{if $vo.age!=''}>Age：<{$vo.age}><{/if}>
+                            </div>
+                            <div style='float:left;font:normal 12px "宋体";'>
+                                <{if $vo.class!=''}>Class：<{$vo.class}><{/if}>
+                            </div>
+                            <div class='ll' style='margin-top:8px;float:left;height:25px;width:65%;font:normal 14px "楷体";'>
+                                <div style='float:left;'>关注<{$vo.fri}> | 粉丝<{$vo.fs}></div>
+                                <{if $smarty.session.user.id!=$vo.uid}>
+                                <a href='javascript:void(0)'>
+                                    <div class='nolike' vv='y' fid='<{$vo.uid}>' style='display:<{if $vo.like=="y"}>block<{else}>none<{/if}>;width:70px;text-align:center;float:right;border:1px solid blue;padding:2px;color:red;'>互相关注</div>
+                                    <div class='like' vv='n' fid='<{$vo.uid}>' style='display:<{if $vo.like=="n"}>block<{else}>none<{/if}>;width:70px;text-align:center;float:right;border:1px solid red;padding:2px;color:blue;'>+ 关注</div>
+                                </a>
+                                <{/if}>
+                            </div>
+                        </li>
+                        <{/foreach}>
+                        <div style='width:100%;float:left'>
+                        <li style='float:right'><{$pageinfo2}></li>
+                    </ul>
+                        
+                </div>
+
+
+                <!-- 右侧 -->
+                <div class="col-md-4">
+                    <div class="mb30 m_cats">
+                        <div class="tt">
+                            <h3>帖子标签</h3>
+                            <a href="__APP__/Cat/index" class="more">所有标签 »</a>
+                        </div>
+                        <ul class="list_ib" style='width:230px;'>
+                            <{foreach $cat as $ty }>
+                                <li><a href="__APP__/Message/index2/pid/<{$ty.id}>"><{$ty.name}></a></li>
+
+                            <{/foreach}>
+                        </ul>
+                    </div>
+
+                    
+                    <div class="m_pay_list">
+                        <div class="tt">
+                            <h3>活跃用户</h3>
+                        </div>
+                        <ol>
+                            <{foreach $person as $vo}>
+                            <li><span><{$vo@iteration}></span><a href="__APP__/Message/mine/uid/<{$vo.id}>"><img style='width:50px;height:50px;' src='__PUBLIC__/uploads/users/<{if $vo.picture!="" && $vo.picture!="1.jpg"}><{$vo.username}>/<{$vo.picture}><{else}>0/0.jpg<{/if}>'>　<{if $vo.name!=''}><{$vo.name}><{else}><{$vo.username}><{/if}></a></li>
+                            <{/foreach}>
+                        </ol>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<{include file="../Public/foot.html"}>
+</body></html>
+<script type="text/javascript" charset="utf-8">
+    $(function(){
+        $('.myfri').click(function(){
+            if($('#num').html()!='<{$myfri}>'){
+                window.location.reload();
+            }
+            $('#myfri').slideDown("slow");
+            $('#myfs').fadeOut("slow");
+            $('.myfs').css({'background':'#fff','color':'#888'});
+            $('.myfri').css({'background':'#6FB4EA','color':'#fff'});
+        });
+        $('.myfs').click(function(){
+            $('#myfs').slideDown("slow");
+            $('#myfri').hide();
+            $('.myfri').css({'background':'#fff','color':'#888'});
+            $('.myfs').css({'background':'#6FB4EA','color':'#fff'});
+        });
+        //关注
+        $(".like").click(function(){
+            var vv=$(this).attr('vv');
+            var fid=$(this).attr('fid');
+            var div=$(this);
+            $.ajax({
+                url:"__APP__/Message/friend",     //请求地址
+                type:"post",                    //发送方式
+                data:{vv:vv,fid:fid},        //发送的数据
+                dataType:"json",                //响应数据的方式
+                async:true,
+                success:function(data){
+                    div.hide();
+                    div.siblings().show();
+                    <{if $user.id eq $smarty.session.user.id}>
+                    $('#num').html(parseInt($('#num').html())+1);
+                    <{/if}>
+                },
+                error:function(){
+                    alert("亲，请登录！");
+                }
+            })
+        });
+        //取消
+        $(".nolike").click(function(){
+            var vv=$(this).attr('vv');
+            var fid=$(this).attr('fid');
+            var div=$(this);
+            $.ajax({
+                url:"__APP__/Message/friend",   //请求地址
+                type:"post",                    //发送方式
+                data:{vv:vv,fid:fid},           //发送的数据
+                dataType:"json",                //响应数据的方式
+                async:true,
+                success:function(data){
+                    div.hide();
+                    div.siblings().show();
+                    <{if $user.id eq $smarty.session.user.id}>
+                    $('#num').html(parseInt($('#num').html())-1);
+                    <{/if}>
+                },
+                error:function(){
+                    alert("亲，请登录！");
+                }
+            })
+        });
+    })
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3-6</title>
+		<style>
+			#box li{
+				list-style: none;
+				width: 100px;
+				height: 30px;
+				line-height: 30px;
+				font-size: 20px;
+				margin: 0;
+				border: 1px solid #000000;
+				text-align: center;
+			}
+			.list{
+				background: #333;
+				color: #fff;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<script>
+			$(document).ready(function(){
+				$("#box li").on("click",function(){
+					$(this).toggleClass("list");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>新闻</li>
+				<li>娱乐</li>
+				<li>体育</li>
+				<li>科技</li>
+				<li>汽车</li>
+			</ul>
+		</div>
+	</body>
+</html>

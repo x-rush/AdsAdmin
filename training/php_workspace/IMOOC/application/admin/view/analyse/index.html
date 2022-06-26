@@ -1,0 +1,245 @@
+<html>
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMOOC</title>
+
+	<!-- Bootstrap Styles-->
+    <link href="__STATIC__/adminMSI/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="__STATIC__/adminMSI/css/font-awesome.css" rel="stylesheet" />
+     <!-- Morris Chart Styles-->
+   
+        <!-- Custom Styles-->
+    <link href="__STATIC__/adminMSI/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+ 
+     <!-- TABLE STYLES-->
+    <link href="__STATIC__/adminMSI/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="__STATIC__/admin2/assets/ico/favicon.html">
+    
+ 
+    <link href="__STATIC__/admin2/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__STATIC__/admin2/assets/css/alertify.css" rel="stylesheet">
+    <link rel="Favicon Icon" href="favicon.ico">
+    
+     <script src="__STATIC__/echarts.simple.min.js"></script>
+
+    <link href="__STATIC__/layui/css/layui.css" rel="stylesheet">
+    <script type="__STATIC__/layui/layui.js"></script>
+
+</head>
+<body>
+    <div id="wrapper">
+        {include file="public:header"/}
+        <!--/. NAV TOP  -->
+         <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                   <li>
+                        <a href="{:url('video/index')}"  ><i class="fa fa-desktop"></i>视频管理</a>
+                                           
+                    </li> 
+                    <li>
+                        <a href="{:url('videotype/index')}"><i class="fa fa-edit"></i>视频类型管理</a>
+                    </li>
+                    <li>
+                        <a href="{:url('user/index')}"><img src="__STATIC__/adminMSI/icon/people.png" class="fa fa-fw" >&nbsp&nbsp用户管理</a>
+                    </li>
+                    
+                    <li>
+                       <a href="{:url('comments/index')}" ><i class="fa fa-table"></i>留言管理</a>
+                    </li>
+                   
+                    <li>
+                        <a href="{:url('article/index')}"><i class="fa fa-fw fa-file"></i>文章管理</a>
+                    </li>
+                     <li>
+                        <a class="active-menu" href="{:url('analyse/index')}"><i class="fa fa-dashboard"></i>数据分析</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            <div id="page-inner">
+			 <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            数据分析 <small>IMOOC</small>
+                        </h1>
+                    </div>
+                </div> 
+                 <!-- /. ROW  -->
+                   <div class="row">
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-green">
+                            <div class="panel-body">
+                                <i class="fa fa-bar-chart-o fa-5x"></i>
+                                <h3>{$vnum}</h3>
+                            </div>
+                            <div class="panel-footer back-footer-green">
+                                Videos
+
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-red">
+                            <div class="panel-body">
+                                <i class="fa fa fa-comments fa-5x"></i>
+                                <h3>{$cnum} </h3>
+                            </div>
+                            <div class="panel-footer back-footer-red">
+                                Comments
+
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-red">
+                            <div class="panel-body">
+                                <i class="fa fa fa-file fa-5x"></i>
+                                <h3>{$anum} </h3>
+                            </div>
+                            <div class="panel-footer back-footer-red">
+                                Articles
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-brown">
+                            <div class="panel-body">
+                                <i class="fa fa-users fa-5x"></i>
+                                <h3>{$unum} </h3>
+                            </div>
+                            <div class="panel-footer back-footer-brown">
+                                No. of Users
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             VIDEO柱状图分布                                                             
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                               <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: [{volist name="types" id="vo"}"{$vo.typename}",{/volist}]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [{volist name="types" id="vo"}{$vo.num},{/volist}]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+     
+
+
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             视频上传时间线                                                            
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                               <div id="main" style="width: 600px;height:auto;">
+     
+  
+                                 {volist name="video" id="vo"}
+                                    <ul class="layui-timeline">
+                                    <li class="layui-timeline-item">
+                                     <i class="layui-icon layui-timeline-axis" >&#xe63f;</i>
+                            <div class="layui-timeline-content layui-text">
+                                 <h3 class="layui-timeline-title">{$vo.uploaddate}</h3>
+                         
+                               
+                              <p>
+                            {$vo.videoname}
+                             </p>  
+                             <h4 >{$vo.intro}</h4>
+                              </div>
+                             </li>
+                        </ul>
+                         {/volist}  
+                        </div>
+                        </div>
+                    </div> 
+                </div>    
+             </div>      
+          <!-- /. ROW  -->
+        </div>
+
+
+               <footer><p>Copyright &copy; 2018.Company name All rights reserved.More Templates <a href="#" target="_blank" title="慕课网">慕课网</a> </p></footer>
+    </div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+                </div>
+           </div>
+       </div>
+
+
+    <script src="__STATIC__/adminMSI/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="__STATIC__/adminMSI/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="__STATIC__/adminMSI/js/jquery.metisMenu.js"></script>
+     <!-- DATA TABLE SCRIPTS -->
+    <script src="__STATIC__/adminMSI/js/dataTables/jquery.dataTables.js"></script>
+    <script src="__STATIC__/adminMSI/js/dataTables/dataTables.bootstrap.js"></script>
+    
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
+         <!-- Custom Js -->
+    <script src="__STATIC__/adminMSI/js/custom-scripts.js"></script>
+   
+</body>
+</html>

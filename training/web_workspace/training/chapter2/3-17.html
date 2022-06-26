@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>手风琴3-17</title>
+		<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+		<script type="text/javascript" src="../js/jquery-3.2.1.js" ></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#box li:odd").css({
+					height:"20px"
+				});
+				$("#box li:odd").on("mouseover",function(){
+					$("#box li:even").hide();
+					
+					$(this).prev().show();
+					$(this).hide();
+				});
+				$("#box li:even").on("mouseout",function(){
+					
+					$("#box li:odd").show();
+					$("#box li:even").hide();
+				});			
+			});
+		</script>
+		<style type="text/css">
+			#box{
+				border: 1px solid gray;
+				width: 250px;
+			}
+			#box ul{
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				width: 160px;
+				
+			}
+			#box img{
+				width: 80px;
+				height: 80px;
+				margin-left: 25px;
+			}
+			#box li{
+				position: relative;
+				margin: 5px 0 5px 0;
+				/*border-bottom: 1px solid gray;*/
+				clear: both;//清除浮动
+				text-align: center;
+				width: 250px;
+				height: 80px;
+				margin: 0;
+			}
+			#box .right{
+				float: right;
+				margin-top: 10px;
+			}
+			#box i{
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+			#box .num{
+				position: absolute;
+				top: 1px;
+				left: 3px;
+				text-align: center;
+				font-weight: bold;
+				font-size: 10px;
+				color: white;
+			}
+			#box .text{
+				display: block;
+				width: 110px;
+				margin: 0 auto;
+				height: 50px;
+				word-break:break-word;//自动换行
+				margin-top: 10px;
+				/*line-height: 30px;*/
+				font-size: 12px;
+				overflow: hidden;
+			}
+			#box .now{
+				color: #f00;
+				font-weight: bold;
+				font-size: 12px;
+			}
+			#box .old{
+				color: gray;
+				font-size: 12px;
+			}
+			#box .short-text{
+				font-size: 12px;
+				display: block;
+				float: left;
+				height: 16px;
+				line-height: 16px;
+				margin-left: 20px;
+			}
+			#box .short-text{
+				width: 160px;
+				overflow: hidden;//超过80px的部分就隐藏
+			}
+			h2{
+				margin: 0;
+				background: #CD5C5C;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="box">
+			<h2>销量排行榜</h2>
+			<ul>
+				<li style="display: none;">
+					<i class="fa fa-square" style="color: black;"></i>
+					<div class="num">1</div>
+					<img src="../img/ice cream png icon (1).png"" />
+					<div class="right">
+					<p class="text">dogedogedogedogedogedogedoge</p>
+					<span class="now">￥88888</span>
+					<del class="old">￥123131</del></div>
+				</li>
+				<li>
+					<i class="fa fa-square" style="color: black;"></i>
+					<div class="num">1</div>
+					<span class="short-text">doge</span>
+				</li>
+				<li style="display: none;">
+					<i class="fa fa-square" style="color: black;"></i>
+					<div class="num">2</div>
+					<img src="../img/ice cream png icon (2).png" alt="" />
+					<div class="right">
+					<span class="text">doge</span>
+					<span class="now">￥88888</span>
+					<del class="old">￥123131</del></div>
+				</li>
+				<li>
+					<i class="fa fa-square" style="color: black;"></i>
+					<div class="num">2</div>
+					<span class="short-text">doge</span>
+				</li>
+				<li style="display: none;">
+					<i class="fa fa-square" style="color: black;"></i>
+					<div class="num">3</div>
+					<img src="../img/ice cream png icon (4).png" alt="" />
+					<div class="right">
+					<span class="text">doge</span>
+					<span class="now">￥88888</span>
+					<del class="old">￥123131</del></div>
+				</li>
+				<li>
+					<i class="fa fa-square" style="color: black;"></i>
+					<div class="num">3</div>
+					<span class="short-text">doge</span>
+				</li>
+				<li style="display: none;">
+					<i class="fa fa-square" style="color: black;"></i>
+					<div class="num">4</div>
+					<img src="../img/ice cream png icon (4).png" alt="" />
+					<div class="right">
+					<span class="text">doge</span>
+					<span class="now">￥88888</span>
+					<del class="old">￥123131</del></div>
+				</li>
+				<li>
+					<i class="fa fa-square" style="color: black;"></i>
+					<div class="num">4</div>
+					<span class="short-text">doge</span>
+				</li>
+				<li style="display: none;">
+					<i class="fa fa-square" style="color: black;"></i>
+					<div class="num">5</div>
+					<img src="../img/ice cream png icon (4).png" alt="" />
+					<div class="right">
+					<span class="text">doge</span>
+					<span class="now">￥88888</span>
+					<del class="old">￥123131</del></div>
+				</li>
+				<li>
+					<i class="fa fa-square" style="color: black;"></i>
+					<div class="num">5</div>
+					<span class="short-text">doge</span>
+				</li>
+				<li style="display: none;">
+					<i class="fa fa-square" style="color: black;"></i>
+					<div class="num">6</div>
+					<img src="../img/ice cream png icon (4).png" alt="" />
+					<div class="right">
+					<span class="text">doge</span>
+					<span class="now">￥88888</span>
+					<del class="old">￥123131</del></div>
+				</li>
+				<li>
+					<i class="fa fa-square" style="color: black;"></i>
+					<div class="num">6</div>
+					<span class="short-text">doge</span>
+				</li>
+			</ul>
+		</div>
+		
+	</body>
+</html>

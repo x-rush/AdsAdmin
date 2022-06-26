@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>02条件与循环</title>
+		<script src="vue.js"></script>
+	</head>
+	<body>
+		<div id="myApp">
+			<h3>游戏列表</h3>
+			<div v-if="seen">2019年最热游戏</div>
+			<ol>
+				<li v-for="game in games">{{game.title}}/{{game.price}}</li>
+			</ol>
+		</div>
+		<script>
+			/*
+			 * {"":"","":""}
+			 [{"":"","":""},{"":""}]
+			 * */
+			var myApp = new Vue({
+				el:"#myApp",
+				data:{
+					seen:true,
+					games:[
+						{title:'LOL',price:400},
+						{title:'OW',price:180},
+						{title:'CSGO',price:200}
+					]
+				}
+			});
+		</script>
+	</body>
+</html>

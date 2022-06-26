@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+	<title>我的</title>
+	<meta charset="utf-8">
+<head>
+	<meta name="viewport"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--<meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">-->
+<link href="font/font-awesome.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<!--<link rel="stylesheet" type="text/css" href="css/mui.css"/>-->
+<link rel="stylesheet" href="css/aui.css">
+
+</head>
+<script type="text/javascript">
+			$(function() {
+	var id=window.localStorage.getItem('userid');
+	var url='http://172.24.10.175/workout/api.php/getmine/userid/'+id;  	
+            $.ajax({
+                type: 'post',
+                url: url,
+                cache: false,
+                dataType: 'jsonp',
+				jsonp: "callback",
+                success: function (data){
+                   $("h4").text(data.user_name);
+                   $(".picture").attr("src","http://172.24.10.175/workout/Uploads/"+data.photo);
+
+                },error(){
+                	alert(1);
+                }
+            });
+        });
+</script>
+<style type="text/css">
+
+				a{
+					text-decoration: none;
+				}
+				a:hover{
+					    cursor: pointer;
+				}
+				
+				.nav-bottom{
+					padding-bottom: 50px;
+                    padding-top: 40px;
+				}
+				
+
+                .new-mine-title{
+                	width: 100%;
+				    padding: 2%;
+				    background-color: #fff;
+				    border-bottom: solid 1px #efefef;
+				    font-weight: bold;
+                }
+                
+                .new-mine-title a{
+                	text-decoration: none;
+                    color: #FC605A;
+                }
+                
+                .new-mine-title span {
+					font-size: 17px;
+				    margin-right: 3%;
+				}
+				.mui-table-view {
+				    position: relative;
+				    margin-top: 0;
+				    margin-bottom: 0;
+				    padding-left: 0;
+				    list-style: none;
+				    background-color: #fff;
+				}
+				
+				.mui-table-view-cell {
+				    position: relative;
+				    overflow: hidden;
+				    padding: 11px 15px;
+				    -webkit-touch-callout: none;
+				}
+				
+				.mui-table-view-cell>a:not(.mui-btn) {
+				    position: relative;
+				    display: block;
+				    overflow: hidden;
+				    margin: -11px -15px;
+				    padding: inherit;
+				    white-space: nowrap;
+				    text-overflow: ellipsis;
+				    color: inherit;
+				    border-bottom: solid 1px #efefef;
+				}
+
+				.right{
+					position: absolute;
+					top: 7px;
+					right: 0px;
+				}
+	</style>
+<body style="background: white">
+<header class="aui-bar aui-bar-nav " style="background-color: #EE4000;color: white  ">
+    <a href="index.html" class="aui-pull-left aui-btn">
+        <span class="aui-iconfont aui-icon-left" style="color: white"></span>
+    </a>
+    <div class="aui-title"style="color:white;">我的信息</div>
+</header>
+<div class="nav-bottom">
+	<div class="new-mine">
+		<div class="mine-photo">
+					<img src="img/toutou.png" class="picture">
+				    <span class="tel"></span>	
+		</div>	
+		
+		<div class="new-mine-title">
+			<a href="new-mine-order3.html"><span><img src="img/information.png"/></span>我的信息</a>
+		</div>
+				
+		<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="myshaitu.html" >
+							我的晒图
+							<img src="img/right (1).png" class="right"/>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="guanzhu.html" >
+							我的关注
+							<img src="img/right (1).png" class="right"/>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="changeHead.html" >
+							修改头像
+							<img src="img/right (1).png" class="right"/>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="changepassword.html" >
+							修改密码
+							<img src="img/right (1).png" class="right"/>
+						</a>
+					</li>
+				</ul>
+	</div>
+	
+</div>
+
+</body>

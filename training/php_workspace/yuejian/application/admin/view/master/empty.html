@@ -1,0 +1,128 @@
+﻿{layout name="public/home"/}
+<div class="header">
+    <h1 class="page-header">
+        权威大师
+    </h1>
+    <!--<ol class="breadcrumb">-->
+    <!--<li><a href="#">Home</a></li>-->
+    <!--<li><a href="#">Empty</a></li>-->
+    <!--<li class="active">Data</li>-->
+    <!--</ol>-->
+
+</div>
+<div id="page-inner" style="min-height: 600px">
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Advanced Tables -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    master Tables
+                    <a href="#" onclick="orderlist()"  style="float: right"><i class="fa fa-plus ">New Classification</i></a>
+                </div>
+                <div class="panel-body">
+                    <div >
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>大师名</th>
+                                <th>性别</th>
+                                <th>头像</th>
+                                <th>简介</th>
+                                <th>所属俱乐部</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name='master' id='vo'}
+                            <tr class="odd gradeX">
+                                <td>{$i}</td>
+                                <td>{$vo.tname}</td>
+                                <td>{$vo.tsex?'男':'女'}</td>
+                                <td><img src="__STATIC__/img/{$vo.tpic}" width="25px" alt=""></td>
+                                <td>{$vo.tintro|msubstr=0,20,'utf-8',true}</td>
+                                <td>{$vo.cname}</td>
+                                <td><a href="javascript:;"><button type="button" class="btn btn-danger" onclick="masterDel({$vo.msid})">删除</button></a></td>
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            <!--End Advanced Tables -->
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function masterDel(id) {
+        layer.confirm('确认删除',{btn:['确认','取消']},
+            function () {
+                $.post("{:url('admin/mastersdel')}",{"msid":id},function (data) {
+                    if(data.status==0){
+                        location.href=location.href;//刷新页面
+                        layer.msg(data.msg,{icon:6});
+                    }else{
+                        layer.msg(data.msg,{icon:5});
+                    }
+                });
+            },function () {
+
+            });
+    }
+</script>
+<script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element','form', function(){
+        var element = layui.element;
+        var form = layui.form;
+
+        form.render();
+
+        //…
+    });
+    function orderlist() {
+        layui.use('layer', function () {
+            var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+
+            // layer.msg('正在加载',100);
+            layer.open({
+                type: 2 //此处以iframe举例
+                , title: '名师列表'
+                , area: ['800px', '600px']
+                , shade: 0
+                , maxmin: true
+                , offset: 'auto'//显示坐标-auto居中
+                , content:"{:url('admin/trainerlist')}"
+                , btn: ['关闭']
+                , yes: function () {
+                    layer.closeAll();
+                    // $(that).click();
+                }
+                , zIndex: layer.zIndex //重点1
+                , success: function (layero) {
+                    layer.setTop(layero); //重点2
+                },
+                end: function () {
+                    window.location.reload();
+                }
+            });
+        });
+    };
+</script>
+<script type="text/javascript">
+    function num(obj){
+        obj.value = obj.value.replace(/[^\d.]/g,""); //清除"数字"和"."以外的字符
+        obj.value = obj.value.replace(/^\./g,""); //验证第一个字符是数字
+        obj.value = obj.value.replace(/\.{2,}/g,"."); //只保留第一个, 清除多余的
+        obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+        obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3'); //只能输入两个小数
+    }
+</script>
+
+
+
+

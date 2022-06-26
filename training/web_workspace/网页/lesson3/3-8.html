@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3-8</title>
+	</head>
+	<style>
+		#cont{
+			border: 1px solid #000000;
+			width: 525px;
+			height: 225px;
+			padding: 10px;
+		}
+		#cont > div{
+			float: left;
+		}
+		#left img{
+			width: 300px;
+			height: 200px;
+		}
+		#left{
+			width: 301px;
+			height: 201px;
+			border: 1px solid #000;
+			padding: 10px;
+		}
+		#right ul{
+			padding: 0;
+		}
+		#right li{
+			list-style: none;
+			width: 200px;
+			height: 30px;
+			border-bottom: 1px dotted #ccc;
+			text-align: center;
+			line-height: 30px;
+		}
+		#right li a{
+			text-decoration: none;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<script>
+			$(document).ready(function(){
+				$("#right li").hover(function(){
+					var i = $("#right li").index(this) + 1;
+					var s = "../img/" + i + ".jpg";
+					var sss="";
+					$("left img").attr("src",s);
+					$("left a").attr("href",sss);
+					$(this).css({
+						fontWeight:"bold";
+					});
+				});
+			},function(){
+				$(this).css({
+						fontWeight:"normal";
+					});
+			});
+		</script>
+	<body>
+		<div id="cont">
+			<div id="left">
+				<a href="#">
+                    <img src="img/DSC_0028.JPG">
+				</a>
+			</div>
+			<div id="right">
+				<ul>
+					<li>
+					    <a href="#">1111</a>
+					</li>
+					<li>
+					    <a href="#">2222</a>
+					</li>
+					<li>
+					    <a href="#">3333</a>
+					</li>
+					<li>
+					    <a href="#">4444</a>
+					</li>
+					<li>
+					    <a href="#">5555</a>
+					</li>
+					<li>
+					    <a href="#">6666</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

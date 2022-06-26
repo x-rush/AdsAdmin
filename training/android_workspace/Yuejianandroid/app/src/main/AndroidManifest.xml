@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.edu.neusoft.liruoxing">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name="cn.edu.neusoft.liruoxing.myapplication.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="cn.edu.neusoft.liruoxing.activity.MainActivity"
+            android:label="@string/title_activity_main" />
+        <activity android:name="cn.edu.neusoft.liruoxing.activity.ActivityDetailActivity" />
+        <activity android:name="cn.edu.neusoft.liruoxing.activity.MasterDetailActivity" />
+        <activity android:name="cn.edu.neusoft.liruoxing.activity.MatchDetailActivity" />
+        <activity
+            android:name="cn.edu.neusoft.liruoxing.activity.LoginActivity"
+            android:label="登录" />
+        <activity android:name="cn.edu.neusoft.liruoxing.activity.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="cn.edu.neusoft.liruoxing.activity.RegisterActivity"
+            android:label="注册" />
+        <activity
+            android:name="cn.edu.neusoft.liruoxing.activity.TrainDetailActivity"
+            android:label="入门" />
+        <activity
+            android:name="cn.edu.neusoft.liruoxing.activity.RookieActivity"
+            android:label="菜鸟" />
+        <activity
+            android:name="cn.edu.neusoft.liruoxing.activity.AdvanceActivity"
+            android:label="进阶" />
+        <activity
+            android:name="cn.edu.neusoft.liruoxing.activity.PopularActivity"
+            android:label="最具人气" />
+        <activity
+            android:name="cn.edu.neusoft.liruoxing.activity.ClubDetailActivity"
+            android:label="离我最近" />
+        <activity
+            android:name="cn.edu.neusoft.liruoxing.activity.MineMessageActivity"
+            android:label="我的信息" />
+        <activity
+            android:name="cn.edu.neusoft.liruoxing.activity.UpdateMessageActivity"
+            android:label="更新信息" />
+        <activity
+            android:name="cn.edu.neusoft.liruoxing.activity.MineShareActivity"
+            android:label="我的晒图" />
+        <activity
+            android:name="cn.edu.neusoft.liruoxing.activity.MineSettingActivity"
+            android:label="我的设置" />
+        <activity
+            android:name="cn.edu.neusoft.liruoxing.activity.ShareActivity"
+            android:label="我的晒图" />
+        <activity
+            android:name="cn.edu.neusoft.liruoxing.activity.FeedBackActivity"
+            android:label="反馈" />
+        <activity android:name="cn.edu.neusoft.liruoxing.activity.ShareDetailActivity" />
+        <activity
+            android:name="cn.edu.neusoft.liruoxing.activity.MineFocusActivity"
+            android:label="@string/title_activity_mine_focus" />
+        <activity android:name="cn.edu.neusoft.liruoxing.activity.ActivityEnrollActivity" />
+        <activity android:name="cn.edu.neusoft.liruoxing.activity.MatchEnrollActivity" />
+        <activity android:name="cn.edu.neusoft.liruoxing.activity.TrainEnrollActivity" />
+        <activity android:name="cn.edu.neusoft.liruoxing.activity.MineOrderActivity"></activity>
+    </application>
+
+</manifest>

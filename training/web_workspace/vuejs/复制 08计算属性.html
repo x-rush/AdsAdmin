@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>07计算属性</title>
+		<script src="vue.js"></script>
+	</head>
+
+	<body>
+		<div id="myApp">
+			一台Switch的价格:{{price}}円,<br /> 
+			含税价格为:{{priceInTax}}円,<br /> 
+			折合人民币:{{priceInChinaRMB}}元
+			<button @click="btnClick(1000)">加价1000円</button>
+		</div>
+		<script>
+			var myApp = new Vue({
+				el: "#myApp",
+				data: {
+					price: 29980,
+					priceInTax: 0,
+					priceInChinaRMB: 0
+				},
+				watch: {
+					price: function(newVal, oldVal) {
+						console.log(newVal, oldVal);
+						this.priceInTax = Math.round(this.price * 1.08);
+						this.priceInChinaRMB = Math.round(this.priceInTax/15.69);
+					}
+				},
+				methods: {
+					btnClick: function(addPrice) {
+						this.price += addPrice;
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

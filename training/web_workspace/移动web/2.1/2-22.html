@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.container{
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<span>
+				<lable>姓名</lable>
+				<input type="text" name="name" id="name" value="" />
+			</span>
+			
+			<span>
+				<lable>年龄</lable>
+				<input type="text" name="age" id="age" value="" />
+			</span>
+			
+			<span>
+				<lable>身高</lable>
+				<input type="text" name="high" id="high" value="" />
+			</span>
+			
+			<span>
+				<lable>体重</lable>
+				<input type="text" name="weight" id="weight" value="" />
+			</span>
+			
+			<span>
+				<input type="button" name="add" id="add" value="添加" />
+			</span>
+			<hr />
+			
+			<span>
+				<lable>按姓名查询</lable>
+				<input type="text" name="add" id="search_name" value="" />
+				<input type="button" name="add" id="search" value="查询" />
+				<input type="button" name="add" id="search_all" value="查询全部" />
+			</span>
+			<hr />
+			
+			<span>
+				<lable>按姓名删除</lable>
+				<input type="text" name="add" id="del_name" value="" />
+				<input type="button" name="add" id="del" value="删除" />
+				<input type="button" name="add" id="del_all" value="删除全部" />
+			</span>
+			<hr />
+			
+			<span>
+				<lable>修改</lable>
+				<input type="text" name="add" id="change_name" value="" />
+				的年龄为：
+				<input type="text" name="add" id="change_age" value="" />
+				<input type="button" name="add" id="change" value="更新" />
+			</span>
+		</div>
+		
+		<script>
+			var db = openDatabase('mysql','1.0','test Db',2 * 1024 * 1024);
+			db.transaction(function (tx) {  
+			   tx.executeSql('CREATE TABLE IF NOT EXISTS STUDENT '+
+			   '(ID INTEGER PRIMARY KEY AUTOINCREMENT, '+
+			   'NAME TEXT,AGE TEXT,HEIGHT TEXT,WEIGHT TEXT)'
+			   ),function(tx,error){
+			   	alert('创新失败：'+error.message);};
+			});
+			
+			document.getElementById('add').onclick=function(){
+				var username=document.getElementById('name').value;
+				var age=document.getElementById('age').value;
+				var height=document.getElementById('high').value;
+				var weight=document.getElementById('weight').value;
+				
+				db.transaction(function(tx){
+					tx.executeSql('INSERT INTO STUDENT (NAME,AGE,HEIGHT,WEIGHT) VALUES(?,?,?,?)',
+                [username,age,height,weight],
+					function(tx,result){
+						console.log("新增"+username+"成功");
+					},function(tx,error){
+						alert('新增失败：'+error.message);
+					});
+				});
+			};
+		</script>
+	</body>
+</html>

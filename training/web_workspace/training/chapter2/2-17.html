@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>2-17</title>
+		<style>
+			#input1{
+				width: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="input1" onfocus="bc()" onblur="bd()"/>
+		<input type="button" value="搜索" id="input2"/>
+		
+		<script>
+			var dsq1,dsq2;
+			
+			function bc(){
+				dsq1=setInterval("bcf()",10)
+			}
+			function bd(){
+				dsq2=setInterval("bcf()",10)
+			}
+			var w=100;
+			var input1=document.getElementById("input1");
+			function bcf(){
+				w++;
+				input1.style.width=w+"px";
+				
+				if(w==200){
+					clearInterval(dsq1);
+				}
+			}
+			function bdf(){
+				w--;
+				input1.style.width=w+"px";
+					
+				if(w==100){
+					clearInterval(dsq2);
+				}
+			}
+		</script>
+	</body>
+</html>

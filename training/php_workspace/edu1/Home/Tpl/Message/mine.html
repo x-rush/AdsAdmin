@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+    <head>
+        <title>个人中心</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+        <link rel="icon" type="image/x-icon" href="__PUBLIC__/images/favicon.png">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/typo.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/simple.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/message.css">
+        <script type="text/javascript" src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+      
+    </head>
+    <body>
+        <{include file="../Public/head.html"}>
+<div id="sub-header" class="group_h">
+    <div class="container">
+        <div class="navbar-header col-sm-offset-1">
+            <h1><a href="__APP__/Message/mine">个人中心</a></h1>
+        </div>
+        <div class="col-md-6">
+            <ul class="navbar-left">
+                <li><a href="__APP__/Message/index">贴吧首页</a></li>
+                <li class="btn-upload-w"><a href="__APP__/Message/add" class="btn btn-default btn-upload"><i class="icon-upload-alt"></i>发帖去~</a></li>
+                <li><a href="__APP__/Question/index">问题首页</a></li>
+                <li class="btn-upload-w"><a href="__APP__/Question/add" class="btn btn-default btn-upload"><i class="icon-upload-alt"></i>提问去~</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+<div id="main">
+    <div class="container">
+        <div class="home_module row">
+            <div class="container">
+                
+                <div class="col-md-8">
+                    <div style='border:1px solid #ddd;width:100%;height:100px;background:url("__PUBLIC__/images/t_bg.jpg") 0px 40px no-repeat'>
+                        <div style='float:left;width:100px;height:100px;'>
+                            <img style='width:100px;height:100px' src="__PUBLIC__/uploads/users/<{if $user.picture!='' && $user.picture!='1.jpg'}><{$user.username}>/<{$user.picture}><{else}>0/1.jpg<{/if}>">
+                        </div>
+                        <div style='margin:15px 0px 0px 50px;float:left;width:150px;height:30px;font:bold 20px "楷体";'>
+                            <{if $user.name!=''}><{$user.name}><{else}><{$user.username}><{/if}>
+                        </div>
+                        <div class='dhf' style='margin:23px 0px 0px 7%;float:left;height:17px;font:normal 12px "宋体";'>
+                            <{if $user.id eq $smarty.session.user.id}>
+                                <a href='__APP__/Message/mynews'>最新动态：待回复消息 <{$smarty.session.user.hfnum}></a>
+                            <{/if}>
+                        </div>
+
+                        <{if $user.id neq $smarty.session.user.id}>
+                        <button class='nolike' vv='y' style='display:<{if $user.like=="y"}>block<{else}>none<{/if}>;margin:15px 0px 0px 150px;float:left;width:55px;color:#f00;background:#1A7ED3;height:25px;font:bold 12px "宋体";'>已关注</button>
+                        <button class='like' vv='n' style='display:<{if $user.like=="n"}>block<{else}>none<{/if}>;margin:15px 0px 0px 150px;float:left;width:55px;color:#f00;background:#83ADCE;height:25px;font:bold 12px "宋体";'><b>+</b> 关注</button>
+                        <{/if}>
+                        <div style='float:left;width:80%;height:2px;'></div>
+                        <div style='margin:0px 0px 0px 50px;width:74%;float:left;height:17px;font:normal 12px "宋体";'>
+                            发帖：<{$mnum}>　提问：<{$mnum2}>
+                        </div>
+                        <{if $user.id eq $smarty.session.user.id}>
+                        <div class='menu'>
+                            <a href='__APP__/Message/mymess'>我的帖子</a>
+                        </div>
+                        <div class='menu'>
+                            <a href='__APP__/Message/myques'>我的问题</a>
+                        </div>
+                        <div class='menu'>
+                            <a href='__APP__/Message/mynews'>我的动态</a>
+                        </div>
+                        <div class='menu'>
+                            <a href='__APP__/Message/mylike'>我的收藏</a>
+                        </div>
+                        <div class='menu'>
+                            <a href='__APP__/Message/myfri'>我的关注</a>
+                        </div>
+                        <{else}>
+                        <div class='menu'>
+                            <a href='__APP__/Message/mymess/uid/<{$smarty.get.uid}>'>他的帖子</a>
+                        </div>
+                        <div class='menu'>
+                            <a href='__APP__/Message/myques/uid/<{$smarty.get.uid}>'>他的问题</a>
+                        </div>
+                        <div class='menu'>
+                            <a href='__APP__/Message/mylike/uid/<{$smarty.get.uid}>'>他的收藏</a>
+                        </div>
+                        <div class='menu'>
+                            <a href='__APP__/Message/myfri/uid/<{$smarty.get.uid}>'>他的关注</a>
+                        </div>
+                        <{/if}>
+                    </div>
+                    <br>
+                    <div class="tt">
+                        <h3><{if $user.id eq $smarty.session.user.id}>我的帖子<{else}>他的帖子<{/if}></h3>
+                    </div>
+                    <div class="m_n_item_info f12 c999" style='background:url("__PUBLIC__/images/m_bt.jpg") repeat-x'>
+                        <span class="g_topic_t ml10">　　　　帖子标题　　　　　　　　</span>
+                        <span class="g_topic_t ml10">发布时间</span>
+                        <span class="g_topic_t ml10">　　浏览量｜评论量</span>
+                    </div>
+                    <ul class="list_pb20">
+                        <{foreach $list as $vo}>
+                        <li class='m_newlist'> 
+                            <div class="t_ml_120" style='margin-left:0px;float:left;width:50%;'>
+                                <a href="__URL__/show/id/<{$vo.id}>"><{$vo@iteration}>、<{$vo.title|truncate:13:'...':true}></a>
+                                <{if $vo.img=='y'}><img style='margin-top:-2px' src='__PUBLIC__/images/img.png'><{/if}>
+                                <{if $vo.isbest=='1'}><img style='margin-top:-2px' src='__PUBLIC__/images/best.png'><{/if}>
+                                <{if $vo.ishot=='1'}><img style='margin-top:-2px' src='__PUBLIC__/images/hot.png'><{/if}>
+                            </div>
+                            <span style='margin:5px 0px 0px 0px;float:left;width:180px;font:normal 14px "宋体"'>
+                                <{$vo.addtime|date_format:"%Y-%m-%d %H:%M:%S"}>
+                            </span>
+                            <span style='margin-top:5px;float:left;width:100px;font:bold 13px "宋体"'>
+                                <div style='width:48px;float:left;text-align:right;color:#670A67'><{$vo.scan}></div>
+                                <div style='margin:0px 5px;width:5px;float:left;color:black'>/</div>
+                                <div style='width:35px;float:left;color:#F51231'><{$vo.plnum}></div>
+                            </span>
+                            <span style='float:left;width:10px;text-align:center'>
+                                <{if $user.id eq $smarty.session.user.id}>
+                                    <a href='__APP__/Message/delete/id/<{$vo.id}>'><img alt='删除'style='margin-top:-4px;' class="img" src="__PUBLIC__/images/del.png"></a>
+                                <{/if}>
+                            </span>
+                        </li>
+                        <{/foreach}>
+                    </ul>
+                        <div class="tc">
+                            <ul class="pagination">
+                                <{$pageinfo}>
+                            </ul>
+                        </div>
+                    <div class="tt">
+                        <h3><{if $user.id eq $smarty.session.user.id}>我的问题<{else}>他的问题<{/if}></h3>
+                    </div>
+                    <div class="m_n_item_info f12 c999" style='background:url("__PUBLIC__/images/m_bt.jpg") repeat-x'>
+                        <span class="g_topic_t ml10">　　　问题简介　　　</span>
+                        <span class="g_topic_t ml10">被提问教师</span>
+                        <span class="g_topic_t ml10">时间</span>
+                        <span class="g_topic_t ml10">　　状态</span>
+                    </div>
+                    <ul class="list_pb20">
+                        <{foreach $list2 as $vo}>
+                        <li class='m_newlist'> 
+                            <div class="t_ml_120" style='margin-left:0px;float:left;width:44%'>
+                                <a href="__APP__/Question/show/id/<{$vo.id}>"><{$vo@iteration}>、<{$vo.content|strip_tags|truncate:13:'...':true}></a>
+                                <{if $vo.isbest=='1'}><img style='margin-top:-2px' src='__PUBLIC__/images/best.png'><{/if}>
+                            </div>
+                            <span style='margin:5px 0px 0px 0px;float:left;width:90px;font:normal 14px "宋体";'>
+                                <{$vo.tname}>
+                            </span>
+                            <span style='margin:5px 0px 0px 0px;float:left;width:140px;font:normal 14px "宋体"'>
+                                <{$vo.addtime|date_format:"%Y-%m-%d %H:%M:%S"}>
+                            </span>
+                            <{if $vo.replay==''}>
+                                <span style='border:1px solid #ddd;background:red;color:#fff;margin:5px 0px 0px 10px;text-align:center;float:left;width:60px;font:bold 14px "楷体"'>未回复</span>
+                            <{else}>
+                                <span style='border:1px solid #ddd;background:blue;color:#fff;margin:5px 0px 0px 10px;text-align:center;float:left;width:60px;font:bold 14px "楷体"'>已回复</span>
+                            <{/if}>
+
+                            <span style='float:left;width:33px;text-align:center'>
+                                <{if $user.id eq $smarty.session.user.id}>
+                                    <a href='__APP__/Question/delete/id/<{$vo.id}>'><img alt='删除'style='margin-top:-4px;' class="img" src="__PUBLIC__/images/del.png"></a>
+                                <{/if}>
+                            </span>
+                        </li>
+                        <{/foreach}>
+                    </ul>
+                        <div class="tc">
+                            <ul class="pagination">
+                                <{$pageinfo2}>
+                            </ul>
+                        </div>
+                </div>
+
+
+                <!-- 右侧 -->
+                <div class="col-md-4">
+                    <div class="mb30 m_cats">
+                        <div class="tt">
+                            <h3>帖子标签</h3>
+                            <a href="__APP__/Cat/index" class="more">所有标签 »</a>
+                        </div>
+                        <ul class="list_ib" style='width:230px;'>
+                            <{foreach $cat as $ty }>
+                                <li><a href="__APP__/Message/index2/pid/<{$ty.id}>"><{$ty.name}></a></li>
+
+                            <{/foreach}>
+                        </ul>
+                    </div>
+
+                    
+                    <div class="m_pay_list">
+                        <div class="tt">
+                            <h3>活跃用户</h3>
+                        </div>
+                        <ol>
+                            <{foreach $person as $vo}>
+                            <li><span><{$vo@iteration}></span><a href="__APP__/Message/mine/uid/<{$vo.id}>"><img style='width:50px;height:50px;' src='__PUBLIC__/uploads/users/<{if $vo.picture!="" && $vo.picture!="1.jpg"}><{$vo.username}>/<{$vo.picture}><{else}>0/0.jpg<{/if}>'>　<{if $vo.name!=''}><{$vo.name}><{else}><{$vo.username}><{/if}></a></li>
+                            <{/foreach}>
+                        </ol>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<{include file="../Public/foot.html"}>
+</body></html>
+<script type="text/javascript" charset="utf-8">
+    $(function(){
+        //关注
+        $(".like").click(function(){
+            var vv=$(this).attr('vv');
+            var div=$(this);
+            $.ajax({
+                url:"__APP__/Message/friend",     //请求地址
+                type:"post",                    //发送方式
+                data:{vv:vv,fid:'<{$user.id}>'},        //发送的数据
+                dataType:"json",                //响应数据的方式
+                async:true,
+                success:function(data){
+                    $(".like").hide();
+                    $(".nolike").show();
+                },
+                error:function(){
+                    alert("亲，请登录！");
+                }
+            })
+        });
+        //取消
+        $(".nolike").click(function(){
+            var vv=$(this).attr('vv');
+            var div=$(this);
+            $.ajax({
+                url:"__APP__/Message/friend",     //请求地址
+                type:"post",                    //发送方式
+                data:{vv:vv,fid:'<{$user.id}>'},        //发送的数据
+                dataType:"json",                //响应数据的方式
+                async:true,
+                success:function(data){
+                    $(".nolike").hide();
+                    $(".like").show();
+                },
+                error:function(){
+                    alert("亲，请登录！");
+                }
+            })
+        });
+        //鼠标移入移除事件
+        $('.m_newlist').mouseover(function(){
+            //鼠标移入事件处理
+            $(this).css("borderColor",'blue');
+        }).mouseout(function(){
+            //鼠标移除事件处理
+            $(this).css("borderColor",'#ddd');
+        });
+    });
+</script>

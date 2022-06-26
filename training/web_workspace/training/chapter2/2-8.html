@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 200px;
+				height: 200px;
+				border: 1px solid #ff0000;
+				background:#FF0000;
+				color: #fff;
+				text-align: center;
+				font-size: 40px;
+			}
+		</style>
+		<script>
+			function changeBox(){
+				var w=Math.floor(Math.random()*501)+100;
+				var h=Math.floor(Math.random()*501)+100;
+				
+				var r=Math.floor(Math.random()*256);
+				var g=Math.floor(Math.random()*256);
+				var b=Math.floor(Math.random()*256);
+				
+				
+				var d=document.getElementById("box");
+				d.style.width=w+"px";
+				d.style.height=h+"px";
+				d.style.background="rgb("+r+","+g+","+b+")";
+				
+				d.innerHTML="width"+w+"<br>Height"+h;
+				d.innerHTML+="<br>Color:rgb("+r+","+g+","+b+")"
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="changeBox()">随机变化</button>
+		<div id="box"></div>
+	</body>
+</html>

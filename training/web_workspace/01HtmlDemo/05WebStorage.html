@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WebStorage</title>
+</head>
+<body>
+	<script type="text/javascript">
+		if(localStorage.pagecount){
+			localStorage.pagecount=Number(localStorage.pagecount)+1;
+		}else{
+			localStorage.pagecount=1;
+		}
+		document.write("本地存储访问："+localStorage.pagecount+"次。");
+	</script>	
+	<p>刷新页面会看到计数器在增长。</p>
+	<p>请关闭浏览器窗口，再试一次，计数器会继续计数。</p>
+	
+	<script type="text/javascript">
+		if(sessionStorage.pagecount){
+			sessionStorage.pagecount=Number(sessionStorage.pagecount)+1;
+		}else{
+			sessionStorage.pagecount=1;
+		}
+		document.write("Session存储访问："+sessionStorage.pagecount+"次。");
+	</script>	
+	<p>刷新页面会看到计数器在增长。</p>
+	<p>请关闭浏览器窗口，再试一次，计数器会被重置。</p>
+</body>
+</html>

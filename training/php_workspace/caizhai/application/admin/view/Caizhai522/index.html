@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Realm - Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bluth Company">
+    <link rel="shortcut icon" href="__STATIC__/admin/assets/ico/favicon.html">
+    <link href="__STATIC__/admin/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="__STATIC__/admin/assets/css/theme.css" rel="stylesheet">
+    <link href="__STATIC__/admin/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__STATIC__/admin/assets/css/alertify.css" rel="stylesheet">
+    <link rel="Favicon Icon" href="favicon.ico">
+
+  </head>
+  <body>
+    {include file="public:header"/}
+
+    <div class="container-fluid">
+
+      {include file="public:sidemenu"/}
+
+      <!-- Main window -->
+      <div class="main_container" id="users_page">
+
+        <div class="row-fluid">
+          <ul class="breadcrumb">
+            <li><a href="#">Home</a> <span class="divider">/</span></li>
+            <li><a href="#">Pages</a> <span class="divider">/</span></li>
+            <li class="active">type522</li>
+          </ul>
+
+        </div> <!-- /row-fluid -->
+
+        
+        <div class="row-fluid">
+          <div class="widget widget-padding span12">
+            <div class="widget-header">
+              <i class="icon-group"></i>
+              <h5>Users</h5>
+              <div class="widget-buttons">
+                  <a href="#" data-title="Add User" data-toggle="modal" data-target="#example_modal"><i class="icon-plus"></i></a>
+                  <a href="#" data-title="Collapse" data-collapsed="false" class="collapse"><i class="icon-chevron-up"></i></a>
+              </div>
+            </div>  
+            <div class="widget-body">
+              <table id="users" class="table table-striped table-bordered dataTable">
+                <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>采摘园名称</th>
+                    <th>类别</th>
+                    <th>地址</th>
+                    <th>联系方式</th>
+                    <th>开园时间</th>
+                    <th>图片</th>    
+                    <th>介绍</th>
+                    <th>发布时间</th>  
+                    <th></th>              
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  {volist name="caizhai522" id="vo"}
+              
+                  <tr>
+                    <td>{$vo.cid522}</td>
+                    <td>{$vo.cainame522}</td>
+                    <td>{$vo.typename522}  </td>
+                    <td>{$vo.address522}</td>
+                    <td>{$vo.contact522 }</td>
+                    <td>{$vo.opendate522 }</td>
+                    <td><img src="__STATIC__/uploads/{$vo.pic522}" width="100" height="100"></td>
+                   
+                      <td>{$vo.intro522}</td>
+                      <td>{$vo.releasedate522 }</td>
+                       <td>
+                      <div class="btn-group">
+                        <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+                        Action
+                          <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                          <li><a href="#"><i class="icon-envelope"></i> Email</a></li>
+                        <li><a href="#" data-title="Add User" data-toggle="modal" data-target="#edit_modal" onclick="jsedit({$vo.cid522})"><i class="icon-edit"></i>Edit</a></li>
+                          <li><a href="#"><i class="icon-trash"></i> Delete</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  {/volist}
+                </tbody>
+              </table>
+            </div> <!-- /widget-body -->
+          </div> <!-- /widget -->
+        </div> <!-- /row-fluid -->
+
+      </div>
+      <!-- /Main window -->
+
+    </div><!--/.fluid-container-->
+    </div><!-- wrap ends-->
+
+    <!-- Example Modal -->
+    <div id="example_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">添加采摘园信息</h3>
+      </div>
+  <div class="modal-body">
+      <form class="form-horizontal" action="{:url('add')}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="inputUser" class="col-md-2 control-label">采摘园名称:</label>
+          <div class="col-sm-6"> 
+            <input type="text" class="form-control" id="inputUser" placeholder="采摘园名称" name="cainame522"> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputUser" class="col-md-2 control-label">采摘园类型:</label>
+          <div class="col-sm-6">
+            <select class="form-control" name="caizhai522">
+              {volist name="type522" id="tp"}
+              <option value={$tp.tid522}>{$tp.typename522}</option>
+              {/volist}
+            </select> 
+          </div>
+        </div>
+          <div class="form-group" >
+          <label for="inputUser" class="col-md-2 control-label">采摘园地址:</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" id="inputAddress" placeholder="采摘园地址" name="address522"> 
+          </div>
+        </div>
+          <div class="form-group" >
+          <label for="inputUser" class="col-md-2 control-label">联系方式:</label>
+          <div class="col-sm-6">
+            <input type="email" class="form-control" id="inputAddress" placeholder="联系方式" name="contact522 "> 
+          </div>
+        </div>
+         <div class="form-group" >
+          <label for="inputUser" class="col-md-2 control-label">开园时间:</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" id="inputAddress" placeholder="开园时间" name="opendate522 "> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">图片:</label>
+          <div class="col-sm-6">
+            <input type="file" name="pic522" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">介绍:</label>
+          <div>
+            <textarea class="form-control"  rows="3" name="intro522"></textarea>
+          </div>
+        </div>
+         <div class="form-group" >
+          <label for="inputUser" class="col-md-2 control-label">发布时间:</label>
+          <div class="col-sm-6">
+            <input type="publishtime" class="form-control" id="inputAddress" placeholder="发布时间" name="releasedate522 "> 
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10" style="margin:20px 0 0 100px">
+            <input type="submit" name="" value="添加" class="btn btn-default">
+            <input type="reset" name="" value="重置" class="btn btn-default">
+          </div>
+        </div>
+
+      </form>
+
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+  </div>
+</div>  
+
+    <div id="edit_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">修改采摘园信息</h3>
+  </div>
+  <div class="modal-body">
+      <form class="form-horizontal" action="{:url('update')}" method="post" enctype="multipart/form-data">   
+        <input type="hidden" name="cid522" id="vid-modal">
+        <div class="form-group">
+          <label for="inputUser" class="col-md-2 control-label">采摘园名称:</label>
+          <div class="col-sm-6"> 
+            <input type="text" class="form-control" id="inputUser" placeholder="采摘园名称" name="vname"> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputUser" class="col-md-2 control-label">采摘园类型:</label>
+          <div class="col-sm-6">
+            <select class="form-control" name="caizhai522">
+              {volist name="type522" id="tp"}
+              <option value={$tp.tid522}>{$tp.typename522}</option>
+              {/volist}
+            </select> 
+          </div>
+        </div>
+          <div class="form-group" >
+          <label for="inputUser" class="col-md-2 control-label">采摘园地址:</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" id="inputAddress" placeholder="采摘园地址" name="address"> 
+          </div>
+        </div>
+          <div class="form-group" >
+          <label for="inputUser" class="col-md-2 control-label">联系方式:</label>
+          <div class="col-sm-6">
+            <input type="email" class="form-control" id="inputAddress" placeholder="联系方式" name="email"> 
+          </div>
+        </div>
+         <div class="form-group" >
+          <label for="inputUser" class="col-md-2 control-label">开园时间:</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" id="inputAddress" placeholder="开园时间" name="opentime"> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">图片:</label>
+          <div class="col-sm-6">
+            <input type="file" name="pic" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">介绍:</label>
+          <div>
+            <textarea class="form-control"  rows="3" name="intro"></textarea>
+          </div>
+        </div>
+         <div class="form-group" >
+          <label for="inputUser" class="col-md-2 control-label">发布时间:</label>
+          <div class="col-sm-6">
+            <input type="publishtime" class="form-control" id="inputAddress" placeholder="发布时间" name="publishtime"> 
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10" style="margin:20px 0 0 100px">
+            <input type="submit" name="" value="添加" class="btn btn-default">
+            <input type="reset" name="" value="重置" class="btn btn-default">
+          </div>
+        </div>
+
+      </form>
+
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+  </div>
+</div>  
+
+    {include file="public:footer"/}
+   
+  </body>
+</html>

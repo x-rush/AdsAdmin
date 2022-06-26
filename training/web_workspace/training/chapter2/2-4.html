@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>2-4</title>
+		<style>
+			#box{
+				width:200px;
+				height:200px;
+				border:2px double #000;
+			}
+		</style>
+		<script>
+			function bianKuan(){
+				var d=document.getElementById("box");
+				d.style.width="300px";
+			}
+			function bianZhai(){
+				var d=document.getElementById("box");
+				d.style.width="100px";
+			}
+			function bianYuan(){
+				var d=document.getElementById("box");
+				d.style.width="200px";
+				d.style.height="200px";
+				d.style.borderRadius="50%";
+			}
+			function show(){
+				var d=document.getElementById("box");
+				d.style.display="block"
+			}
+			function hide(){
+				var d=document.getElementById("box");
+				d.style.display="none";
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="bianKuan()">变宽</button>
+		<button onclick="bianZhai()">变窄</button>
+		<button onclick="bianYuan()">变圆</button>
+		<button onclick="show()">显示</button>
+		<button onclick="hide()">消失</button>
+		<div id="box"></div>
+	</body>
+</html>

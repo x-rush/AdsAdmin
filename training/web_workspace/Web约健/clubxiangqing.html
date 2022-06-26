@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/aui.css">
+    <link rel="stylesheet" href="css/aui-flex.css">
+    <link rel="stylesheet" href="css/aui-pull-refresh.css">
+    <link rel="stylesheet" href="css/aui-skin.css">
+    <link rel="stylesheet" href="css/aui-skin-night.css">
+    <link rel="stylesheet" href="css/aui-slide.css">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=o9iLifyXq4PWDDLEMou9MIN9fPBkrHsh"></script>
+</head>
+<body  style="background-color: white">
+<div id="app">
+<header class="aui-bar aui-bar-nav " style="background-color: #EE4000;color: white  ">
+    <a href="index.html" class="aui-pull-left aui-btn">
+        <span class="aui-iconfont aui-icon-left" style="color: white"></span>
+    </a>
+    <div class="aui-title"style="color:white;" v-html="sites.club_name+'详情'"></div>
+</header>
+    <div >
+        <div  style="width: 90%;margin-left: auto;margin-right: auto;text-align: center;color: #333333;">
+            <h1 onclick="care()" v-text="sites.club_name+''" style="margin-top: 20px"></h1>
+            <img style="margin-top: 20px" v-bind:src="'http://172.24.10.175/workout/Uploads/'+sites.thumb" alt="" width="100%">
+            <div style="text-align: left;line-height: 24px">
+            <p v-text="'所在省区：'+sites.province_name"></p>
+            <p v-text="'具体位置：'+sites.club_contact"></p>
+            <p v-text="'联系电话：'+sites.club_tel"></p>
+            <p v-text="'开放时间：'+sites.open_time"></p>
+            <p v-text="'联系电话：'+sites.club_tel"></p>
+            <p v-html="'俱乐部介绍：'+sites.introduction"></p>
+            <p v-html="'所需工具：'+sites.equipsuggest"></p>
+            </div>
+            <h1>地图位置</h1>
+        </div>
+    </div>
+    <div id="allmap" style="width: 90%;height: 300px;margin-right: auto;margin-left: auto;margin-bottom: 30px;margin-top: 20px"></div>
+</div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script>
+    var url=window.location.href;
+
+    spstr=url.split("=");
+    var id=spstr[spstr.length-1];
+    var uid= $.cookie('uid');
+    var url1 = "http://172.24.10.175/workout/api.php/get/mod/club/id/"+id;
+    new Vue({
+        el: '#app',
+        data: {
+            sites: []
+        },
+        created: function () {
+
+            var self = this;
+            $.ajax({
+                url: url1,
+                type: 'post',
+                data: {},
+                dataType: 'jsonp'
+            }).then(function (res) {
+                console.log(res);
+                window.localStorage.setItem("a",res['longitude']);
+                window.localStorage.setItem("b",res['latitude']);
+                //把从json获取的数据赋值给数组
+                self.sites = res;
+            }).fail(function () {
+                console.log('失败');
+            })
+        }
+    });
+
+
+    function care() {
+
+        $.ajax({
+            url: "http://172.24.10.175/workout/api.php/create/mod/clubfans/club_id/" + id + "/user_id/" + uid + "/fans_type=1",
+            type: 'post',
+            async: false,
+            dataType: 'jsonp',
+            success: function (data) {
+                alert('关注成功');
+            }
+        });
+    }
+</script>
+<script type="text/javascript">
+    var a = window.localStorage.getItem("a");
+    var b = window.localStorage.getItem("b");
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");
+    map.centerAndZoom(new BMap.Point(a,b),10);
+    setTimeout(function(){
+        map.setZoom(14);
+    }, 2000);  //2秒后放大到14级
+    map.enableScrollWheelZoom(true);
+
+</script>
+</html>

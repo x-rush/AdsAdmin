@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#form1{
+				width:350px;
+				font-size:14px;
+			}
+			#form1 label{
+				width:100px;
+				display: inline-block;
+				text-align: right;
+			}
+		</style>
+		<script>
+			function isNull(str){
+				if(str == "") return true;
+				var regu = "^[ ]+$";
+				var re = new RegExp(regu);
+				return re.test(str);
+			}
+			
+			function isInteger(str){
+				var regu = /^[-]{0,1}[0-9]+$/;
+				return regu.test(str);
+			}
+			
+			function checkMobile(s){
+				var regu = /^[1][358][0-9]{9}$/;
+				return regu.test(s);
+			}
+			
+			function checkForm(){
+				var sUser = document.form1.user.value;
+				var sPsw = document.form1.psw.value;
+				var sPsw2 = document.form1.psw2.value;
+				var sNumber = document.form1.number1.value;
+				
+				if(isNull(sUser)){
+					alert("用户名不能为空！");
+					return false;
+				}else if(isNull(sPsw)){
+					alert("密码不能为空！");
+					return false;
+				}else if(isNull(sPsw2)){
+					alert("重复密码不能为空！");
+					return false;
+				}
+				
+				if(sUser.length < 4 || sUser.length > 8){
+					alert("用户名长度4-8位。");
+					return false;
+				}
+				
+				if(sPsw.length <5 || sPsw.length > 14){
+					alert("密码长度5-14位");
+					return false;
+				}
+				
+				if(sPsw !== sPsw2){
+					alert("两次输入密码应一致。");
+					return false;
+				}
+				
+				if(!isInteger(sNumber)){
+					alert("请输入整数！");
+					return false;
+				}
+				
+				var sMobile = document.form1.mobile.value;
+				if(!checkMobile(sMobile)){
+					alert("请输入正确的手机号！");
+					return false;
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<form id="form1" name="form1" method="get" action="" onsubmit="return checkForm()">
+			<fieldset>
+				<legend>
+					用户注册
+				</legend>
+				<p>
+					<label for="user">用户名：</label>
+					<input type="text" name="user" id="user" />
+				</p>
+				<p>
+					<label for="psw">密码：</label>
+					<input type="text" name="psw" id="psw" />
+				</p>
+				<p>
+					<label for="psw2">重复密码：</label>
+					<input type="text" name="psw2" id="psw2" />
+				</p>
+				<p>
+					<label for="number1">输入整数：</label>
+					<input type="text" name="number1" id="number1" />
+				</p>
+				<p>
+					<label for="mobile">手机号：</label>
+					<input type="text" name="mobile" id="mobile"/>
+				</p>
+				<p>
+					<label for="button"></label>
+					<input type="submit" name="button" id="button" value="提交">
+				</p>
+			</fieldset>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>video exercise</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#myVideo{
+			position: relative;
+		}
+		#play{
+			position: absolute;
+			top: 20%;
+			left: 20%;	
+			border-radius: 50%;
+			outline: none;
+		}
+		#video{
+			width: 640px;
+			height: 360px;
+		}
+	</style>
+</head>
+<body>
+	<div id="video" onmouseover="apear()" onmouseout="disapear()">
+<video id="myVideo" src="../img/cat1.mp4" poster="../img/poster.png" >您的浏览器不支持video标签</video>
+<br /><br />
+<input type="button" value="播放" onclick="playPause()" id="play"  />
+</div>
+</body>
+<script type="text/javascript">
+	var myVideo = document.getElementById("myVideo");
+	var btn_play = document.getElementById('play');	
+	function playPause(){
+		if(myVideo.paused){
+			btn_play.value='暂停';
+			myVideo.play();
+		}
+		else
+			{myVideo.pause();
+						btn_play.value='播放';}
+	}
+	function apear(){
+		btn_play.style.display='block';
+	}
+	function disapear(){
+		btn_play.style.display='none';
+
+	}
+</script>
+</html>

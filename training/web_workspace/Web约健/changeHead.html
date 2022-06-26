@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>修改头像</title>
+		<meta name="viewport"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    	<link rel="stylesheet" href="css/aui.css">
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+	</head>
+	<body>
+<header class="aui-bar aui-bar-nav " style="background-color: #EE4000;color: white  ">
+    <a href="index.html" class="aui-pull-left aui-btn">
+        <span class="aui-iconfont aui-icon-left" style="color: white"></span>
+    </a>
+    <div class="aui-title"style="color:white;">修改头像</div>
+</header>
+<form action="javascript:;" method="post" enctype="multipart/form-data" onsubmit="push()" class="biaodan">   
+                     <span>选择头像：</span>
+            <input type="file" id="inFile" name="photo" class="file-btn" /><br>
+            <input type="submit" name="" style="margin-top: 15%" class="tijiao">
+</form>  
+
+<script type="text/javascript">
+
+function push(){
+        var id=window.localStorage.getItem('userid');
+        console.log(id);
+
+        var url="http://172.24.10.175/workout/api.php/fuserphoto/userid/"+id;
+        $(".biaodan").ajaxSubmit({
+            url:url,
+            dataType: 'json',
+            beforeSubmit : function() {
+                alert("更换成功");
+                location.href="index.html";
+            },
+        })
+   }
+		 </script>
+	</body>
+</html>

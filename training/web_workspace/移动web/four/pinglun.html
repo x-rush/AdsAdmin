@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body, dl, dd, p, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+
+        ol, ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        img {
+            border: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        input, textarea, select {
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit
+        }
+
+        input, textarea, select {
+            *font-size: 100%
+        }
+
+        #box {
+            width: 400px;
+            height: auto;
+            margin: 50px auto;
+            border: 1px solid #4E5465;
+        }
+
+        #box .top img {
+            float: left;
+            width: 150px;
+            margin: 5px;
+        }
+
+        #box .top p {
+            float: left;
+            width: 230px;
+            padding: 5px 5px 0;
+        }
+        #box .top p span{
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #box .top:after {
+            display: block;
+            clear: both;
+            content: "";
+        }
+        #box input{margin-left: 5px}
+        #box   .text{width: 380px;height: 20px;margin: 5px 5px 2px 5px}
+        #box ul{margin: 10px 0 20px 20px;list-style-type: disc}
+        #box ul li{margin: 5px 0 0 20px;}
+        #box ul li span{user-select: none;margin-left:10px;color: red;cursor: pointer;}
+        #box ul li.on{display: none}
+        
+    </style>
+</head>
+<body>
+<div id="box">
+    <div class="top">
+        <img src="img/f1.jpeg" alt="">
+        <p><span>动漫简介：</span>时值“大海贼时代”，为了寻找传说中海贼王罗杰所留下的大秘宝“ONE PIECE”，无数海贼扬起旗帜，互相争斗。</p>
+    </div>
+    <textarea name="" class="text" cols="30" rows="10" value=""></textarea>
+    <input type="button" value="发表评论">
+    <ul>
+        <!--<li>2tyuioiytyuh<span>删除</span></li>-->
+    </ul>
+</div>
+
+<script>
+    var oText=document.querySelector('.text'),
+        oInput=document.querySelector('input'),
+    aUl=document.querySelector('ul');
+    console.log(aUl);
+    console.log(oText);
+
+        oInput.onclick=function () {
+            if(oText.value){
+            aUl.innerHTML += "<li>" + oText.value + "<span>" + "删除" + "</span>" + "</li>";
+            var oSpan = aUl.querySelectorAll('li span'),
+                oLi= aUl.querySelectorAll('li');
+            // var tet="<li>" + oText.value + "<span>" + "删除" + "</span>" + "</li>"
+            // console.log(oSpan.length);
+            console.log();
+
+            for (var i = 0; i < oSpan.length; i++) {
+                //方法一
+                (function (i) {
+                    oSpan[i].onclick = function () {
+                        oLi[i].className='on';
+                    }
+                })(i)
+                // //方法二
+                // oSpan[i].index=i;
+                // oSpan[i].onclick = function (){
+                //     oLi[this.index].className='on';
+                // }
+                aUl.insertBefore(oLi[i+1],oLi[i]);// 新建的元素节点插入到 上一个li元素前面
+            }
+        }
+    }
+</script>
+</body>
+</html>

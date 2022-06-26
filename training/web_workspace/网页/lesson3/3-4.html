@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3-4</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<script>
+			$(document).ready(function(){
+				var s = $("#dish").text();
+				$("ul").append("<li>"+s+"</li>")
+			});
+		</script>
+	</head>
+	<body>
+		<input type="text" id="dish">
+		<button id="add">添加菜单</button>
+		<ul>
+			<li>糖醋排骨</li>
+			<li>锅包肉</li>
+		</ul>
+	</body>
+</html>

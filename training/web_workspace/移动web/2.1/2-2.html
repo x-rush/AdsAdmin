@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en"> 
+		<meta charset="UTF-8">
+		<title>Storage</title>
+	</head>
+	<body>
+		<input type="text"  id="username" >
+		<input type="button" id="localStorageId" value="localStorage 设置数据" />
+		<input type="button"  id="getlocalStorageId" value="localStorage 获取数据" />
+		<input type="button" id="removesessionStorageId" value="localStorage 删除数据" />
+		<script type="text/javascript">
+			var db = openDatabase('mydb','1.0','test DB',2 * 1024 * 1024);
+			db.transaction(function(tx){
+				tx.executeSql('CREATE TABLE IF NOF EXISTS STUDENT '+
+				'(ID INTEGER PRIMARY KEY AUTOINCREMENT,'+
+				'NAME text,AGE text,HEIGHT text,WEICHT text)'
+			),function(tx,error){
+				alert('创建表失败：'+error.message);};
+			});
+			
+			document.getElementById("addInfo").onclick=function(){
+				var username=document.getElementById("username").value;
+				var userage=document.getElementById("userage").value;
+				var userheight=document.getElementById("userheight").value;
+				var userweight=document.getElementById("userweight").value;
+				
+				db.transaction(function (tx)){
+					tx.executeSql('INSERT INTO STUDENT (NAME,AGE,HEIGHT,WEIGHT) VALUES(?,?,?,?)',
+                [username,userage,userheight,userweight]
+				}
+			};
+			
+		</script>
+	</body>
+	
+</html>

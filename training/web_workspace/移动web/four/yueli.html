@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body, dl, dd, p, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+
+        ol, ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        img {
+            border: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        input, textarea, select {
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit
+        }
+
+        input, textarea, select {
+            *font-size: 100%
+        }
+
+        #wrap {
+            width: 200px;
+            /*height: 50px;*/
+            margin: 100px auto;
+            border: 1px solid #ccc;
+        }
+
+        #wrap ul li {
+            float: left;
+            width: 50px;
+            height: 50px;
+            background-color: #ccc;
+            border: 1px solid white;
+            text-align: center;
+            line-height: 50px;
+            box-sizing: border-box;
+            cursor: pointer
+        }
+
+        #wrap ul {
+            overflow: hidden
+        }
+
+        p {
+            height: 50px;
+            width: 100%;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 50px;
+            box-sizing: border-box
+        }
+    </style>
+
+</head>
+<body>
+<div id="wrap">
+    <ul>
+        <li>1月</li>
+        <li>2月</li>
+        <li>3月</li>
+        <li>4月</li>
+        <li>5月</li>
+        <li>6月</li>
+        <li>7月</li>
+        <li>8月</li>
+        <li>9月</li>
+        <li>10月</li>
+        <li>11月</li>
+        <li>12月</li>
+    </ul>
+    <p>1月</p>
+</div>
+
+<script>
+    var aLi = document.querySelectorAll('#wrap ul li'),
+        oP = document.querySelector('#wrap p');
+    console.log(aLi);
+    var arr = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+    for (var i = 0; i < aLi.length; i++) {
+        (function (i) {
+            aLi[i].onclick = function () {
+                oP.innerHTML = arr[i];
+            }
+        })(i)
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+{layout name="public/home"/}
+<div class="header">
+    <h1 class="page-header">
+        俱乐部列表
+    </h1>
+
+</div>
+<div id="page-inner" style="min-height: 600px">
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Advanced Tables -->
+            <div class="panel panel-default">
+                {if(session('cluberror'))}
+                <div class="alert alert-danger">
+                    <ul>
+                        <li>{$Think.session.cluberror}</li>
+                    </ul>
+                </div>
+                {elseif(session('clubsuccess'))}
+                <div class="alert alert-success">
+                    <ul>
+                        <li>{$Think.session.clubsuccess}</li>
+                    </ul>
+                </div>
+                {/if}
+                <div class="panel-heading">
+                    Club Tables
+                    <a href="#"  data-toggle="modal" data-target="#edit" style="float: right"><i class="fa fa-plus ">New Club</i></a>
+                </div>
+                <div class="panel-body">
+                    <div >
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>俱乐部名称</th>
+                                <th>管理员姓名</th>
+                                <th>俱乐部海报</th>
+                                <th>俱乐部简介</th>
+                                <th>俱乐部电话</th>
+                                <th>操作</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name='club' id='vo'}
+                            <tr class="odd gradeX">
+                                <td>{$i}</td>
+                                <td>{$vo.cname}</td>
+                                <td>{$vo.cadminname}</td>
+                                <td><img src="__STATIC__/img/{$vo.cpic}" width="50px" alt=""></td>
+                                <td>{$vo.intro|msubstr=0,20,'utf-8',true}</td>
+                                <td>{$vo.ctel}</td>
+                                <td><a href="#" data-toggle="modal" data-target="#update_dialog" onclick="jsedit({$vo.cid})"><button type="button" class="btn btn-primary">修改</button></a>
+                                </td>
+                                <td><a href="javascript:;"><button type="button" class="btn btn-danger" onclick="clubdel({$vo.cid})">删除</button></a></td>
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">请填写俱乐部信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="{:url('admin/clubAdd')}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="inputUser" class="col-md-2 control-label">名称</label>
+                        <div class="col-md-6">
+                            <input type="inputUser" class="form-control" placeholder="俱乐部名" name="cname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">管理员</label>
+                        <div class="col-md-10">
+                            <select class="form-control" name="cadminid">
+                                {volist name="admin" id="value"}
+                                <option value="{$value.cadminid}">{$value.cadminname}</option>
+                                {/volist}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-md-2 control-label">海报</label>
+                        <div class="col-md-6">
+                            <input type="file" name="cpic" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">电话</label>
+                        <div class="col-md-10">
+                            <input type="input" class="form-control" name="ctel">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">简介</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="intro" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="submit" name="" value="提交" class="btn btn-default">
+                            <input type="reset" name="" value="重置" class="btn btn-default">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="update_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">修改俱乐部信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="{:url('admin/clubUpdate')}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="hidden" name="cid" id="cid">
+                        <label class="col-md-2 control-label">名称</label>
+                        <div class="col-md-10">
+                            <input type="inputUser" class="form-control" id="cname" placeholder="俱乐部名称" name="cname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">简介</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="intro" id="intro" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-md-2 control-label">海报</label>
+                        <div class="col-md-5">
+                            <input type="file" name="cpic" >
+                        </div>
+                        <div class="col-md-5">
+                            <label  class="col-md-2 control-label">原海报</label>
+                            <img id="prepic" width=100px height="80px" src="" name="prepic">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">电话</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="ctel" name="ctel">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" name="" value="提交" class="btn btn-default">
+                        <button type="button" class="btn btn-default" onclick="" data-dismiss="modal">关闭</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    function jsedit(cid){
+        $.getJSON(
+            "{:url('admin/clubedit')}",{"cid":cid},function(json){
+                $("#cid").val(json.cid);
+                $("#cname").val(json.cname);
+                $("#intro").val(json.intro);
+                $('#prepic').attr("src","__STATIC__/img/"+json.cpic);
+                $("#ctel").val(json.ctel);
+            });
+    }
+    function clubdel(id) {
+        layer.confirm('确认删除',{btn:['确认','取消']},
+            function () {
+                $.post("{:url('admin/clubdel')}",{"cid":id},function (data) {
+                    if(data.status==0){
+                        location.href=location.href;//刷新页面
+                        layer.msg(data.msg,{icon:6});
+                    }else{
+                        layer.msg(data.msg,{icon:5});
+                    }
+                });
+            },function () {
+
+            });
+    }
+</script>

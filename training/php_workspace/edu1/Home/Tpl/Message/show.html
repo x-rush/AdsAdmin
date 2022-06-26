@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title><{$title}></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+        <link rel="icon" type="image/x-icon" href="__PUBLIC__/images/favicon.png">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/typo.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/simple.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/message.css">
+        <style type="text/css">
+        .ml10{
+            margin-left:50px;
+            width:600px;
+            font:bold 22px "楷体";
+            text-align:center;
+            color:#000;
+        }
+        </style>
+        
+		<script type="text/javascript" src="__PUBLIC__/jquery/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/xheditor/xheditor-1.2.1.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/xheditor/xheditor_lang/zh-cn.js"></script>
+
+        <script type="text/javascript" src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+      
+	</head>
+    <body>
+    <{include file="../Public/head.html"}>
+        
+<div id="sub-header" class="group_h">
+    <div class="container">
+        <div class="navbar-header col-sm-offset-1">
+            <h1><a href="__APP__/Message/index">贴吧</a></h1>
+        </div>
+        <div class="col-md-6">
+            <ul class="navbar-left">
+                <li><a href="__APP__/Message/index">帖子总览</a></li>
+                <li><a href="__APP__/Message/hot">大家都在看</a></li>
+                <li class="btn-upload-w"><a href="__APP__/Message/add" class="btn btn-default btn-upload"><i class="icon-upload-alt"></i>发帖去~</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <ul class="navbar-left">
+                <li><a href="__APP__/Message/mine"><i class="icon-list"></i>个人中心</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="main">
+    <div class="container">
+        <div class="home_module row">
+            <div class="container">
+                <div class="col-md-8">
+                    <div class="tt">
+                        <h3><{$list.title}></h3>
+                    </div>
+                    <{if $smarty.session.user.id==$list.uid}>
+                        <h4><a href='__APP__/Message/edit/id/<{$list.id}>/uid/<{$list.uid}>'>修改一下下</a></h4>
+                    <{/if}>
+                    
+                    <a href='javascript:void(0)'><div class='nolike' vv='y' style='display:<{if $list.like=="y"}>block<{else}>none<{/if}>;margin:5px;float:left;width:60px;padding:5px 3px;text-align:center;color:#fff;background:#1A7ED3;font:bold 12px "宋体";'>已收藏</div></a>
+                    <a href='javascript:void(0)'><div class='like' vv='n' style='display:<{if $list.like=="n"}>block<{else}>none<{/if}>;margin:5px;float:left;width:60px;padding:5px 3px;text-align:center;color:#fff;background:#83ADCE;font:bold 12px "宋体";'>收藏</div></a>
+                    <div class="m_n_item_info f12 c999" style='background:#fff'>
+                        <div style='float:right;color:#555;margin-top:-5px'>
+                            <div style='float:left;margin-right:10px;width:200px;'>发帖人：<a href='__APP__/Message/mine/uid/<{$list.uid}>'><b><{$list.username}></b></a></div>
+                            <div style='float:left;width:170px;'><b><{$list.addtime|date_format:"%Y-%m-%d %H:%M:%S"}></b></div>
+                        </div>
+                        <br>
+                        <div style='float:right;color:#555;margin-top:-10px'>
+                            <div style='float:left;margin-right:10px;width:270px;'>标　签：<{$list.cname}></div>
+                            <div style='float:left;width:100px;'>浏 览 量：<b><{$list.scan}></b></div>
+                        </div>
+                    </div>
+                    <div style='width:100%;overflow:hidden;border-top:2px solid #ccc;margin-top:10px'>
+                        <br>
+                        <{$list.content}>
+                    </div>
+                    <br>
+                    <{foreach $list1 as $vo}>
+                        <div style='float:left;border:1px solid #ccc;width:100%;'>
+                            <div style='float:left;width:100px;'>
+                                <a href='__APP__/Message/mine/uid/<{$vo.uid}>'><img style='width:100px;height:100px;' src='__PUBLIC__/uploads/users/<{if $vo.picture!="" && $vo.picture!="1.jpg"}><{$vo.username}>/<{$vo.picture}><{else}>0/0.jpg<{/if}>'>
+                                <div style='width:100px;height:30px;float:left;text-align:center;font:bold 16px "宋体"'>
+                                    <{if $vo.name!=''}><{$vo.name}><{else}><{$vo.username}><{/if}>
+                                </div></a>
+                            </div>
+                            <div style='float:right;width:80%;height:30px;font:normal 12px "宋体";margin:5px 0px 0px 10px'>
+                                <b>评论内容：</b>(<{$vo.addtime|date_format:"%Y-%m-%d %H:%M:%S"}>)
+                                <span style='float:right;margin-top:-5px;padding-top:3px;width:20px;height:25px;background:url("__PUBLIC__/images/fn.jpg");font:bold 14px "黑体";text-align:center;color:#fff;'><{if $smarty.get.p>0}><{$vo@iteration+(($smarty.get.p-1)*5)}><{else}><{$vo@iteration}><{/if}></span>
+                                <{if $smarty.session.user.id==$vo.uid || $smarty.session.user.id==$list.uid}>
+                                <span style='float:right;margin-top:0px;width:20px;height:25px;text-align:center;'><a href='__APP__/Message/delcomm/cid/<{$vo.id}>/id/<{$list.id}>'><img src='__PUBLIC__/images/del.png'></a></span>
+                                <{/if}>
+                            </div>
+                            <div style='float:right;width:80%;margin:5px 0px 0px 10px'>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<{$vo.content}>
+                                <br>
+                            </div>
+                            <div style='float:right;text-align:center;width:730px;height:2px;border:0px solid red;'>
+                                
+                            </div>
+                            <div class='ckhf' style='text-align:center;float:right;width:80px;font:normal 12px "宋体";border:3px dotted #EDE6ED;'>
+                                <a href='javascript:void(0)'>查看回复(<b class='hnum'><{$vo.hf|count}></b>)</a>
+                            </div>
+                            <div style='float:right;text-align:center;width:100%;height:0px;border:0px solid red;'>
+                                
+                            </div>
+                            <div class="replay" style='background:#EDE6ED;display:none;float:right;width:80%;'>
+                                <{foreach $vo.hf as $hf}>
+                                    <div style="float:left;width:95%;margin:3px 15px 5px 15px;border-bottom:1px dashed #bbb;">
+                                        <a href='__APP__/Message/mine/uid/<{$hf.uid}>'><img style='float:left;width:50px;height:50px;' src='__PUBLIC__/uploads/users/<{if $hf.picture!="" && $hf.picture!="1.jpg"}><{$hf.username}>/<{$hf.picture}><{else}>0/0.jpg<{/if}>'>
+                                        <div style='width:85%;float:right;font:normal 12px "宋体"'>
+                                            <b><{if $hf.name!=''}><{$hf.name}><{else}><{$hf.username}><{/if}>：</b></a>
+                                            <{$hf.content}>
+                                            <br>
+                                            <{if $smarty.session.user.id==$hf.uid}>
+                                                <span style='float:right'><a href='__APP__/Message/delcomm/cid/<{$hf.id}>/id/<{$list.id}>'>删除</a></span><br>
+                                            <{/if}>
+                                            <span style='float:right'><{$hf.addtime|date_format:"%Y-%m-%d %H:%M:%S"}></span>
+                                        </div>
+                                    </div>
+                                <{/foreach}>
+                                <div class='rr'>
+                                </div>
+                                <textarea class='text' style='margin:5px' name="content" rows="2" cols="47%"></textarea>
+                                <input class='pid' type='hidden' name='pid' value='<{$vo.id}>'>
+                                <input class='button' style='float:right;font:bold 14px "楷体";width:50px;height:25px;margin:5px;' type='submit' name='sub' value='回复'>
+                            </div>
+                        </div>
+                    <{/foreach}>
+                    <{$pageinfo}>
+                                
+                    <form method="post" action="__APP__/Message/comm/id/<{$list.id}>" class="pageForm required-validate" onsubmit="return iframeCallback(this)">
+                        <input type='hidden' name='status' value="<{if $smarty.session.user.id==$list.uid}>1<{else}>0<{/if}>">
+                        <div style='font:bold 14px "宋体";margin:10px 0px;color:red;'>
+                            评论：
+                        </div>
+                        <div id="name" style='width:100%;overflow:hidden;'>
+                            <textarea cols="100%" rows="4" class="xheditor-simple {upImgUrl:'__URL__/doupload',upImgExt:'jpg,jpeg,gif,png',html5Upload:false}" name="content"></textarea>
+                            <button type="submit" style='width:60px;height:30px;float:right;'> G O</button>
+                        </div>
+                    </form>
+
+                </div>
+
+
+                <!-- 右侧 -->
+                <div class="col-md-4">
+                    <div class="mb30 m_cats">
+                        <div class="tt">
+                            <h3>帖子标签</h3>
+                            <a href="__APP__/Cat/index" class="more">所有标签 »</a>
+                        </div>
+                        <ul class="list_ib" style='width:230px;'>
+                            <{foreach $cat as $ty }>
+                                <li><a href="__APP__/Message/index2/pid/<{$ty.id}>"><{$ty.name}></a></li>
+
+                            <{/foreach}>
+                        </ul>
+                    </div>
+                    <div class="m_pay_list">
+                        <div class="tt">
+                            <h3>活跃用户</h3>
+                        </div>
+                        <ol>
+                            <{foreach $person as $vo}>
+                            <li><span><{$vo@iteration}></span><a href="__APP__/Message/mine/uid/<{$vo.id}>"><img style='width:50px;height:50px;' src='__PUBLIC__/uploads/users/<{if $vo.picture!="" && $vo.picture!="1.jpg"}><{$vo.username}>/<{$vo.picture}><{else}>0/0.jpg<{/if}>'>　<{if $vo.name!=''}><{$vo.name}><{else}><{$vo.username}><{/if}></a></li>
+                            <{/foreach}>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<{include file="../Public/foot.html"}>
+</body></html>
+<script type="text/javascript" charset="utf-8">
+    $(function(){
+        //查看回复
+        $('.ckhf').click(function(){
+            if($(this).next().next().css('display')=='none'){
+                $(this).next().next().slideDown("slow");
+                $(this).css('background','#eee');
+            }else{
+                $(this).next().next().slideUp("normal");
+                $(this).css('background','#fff');
+            }
+        });
+        //添加回复
+        $(".button").click(function(){
+            var $content=$(this).parent('.replay').find('.text').val();
+            if(!$content.trim()){
+                die;
+            }
+            var $pid=$(this).parent('.replay').find('.pid').val();
+            var div=$(this).parent('.replay');
+            $.ajax({
+                url:"__APP__/Message/comm",     //请求地址
+                type:"post",                    //发送方式
+                data:{content:$content,mid:'<{$list.id}>',pid:$pid,status:<{if $smarty.session.user.id==$list.uid}>1<{else}>0<{/if}>},        //发送的数据
+                dataType:"json",                //响应数据的方式
+                async:true,
+                success:function(data){
+                    var str='';
+                    str+='<div style="float:left;width:95%;margin:3px 15px 5px 15px;border-bottom:1px dashed #bbb;">';
+                    str+="<img style='float:left;width:50px;height:50px;' src='__PUBLIC__/uploads/users/<{if $smarty.session.user.picture!='' && $smarty.session.user.picture!='1.jpg'}><{$smarty.session.user.username}>/<{$smarty.session.user.picture}><{else}>0/0.jpg<{/if}>'>";
+                    str+="<div style='width:85%;float:right;font:normal 12px \"宋体\"'>";
+                    str+="<a href='__APP__/Message/mine/uid/"+data['uid']+"'><b><{if $smarty.session.user.name}><{$smarty.session.user.name}><{else}><{$smarty.session.user.username}><{/if}>：</b></a>";
+                    str+=data['content'];
+                    str+="<br>";
+                    str+="<span style='float:right'><a href='__APP__/Message/delcomm/cid/"+data['id']+"/id/<{$list.id}>'>删除</a></span><br>";
+                    str+="<span style='float:right'>"+data['addtime']+"</span>";
+                    str+="</div></div>";
+                    div.find('.rr').append(str);
+                    div.find('.text').val('');
+                    div.siblings('.ckhf').find('.hnum').text(parseInt(div.siblings('.ckhf').find('.hnum').text())+1);
+                },
+                error:function(){
+                    alert("亲，请登录！");
+                }
+            })
+        });
+        //添加收藏
+        $(".like").click(function(){
+            var vv=$(this).attr('vv');
+            var div=$(this);
+            $.ajax({
+                url:"__APP__/Message/like",     //请求地址
+                type:"post",                    //发送方式
+                data:{vv:vv,mid:'<{$list.id}>'},        //发送的数据
+                dataType:"json",                //响应数据的方式
+                async:true,
+                success:function(data){
+                    $(".like").hide();
+                    $(".nolike").show();
+                },
+                error:function(){
+                    alert("亲，请登录！");
+                }
+            })
+        });
+        //取消收藏
+        $(".nolike").click(function(){
+            var vv=$(this).attr('vv');
+            var div=$(this);
+            $.ajax({
+                url:"__APP__/Message/like",     //请求地址
+                type:"post",                    //发送方式
+                data:{vv:vv,mid:'<{$list.id}>'},        //发送的数据
+                dataType:"json",                //响应数据的方式
+                async:true,
+                success:function(data){
+                    $(".nolike").hide();
+                    $(".like").show();
+                },
+                error:function(){
+                    alert("亲，请登录！");
+                }
+            })
+        });
+    });
+</script>

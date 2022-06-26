@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>weather</title>
+    <meta name="author" content="jiangmin"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: lightblue;
+            text-align: center;
+            font-family: "STXingkai", Helvetica, Arial, '宋体', sans-serif;
+        }
+
+        li {
+            float: left;
+            margin-left:50px;
+            list-style: none;
+            text-align: center;
+
+        }
+
+        .container {
+            margin-top: 10%;
+            max-width: 120px;
+            border-radius: 35px;
+            background: white;
+            box-shadow: 5px 5px 5px #666;
+        }
+
+        @keyframes mymove {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        /*Safari and Chrome*/
+        @-webkit-keyframes mymove {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        #logo {
+            width: 100%;
+            animation: mymove 1s infinite;
+            -webkit-animation: mymove 1s infinite; /* Safari 和 Chrome */
+        }
+
+        #weather {
+            font-size: 2em;
+        }
+
+        #tmp {
+            font-size: 3.5em;
+        }
+        #box{
+            width: 100%;
+            height:480px ;
+            margin:100px 330px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+    <ul>
+        <li class="list1">
+            <div class="container">
+            <p class="time"></p>
+            <div class="row">
+                <div class="col-xs-12">
+                    <img id="logo" src="img/晴.png" alt="" class="img-responsive"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <span id="weather">loading</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    最高温度 <span id="tmp" class="tmp0"></span>℃ <br>
+                    最低温度 <span id="tmp" class="tmp1"></span>℃
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <span id="loc">loading</span>,<span id="cnty">loading</span>
+                </div>
+            </div>
+            </div>
+        </li>
+        <li class="list2">
+            <div class="container">
+            <p class="time"></p>
+            <div class="row">
+                <div class="col-xs-12">
+                    <img id="logo" src="img/晴.png" alt="" class="img-responsive"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <span id="weather">loading</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    最高温度 <span id="tmp" class="tmp0"></span>℃ <br>
+                    最低温度 <span id="tmp" class="tmp1"></span>℃
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <span id="loc">loading</span>,<span id="cnty">loading</span>
+                </div>
+            </div>
+            </div>
+        </li>
+        <li class="list3">
+            <div class="container">
+                <p class="time"></p>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <img id="logo" src="img/晴.png" alt="" class="img-responsive"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span id="weather">loading</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        最高温度 <span id="tmp" class="tmp0"></span>℃ <br>
+                        最低温度 <span id="tmp" class="tmp1"></span>℃
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span id="loc">loading</span>,<span id="cnty">loading</span>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+<p class="by"></p>
+
+<script src="js/ajax.js"></script>
+<script>
+    var key = "6e1ae2bb39224701b3cad53274af047f",
+        url = "https://free-api.heweather.com/s6/weather/forecast?location=auto_ip&key=";
+    var urltotal = url + key;
+    ajax(urltotal, function (str) {
+        var data = JSON.parse(str);
+        console.log(JSON.parse(str));
+        var oDiv = document.querySelectorAll('.list1 .container .row .col-xs-12');
+        var oDiv1 = document.querySelectorAll('.list2 .container .row .col-xs-12');
+        var oDiv2 = document.querySelectorAll('.list3 .container .row .col-xs-12');
+         oDiv[1].querySelector('#weather').innerHTML = data['HeWeather6'][0]['daily_forecast'][0].cond_txt_n;
+        oDiv[2].querySelector('span.tmp0').innerHTML = data['HeWeather6'][0]['daily_forecast'][0].tmp_max;
+        oDiv[2].querySelector('span.tmp1').innerHTML = data['HeWeather6'][0]['daily_forecast'][0].tmp_min;
+        oDiv[3].querySelector('#loc').innerHTML = data['HeWeather6'][0]['basic'].cnty;
+        oDiv[3].querySelector('#cnty').innerHTML = data['HeWeather6'][0]['basic'].parent_city;
+
+        oDiv1[1].querySelector('#weather').innerHTML = data['HeWeather6'][0]['daily_forecast'][1].cond_txt_n;
+        oDiv1[2].querySelector('span.tmp0').innerHTML = data['HeWeather6'][0]['daily_forecast'][1].tmp_max;
+        oDiv1[2].querySelector('span.tmp1').innerHTML = data['HeWeather6'][0]['daily_forecast'][1].tmp_min;
+        oDiv1[3].querySelector('#loc').innerHTML = data['HeWeather6'][0]['basic'].cnty;
+        oDiv1[3].querySelector('#cnty').innerHTML = data['HeWeather6'][0]['basic'].parent_city;
+
+
+        oDiv2[1].querySelector('#weather').innerHTML = data['HeWeather6'][0]['daily_forecast'][2].cond_txt_n;
+        oDiv2[2].querySelector('span.tmp0').innerHTML = data['HeWeather6'][0]['daily_forecast'][2].tmp_max;
+        oDiv2[2].querySelector('span.tmp1').innerHTML = data['HeWeather6'][0]['daily_forecast'][2].tmp_min;
+        oDiv2[3].querySelector('#loc').innerHTML = data['HeWeather6'][0]['basic'].cnty;
+        oDiv2[3].querySelector('#cnty').innerHTML = data['HeWeather6'][0]['basic'].parent_city;
+    }, function () {
+        alert('失败')
+    })
+
+
+</script>
+</body>
+</html>

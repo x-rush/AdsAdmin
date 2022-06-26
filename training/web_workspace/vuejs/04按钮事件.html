@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>04按钮事件</title>
+		<script src="vue.js"></script>
+	</head>
+	<body>
+		<div id="myApp">
+			<p>最喜欢的游戏：{{mygame}}</p>
+			<!--    v-on：为页面元素绑定各种事件，        -->
+			<button v-on:click="btnClick('冒险岛')">冒险岛</button>
+			<button v-on:click="btnClick('魂斗罗')">魂斗罗</button>
+			<button v-on:click="btnClick('赤色要塞')">赤色要塞</button>
+		</div>
+		<script>
+			var myApp = new Vue({
+				el:"#myApp",
+				data:{mygame:"赤色要塞"},
+				methods:{
+					btnClick:function(pname){
+						this.mygame=pname;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
