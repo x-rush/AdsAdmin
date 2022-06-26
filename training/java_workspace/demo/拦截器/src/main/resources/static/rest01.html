@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+
+</head>
+<body>
+
+	<h1>jquery + restful</h1>
+	
+	<div id="app">
+		<button @click="m1">添加</button>
+		<button @click="m2">修改</button>
+		<button @click="m3">删除</button>
+		<button @click="m4">查询</button>
+	</div>
+	
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#app',
+			methods:{
+				m1:function(){
+					$.ajax({
+						url:'/c01/jack/20',
+						type:'post'
+					});
+				},
+				m2:function(){
+					$.ajax({
+						url:'/c01',
+						type:'put'
+					});					
+				},
+				m3:function(){
+					$.ajax({
+						url:'/c01',
+						type:'delete'
+					});					
+				},
+				m4:function(){
+					$.ajax({
+						url:'/c01',
+						type:'get'
+					});					
+				}
+			}
+		});	
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+/*2008.10.15*/
+
+#ajaxRuningDiv{
+	text-align:center;
+}
+
+.showMe {
+	visibility: visible;
+}
+
+.hideMe {
+	visibility: hidden;
+}
+
+

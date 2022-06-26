@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>销售商品</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+<link rel="stylesheet" href="../public/css/bootstrap.min.css">
+<link rel="stylesheet" href="../public/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="../public/plugins/jqgrid/ui.jqgrid-bootstrap.css">
+<link rel="stylesheet"
+	href="../public/plugins/ztree/css/metroStyle/metroStyle.css">
+<link rel="stylesheet" href="../public/css/main.css">
+<script src="/public/libs/jquery.min.js"></script>
+<script src="/public/plugins/layer/layer.js"></script>
+<script src="/public/libs/bootstrap.min.js"></script>
+<script src="/public/libs/vue.min.js"></script>
+<script src="/public/plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="/public/plugins/jqgrid/jquery.jqGrid.min.js"></script>
+<script src="/public/plugins/ztree/jquery.ztree.all.min.js"></script>
+<script src="/public/js/common.js"></script>
+</head>
+<body>
+	<div id="rrapp" v-cloak>
+		<div v-show="showList">
+			<div class="grid-btn">
+				<div class="form-group col-sm-2">
+					<input type="text" class="form-control" v-model="q.username"
+						@keyup.enter="query" placeholder="用户名">
+				</div>
+				<a class="btn btn-default" @click="query">查询</a> <a
+					v-if="hasPermission('sys:user:save')" class="btn btn-primary"
+					@click="add"><i class="fa fa-plus"></i>&nbsp;新增</a> <a
+					v-if="hasPermission('sys:user:update')" class="btn btn-primary"
+					@click="update"><i class="fa fa-pencil-square-o"></i>&nbsp;修改</a> <a
+					v-if="hasPermission('sys:user:delete')" class="btn btn-primary"
+					@click="del"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+			</div>
+
+			<div class="ui-jqgrid " id="gbox_jqGrid" dir="ltr">
+				<div class="jqgrid-overlay ui-overlay" id="lui_jqGrid"></div>
+				<div class="loading row" id="load_jqGrid" style="display: none;">读取中...</div>
+				<div class="ui-jqgrid-view table-responsive" role="grid"
+					id="gview_jqGrid" style="width: 100%;">
+					<div class="ui-jqgrid-titlebar ui-jqgrid-caption"
+						style="display: none;">
+						<a role="link" class="ui-jqgrid-titlebar-close HeaderButton "
+							title="Toggle Expand Collapse Grid" style="right: 0px;"><span
+							class="ui-jqgrid-headlink glyphicon glyphicon-circle-arrow-up"></span></a><span
+							class="ui-jqgrid-title"></span>
+					</div>
+					<div class="ui-jqgrid-hdiv" >
+					<div class="ui-jqgrid-hbox">
+		<table
+			class="ui-jqgrid-htable ui-common-table table table-bordered"
+			role="presentation"
+			aria-labelledby="gbox_jqGrid" style="width: 100%;">
+			<thead>
+				<tr class="ui-jqgrid-labels" role="row" >
+					<th role="columnheader"
+						class="ui-th-column ui-th-ltr" style="width:25px">
+						<div class="ui-th-div" id="jqgh_jqGrid_rn">
+						</div>
+					</th>
+					<th role="columnheader"
+						class="ui-th-column ui-th-ltr">
+						<div class="ui-th-div" >
+							<input role="checkbox" class="cbox" type="checkbox">
+						</div>
+					</th>
+					<th role="columnheader"
+						class="ui-th-column ui-th-ltr">
+						<div class="ui-th-div ui-jqgrid-sortable">
+							销售详单编号
+						</div>
+					</th>
+					<th role="columnheader"
+						class="ui-th-column ui-th-ltr">
+						<div class="ui-th-div ui-jqgrid-sortable">
+							货物编号
+						</div>
+					</th>
+					<th role="columnheader"
+						class="ui-th-column ui-th-ltr">
+						<div class="ui-th-div ui-jqgrid-sortable">
+							货物样式
+						</div>
+					</th>
+					<th role="columnheader"
+						class="ui-th-column ui-th-ltr">
+						<div class="ui-th-div ui-jqgrid-sortable">
+							货物名称
+						</div>
+					</th>
+					<th role="columnheader"
+						class="ui-th-column ui-th-ltr">
+						<div class="ui-th-div ui-jqgrid-sortable">
+							货物数量
+						</div>
+					</th>
+					<th role="columnheader"
+						class="ui-th-column ui-th-ltr">
+						<div class="ui-th-div ui-jqgrid-sortable">
+							货物价格
+						</div>
+					</th>
+					<th role="columnheader"
+						class="ui-th-column ui-th-ltr">
+						<div class="ui-th-div ui-jqgrid-sortable">
+							货物总量
+						</div>
+					</th>
+					<th role="columnheader"
+						class="ui-th-column ui-th-ltr">
+						<div class="ui-th-div ui-jqgrid-sortable">
+							货物单位
+						</div>
+					</th>
+					<th role="columnheader"
+						class="ui-th-column ui-th-ltr">
+						<div class="ui-th-div ui-jqgrid-sortable">
+							销售单序号
+						</div>
+					</th>
+					<!-- <th role="columnheader"
+						class="ui-th-column ui-th-ltr">
+						<div class="ui-th-div ui-jqgrid-sortable">
+							种类序号
+						</div>
+					</th> -->
+					<th role="columnheader"
+						class="ui-th-column ui-th-ltr">
+						<div class="ui-th-div ui-jqgrid-sortable">
+							添加时间
+						</div>
+					</th>
+					
+				</tr>
+			</thead>
+		</table>
+						</div>
+					</div>
+					
+					<div class="ui-jqgrid-bdiv"
+				style="height: 385px; overflow-x: scroll;">
+				<div style="position: relative; padding-right:20px">
+					<div></div>
+					<table id="jqGrid" tabindex="0" role="presentation"
+						aria-multiselectable="true" aria-labelledby="gbox_jqGrid"
+						class="ui-jqgrid-btable ui-common-table table table-bordered" >
+						<tbody>
+							<tr class="jqgfirstrow" role="row" >
+								<td role="gridcell" style="height: 0px; width: 25px;"></td>
+								<td role="gridcell" style="height: 0px;"></td>
+								<td role="gridcell" style="height: 0px;"></td>
+								<td role="gridcell" style="height: 0px;"></td>
+								<td role="gridcell" style="height: 0px;"></td>
+								<td role="gridcell" style="height: 0px;"></td>
+							</tr>
+							<tr v-for="(entity,index) in entitylist" role="row" class="jqgrow ui-row-ltr">
+								<td role="gridcell" class="jqgrid-rownum"
+									style="text-align: center; width: 25px;">{{(page.currPage-1)*page.pageSize+index+1}}</td>
+								
+								<td role="gridcell" >
+									<input role="checkbox"  name="ids" v-bind:value="entity.id" type="checkbox" class="cbox checkbox" >
+								</td>
+<!-- 								<td role="gridcell">{{entity.userId}}</td> -->
+								
+								<td role="gridcell" >{{entity.code}}</td>
+								
+								<td role="gridcell">{{entity.goodsid}}</td>
+								
+								<td role="gridcell">{{entity.model}}</td>
+								
+								<td role="gridcell">{{entity.name}}</td>
+								
+								<td role="gridcell">{{entity.num}}</td>
+								
+								<td role="gridcell">{{entity.price}}</td>
+								
+								<td role="gridcell">{{entity.total}}</td>
+								
+								<td role="gridcell">{{entity.unit}}</td>
+								
+								<td role="gridcell">{{entity.salelistid}}</td>
+								
+								<td role="gridcell" >{{entity.addtime}}</td>
+								
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+				<div class="ui-jqgrid-resize-mark" id="rs_mjqGrid">&nbsp;</div>
+				<div id="jqGridPager" class="ui-jqgrid-pager" dir="ltr" >
+					<div id="pg_jqGridPager" class="ui-pager-control" role="group">
+						<table class="ui-pg-table ui-common-table ui-pager-table table">
+							<tbody>
+								<tr>
+									<td id="jqGridPager_left" align="left"></td>
+									<td id="jqGridPager_center" align="center"
+										style="white-space: pre; width: 340px;"><table
+											class="ui-pg-table ui-common-table ui-paging-pager">
+											<tbody>
+												<tr>
+													<td id="first_jqGridPager" class="ui-pg-button ui-disabled"
+														title="First Page" v-on:click="toPage(1)"><span
+														class="glyphicon glyphicon-step-backward"></span></td>
+													<td id="prev_jqGridPager" class="ui-pg-button ui-disabled"
+														title="Previous Page" v-on:click="toPage(page.currPage-1)"><span
+														class="glyphicon glyphicon-backward"></span></td>
+													<td class="ui-pg-button ui-disabled"><span
+														class="ui-separator"></span></td>
+													<td id="input_jqGridPager" dir="ltr">
+													<input class="ui-pg-input form-control" 
+														v-on:keyup="toPage(pagenum)" v-model="pagenum" type="text" size="2"
+														maxlength="7" value="1" role="textbox"> 共{{page.totalPage}}页</td>
+													<td class="ui-pg-button ui-disabled"><span
+														class="ui-separator"></span></td>
+													<td id="next_jqGridPager" class="ui-pg-button ui-disabled"
+														title="Next Page" v-on:click="toPage(page.currPage+1)"><span
+														class="glyphicon glyphicon-forward"></span></td>
+													<td id="last_jqGridPager" class="ui-pg-button ui-disabled"
+														title="Last Page" v-on:click="toPage(page.totalPage)"><span
+														class="glyphicon glyphicon-step-forward"></span></td>
+													<td dir="ltr"><select
+														class="ui-pg-selbox form-control" role="listbox"
+														title="Records per Page"><option role="option"
+																value="10" selected="selected">10</option>
+															<option role="option" value="30">30</option>
+															<option role="option" value="50">50</option></select></td>
+												</tr>
+											</tbody>
+										</table></td>
+									<td id="jqGridPager_right" align="right"><div dir="ltr"
+											style="text-align: right" class="ui-paging-info">{{(page.currPage-1) * page.pageSize + 1}} - {{page.currPage *page.pageSize}} 共 {{page.totalCount}} 条</div></td>
+								</tr>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+
+		<div v-show="!showList" class="panel panel-default">
+			<div class="panel-heading">{{title}}</div>
+			<form class="form-horizontal">
+				<div class="form-group">
+					<div class="col-sm-2 control-label">货物样式</div>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" v-model="salelistgoods.model"
+						placeholder="货物样式" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2 control-label">货物名称</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" v-model="salelistgoods.name"
+							placeholder="货物名称" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2 control-label">货物数量</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" v-model="salelistgoods.num"
+							placeholder="货物数量" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2 control-label">货物价格</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" v-model="salelistgoods.price"
+							placeholder="货物价格" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2 control-label">货物总量</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" v-model="salelistgoods.total"
+							placeholder="货物总量" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2 control-label">货物单位</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" v-model="salelistgoods.unit"
+							placeholder="货物单位" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2 control-label">销售单序号</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" v-model="salelistgoods.salelistid"
+							placeholder="销售单序号" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2 control-label">种类序号</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" v-model="salelistgoods.typeid"
+							placeholder="种类序号" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2 control-label"></div>
+					<input type="button" class="btn btn-primary" @click="saveOrUpdate"
+						value="确定" /> &nbsp;&nbsp;<input type="button"
+						class="btn btn-warning" @click="reload" value="返回" />
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="/public/js/sys/salelistgoods.js"></script>
+</body>
+</html>
+
+
+
+

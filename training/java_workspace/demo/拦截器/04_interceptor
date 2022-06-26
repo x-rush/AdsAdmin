@@ -1,0 +1,43 @@
+预备知识:
+
+(1)控制层:Servlet API
+控制器	Servlet		javax.servlet.Servlet
+过滤器	Filter		javax.servlet.Filter
+监听器	Listener	javax.servlet.ServletContextListener
+
+(2)代理模式
+Service接口
+ServiceImpl实现类
+ServiceProxy代理
+
+用户A		——>		代理类		——>			资源B	——>		代理类		——>
+
+(3)AOP(面向切面编程的思想)
+
+Spring框架两个核心思想：IOC和AOP
+IOC：控制反转的思想
+AOP：面向切面编程的思想(关注的多个资源的共同点。事务案例。)
+
+(4)Interceptor(拦截器)
+
+SpringMVC框架中的拦截器。
+
+为什么需要了解拦截器?
+
+一类页面：不需要认证就可以访问的。例如：登陆页面。
+二类页面：必须认证之后才可以访问的。例如：主页面。
+
+一类控制器：不需要认证就可以访问的。
+二类控制器：必须认证之后才可以访问的。
+
+认证的概念：可以访问系统的用户。
+授权的概念：用户访问的资源。
+说明：项目中的登陆模块是最难的模块。(认证、授权)
+
+(5)拦截器的开发步骤:
+第一步：编写控制器
+第二步：编写拦截器(interceptor)
+org.springframework.web.servlet.HandlerInterceptor;
+第三步：配置拦截器
+org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport
+

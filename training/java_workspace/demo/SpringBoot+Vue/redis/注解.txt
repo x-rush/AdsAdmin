@@ -1,0 +1,8 @@
+实体类
+Serializable
+
+启动类
+@EnableCaching
+
+业务层查询
+@Cacheable(value="user_cache")

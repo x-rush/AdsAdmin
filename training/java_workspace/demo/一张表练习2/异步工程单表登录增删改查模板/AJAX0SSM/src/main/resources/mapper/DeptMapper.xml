@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yangfulai.dao.DepartmentDAO">
+
+    <insert id="insert" parameterType="Department">
+        INSERT INTO t_department VALUES(#{departmentNo},#{departmentName})
+    </insert>
+    <update id="update" parameterType="Department">
+        update t_department set departmentName = #{departmentName}  WHERE departmentNo = #{departmentNo}
+    </update>
+    <delete id="delete" parameterType="String">
+        DELETE from t_department where departmentNo = #{departmentNo}
+    </delete>
+    <resultMap type="Department" id="mapDept">
+        <id property="departmentNo" column="departmentNo"/>
+        <result property="departmentName" column="departmentName"/>
+    </resultMap>
+    <sql id="sqlDept">
+         departmentNo,departmentName
+    </sql>
+    <select id="selectOne" resultMap="mapDept" parameterType="String">
+        SELECT  departmentNo,departmentName
+        from t_department where departmentNo = #{departmentNo}
+    </select>
+    
+    <select id="getAll" resultMap="mapDept" >
+        SELECT <include refid="sqlDept"/> 
+        from t_department 
+    </select>
+    
+    <select id="getCount" resultType="int" >
+        SELECT count(*)
+        from t_department 
+        <where>
+            <if test="1==1">
+                departmentNo = departmentNo
+            </if>
+            <if test="departmentName != null">
+               and departmentName like  concat('%',#{departmentName},'%')
+            </if>
+        </where>
+    </select>
+    <select id="selectAll" resultMap="mapDept" >
+        SELECT <include refid="sqlDept"/>
+        from t_department 
+        <where>
+            <if test="1==1">
+                departmentNo = departmentNo
+            </if>
+            <if test="departmentName != null">
+               and departmentName like  concat('%',#{departmentName},'%')
+            </if>
+        </where>
+        limit #{page},#{rows}
+    </select>
+    
+</mapper>

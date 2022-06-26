@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+<link rel="stylesheet" href="../public/css/bootstrap.min.css">
+<link rel="stylesheet" href="../public/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="../public/plugins/jqgrid/ui.jqgrid-bootstrap.css">
+<link rel="stylesheet"
+	href="../public/plugins/ztree/css/metroStyle/metroStyle.css">
+<link rel="stylesheet" href="../public/css/main.css">
+<script src="../public/libs/jquery.min.js"></script>
+<script src="../public/plugins/layer/layer.js"></script>
+<script src="../public/libs/bootstrap.min.js"></script>
+<script src="../public/libs/vue.min.js"></script>
+<script src="../public/plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="../public/plugins/jqgrid/jquery.jqGrid.min.js"></script>
+<script src="../public/plugins/ztree/jquery.ztree.all.min.js"></script>
+<script src="../public/js/common.js"></script>
+</head>
+<body>
+<div id="GoodsCheckList">
+<div v-show="showList">
+<input type="text" name="checknumber" v-model="searchs.checknumber" />
+<input type="button" value="查询" v-on:click="search()" />
+<input type="button" value="添加" v-on:click="add()" />
+<input type="button" value="修改" v-on:click="update()" />
+<input type="button" value="删除" v-on:click="del()" />
+<table class="ui-jqgrid-htable ui-common-table table table-bordered"
+			role="presentation"
+			aria-labelledby="gbox_jqGrid" style="width: 100%;">
+<tr>
+<th></th>
+<th><input type="checkbox" name="chooseAll" id="chooseAll" v-on:click="chooseAll()" /></th>
+<th>盘点单据序号</th>
+<th>商品编号</th>
+<th>关联商品表id</th>
+<th>商品类型</th>
+<th>商品名称</th>	
+<th>商品盘点数量</th>
+<th>前一天商品库存量</th>
+<th>销售总量</th>
+<th>单位</th>
+<th>退单数量</th>
+<th>关联商品种类id</th>
+<th>关联用户id</th>
+<th>盘点是否合格</th>
+<th>备注</th>
+<th>注册时间</th>
+<th>关联t_goods_check表</th>	
+</tr>
+<tr v-for="(entity,index) in information" >
+<td>{{index+1}}</td>
+<td><input type="checkbox" name="choose" v-bind:value="entity.id" /></td>
+
+<!-- <td><input type="checkbox" name="ids" v-bind:value="entity.id"></td> -->
+
+<td>{{entity.id}}</td>
+<td>{{entity.code}}</td>
+<td>{{entity.goodsid}}</td>
+<td>{{entity.model}}</td>
+<td>{{entity.name}}</td>
+<td>{{entity.num}}</td>
+<td>{{entity.marketnum}}</td>
+<td>{{entity.returnnum}}</td>
+<td>{{entity.stocknum}}</td>
+<td>{{entity.unit}}</td>
+<td>{{entity.typeid}}</td>
+<td>{{entity.userid}}</td>
+<td>{{entity.result}}</td>
+<td>{{entity.memo}}</td>
+<td>{{entity.addtime}}</td>
+<td>{{entity.goodscheckid}}</td>
+<!-- <td>{{entity.delflag}}</td> -->
+</tr>
+</table>
+<!-- 页码的破东西  -->
+<!-- <div class="ui-jqgrid-resize-mark" id="rs_mjqGrid">&nbsp;</div> -->
+				<!-- <div id="jqGridPager" class="ui-jqgrid-pager" dir="ltr" >
+					<div id="pg_jqGridPager" class="ui-pager-control" role="group"> -->
+						<table class="ui-pg-table ui-common-table ui-pager-table table">
+							<tbody>
+								<tr>
+									<td id="jqGridPager_left" align="left" style="width:382px; height:38px;"></td>
+									<td id="jqGridPager_center" align="center"
+										style="white-space: pre; width: 340px; height:38px;"><table
+											class="ui-pg-table ui-common-table ui-paging-pager">
+											<tbody>
+												<tr>
+													<td id="first_jqGridPager" class="ui-pg-button ui-disabled"
+														title="First Page" v-on:click="toPage(1)">
+														<span class="glyphicon glyphicon-step-backward"></span></td>
+													<td id="prev_jqGridPager" class="ui-pg-button ui-disabled"
+														title="Previous Page" v-on:click="toPage(page.pageNumber-1)"><span
+														class="glyphicon glyphicon-backward"></span></td>
+													<td class="ui-pg-button ui-disabled"><span
+														class="ui-separator"></span></td>
+													<td id="input_jqGridPager" dir="ltr">
+													<input class="ui-pg-input form-control" 
+														v-on:keyup="toPage(page.pageNumber)" v-model="page.pageNumber" type="text" size="2"
+														maxlength="7" value="1" role="textbox"> 共{{page.pageTotalNumber}}页</td>
+													<td class="ui-pg-button ui-disabled"><span
+														class="ui-separator"></span></td>
+													<td id="next_jqGridPager" class="ui-pg-button ui-disabled"
+														title="Next Page" v-on:click="toPage(page.pageNumber+1)"><span
+														class="glyphicon glyphicon-forward"></span></td>
+													<td id="last_jqGridPager" class="ui-pg-button ui-disabled"
+														title="Last Page" v-on:click="toPage(page.pageTotalNumber)"><span
+														class="glyphicon glyphicon-step-forward"></span></td>
+													<td dir="ltr"><select
+														class="ui-pg-selbox form-control" role="listbox"
+														title="Records per Page"><option role="option"
+																value="10" selected="selected">10</option>
+															<option role="option" value="30">30</option>
+															<option role="option" value="50">50</option></select></td>
+												</tr>
+											</tbody>
+										</table></td>
+									<td id="jqGridPager_right" align="right"><div dir="ltr"
+											style="text-align: right; width:382px; height:38px" class="ui-paging-info">
+												{{(page.pageNumber-1) * page.pageCount + 1}} - {{page.pageNumber * page.pageCount}}
+											共 {{page.totalCount}} 条
+											</div></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- </div>
+				</div> -->
+<!-- 
+<table>
+
+<tr >
+<td id="first_jqGridPager" class="ui-pg-button ui-disabled"
+		title="First Page" v-on:click="toPage(1)">
+	<span class="glyphicon glyphicon-step-backward"></span></td>
+<td id="prev_jqGridPager" class="ui-pg-button ui-disabled"
+		title="Previous Page" v-on:click="toPage(page.currPage-1)">
+	<span class="glyphicon glyphicon-backward"></span></td>
+<td class="ui-pg-button ui-disabled"><span class="ui-separator"></span></td>
+<td id="input_jqGridPager" dir="ltr">
+<input class="ui-pg-input form-control" 
+		v-on:keyup="toPage(pagenum)" v-model="page.pageTotalNumber" type="text" size="2"
+		maxlength="7" value="1" role="textbox"> 共{{page.pageTotalNumber}}页</td>
+<td class="ui-pg-button ui-disabled"><span class="ui-separator"></span></td>
+<td id="next_jqGridPager" class="ui-pg-button ui-disabled"
+		title="Next Page" v-on:click="toPage(page.currPage+1)">
+	<span class="glyphicon glyphicon-forward"></span></td>
+<td id="last_jqGridPager" class="ui-pg-button ui-disabled"
+		title="Last Page" v-on:click="toPage(page.totalPage)">
+	<span class="glyphicon glyphicon-step-forward"></span></td>
+<td dir="ltr">
+<select class="ui-pg-selbox form-control" role="listbox" title="Records per Page">
+	<option role="option" value="10" selected="selected">10</option>
+	<option role="option" value="30">30</option>
+	<option role="option" value="50">50</option>
+</select></td> 
+</tr>
+
+</table>
+-->
+
+
+<!-- <td colspan='10'>
+<a v-for="index of page.pageTotalNumber">第{{index}}页</a>
+<input type="text" v-bind:value="" />
+共{{page.pageTotalNumber}}页
+</td> -->
+
+
+</div>
+<div v-show="!showList">
+<div style="display:inline-block; width:110px; display:none;"><label>盘点单据序号:</label></div>
+<input type="text" v-model="goodsCheckList.id" hidden /><br/>
+<div style="display:inline-block; width:110px;"><label>商品编号:</label></div>
+<input type="text" v-model="goodsCheckList.code" /><br/>
+<div style="display:inline-block; width:110px;"><label>关联商品表id:</label></div>
+<input type="text" v-model="goodsCheckList.goodsid" /><br/>
+<div style="display:inline-block; width:110px;"><label>商品类型:</label></div>
+<input type="text" v-model="goodsCheckList.model" /><br/>
+<div style="display:inline-block; width:110px;"><label>商品名称:</label></div>
+<input type="text" v-model="goodsCheckList.name" /><br/>
+<div style="display:inline-block; width:110px;"><label>商品盘点数量:</label></div>
+<input type="text" v-model="goodsCheckList.num" /><br/>
+<div style="display:inline-block; width:110px;"><label>前一天商品库存量:</label></div>
+<input type="text" v-model="goodsCheckList.stocknum" /><br/>
+<div style="display:inline-block; width:110px;"><label>销售总量:</label></div>
+<input type="text" v-model="goodsCheckList.marketnum" /><br/>
+<div style="display:inline-block; width:110px;"><label>单位:</label></div>
+<input type="text" v-model="goodsCheckList.unit" /><br/>
+<div style="display:inline-block; width:110px;"><label>退单数量:</label></div>
+<input type="text" v-model="goodsCheckList.returnnum" /><br/>
+<div style="display:inline-block; width:110px;"><label>关联商品种类id:</label></div>
+<input type="text" v-model="goodsCheckList.typeid" /><br/>
+<div style="display:inline-block; width:110px;"><label>关联用户id:</label></div>
+<input type="text" v-model="goodsCheckList.userid" /><br/>
+<div style="display:inline-block; width:110px;"><label>盘点是否合格:</label></div>
+
+<select v-model="goodsCheckList.result">
+<option selected>请选择</option>
+<option v-for="index in typeList" v-bind:value="index">{{index}}</option>
+<!-- <option v-bind:value="是">是</option>
+<option v-bind:value="否">否</option> -->
+</select>
+
+<!-- <input type="text" v-model="goodsCheckList.result" /> -->
+
+<br/>
+<div style="display:inline-block; width:110px;"><label>备注:</label></div>
+<input type="text" v-model="goodsCheckList.memo" /><br/>
+<!-- <div style="display:inline-block; width:110px;"><label>注册时间:</label></div><input type="text" v-model="goodsCheckList.addtime" /><br/> -->
+<div style="display:inline-block; width:110px;"><label>关联t_goods_check表:</label></div>
+<input type="text" v-model="goodsCheckList.goodscheckid" /><br/>
+<input type="button" value="保存" v-on:click="save()"/>
+<input type="button" value="取消" v-on:click="cancel()" />
+</div>
+
+</div>
+<!-- <script src="/public/js/sys/goodsCheck.js"></script> -->
+<script src="/public/js/sys/goodsCheckList.js"></script>
+</body>
+</html>

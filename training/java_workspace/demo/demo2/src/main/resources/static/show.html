@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/vue.js"></script>
+<script src="/js/date.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+
+<!-- 列表区域  -->
+<div v-show="showList">
+
+	<table>
+		<tr>
+			<td>名称:</td>
+			<td><input type="text" v-model="q.name"></td>
+			<td>单价:</td>
+			<td><input type="text" size="4" v-model="q.price_s"></td>
+			<td>至:</td>
+			<td><input type="text" size="4" v-model="q.price_e"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" name="search" value="查询" v-on:click="search(1)" />
+			</td>
+		</tr>
+	</table>	
+
+<hr >
+	<input type="button" name="add" value="添加" v-on:click="add()" />
+	<input type="button" name="update" value="修改" v-on:click="update()" />
+	<input type="button" name="del" value="删除" v-on:click="dels()" />
+
+<hr >
+<br >
+<table width="90%" border="1px">
+ 	<tr>
+ 		<td><input type="checkbox" name="all" id="all" v-on:click="all()"></td>
+ 		<th>编号</th>
+ 		<th>名称</th>
+ 		<th>单价</th>
+ 		<th>库存</th>
+ 		<th>类别ID</th>
+ 		<th>时间</th>
+ 		<th>操作</th>
+ 	</tr>
+ 	<tr v-for=" (entity,index) in list_product">
+ 		<td><input type="checkbox" name="ids" v-bind:value="entity.id" /></td>
+ 		<td>{{entity.id}}</td>
+ 		<td>{{entity.name}}</td>
+ 		<td>{{entity.price}}</td>
+ 		<td>{{entity.num}}</td>
+ 		<td>
+ 			<template v-if="entity.productType!==null">
+ 				{{entity.productType.name}}
+ 			</template>
+ 		</td>
+ 		<td>{{entity.addtime | dateFormat}}</td>
+ 		<td><a href="javascript:void(0)" v-on:click="del(entity.id)">删除</a></td>
+ 	</tr>
+ 	<tr>
+ 		<td colspan="10">
+ 			
+ 			<a href="#" v-for="index of totalPage" v-on:click="page(index)">{{index}}&nbsp;</a>
+ 			
+
+<!--  			<a href="#" v-on:click="page(2)">2</a>&nbsp; -->
+<!--  			<a href="#" v-on:click="page(3)">3</a>&nbsp; -->
+<!--  			<a href="#" v-on:click="page(4)">4</a>&nbsp; -->
+ 		</td>
+ 	</tr>
+ </table>
+</div>
+<hr>
+<!-- 添加 编辑区域 -->  
+<div v-show="!showList">
+	<input type="hidden" name="id" v-model="product.id">
+	<table width="80%" border="1px">
+		<tr>
+			<td>名称：</td>
+			<td><input type="text" name="name" v-model="product.name"></td>
+		</tr>
+		<tr>
+			<td>单价：</td>
+			<td><input type="text" name="price" v-model="product.price"></td>
+		</tr>
+		<tr>
+			<td>库存：</td>
+			<td><input type="text" name="num" v-model="product.num"></td>
+		</tr>
+		<tr>
+			<td>商品类别：</td>
+			<td>
+				<select name="producttype" v-model="product.ptypeid">
+					<option value="0">--请选择--</option>
+					<option v-for="entity in list_product_type" v-bind:value="entity.id">{{entity.name}}</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<input type="button" name="btn" value="保存" v-on:click="save()">&nbsp;
+				<input type="button" name="btn" value="更新" v-on:click="doupdate()">&nbsp;
+				<input type="button" name="btn" value="返回" v-on:click="back()">&nbsp;
+			</td>
+		</tr>
+	</table>
+
+</div>  
+
+  
+</div>
+
+<script src="/js/sys/show.js"></script>
+
+</body>
+</html>

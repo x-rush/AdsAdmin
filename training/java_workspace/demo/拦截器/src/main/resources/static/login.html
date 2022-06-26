@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/axios.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+
+</head>
+<body>
+
+	<h1>登录页面</h1>
+	
+	<!-- View -->
+	<div id="app">
+		<input type="text" placeholder="请输入用户" v-model="user.username"><br>
+		<input type="password" placeholder="请输入密码" v-model="user.password"><br>
+		<button type="button" v-on:click="login">登陆</button>
+	</div>
+
+	<script type="text/javascript">
+	
+$(function(){
+	
+	// Model
+	var data = {
+			user:{username:'',password:''}
+	};
+	
+	// ViewModel
+	var vm = new Vue({
+		el: '#app',
+		data: data,
+		methods:{
+			login:function(){
+				axios.post('/user/login',this.user).then(function(res){
+					alert(res.data);
+				}).catch(function(err){
+					alert(err);
+				});
+			}
+		}
+	});
+	
+});
+	
+	</script>
+
+</body>
+</html>
+
+
+

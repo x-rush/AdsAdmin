@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yangfulai.dao.PositionDAO">
+
+    <sql id="sqlPos">
+        positionId,departmentObj,positionName,baseSalary,sellPercent
+    </sql>
+   	<sql id="sqlDept">
+   	    departmentNo,departmentName
+   	</sql>
+    <insert id="insert" parameterType="Department"> 
+		INSERT INTO t_position(departmentObj,positionName,baseSalary,sellPercent) 
+		VALUES(#{departmentObj},#{positionName},#{baseSalary},#{sellPercent})	
+    </insert>
+    <update id="update" parameterType="Department">
+        update t_position 
+        <set>
+            <if test="positionName != null">
+                positionName = #{positionName},
+            </if>
+            <if test="baseSalary != null">
+                baseSalary = #{baseSalary},
+            </if>
+            <if test="sellPercent != null">
+                sellPercent = #{sellPercent},
+            </if>
+            <if test="1==1">
+                positionId = positionId
+            </if>
+        </set>
+        WHERE positionId = #{positionId} 
+    </update>
+    
+    <delete id="delete" parameterType="int">
+        DELETE from t_position where positionId = #{positionId}
+    </delete>
+    <resultMap type="Position" id="mapPos">
+         <id property="positionId" column="positionId"/>
+         <result property="departmentObj" column="departmentObj"/>
+         <result property="positionName" column="positionName"/>
+         <result property="baseSalary" column="baseSalary"/>
+         <result property="sellPercent" column="sellPercent"/>
+         
+         <association property="department" javaType="com.yangfulai.pojo.Department">
+				<id property="departmentNo" column="departmentNo"/>
+				<result property="departmentName" column="departmentName"/>
+         </association>
+    </resultMap>
+    <select id="selectOne" resultMap="mapPos" parameterType="int">
+        SELECT <include refid="sqlPos"/>,<include refid="sqlDept"/>
+        from t_position p,t_department d
+		where p.departmentObj = d.departmentNo
+        and positionId = #{positionId}
+    </select>
+    <select id="getCount" resultType="int" >
+		 SELECT count(*)
+		 from t_position p,t_department d
+		 <where>
+		     <if test="1==1">
+		         p.departmentObj = d.departmentNo
+		     </if>
+		     <if test="positionName != null">
+		         AND positionName LIKE concat('%',#{positionName},'%')
+		     </if>
+		 </where>	
+    </select>
+    
+    <select id="selectAll" resultMap="mapPos" >
+		 SELECT <include refid="sqlPos"/>,<include refid="sqlDept"/>
+		 from t_position p,t_department d
+		 <where>
+		     <if test="1==1">
+		         p.departmentObj = d.departmentNo
+		     </if>
+		     <if test="positionName != null">
+		         AND positionName LIKE concat('%',#{positionName},'%')
+		     </if>
+		 </where>	
+		 limit #{page},#{rows}
+    </select>
+</mapper>

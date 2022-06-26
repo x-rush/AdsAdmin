@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title>部门管理</title>
+<link rel="stylesheet" href="css/pintuer.css">
+<link rel="stylesheet" href="css/admin.css">
+
+
+
+<script type="text/javascript" src="/js/vue.js"></script>
+<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/js/axios.js"></script>
+<!--导入vue框架  -->
+<script type="text/javascript" src="/js/department.js"></script>
+
+
+</head>
+<body>
+
+<div id="app">
+
+<div class="panel admin-panel">
+  <div class="panel-head"><strong class="icon-reorder"> 部门列表</strong></div>
+    <div class="padding border-bottom">
+      <ul class="search" style="padding-left:10px;">
+        <li> <button type="button" class="button border-yellow" onclick="window.location.href='#add'"><span class="icon-plus-square-o"></span> 添加部门</button> </li>
+        <li>搜索：</li>
+        <li>
+          <input v-model="serachName" type="text" placeholder="请输入搜索关键字" name="keywords" class="input" style="width:250px; line-height:17px;display:inline-block" />
+          <a @click="table()" href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()" > 搜索</a></li>
+      </ul>
+    </div>
+    <table class="table table-hover text-center">
+      <tr>
+        <th width="100" style="text-align:left; padding-left:20px;">序号</th>
+        
+       <th>部门id</th>
+        <th>名称</th>
+        <th width="310">操作</th>
+      </tr>
+      
+      <!--显示出序号对应的部门id  -->
+    	 {{numID}}
+        <tr v-for="(dep,index) in list">
+          <td style="text-align:left; padding-left:20px;">
+          			<!--显示出序号的部门id  -->
+          			<!--复选框(序号)  -->
+          <input @click="aa()" v-model="numID" type="checkbox" name="id[]" :value="dep.departmentNo" />
+       
+        
+          
+          
+           {{(currentPage-1)*pageSize+index+1}}</td>
+          <td>{{dep.departmentNo}}</td>
+          <td >{{dep.departmentName}}</td>
+          <td><div class="button-group"> 
+          		 <a @click="edit(dep)" class="button border-main" ><span class="icon-edit"></span> 修改</a>
+          		 <a @click="del(dep.departmentNo)" class="button border-red"><span class="icon-trash-o"></span> 删除</a> </div></td>
+        </tr>
+      <tr>
+       
+      <tr>
+        
+      <tr>
+        <td style="text-align:left; padding:19px 0;padding-left:20px;">
+        
+        <input @click="selectAll()" v-model="a" value="0" type="checkbox" id="checkall" /> 全选 </td>
+        
+        
+        <td colspan="7" style="text-align:left;padding-left:20px;">
+        <!--根据序号删除添加一个事件  -->
+        <a @click="delSelect()" class="button border-red icon-trash-o" style="padding:5px 15px;" onclick="DelSelect()"> 删除</a>
+          
+          <select @change="table()" v-model="pageSize"  name="copynum" style="padding:5px 15px; border:1px solid #ddd;" onchange="changecopy(this)">
+            <option value="5">5条/页</option>
+            <option value="10">10条/页</option>
+            <option value="15">15条/页</option>
+            <option value="20">20条/页</option>
+          </select>
+            <span>总共有{{totalCount}}条记录</span>
+          </td>
+      </tr>
+      <tr>
+        <td colspan="8"><div class="pagelist">
+        	<a @click="pageChange(1)">首页</a> 
+        	<a v-if="currentPage > 1"  @click="pageChange(currentPage-1)">上一页</a> 
+        	
+        	
+           <font v-for="page in pageCount">
+           		<span v-if="page == currentPage" class="current">{{page}}</span>
+           		<a @click="pageChange(page)" v-else>{{page}}</a>
+           </font> 
+           
+           
+           
+           <a v-if="currentPage < pageCount"  @click="pageChange(currentPage+1)">下一页</a>
+           <a @click="pageChange(pageCount)">尾页</a> </div></td>
+      </tr>
+    </table>
+</div>
+
+</script>
+<div class="panel admin-panel margin-top">
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>添加部门</strong></div>
+  <div class="body-content">
+    <form method="post" class="form-x" action="">
+    
+       <div class="form-group">
+        <div class="label">
+          <label>部门ID：</label>
+        </div>
+        <div class="field">
+          <input v-model="dep.departmentNo" type="text" class="input w50" name="title" data-validate="required:请输入部门id"/>
+          <div class="tips"></div>
+        </div>
+      </div>
+    
+    
+      <div class="form-group">
+        <div class="label">
+          <label>部门名称：</label>
+        </div>
+        <div class="field">
+          <input v-model="dep.departmentName" type="text" class="input w50" name="title" data-validate="required:请输入部门"/>
+          <div class="tips"></div>
+        </div>
+      </div>
+      
+      
+      <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button @click="addAndUpdate" class="button bg-main icon-check-square-o" type="button"> 提交</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+</div>
+
+</body>
+</html>

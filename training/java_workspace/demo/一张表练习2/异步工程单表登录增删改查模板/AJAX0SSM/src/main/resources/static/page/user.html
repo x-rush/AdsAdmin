@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title></title>
+<link rel="stylesheet" href="css/pintuer.css">
+<link rel="stylesheet" href="css/admin.css">
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/vue.js"></script>
+<script type="text/javascript" src="/js/axios.js"></script>
+
+<script type="text/javascript" src="/js/user.js"></script>
+
+<!--user.html对应的是t_admin表  -->
+
+
+</head>
+<body>
+
+
+<div id="app">
+
+
+<div class="panel admin-panel">
+  <div class="panel-head"><strong class="icon-reorder"> 用户列表</strong></div>
+  <div class="padding border-bottom">  
+  <button type="button" class="button border-yellow" onclick="window.location.href='#add'"><span class="icon-plus-square-o"></span> 添加用户</button>
+  
+<input v-model="serachName" type="text" placeholder="请输入搜索关键字" class="input" style="width:250px; line-height:17px;display:inline-block" />
+<a @click="table()" class="button border-main icon-search"> 搜索</a>  
+  
+  </div>
+  <table class="table table-hover text-center">
+    <tr>
+      <th width="20%">编号</th>
+      <th width="20%">用户</th>
+      <th width="20%">密码</th>
+      <th width="45%">操作</th>
+    </tr>
+   
+    <tr v-for="(user,index) in list">
+    		<!--(当前页数-1)*每页记录数+index下标+1  -->
+      <td>{{(currentPage-1)*pageSize+index+1}}</td>       <!--每页的序号  -->
+      <td>{{user.username}}</td>
+      <td>{{user.password}}</td>
+      <td><div class="button-group">
+      <a @click="edit(user)" class="button border-main"><span class="icon-edit"></span> 修改</a>
+      <a @click="del(user.username)" class="button border-red"><span class="icon-trash-o"></span> 删除</a>
+      </div></td>
+    </tr>
+   
+   
+   		<!--下拉框-每页的记录数  -->
+      <tr>
+        <td colspan="4" style="text-align:left;padding-left:20px;">
+          <select @change="table()" v-model="pageSize" name="copynum" style="padding:5px 15px; border:1px solid #ddd;">
+           			<!--改变事件  -->				 <!--绑定当前记录数  -->
+            <option value="5">5条/页</option>
+            <option value="10">10条/页</option>
+            <option value="15">15条/页</option>
+            <option value="20">20条/页</option>
+          </select>
+          <span>总共有{{totalCount}}条记录</span>
+         </td>
+      </tr>
+      
+      <tr>
+        <td colspan="4"><div class="pagelist" >
+        
+        <a @click="pageChange(1)">首页</a>
+         
+        <!--如果当前页	大于1(!=1)	不显示上一页  -->
+        <a v-if="currentPage > 1"  @click="pageChange(currentPage-1)">上一页</a>
+      		 
+       
+        
+        <font v-for="page in pageCount">
+        
+        		<!--取出的页数等于当前页  -->
+        	<span v-if="page == currentPage" class="current">{{page}}</span>
+        	<a @click="pageChange(page)" v-else>{{page}}</a>
+        
+        </font>
+        
+        
+      
+		<a v-if="currentPage < pageCount"  @click="pageChange(currentPage+1)">下一页</a>
+        <a @click="pageChange(pageCount)">尾页</a> 
+        
+        </div></td>
+      </tr>    
+    
+  </table>
+</div>
+<div class="panel admin-panel margin-top" id="add">
+  <div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 添加用户</strong></div>
+  <div class="body-content">
+    <form id="userform" class="form-x">   
+     
+      <div class="form-group">
+        <div class="label">
+          <label>用户：</label>
+        </div>
+        <div class="field">
+          <input v-model="user.username" type="text" class="input w50" name="username" data-validate="required:请输入用户" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      
+      
+      <div class="form-group">
+        <div class="label">
+          <label>密码：</label>
+        </div>
+        <div class="field">
+          <input v-model="user.password" type="password" class="input w50" name="password" value="" data-validate="required:请输入密码" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      
+      
+      <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button @click="addAndUpdate" class="button bg-main icon-check-square-o" type="button">保存</button>
+        </div>				<!--submit 改成	button  -->
+      </div>
+    </form>
+  </div>
+</div>
+
+
+</div>
+
+
+</body></html>

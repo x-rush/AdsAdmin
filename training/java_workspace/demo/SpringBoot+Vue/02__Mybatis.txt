@@ -1,0 +1,53 @@
+(一)Mybatis框架
+Mybatis框架是一个基于【SQL映射】的【持久层】框架。
+Mybatis框架核心思想：对象关系映射。
+
+Java(面向对象语言)		Mybatis		Mysql(关系型数据库)
+类					表
+变量					字段
+对象					记录
+
+(二)Mybaits框架的开发模式
+第一种：纯手工方式编写SQL的映射文件SQLmapper.xml【实体类、接口、映射文件】
+第二种：使用Mybatis插件生成【实体类、实体类条件类、接口、映射文件】 + 【手工编写】
+第三种：注解方式【实体类、接口(SQL注解)】
+
+(三)Mybatis框架SQL映射文件中的标签(20个)
+<mapper>		跟节点
+<insert>			添加
+<update>		修改
+<delete>			删除
+<select>			查询
+<resultMap>		配置结果映射
+<id>			主键字段
+<result>			其它字段
+<association>		多对一	
+<collection>		一对多
+<if>			分支
+<choose>		分支
+<when>			分支
+<otherwise>		分支
+<where>			条件
+<set>			修改
+<trim>			去空格
+<foreach>		批量
+<sql>			sql定义
+<include>		sql包含
+
+(四)Mybatis框架SQL映射文件中的属性(16个)
+namespace		命名空间
+id			唯一标识
+parameterType		参数类型
+parameterMap		参数map
+resultType		结果类型
+resultMap		结果映射
+type			类型
+property			变量
+column			字段
+test			条件
+collection			集合
+item			元素
+sql			子查询
+separator			分割
+open			前缀
+close			后缀

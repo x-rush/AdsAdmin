@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	
+	<!-- 这是Tomcat下的conf/server.xml设置,注意配置过去!
+	<Context path="/MyTodo" reloadable="true" docBase="D:\workspace\MyTodo" workDir="D:\workspace\MyTodo\work" >
+	<Resource name="jdbc/MyTodoDataSource" auth="Container" type="javax.sql.DataSource"
+            maxActive="100" maxIdle="30" maxWait="10000"
+            username="root" password="hy" driverClassName="org.gjt.mm.mysql.Driver"
+            url="jdbc:mysql://127.0.0.1/test"/>
+	</Context>
+	-->
+
+	<!-- 数据源 -->
+	<resource-ref>
+      <description>到MySql5数据库的JDBC数据源</description>
+      <res-ref-name>jdbc/MyTodoDataSource</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  	</resource-ref>
+  	
+	<!-- 首页 -->
+	<welcome-file-list>
+		<welcome-file>/web/page/index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- InitialSystemServlet -->
+	<servlet>
+		<servlet-name>InitialSystemServlet</servlet-name>
+		<servlet-class>
+			com.heyang.action.initial.InitialSystemServlet
+		</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>	
+	
+	<!-- 初始化log4j的Servlet -->
+	<servlet>
+         <servlet-name>log4j-init</servlet-name>
+         <servlet-class>
+         	com.heyang.action.initial.Log4jInit
+         </servlet-class>
+         <init-param>
+           <param-name>log4j</param-name>
+           <param-value>WEB-INF/classes/log4j.properties</param-value>
+         </init-param>
+         <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <!-- 用于取得数据的Servlet -->
+	<servlet>
+		<servlet-name>FetchDataServlet</servlet-name>
+		<servlet-class>
+			com.heyang.action.FetchDataServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FetchDataServlet</servlet-name>
+		<url-pattern>/FetchData</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 用于取得省下面的城市的Servlet -->
+	<servlet>
+		<servlet-name>GetCitiesServlet</servlet-name>
+		<servlet-class>
+			com.heyang.action.GetCitiesServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GetCitiesServlet</servlet-name>
+		<url-pattern>/GetCities</url-pattern>
+	</servlet-mapping>
+
+</web-app>
