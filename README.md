@@ -15,4 +15,4 @@ for ad serving
 <br>etc...
 
 
-<br> /trainning 是日常学习练习。 10月删除
+<br> /trainning 是日常学习练习。 10月迁移trainning仓库
