@@ -160,6 +160,40 @@ export const constantRoutes = [
     ]
   },
 
+  {
+    path: '/app_manage',
+    component: Layout,
+    redirect: '/app_manage/app_list',
+    name: 'app_manage',
+    meta: { title: '应用管理' },
+    alwaysShow: true,
+    children: [
+      {
+        path: 'app_list',
+        name: 'app_list',
+        component: () => import('@/views/table/index'),
+        meta: { title: '应用列表', icon: 'table' }
+      }
+    ]
+  },
+
+  {
+    path: '/user_manage',
+    component: Layout,
+    redirect: '/user_manage/user_list',
+    name: 'user_manage',
+    meta: { title: '用户管理' },
+    alwaysShow: true,
+    children: [
+      {
+        path: 'user_list',
+        name: 'user_list',
+        component: () => import('@/views/table/index'),
+        meta: { title: '用户列表', icon: 'table' }
+      }
+    ]
+  },
+
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
