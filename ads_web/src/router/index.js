@@ -171,7 +171,7 @@ export const constantRoutes = [
       {
         path: 'app_list',
         name: 'app_list',
-        component: () => import('@/views/table/index'),
+        component: () => import('@/views/app/index'),
         meta: { title: '应用列表', icon: 'table' }
       }
     ]
@@ -188,8 +188,25 @@ export const constantRoutes = [
       {
         path: 'user_list',
         name: 'user_list',
-        component: () => import('@/views/table/index'),
+        component: () => import('@/views/user/index'),
         meta: { title: '用户列表', icon: 'table' }
+      }
+    ]
+  },
+
+  {
+    path: '/serving_manage',
+    component: Layout,
+    redirect: '/serving_manage/serving_list',
+    name: 'serving_manage',
+    meta: { title: '投放管理' },
+    alwaysShow: true,
+    children: [
+      {
+        path: 'serving_list',
+        name: 'serving_list',
+        component: () => import('@/views/serving/index'),
+        meta: { title: '渠道列表', icon: 'table' }
       }
     ]
   },
