@@ -171,7 +171,7 @@ export const constantRoutes = [
       {
         path: 'app_list',
         name: 'app_list',
-        component: () => import('@/views/app/index'),
+        component: () => import('@/views/app/complex-table'),
         meta: { title: '应用列表', icon: 'table' }
       }
     ]
