@@ -15,5 +15,5 @@ for ad serving
 <br>etc...
 
 
-<br> /trainning  是日常学习练习demo
+<br> /trainning  是练习demo
 <br> /admin_template  是admin前端的模板组件
