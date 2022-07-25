@@ -46,7 +46,13 @@
         "psr-4": {
             "App\\": "app/"
         },
-        "files": []
+        "files": [
+            "extend/func.php",
+            "extend/helper.php"
+        ],
+        "psr-0": {
+            "": "extend/"
+        }
     },
     "autoload-dev": {
         "psr-4": {
