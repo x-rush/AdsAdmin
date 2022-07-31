@@ -14,7 +14,6 @@ class BaseController extends AbstractController
         $this->initialize();
     }
 
-
     public function initialize()
     {
     }
